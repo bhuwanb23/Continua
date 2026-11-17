@@ -1,0 +1,215 @@
+{
+  "dataset_version": "continua-synth-v1",
+  "generator_version": "generator-v1",
+  "providers": [
+    {
+      "display_name": "Dr. Grace Lin",
+      "fixture_key": "PROV-CARD-01",
+      "organization": "Heartland Cardiology",
+      "provider_id": "50ff4107-0838-5541-a6b0-0f25e4d11d70",
+      "specialty": "cardiology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Omar Haddad",
+      "fixture_key": "PROV-CARD-02",
+      "organization": "Brookside Cardiac Clinic",
+      "provider_id": "c54a1489-b6b1-5954-9908-9574695c210e",
+      "specialty": "cardiology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Rachel Kim",
+      "fixture_key": "PROV-CARD-03",
+      "organization": "Northgate Cardiovascular",
+      "provider_id": "81beea51-009b-58ef-9bad-8c7c3202dc18",
+      "specialty": "cardiology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Helen Park",
+      "fixture_key": "PROV-ENDO-01",
+      "organization": "Meadowbrook Endocrinology",
+      "provider_id": "2c81a347-0502-5dc6-8f84-eab5e875a48d",
+      "specialty": "endocrinology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Samuel Boateng",
+      "fixture_key": "PROV-ENDO-02",
+      "organization": "Vista Endocrine Care",
+      "provider_id": "f80cb94f-072a-54c5-a9aa-f6ebfe110635",
+      "specialty": "endocrinology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Cedar Ridge Imaging",
+      "fixture_key": "PROV-IMG-01",
+      "organization": "Cedar Ridge Imaging",
+      "provider_id": "a33e2451-534f-565f-a3a0-1bc159517954",
+      "specialty": "imaging",
+      "synthetic": true
+    },
+    {
+      "display_name": "Northgate Imaging Center",
+      "fixture_key": "PROV-IMG-02",
+      "organization": "Northgate Imaging Center",
+      "provider_id": "8866e03e-0db8-5e79-83ee-1239e1d53ae9",
+      "specialty": "imaging",
+      "synthetic": true
+    },
+    {
+      "display_name": "Lakeside Radiology",
+      "fixture_key": "PROV-IMG-03",
+      "organization": "Lakeside Radiology",
+      "provider_id": "707ed5db-06dc-569f-adf0-89a9e7aede2a",
+      "specialty": "imaging",
+      "synthetic": true
+    },
+    {
+      "display_name": "Metro Lab Services",
+      "fixture_key": "PROV-LAB-01",
+      "organization": "Metro Lab Services",
+      "provider_id": "1aa7921c-a6ca-5e90-8d19-55bd7437ddc2",
+      "specialty": "laboratory",
+      "synthetic": true
+    },
+    {
+      "display_name": "Pinnacle Labs",
+      "fixture_key": "PROV-LAB-02",
+      "organization": "Pinnacle Labs",
+      "provider_id": "81bf0322-8176-5a68-ade1-459515bd6f24",
+      "specialty": "laboratory",
+      "synthetic": true
+    },
+    {
+      "display_name": "Valley Clinical Labs",
+      "fixture_key": "PROV-LAB-03",
+      "organization": "Valley Clinical Labs",
+      "provider_id": "6f92ab25-aea3-53bb-8ca8-3bebdec2b544",
+      "specialty": "laboratory",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Anita Patel",
+      "fixture_key": "PROV-ONC-01",
+      "organization": "Northlake Oncology Center",
+      "provider_id": "9a8d7ab1-bff6-5e2c-bc8c-e8028168ad37",
+      "specialty": "oncology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Julian Reed",
+      "fixture_key": "PROV-ONC-02",
+      "organization": "Cedar Ridge Cancer Center",
+      "provider_id": "18124035-ee07-5e28-89e1-d741f1fb3ac7",
+      "specialty": "oncology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Naomi Okafor",
+      "fixture_key": "PROV-ONC-03",
+      "organization": "Summit Oncology Associates",
+      "provider_id": "a85c1865-f933-5e25-80d6-3f21d29f94e5",
+      "specialty": "oncology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Victor Salas",
+      "fixture_key": "PROV-ONC-04",
+      "organization": "Prairie View Hematology-Oncology",
+      "provider_id": "00b82d76-abd3-5880-a7fb-88b15f65c2dd",
+      "specialty": "oncology",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Lena Ortiz",
+      "fixture_key": "PROV-PCP-01",
+      "organization": "Northlake Primary Care",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "specialty": "primary_care",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Marcus Bell",
+      "fixture_key": "PROV-PCP-02",
+      "organization": "Greenfield Family Medicine",
+      "provider_id": "c882b071-f205-501a-a733-042735f165f7",
+      "specialty": "primary_care",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Priya Raman",
+      "fixture_key": "PROV-PCP-03",
+      "organization": "Riverbend Primary Care",
+      "provider_id": "118ee9a3-145d-54cf-a5a7-264da2cbb46c",
+      "specialty": "primary_care",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Daniel Cho",
+      "fixture_key": "PROV-PCP-04",
+      "organization": "Hillcrest Medical Group",
+      "provider_id": "ac4aed71-8eaf-554e-befc-079ec411d6af",
+      "specialty": "primary_care",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Sofia Alvarez",
+      "fixture_key": "PROV-PCP-05",
+      "organization": "Southfork Family Health",
+      "provider_id": "3fee91c0-8be4-5bc4-b8ce-368c344bf9ee",
+      "specialty": "primary_care",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Ethan Brooks",
+      "fixture_key": "PROV-PCP-06",
+      "organization": "Lakeside Primary Care",
+      "provider_id": "0adf467f-cc8a-58b4-886f-1d6a397ce35e",
+      "specialty": "primary_care",
+      "synthetic": true
+    },
+    {
+      "display_name": "Greenfield Pharmacy",
+      "fixture_key": "PROV-PHARM-01",
+      "organization": "Greenfield Pharmacy",
+      "provider_id": "d419c6cc-08aa-52b2-ac97-9a8beb6962a8",
+      "specialty": "pharmacy",
+      "synthetic": true
+    },
+    {
+      "display_name": "Metro Rx",
+      "fixture_key": "PROV-PHARM-02",
+      "organization": "Metro Rx",
+      "provider_id": "5ab96984-cd69-5c7c-9802-3448a8b738e0",
+      "specialty": "pharmacy",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Teresa Vaughn",
+      "fixture_key": "PROV-SURG-01",
+      "organization": "Northlake Surgical Associates",
+      "provider_id": "df85db94-8eb4-559b-a419-74ac8cd419e2",
+      "specialty": "surgery",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Ben Whitaker",
+      "fixture_key": "PROV-SURG-02",
+      "organization": "Cedar Ridge Surgery Center",
+      "provider_id": "1c7a766d-8e23-5c2d-9cde-5db9c78c1281",
+      "specialty": "surgery",
+      "synthetic": true
+    },
+    {
+      "display_name": "Dr. Alina Novak",
+      "fixture_key": "PROV-SURG-03",
+      "organization": "Summit Surgical Group",
+      "provider_id": "981d52cc-28c8-5ef1-87f1-9fdbb68d19bb",
+      "specialty": "surgery",
+      "synthetic": true
+    }
+  ],
+  "synthetic": true
+}

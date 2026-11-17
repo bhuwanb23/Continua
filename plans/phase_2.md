@@ -1805,7 +1805,30 @@ Is the dataset realistic enough to challenge extraction while still being comple
 
 Yes.
 
-Only then stamp:
+## Phase 2 execution checklist
+
+- [x] Generator architecture and deterministic seed
+- [x] 26-provider ecosystem
+- [x] 80 patients across 4 cohorts
+- [x] Scenario grammar T01–T06
+- [x] Positive gap planting (42 patients, 66 gaps)
+- [x] Adversarial negatives HN-01–HN-15 (13 negative + 2 adversarial-positive)
+- [x] Canonical truth-event generation
+- [x] Document template system (9 templates, controlled messiness)
+- [x] Padding to realistic length bands (25/55/20)
+- [x] Maria golden case (3 gaps, tamoxifen not a gap)
+- [x] Ground-truth manifest generation
+- [x] Negative manifest
+- [x] Extraction-gold subset (12 patients / 130 events)
+- [x] Data validator (scripts/validate-dataset.ts)
+- [x] Synthetic/PHI safety audit
+- [x] Mutation tests
+- [x] Leakage audit
+- [x] Reproducibility + hashing
+- [x] Dataset characterization (docs/data/dataset-characterization.md)
+- [x] Docs: dataset-design, scenario-catalog, adversarial-cases, maria-golden-case, dataset-card
+- [x] npm scripts and CI integration
+- [x] Delete scripts/debug-truth.ts
 
 CONTINUA PHASE 2: continua-synth-v1 FROZEN
 

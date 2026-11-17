@@ -1,0 +1,251 @@
+{
+  "dataset_version": "continua-synth-v1",
+  "eval_version": "continua-eval-v1",
+  "negatives": [
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "00f9f2f6-b2b9-52db-979f-dd45929e49fe",
+      "reason": "Referral window has not elapsed at the evaluation date.",
+      "scenario_id": "HN-03"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "12a06ba7-66a6-524b-8707-1c525c4ef922",
+      "reason": "Medication stopped before the monitoring window closed.",
+      "scenario_id": "HN-08"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "23e858b3-8ab0-58c4-82cd-6873b8915122",
+      "reason": "Referral window has not elapsed at the evaluation date.",
+      "scenario_id": "HN-03"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "2f6079a3-3c2c-5305-b9b9-668687df24d5",
+      "reason": "Monitoring completed using an accepted alias (HbA1c).",
+      "scenario_id": "HN-09"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "30b1d127-ecd2-5e13-b0f2-6b579c328499",
+      "reason": "Repeated CBC is outside the 14-day duplicate window.",
+      "scenario_id": "HN-06"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "3150b13f-fb84-53bc-9116-69550d51f0e6",
+      "reason": "Monitoring completed one day before the deadline.",
+      "scenario_id": "HN-10"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "4e36e9af-26c3-5802-8b74-d8ca0f69d4ad",
+      "reason": "Repeated CBC is outside the 14-day duplicate window.",
+      "scenario_id": "HN-06"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "4e74aa3e-cc02-57e4-ae83-9f6d45c22b49",
+      "reason": "Medication stopped before the monitoring window closed.",
+      "scenario_id": "HN-08"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "539efe66-7d1d-554f-b694-6fac41e67c6b",
+      "reason": "Referral completed by the correct specialist inside the window.",
+      "scenario_id": "HN-01"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "67306812-1286-5f32-8e2b-cc11ba399f24",
+      "reason": "Same imaging modality but different body regions.",
+      "scenario_id": "HN-07"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "6e447d9f-2cf4-5b04-a378-14bec3e0174c",
+      "reason": "Repeated CBCs are an explicit serial monitoring plan.",
+      "scenario_id": "HN-05"
+    },
+    {
+      "detector": "all",
+      "expected": "no_gap",
+      "patient_id": "7e9052d5-f85c-50e3-a69a-c5e012c74481",
+      "reason": "Partial date recorded by an outside laboratory.",
+      "scenario_id": "HN-13"
+    },
+    {
+      "detector": "all",
+      "expected": "no_gap",
+      "patient_id": "7feb5a77-d9cd-53e0-91c1-6b951b7c94e2",
+      "reason": "Provider unknown; no monitoring trigger exists.",
+      "scenario_id": "HN-14"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "82662b06-f9d5-581a-baec-8bd78c7cf647",
+      "reason": "Repeated CBCs are an explicit serial monitoring plan.",
+      "scenario_id": "HN-05"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "85e80aec-2b20-515a-bb49-d2fb1d7afe97",
+      "reason": "Monitoring completed one day before the deadline.",
+      "scenario_id": "HN-10"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "88d6cc47-ce57-5af4-b701-68de188ce8ad",
+      "reason": "Same imaging modality but different body regions.",
+      "scenario_id": "HN-07"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "8ed0ad89-9f35-55e7-994a-344bca58e63e",
+      "reason": "Specialist completion occurred via telehealth.",
+      "scenario_id": "HN-04"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "8f2b0295-4a13-5a2f-90b8-d43f83a1055b",
+      "reason": "Referral explicitly marked completed.",
+      "scenario_id": "HN-15"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "8f3558bb-1514-5945-b036-1142a13c423d",
+      "reason": "Referral explicitly marked completed.",
+      "scenario_id": "HN-15"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "99aa70e5-4028-5e22-a266-f841c176e50d",
+      "reason": "Repeated CBC is outside the 14-day duplicate window.",
+      "scenario_id": "HN-06"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "ac4cddd3-ecc3-5581-8e02-d15451f14334",
+      "reason": "Two documents are copies of one lab event.",
+      "scenario_id": "HN-12"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "afd3184b-749b-5439-92a6-0dd136e2b4c9",
+      "reason": "Same imaging modality but different body regions.",
+      "scenario_id": "HN-07"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "b59fcd3f-4320-5670-889d-aef25f07a5a6",
+      "reason": "Monitoring completed using an accepted alias (HbA1c).",
+      "scenario_id": "HN-09"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "bb751d08-d605-553c-a265-b361cc98e5d4",
+      "reason": "Monitoring completed using an accepted alias (HbA1c).",
+      "scenario_id": "HN-09"
+    },
+    {
+      "detector": "all",
+      "expected": "no_gap",
+      "patient_id": "c661c25f-c7d3-555c-9708-37763e9e4437",
+      "reason": "Provider unknown; no monitoring trigger exists.",
+      "scenario_id": "HN-14"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "cb9c9a11-23d8-54cf-96d5-adf8461501c9",
+      "reason": "Specialist completion occurred via telehealth.",
+      "scenario_id": "HN-04"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "dafe98f5-2873-56b9-a4f6-b70e6f6e3e25",
+      "reason": "Referral completed by the correct specialist inside the window.",
+      "scenario_id": "HN-01"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "deab9223-2d62-577e-9d41-23929e4eff99",
+      "reason": "Referral window has not elapsed at the evaluation date.",
+      "scenario_id": "HN-03"
+    },
+    {
+      "detector": "all",
+      "expected": "no_gap",
+      "patient_id": "e0992109-3b8d-5162-9cd2-6017ea4f9ebb",
+      "reason": "Partial date recorded by an outside laboratory.",
+      "scenario_id": "HN-13"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "e14c122d-5053-50c1-aeb0-36225feff589",
+      "reason": "Specialist completion occurred via telehealth.",
+      "scenario_id": "HN-04"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "reason": "Monitoring completed one day before the deadline.",
+      "scenario_id": "HN-10"
+    },
+    {
+      "detector": "missed_followup",
+      "expected": "no_gap",
+      "patient_id": "fb7ea7f4-55e3-566d-b240-b5bcf6ebda55",
+      "reason": "Referral completed by the correct specialist inside the window.",
+      "scenario_id": "HN-01"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "fd6f4e2f-d63c-5bb5-90dc-d2873531513a",
+      "reason": "Repeated CBCs are an explicit serial monitoring plan.",
+      "scenario_id": "HN-05"
+    },
+    {
+      "detector": "duplicate_test",
+      "expected": "no_gap",
+      "patient_id": "fd988bac-d502-5fac-891a-7b9f8682666d",
+      "reason": "Two documents are copies of one lab event.",
+      "scenario_id": "HN-12"
+    },
+    {
+      "detector": "med_monitoring",
+      "expected": "no_gap",
+      "patient_id": "fd9b92bb-6591-5427-ae70-d4ab51739473",
+      "reason": "Medication stopped before the monitoring window closed.",
+      "scenario_id": "HN-08"
+    }
+  ]
+}

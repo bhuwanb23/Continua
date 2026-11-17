@@ -1,0 +1,88 @@
+{
+  "age": {
+    "max": 79,
+    "min": 36
+  },
+  "cohorts": {
+    "cardio": 16,
+    "metabolic": 16,
+    "mixed": 16,
+    "oncology": 32
+  },
+  "content_hash": "1790307189c34963df03b327ae2744cad03fbb0c5b63d1db43723ac8ff4e2d6e",
+  "dataset_version": "continua-synth-v1",
+  "difficulty": {
+    "EASY": 26,
+    "HARD": 27,
+    "MEDIUM": 27
+  },
+  "document_count": 485,
+  "document_length_bands": {
+    "long": 98,
+    "medium": 267,
+    "short": 120
+  },
+  "documents_by_type": {
+    "consult_note": 135,
+    "discharge_summary": 1,
+    "followup": 105,
+    "imaging_report": 15,
+    "lab_report": 160,
+    "medication_list": 32,
+    "referral": 37
+  },
+  "evaluation_as_of_date": "2026-06-05",
+  "extraction_gold_events": 130,
+  "extraction_gold_patients": 12,
+  "gap_types": {
+    "duplicate_test": 20,
+    "med_monitoring": 20,
+    "missed_followup": 26
+  },
+  "generator_version": "generator-v1",
+  "hashes": {
+    "extraction_gold_sha256": "d74e758c32f5499235aa47145ff06f858ca0dcc411a1385ca833ac1624bec284",
+    "ground_truth_sha256": "3a0deb04396a9c6a51208d56c04a59c878fb7199d58cbe7e8cc4b338a5f1a5f2",
+    "negative_manifest_sha256": "9b72b523728fced7bb901c6a99523b76d3301d0dfba8e07dbde051095f5990a9",
+    "patients_sha256": "f49c940554418601e6ed209acc7d0b69d0bbb99115dabd030567afaa6b13b87e",
+    "providers_sha256": "a5cd160ddbc23814dcc06d2b91b7dee51bab34316c2bd4db36d05696c1615049",
+    "records_sha256": "0708eee737944039f92ea256b56ba2d43b49203bf55af443cfe53974fc736a06",
+    "truth_events_sha256": "309e6ec53e375e2f714dff83b5c654fa9f7231097ca1c1dce6b6032b49d05b8a"
+  },
+  "negative_families": [
+    "HN-01",
+    "HN-03",
+    "HN-04",
+    "HN-05",
+    "HN-06",
+    "HN-07",
+    "HN-08",
+    "HN-09",
+    "HN-10",
+    "HN-12",
+    "HN-13",
+    "HN-14",
+    "HN-15"
+  ],
+  "negative_instances": 35,
+  "negative_patients": 38,
+  "patient_count": 80,
+  "positive_patients": 42,
+  "provider_count": 26,
+  "providers_by_specialty": {
+    "cardiology": 3,
+    "endocrinology": 2,
+    "imaging": 3,
+    "laboratory": 3,
+    "oncology": 4,
+    "pharmacy": 2,
+    "primary_care": 6,
+    "surgery": 3
+  },
+  "seed": 20261117,
+  "sex": {
+    "F": 40,
+    "M": 40
+  },
+  "total_gaps": 66
+}

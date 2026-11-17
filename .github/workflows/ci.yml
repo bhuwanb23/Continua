@@ -39,6 +39,26 @@ jobs:
       - name: Data checks
         run: npm run validate:data
 
+      - name: Regenerate dataset and verify committed bytes
+        run: |
+          npm run generate:data
+          git diff --exit-code -- data/
+
+      - name: Dataset checks
+        run: npm run validate:dataset
+
+      - name: Truth derivability
+        run: npm run check:truth
+
+      - name: Synthetic safety audit
+        run: npm run audit:synthetic
+
+      - name: Label leakage audit
+        run: npm run check:leakage
+
+      - name: Dataset hashes
+        run: npm run hash:dataset
+
       - name: Environment checks
         run: npm run validate:env
 

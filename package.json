@@ -21,8 +21,15 @@
     "validate:env": "tsx scripts/validate-env.ts",
     "check:safety": "tsx scripts/check-safety.ts",
     "check:secrets": "tsx scripts/check-secrets.ts",
+    "generate:data": "tsx scripts/generate-synthetic-data.ts",
+    "validate:dataset": "tsx scripts/validate-dataset.ts",
+    "check:truth": "tsx scripts/check-truth.ts",
+    "audit:synthetic": "tsx scripts/audit-synthetic-safety.ts",
+    "check:leakage": "tsx scripts/check-leakage.ts",
+    "hash:dataset": "tsx scripts/hash-dataset.ts",
+    "characterize:data": "tsx scripts/characterize-dataset.ts",
     "verify:determinism": "tsx scripts/verify-determinism.ts",
-    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:env && npm run check:safety && npm run check:secrets"
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset"
   },
   "dependencies": {
     "next": "15.5.29",

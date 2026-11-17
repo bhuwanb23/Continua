@@ -1,0 +1,819 @@
+{
+  "dataset_version": "continua-synth-v1",
+  "eval_version": "continua-eval-v1",
+  "evaluation_as_of_date": "2026-06-05",
+  "gaps": [
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "0508b76c-efb9-56b9-9e21-2652ed3ac7c8",
+      "gap_type": "med_monitoring",
+      "patient_id": "f03103c6-77da-5b3c-aa8c-2eaa69a10eb6",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "98680d3c-c421-5859-a60d-887f32bc63bb"
+      ],
+      "trigger_event_id": "95088d78-3444-5a7f-af01-571877de21d1"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "0786b4cc-c05d-51e3-8950-4c59777d4394",
+      "gap_type": "missed_followup",
+      "patient_id": "f03103c6-77da-5b3c-aa8c-2eaa69a10eb6",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "10df42ce-15e0-5cca-9c63-b01813ebf1f1"
+      ],
+      "trigger_event_id": "d1bb6c15-3058-5ddd-ad1c-11a053402218"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "0ba9ae27-56bf-5a08-b9a8-829b7f5725bc",
+      "gap_type": "med_monitoring",
+      "patient_id": "fee39371-388c-5434-a68e-a2960cf89819",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "6fe80a18-c6bd-5e3e-9bef-ad0726d25872"
+      ],
+      "trigger_event_id": "58902f1b-8d66-5427-88cb-4890929c44cf"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "0c8789a4-f495-57bc-bfe9-7cf748a1ace2",
+      "gap_type": "med_monitoring",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "925b8102-db65-594a-84c9-093c3e28bc76"
+      ],
+      "trigger_event_id": "00e5d6c8-ab1a-5aa7-8ed6-59b9adebc3bc"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "0d3cc2f6-2118-5f4b-b4e8-ad37bcefc652",
+      "gap_type": "duplicate_test",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "a4442b3c-a5a9-5c91-a92b-711b0fb5c6c9",
+        "ef055a09-4144-5cc3-9cdb-098bd6f62d86"
+      ],
+      "trigger_event_id": "5a59eb18-2832-53ae-81c4-e67b25394d5c"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "0f4d0f3d-ca48-5bb2-8d1e-66c00924d056",
+      "gap_type": "duplicate_test",
+      "patient_id": "48400b39-475f-5477-8c82-6d56068df599",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "d3f5ecb9-f8d8-5f9a-a9a2-2dbbeed9d465",
+        "04317e23-76e4-52ed-9c50-8ddc8e1fa3d2"
+      ],
+      "trigger_event_id": "38b8bfad-eb13-5254-8733-6aa8995f9f79"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "1327dbce-1268-5a82-a46c-a40b28346f56",
+      "gap_type": "med_monitoring",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "a4620ed7-9fd1-51d2-8d9a-243994b419cc"
+      ],
+      "trigger_event_id": "6116d27b-4cf9-5044-8b82-49eff1581ebb"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "13d1f28b-16b5-5b12-9ee7-17ab0f19d31f",
+      "gap_type": "missed_followup",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "baf7c795-d5f5-58dd-8eef-7c4968b5adbc"
+      ],
+      "trigger_event_id": "61e40b27-39e1-5a47-9240-af8deb650f13"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 7,
+      "gap_truth_id": "149b020c-f066-5098-9a04-05a9f861f602",
+      "gap_type": "med_monitoring",
+      "patient_id": "0cae34d0-e503-5585-8402-519b06d35750",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "955b6ff4-c5e6-5c5f-8a43-f643f51ef0b6"
+      ],
+      "trigger_event_id": "c56b23ef-9937-512f-bd02-07f295f87c8c"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "15cd82f4-af3f-5d7c-9256-e7cbde4e5e0e",
+      "gap_type": "missed_followup",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "5e57edfd-6580-5497-84a2-7d90d9c55064"
+      ],
+      "trigger_event_id": "346647bf-c7ce-573b-99d9-20bac77a6ce4"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "160ac9a5-17a4-533b-af06-d299548437fd",
+      "gap_type": "missed_followup",
+      "patient_id": "9166bfa1-3651-52a9-949b-6c14cc8c58b9",
+      "scenario_id": "HN-11",
+      "source_doc_ids": [
+        "3bf52262-8116-5ef1-8dbe-7a4c5d7766ae"
+      ],
+      "trigger_event_id": "2319f7f3-2d21-5b94-bc28-46b5489cae82"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "170dc8e1-a5ca-5d7f-a114-dda0cf79350d",
+      "gap_type": "duplicate_test",
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "59de9c2f-8000-5cb2-8803-c2650828ed5b",
+        "f195b7dc-300a-543d-ba6c-a3551496e8de"
+      ],
+      "trigger_event_id": "5bfdf581-d671-5395-be5f-aedfba6dfda3"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "1856004d-e5c1-54fe-b023-2d02ffd54316",
+      "gap_type": "duplicate_test",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "c73f37d1-598c-5bb0-94ea-012bd2ce84fe",
+        "82618b7c-26ad-570f-85a5-1054d6c32018"
+      ],
+      "trigger_event_id": "5d8baebd-71ac-5e2f-98a8-d800e6aa8836"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "1da13b03-e829-5139-ae49-f182565fb700",
+      "gap_type": "med_monitoring",
+      "patient_id": "50802290-51d6-580c-90ff-deb48fde0b40",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "f7e96e38-083d-558f-a9be-5df0e9f5e021"
+      ],
+      "trigger_event_id": "55a4e71d-e12b-547c-b401-0f0a8eaea8b8"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "26df05ec-458f-5f3b-a324-1ffa0219e0bf",
+      "gap_type": "missed_followup",
+      "patient_id": "4655f72d-c926-5766-859b-6cd45cbaecbe",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "79daf761-a0dc-5439-9f06-3a8ab1d2b5f7"
+      ],
+      "trigger_event_id": "1d784924-490a-53ce-9b61-ad401f2b9934"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 7,
+      "gap_truth_id": "2abebb1b-42a3-597a-b661-59a7af0d22a8",
+      "gap_type": "med_monitoring",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "0fa35d4d-b944-597a-8a6f-b8171510fc00"
+      ],
+      "trigger_event_id": "5fe2be44-4f9e-5e3f-be0e-eb7e0440e561"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "2c025d61-8970-582e-a393-ff58ecf2d4ba",
+      "gap_type": "missed_followup",
+      "patient_id": "0d897623-5352-588b-a1e0-15b0aedc1171",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "4e51414a-c60e-584c-ad75-b98db2152656"
+      ],
+      "trigger_event_id": "9647af4e-fd23-5cbe-9ea1-7a0993d53cb7"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "34bbb8bf-61cb-56de-a7d5-56bc9e651b0e",
+      "gap_type": "missed_followup",
+      "patient_id": "2e747376-7b45-5793-802a-247bc9ccd60f",
+      "scenario_id": "HN-11",
+      "source_doc_ids": [
+        "0aa4d34c-d3cc-5b46-9518-24e478736f82"
+      ],
+      "trigger_event_id": "efbff792-ebfa-5a61-a536-9b5acdd480d7"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "3666986a-9882-561f-a641-368534ee42b9",
+      "gap_type": "duplicate_test",
+      "patient_id": "98c35244-660d-5966-ab9c-353ba06ae906",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "0727d170-4266-5a8f-bd4e-6dc1966fd92e",
+        "158b0268-300a-591a-8975-c913f9088a72"
+      ],
+      "trigger_event_id": "241d5fdf-8029-5759-8f7b-3cfa4b88e351"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "39b7b85a-2d07-596a-9f8a-754935bfcde1",
+      "gap_type": "med_monitoring",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "35c30b36-0f7c-5acc-9d46-c9728c9769d9"
+      ],
+      "trigger_event_id": "d71801b3-84fa-5e32-b010-b228b7b22b7f"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "3a82d416-5088-5cde-bf4b-e49af5483b18",
+      "gap_type": "duplicate_test",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "0bb736f0-9ea4-5ef8-8abb-6762189a1dc3",
+        "0a3f0326-d5e4-5497-8439-426f161529c9"
+      ],
+      "trigger_event_id": "b3ea089a-8e29-5c8a-9b49-2aefce1455cd"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "3facd21f-ace9-5a34-a2a4-dc236fe1040e",
+      "gap_type": "duplicate_test",
+      "patient_id": "1a052190-7ad0-54c7-95c7-8c9502080be2",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "23032d6e-4877-5dbf-9665-f2d7aef93380",
+        "d84219ed-93af-5a8e-9f03-78274fc03500"
+      ],
+      "trigger_event_id": "18f895db-b6cc-52e7-a86b-8aa1589ccaf4"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "42ebfd8b-ccff-50fc-a69a-e282472275a7",
+      "gap_type": "missed_followup",
+      "patient_id": "306b85b7-d099-5a2e-9da2-87fe15247384",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "041c7422-c5eb-5cdb-9e2c-278ca59d5b61"
+      ],
+      "trigger_event_id": "689f2e03-a8d2-5ad2-a8c2-ea29914011e6"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "47b16d0a-26ab-558c-b39d-577add1cb76e",
+      "gap_type": "med_monitoring",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "b3cd802f-04b6-5f04-a2fe-4a9665fa95e7"
+      ],
+      "trigger_event_id": "138123e9-667a-5001-8096-fa3dcaa87f0a"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "499d896d-7e2f-513a-ae1f-95ab06a3b4d3",
+      "gap_type": "duplicate_test",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "d71fc44a-995b-596b-8d6e-aee074df21d4",
+        "1f36ae1a-3db0-5cbd-9a89-a355a8e23158"
+      ],
+      "trigger_event_id": "5a1b0799-716b-54d6-9045-b23a5ffb092a"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 7,
+      "gap_truth_id": "4bad7918-69bf-5383-a093-c768a7714698",
+      "gap_type": "med_monitoring",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "b2dc1116-943f-596a-af36-97ce00700d8b"
+      ],
+      "trigger_event_id": "3463b494-8a7b-5f23-87ad-30aef238430b"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 7,
+      "gap_truth_id": "513cccdd-84a2-5395-bf86-9033c440450d",
+      "gap_type": "med_monitoring",
+      "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "d2d782a6-10a8-5534-bbfb-f33d6711b64f"
+      ],
+      "trigger_event_id": "cbec1248-5ec6-569f-bd7d-0ef4ac25fbe8"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "53bdd806-17f7-57d1-936a-a78a5b8c8a58",
+      "gap_type": "duplicate_test",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "40b4007e-b24c-5eeb-9a54-beadd1ab6ed8",
+        "4166d857-6bec-5210-9316-ebd0f5bd8541"
+      ],
+      "trigger_event_id": "bf1384b0-9637-5217-b93c-bceb7a76c356"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "5911b840-a6ba-5f0d-9b8d-031445cecdf2",
+      "gap_type": "missed_followup",
+      "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "e178bfab-ec78-5a3d-8523-2d4fdc3d2475"
+      ],
+      "trigger_event_id": "70b56903-37fa-588d-86a7-c2b8dfba7a3d"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 30,
+      "gap_truth_id": "5e6bd373-d142-58fd-b17f-277ba4b322ee",
+      "gap_type": "missed_followup",
+      "patient_id": "1ebcc119-a037-5e40-b034-b7b1c7ad9591",
+      "scenario_id": "HN-02",
+      "source_doc_ids": [
+        "59c48b69-2e3f-56a0-bdb5-af2ef380273a"
+      ],
+      "trigger_event_id": "510f8d05-ec60-5005-8fb6-f57c0cd4f494"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "6bc8f952-9a0b-5217-9f18-270ec8547dbc",
+      "gap_type": "med_monitoring",
+      "patient_id": "fd6f72e1-5c7c-5d32-82b5-f59d0724a0b8",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "c85c0334-07f6-5d6e-9fc4-04689dbfad83"
+      ],
+      "trigger_event_id": "b4fa19bf-4a27-5606-8fa0-5ebca095da38"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "74736f92-cfbc-530f-b3c9-a647fdd34224",
+      "gap_type": "missed_followup",
+      "patient_id": "c7b9ef81-9444-56fa-8cb9-d17201ebec59",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "34a91571-6d2e-577a-a003-fffed7823fe5"
+      ],
+      "trigger_event_id": "605212a9-cd98-5148-9699-029e5d48781d"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "7d2557c5-7c2b-5e6f-a009-422920d95abf",
+      "gap_type": "med_monitoring",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "c9e1dfab-2d58-54b7-95ee-a03005015bfb"
+      ],
+      "trigger_event_id": "ca6160de-7b90-5a4d-9674-a22110f3fc23"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "7d8b3af2-76e6-5722-bd05-99838ecf9fe5",
+      "gap_type": "duplicate_test",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "3b452ce9-506f-5304-b835-e6429906e79e",
+        "52263daa-a777-5e01-ae5e-ad9bf26a0c43"
+      ],
+      "trigger_event_id": "3bf2f698-5674-5e50-aff7-28221c3d3c1d"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "7e79a68c-8979-5fee-89f7-4e303b8b13ab",
+      "gap_type": "missed_followup",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "c8e67546-a3c5-58a8-ad7c-7dbe6fa465c9"
+      ],
+      "trigger_event_id": "4849c86d-a07c-5850-9475-5201c19a4e1f"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "7f133099-a132-5b8a-88c8-7bac90ba1967",
+      "gap_type": "missed_followup",
+      "patient_id": "14a43a84-31d6-5763-9fd6-a47dabcc2b08",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "a9cb3845-f8da-5c94-b048-1ffe1c14e787"
+      ],
+      "trigger_event_id": "e4aeeab3-f721-5246-bb9c-3a9db3482b18"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 7,
+      "gap_truth_id": "830f68a5-0905-560e-9fdd-953bf7ad8274",
+      "gap_type": "med_monitoring",
+      "patient_id": "13bf6285-5ef3-545f-b280-f9fe9e9d9455",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "0736c71e-a4e0-5cc1-ab0b-9fb9d797aa6a"
+      ],
+      "trigger_event_id": "37cfb2de-d7f8-5d23-81e7-24dd351266ef"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "833ec4a9-7857-5343-84f6-e080a4279fb0",
+      "gap_type": "duplicate_test",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "69b9bbf9-57aa-52f0-a720-cb8be79565db",
+        "2ddf7b29-9e14-5ecc-8102-8243c4f547a7"
+      ],
+      "trigger_event_id": "888247b4-5e40-50cb-b95d-943b1129222b"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "841aab9d-2cd6-5acd-9693-53fad27c3dbd",
+      "gap_type": "duplicate_test",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "001ff9e4-c94a-50c1-ba4a-204ae08a77a8",
+        "78fb834f-e801-5375-b93d-ec8e982af6da"
+      ],
+      "trigger_event_id": "e7e1f2db-2b69-54f2-95b1-794d7a30e20b"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "88a263b7-874d-538c-af75-7dedc75a736e",
+      "gap_type": "duplicate_test",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "5e3f31f2-c6c4-57b7-8a19-45930d271035",
+        "0c19b77e-f5e8-5cd6-863a-f4f0a990f6a4"
+      ],
+      "trigger_event_id": "f061b31b-0e11-5c1e-b50d-6bc43a4424ad"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "8d6c3363-01a6-54fb-b2ab-5e095b20521c",
+      "gap_type": "missed_followup",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "bb2459da-7f17-568b-a126-49d96e661648"
+      ],
+      "trigger_event_id": "ee6ec72a-a60f-587f-872f-c071a3d719ac"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "8d8d6e9b-b014-57a2-bfec-5a4bfafc3b3f",
+      "gap_type": "missed_followup",
+      "patient_id": "fd6f72e1-5c7c-5d32-82b5-f59d0724a0b8",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "d60b63d8-b366-5526-994f-1c7576e23c65"
+      ],
+      "trigger_event_id": "8a8e3c8e-a4ef-5ca3-a08e-45cd49811abf"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "9718d256-5235-5b60-9393-470728077a81",
+      "gap_type": "missed_followup",
+      "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "252b0cd9-4e87-5e21-b0bd-60cd9bc38dbd"
+      ],
+      "trigger_event_id": "aa253ba6-bdbc-5d82-80f8-5218ad6b3fa0"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "984ec1f1-bd49-5945-b3a5-41dd6757d76e",
+      "gap_type": "duplicate_test",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "53636809-5946-57b5-9d2d-2d145222c24d",
+        "666e404a-9e5d-5d8d-a1ee-1be97d8fe67f"
+      ],
+      "trigger_event_id": "0fbaa1ec-8984-5c2f-a47e-dab0a7fcd121"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "986f7f62-477d-5430-a0e4-10114523542b",
+      "gap_type": "missed_followup",
+      "patient_id": "7c650408-fa5b-5efb-a75b-47dcc52c701f",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "7727388d-4ca8-5add-bd04-0cf243505088"
+      ],
+      "trigger_event_id": "e5180b3d-c3cf-5252-b017-de593e50a3ed"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "99c51f60-2e2f-59cc-87af-91924fe5a610",
+      "gap_type": "missed_followup",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "9f33dd01-85ce-53e9-b171-b13bbe0ce145"
+      ],
+      "trigger_event_id": "a59b5696-97a8-5646-a2a9-1bce27a42e99"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "9b167908-6954-5a64-b6a8-23e3b7038e42",
+      "gap_type": "med_monitoring",
+      "patient_id": "6d952ef8-190c-57f2-ab7f-ee095c61e402",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "0efacbe3-1663-5049-a033-2aec818f5258"
+      ],
+      "trigger_event_id": "8144e930-3e77-5db8-9916-48259dbbc5c0"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "9c9c4ea9-ef52-5f04-959e-ae9ee739389e",
+      "gap_type": "duplicate_test",
+      "patient_id": "73d37aed-75bb-511c-82ff-74e848dd87d4",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "17b2bcf9-2ff8-582c-8472-fc6da1cd8cd7",
+        "5d12ddd0-7aab-53e9-bec1-7a506ff054f1"
+      ],
+      "trigger_event_id": "1eef0bd7-2013-594f-9782-8d3843e337ed"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "abefd5aa-aa4b-5e02-a064-6edd58a479c4",
+      "gap_type": "duplicate_test",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "1ee3008c-198a-526a-8043-5fca5a502d14",
+        "f550c941-733e-5cdc-9561-d0ab425d5699"
+      ],
+      "trigger_event_id": "adda7a71-99d8-5d22-8792-3fc20601b8c9"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 30,
+      "gap_truth_id": "acff4171-64c6-544c-a2be-fa5dbd8f0100",
+      "gap_type": "missed_followup",
+      "patient_id": "50c3eb6b-abfd-5241-86cb-685101651b78",
+      "scenario_id": "HN-02",
+      "source_doc_ids": [
+        "3b230324-dcd5-5791-addc-92280471cbcf"
+      ],
+      "trigger_event_id": "5f18d82e-9e7e-5416-8f7a-40f7c89d3679"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "b6ceeea3-f076-5114-ada2-84d662abd76e",
+      "gap_type": "med_monitoring",
+      "patient_id": "1a052190-7ad0-54c7-95c7-8c9502080be2",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "94ca3ac7-3bcf-5793-be1f-1c1d8a87c785"
+      ],
+      "trigger_event_id": "a09f1a8f-b81a-5aa2-b422-abdffff19caf"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "b6dc1197-8f45-5cfd-93ba-29739438511f",
+      "gap_type": "med_monitoring",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "7fb11c02-ff35-5ce0-a2d1-a7125a92c17c"
+      ],
+      "trigger_event_id": "92dbfcd8-23af-5884-9a2b-e7816a7e90fc"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "c016280e-6524-5c66-8ca5-34aeb2fc2247",
+      "gap_type": "missed_followup",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "d25fe9b8-5a97-5740-8de7-9e7907675db5"
+      ],
+      "trigger_event_id": "f5a17e63-3fd9-5e88-abe0-c453e95c4489"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "cb1fe6de-c920-5b06-92e5-3168d0e13f86",
+      "gap_type": "missed_followup",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "f1fec56b-71e4-5065-8bb9-02f7f400bd42"
+      ],
+      "trigger_event_id": "80fd88ce-58f0-540e-b460-d44d20351b80"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "cbafbbc0-748a-540e-ab8f-5b6651028655",
+      "gap_type": "med_monitoring",
+      "patient_id": "7e937461-61d7-56f4-9374-b9898b635be8",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "922458b1-1aa0-5b15-82c1-256670809ae1"
+      ],
+      "trigger_event_id": "250c0388-0706-522f-9133-0d4a3eef7843"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "cd663ca7-4b01-5972-81ab-f0512e048e04",
+      "gap_type": "med_monitoring",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "7e2e6fd9-b6b9-5feb-89b5-bea3df940e7d"
+      ],
+      "trigger_event_id": "bd416f0b-80fc-5479-81c4-622851ada797"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "d597e496-29f8-5c7f-a83e-b9db5fe62ef2",
+      "gap_type": "missed_followup",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "5f0ed52f-6338-5c13-9202-13a58e90be9b"
+      ],
+      "trigger_event_id": "76d29db6-4b4e-5f46-a4cf-802efd00a9d9"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 90,
+      "gap_truth_id": "d6f888f0-3f78-5399-aae9-763f98813df7",
+      "gap_type": "med_monitoring",
+      "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+      "scenario_id": "T06",
+      "source_doc_ids": [
+        "c005badb-12a9-5f44-87a7-3d42f9bcfd8e"
+      ],
+      "trigger_event_id": "415ca0ea-4e60-5935-b95a-87d94621e6de"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "e45ac341-0e1b-5000-af81-e5c1a4ff6759",
+      "gap_type": "duplicate_test",
+      "patient_id": "7e5f78a3-24fc-598e-be60-e020b4ca3c65",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "8024a2ab-d5de-54ab-bd0d-3d1051a4163e",
+        "174a8506-5489-563a-a278-8bac82133111"
+      ],
+      "trigger_event_id": "2fd5c4bc-40a7-57d9-96aa-ed82e16a335d"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "e70a343a-d559-578b-a394-ca4f969b5d98",
+      "gap_type": "missed_followup",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "e86df95a-6952-5f96-a276-5c3c7f4f3395"
+      ],
+      "trigger_event_id": "a80089cc-f2d9-5b8e-9aca-a4dc918c43c5"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "efcbcd3a-5a5a-57dd-ac2f-6eb27ba577da",
+      "gap_type": "missed_followup",
+      "patient_id": "abcdbca3-a2fd-5265-88f4-fc879d4a14fa",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "d84d867b-25fd-5527-908c-23d9e3f5648a"
+      ],
+      "trigger_event_id": "222c13ed-64ad-5c60-875b-451b25d21bb0"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "f41373ee-0deb-595f-948f-1e6ecc3a5c28",
+      "gap_type": "missed_followup",
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "85840230-3e24-56ad-ab5a-98cf28cd8e6f"
+      ],
+      "trigger_event_id": "aea6e2b0-ad76-5d11-8c57-58d2d403f1b6"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "f43a8b21-5597-540d-a36a-e2fcb98588d6",
+      "gap_type": "duplicate_test",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "ff4aa89a-df04-507c-8620-9e0bc7e9ef69",
+        "6ecb6033-be7c-5fa7-a000-033dc7e5aa2b"
+      ],
+      "trigger_event_id": "7ca28a67-bd07-5169-b6f1-9e2aef03b1a9"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "f69905aa-e583-5899-887b-21d9a1b8edef",
+      "gap_type": "duplicate_test",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "fc9f1dee-4a3b-5663-92fe-7c8e3e2c12f8",
+        "e39cf92f-8afd-55cf-b335-2848ad23a648"
+      ],
+      "trigger_event_id": "c5958a37-1330-57e0-95a1-12a333922eea"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 45,
+      "gap_truth_id": "f7567560-0177-5792-af10-e8f1053465de",
+      "gap_type": "missed_followup",
+      "patient_id": "e4fbd351-d304-5d39-a948-1a6397cba139",
+      "scenario_id": "T02",
+      "source_doc_ids": [
+        "ca242d22-f2a2-5eeb-a559-97d2ec325129"
+      ],
+      "trigger_event_id": "37c32186-3129-561f-93bc-40c293c974ed"
+    },
+    {
+      "evaluation_as_of_date": "2026-06-05",
+      "expected_window_days": 14,
+      "gap_truth_id": "faa2024a-9f34-5d6d-a026-7df2092ece32",
+      "gap_type": "duplicate_test",
+      "patient_id": "491ac2ac-1249-5906-ab2e-10affc8feff4",
+      "scenario_id": "T04",
+      "source_doc_ids": [
+        "a2063121-6bca-5998-ba44-e26d42b24fd3",
+        "d783c015-88bc-5fb2-8852-58b5543c2320"
+      ],
+      "trigger_event_id": "768d9807-f282-5c22-ac36-82a1ff6e186d"
+    }
+  ]
+}
