@@ -1,0 +1,145 @@
+Company,Industry,Size_Employees,Likely_Problem,Rank,Notes
+AllianceTexas (Hillwood),Logistics/Real Estate,1000+,Industrial park & logistics coordination,High,DFW logistics hub; strong community ties
+BNSF Railway,Logistics/Rail,35000+,Route & yard optimization,Medium,DFW-based HQ; enterprise
+American Airlines,Aviation/Logistics,130000+,Crew scheduling & customer service,Low,Enterprise; less likely small-case sponsor
+DFW Airport,Aviation/Logistics,2000+,Passenger flow & ops,Medium,Public entity; possible
+J.B. Hunt (DFW ops),Logistics,30000+,Route planning & dispatch,Medium,Regional presence
+Werner Enterprises (DFW),Logistics,14000+,Driver scheduling & fuel tracking,Medium,Regional
+XPO Logistics (DFW),Logistics,38000+,Freight visibility & dispatch,Medium,Regional
+Old Dominion Freight Line (DFW),Logistics,25000+,LTL routing & terminal ops,Low,Enterprise
+Saia LTL Freight (DFW),Logistics,12000+,Terminal & route optimization,Low,Enterprise
+Estes Express Lines (DFW),Logistics,20000+,Dispatch & tracking,Low,Enterprise
+Ryder (DFW),Logistics/Fleet,48000+,Fleet maintenance & routing,Medium,Enterprise
+Penske Logistics (DFW),Logistics,20000+,Supply chain visibility,Medium,Enterprise
+Echo Global Logistics (DFW),Logistics,2500+,Freight brokerage automation,Medium,Mid-size; plausible
+Coyote Logistics (DFW),Logistics,3000+,Brokerage & carrier matching,Medium,Mid-size; plausible
+Total Quality Logistics (DFW),Logistics,9000+,Load matching & tracking,Medium,Mid-size
+Arrive Logistics (DFW),Logistics,1500+,Brokerage automation,High,Mid-size; tech-forward
+MoLo Solutions (DFW),Logistics,800+,Carrier matching,High,Plausible sponsor
+Uber Freight (DFW),Logistics,5000+,Marketplace optimization,Low,Enterprise
+Amazon (DFW fulfillment),Logistics/Retail,100000+,Last-mile & warehouse ops,Low,Enterprise
+Walmart (DFW),Retail/Logistics,100000+,Supply chain & inventory,Low,Enterprise
+McKesson (Irving HQ),Healthcare/Distribution,80000+,Supply chain & inventory mgmt,Medium,Enterprise but DFW HQ; prior HackDFW sponsor
+Texas Health Resources,Healthcare,25000+,Patient scheduling & no-shows,High,DFW-based nonprofit health system
+Baylor Scott & White Health,Healthcare,49000+,Patient intake & billing,High,DFW-based; large but community-focused
+UT Southwestern Medical Center,Healthcare/Academic,20000+,Clinical ops & scheduling,Medium,Academic medical center
+Children's Health (Dallas),Healthcare,7000+,Pediatric patient experience,High,Prior HackDFW sponsor (patient experience challenge)
+Methodist Health System,Healthcare,10000+,Scheduling & billing,High,DFW-based
+Medical City Healthcare (HCA),Healthcare,15000+,Patient flow & ops,Medium,Regional
+Cook Children's,Healthcare,8000+,Pediatric care coordination,High,Fort Worth-based; community-focused
+JPS Health Network,Healthcare,6000+,Public health ops & scheduling,High,Fort Worth-based public hospital
+Texas Oncology,Healthcare,5000+,Patient scheduling & follow-up,High,DFW-based oncology practice network
+USMD Health System,Healthcare,1000+,Clinic ops & billing,High,Mid-size; plausible
+PediaQ (Dallas),Healthcare/Tech,200+,Pediatric urgent care ops,High,Local startup/clinic
+Forest Park Medical Center,Healthcare,500+,Surgical center scheduling,Medium,Local
+Dallas Nephrology Associates,Healthcare,300+,Patient follow-up & scheduling,High,Specialty practice; plausible
+Texas Digestive Disease Consultants,Healthcare,400+,Patient scheduling & records,High,Specialty practice
+HeartPlace (Dallas),Healthcare,200+,Cardiology practice ops,High,Specialty practice
+Baylor Oral Health (Dallas),Healthcare,300+,Dental practice mgmt,High,Dental; plausible
+Gentle Dental (DFW),Dental,500+,Patient scheduling & reminders,High,Multi-location dental
+Jefferson Dental (DFW),Dental,1000+,Multi-location ops & no-shows,High,DFW-based dental chain
+Aspen Dental (DFW),Dental,2000+,Patient intake & scheduling,Medium,National with DFW presence
+Kool Smiles (DFW),Dental,1000+,Pediatric dental scheduling,Medium,National
+Parkland Health,Healthcare,12000+,Public health & patient flow,Medium,County hospital system
+ServiceTitan (DFW customers),Construction SaaS,1000+,Field service mgmt,Low,SaaS vendor; not a local business sponsor likely
+ABC Supply (DFW),Construction Supply,10000+,Inventory & delivery tracking,Medium,Regional distributor
+Builders FirstSource (DFW),Construction Supply,20000+,Inventory & logistics,Medium,DFW HQ; enterprise
+Home Depot (DFW pro),Retail/Construction,100000+,Pro contractor workflows,Low,Enterprise
+Lowe's (DFW pro),Retail/Construction,100000+,Pro contractor workflows,Low,Enterprise
+Dallas Builders Association,Construction/Association,50+,Member coordination,High,Local association; plausible sponsor
+Baker Brothers Plumbing (Dallas),Home Services,200+,Dispatch & scheduling,High,Local service business
+Berkeys Air Conditioning (DFW),Home Services,300+,Dispatch & scheduling,High,Local service business
+Lex Air Conditioning (DFW),Home Services,150+,Dispatch & scheduling,High,Local service business
+Mister Sparky (DFW),Home Services,200+,Dispatch & scheduling,High,Local franchise
+One Hour Air (DFW),Home Services,200+,Dispatch & scheduling,High,Local franchise
+Horizon Services (DFW),Home Services,300+,Dispatch & scheduling,High,Local service business
+Chambliss Plumbing (Dallas),Home Services,100+,Scheduling & invoicing,High,Local
+Rescue Air Heating (DFW),Home Services,150+,Dispatch & scheduling,High,Local
+Crumpler (DFW),Home Services,100+,Scheduling & invoicing,High,Local
+Texas Ace Heating (DFW),Home Services,150+,Dispatch & scheduling,High,Local
+Ferguson (DFW),Wholesale/Construction,25000+,Inventory & order mgmt,Medium,Regional distributor
+Watsco (DFW),HVAC Distribution,6000+,Inventory & demand forecasting,Medium,Regional
+Grainger (DFW),Industrial Supply,25000+,Inventory & procurement,Low,Enterprise
+Fastenal (DFW),Industrial Supply,20000+,Inventory & vending,Low,Enterprise
+Torchy's Tacos,Restaurant,2000+,Inventory & multi-location ops,High,DFW-based chain; plausible
+Pecan Lodge,Restaurant,100+,Inventory & scheduling,High,Local BBQ; plausible
+Lockhart Smokehouse,Restaurant,150+,Inventory & scheduling,High,Local
+Cane Rosso,Restaurant,300+,Multi-location ops & inventory,High,DFW-based pizza chain
+Empire Baking Company,Restaurant/Bakery,100+,Order & inventory mgmt,High,Local
+La Madeleine,Restaurant,3000+,Multi-location ops,Medium,DFW HQ
+Chili's (Brinker HQ Dallas),Restaurant,60000+,Ops & supply chain,Low,Enterprise HQ
+TGI Fridays (Dallas HQ),Restaurant,20000+,Ops & supply chain,Low,Enterprise HQ
+Denny's (regional),Restaurant,10000+,Ops,Low,Enterprise
+Norma's Cafe,Restaurant,200+,Scheduling & inventory,High,Local diner
+Ellen's (Dallas),Restaurant,150+,Scheduling & inventory,High,Local
+Hutchins BBQ,Restaurant,200+,Inventory & scheduling,High,Local
+Hard Eight BBQ,Restaurant,300+,Inventory & scheduling,High,Local
+Sonny Bryan's Smokehouse,Restaurant,200+,Inventory & scheduling,High,Local
+Nebraska Furniture Mart (The Colony),Retail,2000+,Inventory & customer service,Medium,Large retail; DFW presence
+Fossil (Richardson HQ),Retail/Accessories,6000+,Inventory & e-commerce,Low,Enterprise
+JCPenney (Plano HQ),Retail,60000+,Inventory & ops,Low,Enterprise
+Neiman Marcus (Dallas HQ),Retail,10000+,Inventory & customer experience,Low,Enterprise
+Half Price Books (Dallas HQ),Retail,3000+,Inventory & store ops,Medium,DFW-based; plausible
+The Container Store (Coppell HQ),Retail,5000+,Inventory & store ops,Medium,DFW-based; plausible
+Michaels (Irving HQ),Retail,40000+,Inventory & craft retail ops,Low,Enterprise
+GameStop (Grapevine HQ),Retail,20000+,Inventory & store ops,Low,Enterprise
+Tuesday Morning (Dallas HQ),Retail,3000+,Inventory & closeout retail,Medium,DFW-based; plausible
+At Home (Plano HQ),Retail,5000+,Inventory & home decor retail,Medium,DFW-based; plausible
+7-Eleven (Irving HQ),Retail/Convenience,80000+,Inventory & store ops,Low,Enterprise
+Buc-ee's (Texas),Retail/Convenience,8000+,Store ops & inventory,Low,Enterprise
+Ebby Halliday Realtors,Real Estate,1500+,Lead follow-up & scheduling,High,DFW-based brokerage
+Briggs Freeman Sotheby's,Real Estate,300+,Lead mgmt & scheduling,High,DFW-based luxury brokerage
+Allie Beth Allman,Real Estate,200+,Lead follow-up,High,DFW-based
+Keller Williams (DFW),Real Estate,5000+,Agent coordination & leads,Medium,Franchise; large
+RE/MAX (DFW),Real Estate,3000+,Agent coordination,Medium,Franchise
+Compass (DFW),Real Estate,1000+,Lead routing & scheduling,Medium,National with DFW presence
+Zillow (DFW ops),Real Estate Tech,5000+,Lead routing,Low,Enterprise
+Opendoor (DFW),Real Estate Tech,2000+,Home-buying ops,Medium,DFW presence
+Invitation Homes (Dallas HQ),Real Estate/Property Mgmt,1000+,Tenant mgmt & maintenance,Medium,DFW-based; plausible
+American Homes 4 Rent (Plano HQ),Real Estate/Property Mgmt,1000+,Tenant mgmt & maintenance,Medium,DFW-based; plausible
+Lincoln Property Company (Dallas HQ),Real Estate/Property Mgmt,2000+,Property mgmt ops,Medium,DFW-based
+Trammell Crow Company (Dallas HQ),Real Estate Development,1000+,Project coordination,Medium,DFW-based
+Hillwood (Dallas),Real Estate Development,1000+,Project & community mgmt,High,DFW-based; plausible
+Jackson Walker (Dallas),Legal,1000+,Document & case mgmt,Medium,DFW law firm
+Locke Lord (Dallas),Legal,1000+,Document & case mgmt,Medium,DFW law firm
+Haynes Boone (Dallas),Legal,1000+,Document & case mgmt,Medium,DFW law firm
+Thompson & Knight (Dallas),Legal,500+,Document mgmt,Medium,DFW law firm
+Grant Thornton (DFW),Accounting,2000+,Audit & client mgmt,Low,Enterprise
+BDO (DFW),Accounting,1000+,Client mgmt,Low,Enterprise
+RSM (DFW),Accounting,1000+,Client mgmt,Low,Enterprise
+Whitley Penn (Fort Worth),Accounting,600+,Client mgmt & billing,High,DFW-based CPA firm; plausible
+Sutton Frost Cary (Dallas),Accounting,200+,Client mgmt & billing,High,Local CPA firm
+Weaver (Fort Worth),Accounting,800+,Client mgmt & billing,High,DFW-based; plausible
+Vizient (Irving HQ),Healthcare Consulting,3000+,Supply chain analytics,Low,Enterprise
+Tenet Healthcare (Dallas HQ),Healthcare,80000+,Ops & patient flow,Low,Enterprise
+HCA Healthcare (DFW),Healthcare,100000+,Ops,Low,Enterprise
+Lockheed Martin (Fort Worth),Aerospace/Defense,15000+,Supply chain & quality,Low,Enterprise
+Bell Textron (Fort Worth),Aerospace/Defense,8000+,Manufacturing ops,Low,Enterprise
+Raytheon (DFW),Aerospace/Defense,10000+,Supply chain,Low,Enterprise
+American Airlines Tech (Fort Worth),Aviation,5000+,IT ops,Low,Enterprise
+BNSF (Fort Worth),Rail,35000+,Yard & route ops,Medium,Enterprise
+GM Financial (Fort Worth),Finance,8000+,Loan servicing & docs,Medium,Regional
+Toyota Financial (Plano),Finance,4000+,Loan servicing,Medium,Regional
+Capital One (Plano),Finance,5000+,Customer service & ops,Low,Enterprise
+JPMorgan Chase (DFW),Finance,10000+,Ops,Low,Enterprise
+Bank of America (DFW),Finance,10000+,Ops,Low,Enterprise
+Wells Fargo (DFW),Finance,10000+,Ops,Low,Enterprise
+Charles Schwab (Westlake HQ),Finance,5000+,Client service & ops,Medium,DFW-based HQ
+Fidelity (Westlake),Finance,5000+,Client service,Medium,DFW presence
+TD Ameritrade (was DFW),Finance,2000+,Client service,Low,Merged
+Dallas Regional Chamber,Business Association,50+,Member coordination,High,DFW business network; plausible sponsor
+Fort Worth Chamber,Business Association,50+,Member coordination,High,Plausible sponsor
+North Texas Commission,Business Association,30+,Regional coordination,High,Plausible sponsor
+TechFW,Startup Accelerator,20+,Startup support,High,Fort Worth; prior HackFW partner
+The DEC (Dallas Entrepreneur Center),Startup Hub,30+,Startup support,High,DFW startup hub; plausible
+Capital Factory (Dallas),Startup Hub,50+,Startup support,High,DFW presence; plausible
+WeWork (DFW),Coworking,200+,Member mgmt,Medium,DFW presence
+Common Desk (Dallas HQ),Coworking,100+,Member mgmt,High,DFW-based; plausible
+Goodwill (DFW),Nonprofit/Retail,2000+,Donation & store ops,Medium,DFW presence
+Salvation Army (DFW),Nonprofit,1000+,Donation & store ops,Medium,DFW presence
+North Texas Food Bank,Nonprofit,500+,Donation & distribution,High,DFW-based; plausible sponsor
+Meals on Wheels (DFW),Nonprofit,200+,Delivery routing,High,DFW-based; plausible
+Habitat for Humanity (DFW),Nonprofit,200+,Project mgmt,Medium,DFW presence
+YMCA (DFW),Nonprofit,1000+,Member mgmt & scheduling,Medium,DFW presence
+Boys & Girls Clubs (DFW),Nonprofit,500+,Program mgmt,Medium,DFW presence
+United Way (DFW),Nonprofit,200+,Campaign & volunteer mgmt,Medium,DFW presence

@@ -1,0 +1,30 @@
+Name,Hackathon,Year,Category,Tech_Stack,AI_Used,Business_Value,Complexity,Demo_Quality,Open_Source,Source
+Curtainfy,HackDFW,2022,Energy/Smart Home,"React Native, Firebase, Google Cloud, Expo",No,"Reduce HVAC energy usage by automating curtain positioning",Medium,High,Yes,devpost.com/software/curtainfy
+ATOMS,HackDFW,2022,Healthcare/Inventory,"ReactJS, Flask, SQLAlchemy, PostgreSQL, Python, ML",Yes (ML),"Frees frontline healthcare professionals' time via smart inventory",Medium,High,Unknown,HackDFW 2022 gallery
+The Game of Insurance,HackDFW,2022,Insurance Education,"Web (unspecified)",No,"Educates users on insurance choices; State Farm challenge winner",Low-Medium,Medium,Unknown,HackDFW 2022 gallery
+Carbon Consulting,HackDFW,2022,Sustainability,"Web (unspecified)",Yes (AI),"Helps companies reach/maintain carbon neutrality via AI feedback",Medium,Medium,Unknown,HackDFW 2022 gallery
+Health Quest,HackDFW,2021,Health/Wellness,"Web (unspecified)",No,"Tracks daily tasks + health facts gamification",Low-Medium,Medium,Unknown,HackDFW 2021 gallery
+CareHero,HackDFW,2021,Health/Wellness,"Web (unspecified)",No,"Gamified healthy habits for kids",Low-Medium,Medium,Unknown,HackDFW 2021 gallery
+convo,HackDFW,2021,Accessibility/Tech Divide,"React, AWS Amplify, Lambda, Firestore, OpenCV, Rekognition, Alexa, Python, Tailwind",Yes (CV/ML),"Bridges tech access divide; 3rd place overall",High,High,Yes,devpost.com/software/convo-2407nm
+EquiTeach,HackDFW,2021,Education Equity,"Web (unspecified)",No,"Equitable education for all",Medium,Medium,Unknown,HackDFW 2021 gallery
+Risk AI-verse,HackDFW,2021,Insurance/ML,"ML (unspecified)",Yes (ML),"Models driver risk via ML for insurance",High,Medium,Unknown,HackDFW 2021 gallery
+Healthy Habits,HackDFW,2021,Insurance/Rewards,"Web (unspecified)",No,"Rewards healthy habits with insurance discounts",Medium,Medium,Unknown,HackDFW 2021 gallery
+YoDash,HackDFW,2021,ESG/Finance,"NLP, statistical computation",Yes (NLP),"Helps companies attract ESG investment via NLP",Medium,Medium,Unknown,HackDFW 2021 gallery
+equiTree,HackDFW,2021,ESG/Investing,"Web (unspecified)",No,"Curates investment portfolios for social impact",Medium,Medium,Unknown,HackDFW 2021 gallery
+McKesson360,HackDFW,2021,Healthcare Supply Chain,"Mobile (unspecified)",No,"360 view of healthcare supply chain in real time; McKesson challenge",Medium,Medium,Unknown,HackDFW 2021 gallery
+TrueLink,HackDFW,2021,Dating/Social,"Spotify API, AI",Yes (AI),"AI music-based matchmaking",Medium,Medium,Unknown,HackDFW 2021 gallery
+Panah Inc.,HackDFW,2022,Healthcare/Monitoring,"Web (unspecified)",No,"Automated monitoring for hospitalized children (parent peace of mind)",Medium,Medium,Unknown,HackDFW 2022 gallery
+Impact DFW,HackDFW,2022,Social Good,"Web (unspecified)",No,"Community impact platform",Low,Medium,Unknown,HackDFW 2022 gallery
+SafeStream,HackDFW,2022,Safety/Evidence,"Web, cloud upload",No,"Captures emergency video + auto-uploads to cloud for evidence",Medium,High,Unknown,HackDFW 2022 gallery
+BedsIOTde manner,HackDFW,2022,Healthcare/IoT,"IoT (unspecified)",No,"Hospital patient monitoring (Ring-like)",Medium,Medium,Unknown,HackDFW 2022 gallery
+Children's Cartoon Visitor,HackDFW,2022,Healthcare/Pediatric,"Web (unspecified)",No,"Cartoon characters help children identify hospital staff",Low,Medium,Unknown,HackDFW 2022 gallery
+Themis,HackDFW,2022,Legal/Tech,"Web (unspecified)",No,"Transparency/humanity-focused legal tech",Medium,Medium,Unknown,HackDFW 2022 gallery
+Personalized reward recommendation,HackDFW,2022,Retail/Rewards,"Web (unspecified)",No,"'You want it you get it' recommendation",Low,Low,Unknown,HackDFW 2022 gallery
+McKesson Sponsor Challenge winners,HackDFW,2022,Healthcare Supply Chain,"Web (unspecified)",No,"McKesson-branded supply chain solutions",Medium,Medium,Unknown,HackDFW 2022 gallery
+Google Sponsor Challenge winners,HackDFW,2022,ML/AI,"Google Cloud/ML",Yes (ML),"Google ML challenge solutions",High,High,Unknown,HackDFW 2022 gallery
+PepsiCo Sponsor Challenge winners,HackDFW,2022,Consumer/Brand,"Web (unspecified)",No,"PepsiCo-branded challenge solutions",Medium,Medium,Unknown,HackDFW 2022 gallery
+CarMax Sponsor Challenge winner,HackDFW,2022,Automotive,"Web (unspecified)",No,"CarMax-branded challenge solution",Medium,Medium,Unknown,HackDFW 2022 gallery
+TIAA Sponsor Challenge winners,HackDFW,2022,Finance,"Web (unspecified)",No,"TIAA-branded challenge solutions",Medium,Medium,Unknown,HackDFW 2022 gallery
+State Farm Sponsor Challenge winners,HackDFW,2022,Insurance,"Web (unspecified)",No,"State Farm-branded challenge solutions",Medium,Medium,Unknown,HackDFW 2022 gallery
+HackFW MADE Challenge,HackFW,2026,Manufacturing/IoT,"IoT, ML/AI, RPA",Yes,"End-to-end info->decision->action flows for manufacturing",High,High,Unknown,HackFW MADE challenge
+DFWhacks 2025 winners,DFWhacks,2025,Mixed,"Web (unspecified)",Mixed,"Local student-built solutions",Low-Medium,Medium,Unknown,dfwhacks.org
