@@ -1,0 +1,73 @@
+{
+  "dataset_version": "continua-synth-v1",
+  "generator_version": "fixture-v1",
+  "synthetic": true,
+  "note": "Minimal synthetic fixture. Not derived from real patient data.",
+  "patient": {
+    "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+    "fixture_key": "P-001-maria",
+    "name": "Maria Chen",
+    "age": 54,
+    "sex": "F",
+    "primary_diagnosis": "Breast cancer — post-surgical",
+    "last_contact_date": "2026-04-28"
+  },
+  "records": [
+    {
+      "source_doc_id": "a4d36cf7-3045-5f67-bb46-2eded26cbff8",
+      "fixture_key": "FX-R1",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "doc_type": "referral",
+      "provider": "Dr. A. Patel",
+      "provider_type": "pcp",
+      "date": "2026-03-25",
+      "text": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days.",
+      "dataset_version": "continua-synth-v1",
+      "generator_version": "fixture-v1",
+      "synthetic": true
+    },
+    {
+      "source_doc_id": "9b611bdf-14d6-5e59-abbd-ae5d8957e9dc",
+      "fixture_key": "FX-R2",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "doc_type": "consult_note",
+      "provider": "Dr. A. Patel",
+      "provider_type": "pcp",
+      "date": "2026-04-02",
+      "text": "Primary care follow-up. No oncology consult documented.",
+      "dataset_version": "continua-synth-v1",
+      "generator_version": "fixture-v1",
+      "synthetic": true
+    }
+  ],
+  "events": [
+    {
+      "event_id": "55f69113-9532-5ff4-99a3-f6ebe4580d7d",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "referral",
+      "date": "2026-03-25",
+      "description": "Referral to medical oncology",
+      "provider": "Dr. A. Patel",
+      "provider_type": "pcp",
+      "source_doc_id": "a4d36cf7-3045-5f67-bb46-2eded26cbff8",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation.",
+      "confidence": 0.96,
+      "series_status": "unknown",
+      "typed": { "specialty": "oncology", "expected_window_days": 45 }
+    },
+    {
+      "event_id": "c9985aaf-a0cc-52bc-912a-6bdd31231b0f",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "consult",
+      "date": "2026-04-02",
+      "description": "Primary care follow-up",
+      "provider": "Dr. A. Patel",
+      "provider_type": "pcp",
+      "source_doc_id": "9b611bdf-14d6-5e59-abbd-ae5d8957e9dc",
+      "source_span": "Primary care follow-up. No oncology consult documented.",
+      "confidence": 0.93,
+      "series_status": "unknown",
+      "typed": { "specialty": "pcp" }
+    }
+  ]
+}

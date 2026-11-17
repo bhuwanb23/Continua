@@ -22,7 +22,7 @@ export class FixtureClinicalEventExtractor implements ClinicalEventExtractor {
     this.version = result.extractor_version;
   }
 
-  async extract(): Promise<ExtractionResult> {
+  async extract(_input: ExtractionInput): Promise<ExtractionResult> {
     return this.result;
   }
 }

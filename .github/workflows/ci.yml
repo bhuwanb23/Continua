@@ -45,6 +45,9 @@ jobs:
       - name: Safety checks
         run: npm run check:safety
 
+      - name: Secret scan
+        run: npm run check:secrets
+
       - name: Dependency audit (production deps)
         run: npm audit --omit=dev --audit-level=high
 

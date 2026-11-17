@@ -176,6 +176,14 @@ export const EvalResultSchema = z.object({
   status: z.enum(["not_run", "complete", "error"]),
 });
 
+export const FixtureSchema = z.object({
+  dataset_version: z.literal("continua-synth-v1"),
+  synthetic: z.literal(true),
+  patient: PatientSchema,
+  records: z.array(SourceRecordSchema).min(1),
+  events: z.array(ClinicalEventSchema).min(1),
+});
+
 export const ApiErrorSchema = z.object({
   error: z.object({
     code: z.enum([

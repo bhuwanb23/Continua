@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { EvalResultSchema } from "@/lib/schemas";
+import { EvalResultSchema, FixtureSchema } from "@/lib/schemas";
 import { VERSION_METADATA } from "@/lib/domain/versions";
 
 const root = process.cwd();
@@ -78,6 +78,11 @@ const goldenCase = z
   .safeParse(readJson("data/spec/maria-golden-case.json"));
 if (!goldenCase.success) {
   failures.push("maria-golden-case.json does not match the frozen golden case");
+}
+
+const fixture = FixtureSchema.safeParse(readJson("data/fixtures/maria-minimal.json"));
+if (!fixture.success) {
+  failures.push("data/fixtures/maria-minimal.json does not match the fixture contract");
 }
 
 const evalReport = EvalResultSchema.safeParse(readJson("eval-report.json"));

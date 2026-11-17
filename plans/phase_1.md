@@ -255,6 +255,7 @@ No invented coverage target.
 - [x] Version manifest centralized (`lib/domain/versions.ts`)
 - [x] Gap/patient priorities separated (`GapPriority` / `PatientInterventionPriority`)
 - [x] Claim classifications defined (`MEASURED` / `MODELED` / `SCENARIO_ASSUMPTION` / `EXTERNAL_RESEARCH`)
+- [x] Provenance metadata defined (`SourceProvenance`, `DerivedProvenance`)
 
 ### Determinism
 - [x] Fixed clock (`FixedClock`, 2026-06-05)
@@ -268,7 +269,8 @@ No invented coverage target.
 - [x] Structured logging with redaction (`lib/logging/`)
 - [x] Repository interfaces + in-memory/JSON implementations
 - [x] Extraction interface + fixture implementation
-- [x] Demo cache abstraction
+- [x] Demo cache abstraction + named artifact types (panel, patients, records, timelines, gaps, queue, impact, evaluation)
+- [x] Minimal synthetic fixture (`data/fixtures/maria-minimal.json`) + fixture-extraction test
 
 ### Quality
 - [x] lint passes (0 errors, 0 warnings)
@@ -278,12 +280,13 @@ No invented coverage target.
 - [x] spec check passes
 - [x] data + env checks pass
 - [x] build passes (`next build`)
+- [x] secret scan passes (`check:secrets`)
 - [x] CI workflow committed (steps verified locally with `npm run validate`)
 
 ### Safety
 - [x] synthetic-data banner (global in `app/layout.tsx`)
 - [x] no PHI (synthetic-only, fixtures are non-clinical)
-- [x] no secrets (`.env*` ignored, redaction, public projection test)
+- [x] no secrets (`.env*` ignored, redaction, public projection test, `check:secrets` scan)
 - [x] no EHR integration claims
 - [x] no clinical-risk terminology (safety scan)
 - [x] no autonomous clinical actions
