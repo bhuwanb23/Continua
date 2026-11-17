@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install exact dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit, contract, integration tests
+        run: npm run test
+
+      - name: Spec checks
+        run: npm run validate:spec
+
+      - name: Data checks
+        run: npm run validate:data
+
+      - name: Environment checks
+        run: npm run validate:env
+
+      - name: Safety checks
+        run: npm run check:safety
+
+      - name: Dependency audit (production deps)
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Production build
+        run: npm run build
