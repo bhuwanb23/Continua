@@ -15,7 +15,7 @@ Left sidebar (collapsible): Dashboard · Patients · (Eval — dev only). Top ba
 - Header: "Good morning, Sarah. Panel: 80 patients."
 - KPI row: Patients flagged (e.g., 12) · Gaps detected (e.g., 19) · Top-5 requiring action today.
 - Gap-type breakdown (3 cards): Missed follow-ups · Duplicate tests · Monitoring gaps (counts).
-- **Primary block: Top 5 Patients Requiring Action** — ranked cards. Each card: rank #, patient name + age/sex, one-line "why" (gap type + key fact), severity badge (High/Med), "View" button.
+- **Primary block: Top 5 Patients Requiring Action** — ranked cards. Each card: rank #, patient name + age/sex, one-line "why" (gap type + key fact), **priority badge (CRITICAL/HIGH/MEDIUM/LOW)**, "View" button.
 - Secondary: "Time saved this panel: 12 min → 8 sec per patient" + "Load demo data" button (if no data).
 - Primary action: click a patient card → Screen 2.
 
@@ -47,8 +47,8 @@ Left sidebar (collapsible): Dashboard · Patients · (Eval — dev only). Top ba
 
 **Purpose:** Browse/search the full panel; filter by gap type / severity.
 
-- Table: name · age · last contact · gap count · top gap type · severity · "View."
-- Filters: gap type, severity, "has gaps only."
+- Table: name · age · last contact · gap count · top gap type · **priority** · "View."
+- Filters: gap type, priority, "has gaps only."
 - Search by name.
 - Primary action: click row → Screen 2.
 

@@ -1,6 +1,6 @@
 # Architecture & Product Planning — Stage Index
 
-> Stage status: Research ✅ · Define ✅ · Refine ✅ · Ideation ✅ · **Architecture & Product Planning ✅ (this folder)** · Build ⏳
+> Stage status: Research ✅ · Define ✅ · Refine ✅ · Ideation ✅ · **Architecture & Product Planning ✅ (this folder, locked with 4 review corrections)** · Build Readiness ⏭️ next · Implementation ⏳
 
 This folder holds the architecture and product planning outputs that convert the locked problem into a buildable, demoable hackathon project. No code has been written yet.
 
@@ -67,3 +67,4 @@ Every scene in the demo storyboard exists to set up this line. The oncology vers
 - Define: `research/define/define-stage.md`
 - Refine (locked v2): `research/refine/refine-stage.md` (+ competitor-analysis, care-gap-types, care-coordinator-workflow)
 - Ideation (validation): `research/ideation/` (red-team, alternative-visions, judge-simulation, demo-memorability, naming-sprint, README)
+- Build Readiness (implementation assets): `research/build-readiness/` — 8 frozen specs (data, event schema, gap rules, priority engine, eval, API, demo seed, acceptance tests)

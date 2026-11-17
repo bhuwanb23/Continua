@@ -42,7 +42,12 @@ Consequences: missed specialist follow-ups (a cancer patient disappears after im
 
 ## 5. Non-goals (explicit)
 
-See `out-of-scope.md`. In short: no patient portal, no EHR replacement, no interoperability network, no chatbot, no symptom checker, no scheduler, no multi-tenant SaaS, no multi-hospital integration, no real PHI (synthetic only).
+See `out-of-scope.md`. In short: no patient portal, no EHR replacement, no interoperability network, no chatbot, no symptom checker, no scheduler, no multi-tenant SaaS, no multi-hospital integration, no real PHI (synthetic only), **no fake Epic/EHR integration** (MVP ingestion is synthetic; production path is standards-based FHIR/HL7 feeds, mentioned as roadmap only).
+
+### Data & integration stance
+- MVP runs on **synthetic cross-provider records only**. No real PHI, no EHR connection.
+- **Human in the loop:** Continua surfaces gaps for coordinator verification. It never diagnoses, treats, or orders. Recommended actions are "verify / contact / review / coordinate," never unsupervised clinical orders.
+- Production integration path (not built): FHIR R4 / HL7 feeds. Stated as roadmap, never implied as implemented.
 
 ## 6. Core outcome (the single metric of success)
 
@@ -50,9 +55,14 @@ See `out-of-scope.md`. In short: no patient portal, no EHR replacement, no inter
 
 This is the product. Everything else (timeline, summary) is the engine underneath.
 
+### Technical architecture (hybrid)
+Documents → LLM structured extraction → normalized events → **deterministic gap detection** → evidence verification → **explainable intervention priority** → LLM/plain-language explanation → UI. The LLM never independently decides a clinical gap when deterministic evidence can establish it.
+
 ## 7. Scope — the 3 gap types (locked)
 
-1. **Missed specialist follow-up:** referral event (date, specialty, reason) exists, but no matching consult note / visit / result within the expected window → flag with evidence (referral doc citation) + action (contact patient, schedule) + impact (recovered referral).
+Detection is **deterministic** over normalized events (not LLM judgment).
+
+1. **Missed specialist follow-up:** referral event (date, specialty, reason) exists, but no matching consult note / visit / result within the expected window → flag with evidence (referral doc citation) + action (verify/contact/review/coordinate) + impact (recovered referral).
 2. **Duplicate diagnostic test:** same normalized test ordered ≥2× within N days by ≥1 provider → flag with evidence + estimated cost avoided.
 3. **Missed medication monitoring:** medication started (drug, date) + expected monitoring lab (drug → lab map, e.g., metformin → A1c/BMP) not ordered within window → flag + recommended order.
 
@@ -66,7 +76,7 @@ Oncology-flavored demo instances: (1) cancer patient no oncology visit 45 days a
 
 **FR-3 Gap detection.** Run the 3 detectors per patient; each gap returns {type, severity, evidence: [source doc ids + quoted span], recommended action, estimated impact}.
 
-**FR-4 Prioritization.** Rank patients by a composite risk score (gap count + severity + recency + clinical weight) → return top-K (default 5) with per-patient "why."
+**FR-4 Prioritization.** Rank patients by an **explainable intervention priority** (gap severity × overdue duration × evidence confidence × actionability; gap type as tie-breaker) → return top-K (default 5) with per-patient "why." This is *intervention priority for coordinator triage*, NOT a clinically validated patient-risk score. Formula is visible in the UI.
 
 **FR-5 Evidence grounding.** Every gap and every summary statement cites source document id(s). No unsupported claim.
 
@@ -78,7 +88,7 @@ Oncology-flavored demo instances: (1) cancer patient no oncology visit 45 days a
 
 **FR-9 Demo data.** Ship a synthetic oncology panel (≈80 patients) with planted gaps so the demo is reproducible and the "wow" line is guaranteed to fire.
 
-**FR-10 (Should) Eval harness.** A small labeled set of patients with known gaps; report precision/recall per gap type. This is the technical-depth signal for judge Shreyansh.
+**FR-10 (Must, P0) Eval harness.** A frozen labeled set of synthetic patients with planted ground-truth gaps (~80 gaps across ~20 patients); report precision/recall/F1 per gap type, macro F1, grounding/citation accuracy, extraction accuracy, and latency. This is the technical-depth signal for judge Shreyansh and the answer to "how do you know the AI found the right gaps?"
 
 ## 9. Non-functional requirements
 

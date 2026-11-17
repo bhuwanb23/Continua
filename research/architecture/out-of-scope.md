@@ -16,6 +16,8 @@ These are the contract. Any new feature must displace a planned one (see mvp-fea
 10. **Population-health dashboards** — future user; out of MVP.
 11. **Mobile app** — desktop-first; mobile out of scope.
 12. **Multi-language / i18n** — English only.
+13. **Fake Epic / EHR integration** — never imply or mock a live connection. MVP runs on synthetic cross-provider records; the production path (FHIR R4 / HL7 feeds) is described as roadmap only.
+14. **Autonomous clinical decisions** — no diagnosis, treatment, or unsupervised orders. Actions are verify/contact/review/coordinate; the coordinator decides.
 
 ## Soft exclusions (build only if ahead of schedule)
 

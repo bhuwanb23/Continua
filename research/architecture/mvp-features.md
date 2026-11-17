@@ -15,12 +15,13 @@ Prioritization rule: a feature ships only if it directly serves the demo's 6 sce
 9. **"Synthetic data" banner** (always visible). (NFR-1)
 10. **LLM response caching** for the demo panel (deterministic demo). (NFR-3)
 11. **Basic loading + error states.** (NFR-4)
+12. **Eval harness (P0, not optional)** with precision/recall/F1 per gap type + macro F1 + grounding/citation accuracy + extraction accuracy + latency, run against a frozen ground-truth set. (FR-10) — required to answer "how do you know the AI found the right gaps?"
+13. **Structured clinical-event extraction** (LLM) feeding deterministic detectors. (FR-2/FR-3)
 
 ## Should Have (ship if time permits; strengthens judging)
 
-12. **Panel patients list** with filter/search. (FR-5 screen)
-13. **Eval harness** with precision/recall per gap type + grounding rate. (FR-10) — *strongly recommended for Shreyansh.*
-14. **Custom data upload** (CSV/JSON) for a non-demo panel.
+14. **Panel patients list** with filter/search. (FR-5 screen)
+15. **Custom data upload** (CSV/JSON) for a non-demo panel.
 15. **"Mark actioned" / action recording** (local state).
 16. **About/Method page.** (Screen 9)
 
@@ -44,4 +45,4 @@ Patient portal, EHR write-back, real PHI, multi-tenant, scheduling, chatbot, sym
 5. Evidence grounding (the credibility).
 6. Impact summary + eval (the judging narrative).
 
-If forced to cut, cut in reverse: eval → impact metrics → evidence deep-dive → patient list → custom upload. **Never cut** timeline, gap detection, or the top-5 queue.
+If forced to cut, cut in reverse: custom upload → patient list → impact metrics polish → evidence deep-dive polish. **Never cut** timeline, extraction, gap detection, evidence grounding, top-5 queue, or the eval harness (P0).
