@@ -103,7 +103,7 @@ Oncology-flavored demo instances: (1) cancer patient no oncology visit 45 days a
 - Design criterion: clean, professional, medical-appropriate UI (not AI-slop).
 - Demo: 90 sec, hits the wow line, shows top-5 queue with evidence.
 - AI substance: timeline + 3 detectors + prioritization + grounding + eval metric reported.
-- Business narrative: "12 min → 8 sec; 1 referral recovered; 1 duplicate test avoided; 1 monitoring gap caught" per 80-patient panel.
+- Business narrative: *modeled* 12 min manual-review assumption vs *measured* synthesis latency; 1 referral recovered, 1 duplicate test avoided, 1 monitoring gap caught per 80-patient panel. Never presented as a measured workflow savings study (see `research/build-readiness/api-contracts.md` §8).
 - Technical credibility: eval precision/recall reported; no hallucinated citations.
 
 ## 11. Risks & mitigations

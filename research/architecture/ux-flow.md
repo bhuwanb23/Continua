@@ -13,10 +13,10 @@ Left sidebar (collapsible): Dashboard · Patients · (Eval — dev only). Top ba
 **Purpose:** Panel-level command center. Answer "who needs me today?"
 
 - Header: "Good morning, Sarah. Panel: 80 patients."
-- KPI row: Patients flagged (e.g., 12) · Gaps detected (e.g., 19) · Top-5 requiring action today.
+- KPI row: Patients flagged (e.g., 39 of 80) · Gaps detected (e.g., 67) · Top-5 requiring action today.
 - Gap-type breakdown (3 cards): Missed follow-ups · Duplicate tests · Monitoring gaps (counts).
 - **Primary block: Top 5 Patients Requiring Action** — ranked cards. Each card: rank #, patient name + age/sex, one-line "why" (gap type + key fact), **priority badge (CRITICAL/HIGH/MEDIUM/LOW)**, "View" button.
-- Secondary: "Time saved this panel: 12 min → 8 sec per patient" + "Load demo data" button (if no data).
+- Secondary: "Modeled: 12 min manual review assumption → 8.1 s measured synthesis" + "Load demo data" button (if no data).
 - Primary action: click a patient card → Screen 2.
 
 ## Screen 2 — Patient Detail
@@ -66,11 +66,12 @@ Left sidebar (collapsible): Dashboard · Patients · (Eval — dev only). Top ba
 **Purpose:** ROI narrative for the demo.
 
 - "This panel: 80 patients reviewed."
-- "12 min → 8 sec per patient (≈15 hours saved)."
+- "Modeled 12 min manual review assumption per patient; 8.1 s measured synthesis (≈15 h modeled savings)."
+- Every number on this screen carries a source chip: `assumption` (12 min baseline) or `measured` (latency). No bare "time saved" figure.
 - "1 missed oncology follow-up recovered."
 - "1 duplicate CBC avoided (~$X)."
 - "1 medication monitoring gap caught (A1c)."
-- "Gaps detected: 19 across 12 patients."
+- "Gaps detected: [measured] across [measured] patients." (against 70 planted gaps on the frozen benchmark)
 
 ## Screen 8 — Eval (dev/demo toggle, optional)
 

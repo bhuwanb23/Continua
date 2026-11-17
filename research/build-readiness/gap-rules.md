@@ -62,7 +62,7 @@ All gap detection runs over the **normalized event store**, never raw text. The 
    - low if 2× within 8–14 days.
 
 **False-positive protections:**
-- Exclude events marked `intentional_series: true` in structured fields (e.g., weekly CBC during chemo) — these are legitimate serial monitoring.
+- Exclude pairs where either event has `series_status == "explicit_series"` (e.g., "weekly CBC for 6 weeks") — these are legitimate serial monitoring. `unknown` does **not** exempt a pair; the rule flags it, because a safety tool should surface the repeat for human review. See `clinical-event-schema.md` § `series_status`.
 - Same-day, same-provider, same-test events are treated as one order (not a duplicate) unless doc ids differ and notes indicate separate orders.
 - Quantitative panels: a CBC component ordered as part of a BMP on the same day is not a duplicate of a standalone CBC on a different day only if dates differ; handled via alias map + date check.
 - Imaging: same modality + same body region within window = duplicate; different body regions are not.
@@ -87,6 +87,8 @@ All gap detection runs over the **normalized event store**, never raw text. The 
    - med if 0 < overdue_days ≤ W/2.
    - low if within window but closing within 7 days (early warning).
 
+4. **Not-yet-elapsed window = NOT a gap (hard rule).** If `S + W` is in the future, the rule must not emit a gap. It may emit a `pending_monitoring` note (severity none, excluded from the queue and from ground truth). This is why Maria's tamoxifen window (365 days, started 44 days before the demo date) is context, not a detected gap. A rule may never claim a window has been missed before it closes.
+
 **False-positive protections:**
 - If a lab exists just outside the window (W < days ≤ W+14), flag as "possibly overdue" with lower confidence rather than a hard gap.
 - If medication was stopped before the window closed (medication_stop event within window), skip.
@@ -95,7 +97,8 @@ All gap detection runs over the **normalized event store**, never raw text. The 
 **Edge cases:**
 - Drug normalization must match map keys (lowercase, no dose).
 - Multiple meds → multiple independent checks.
-- Oncology meds (tamoxifen/anastrozole) use annual follow-up window; flag only if no oncology consult within 365 days of start.
+- Oncology meds (tamoxifen/anastrozole) use an annual follow-up window; a gap is only reportable **after** the 365 days elapse with no oncology consult. Before that, emit a `pending_monitoring` note only.
+- A medication with multiple expected labs (metformin → a1c + bmp) emits one gap citing the missing labs, not two duplicate gaps for the same trigger event.
 
 ## Severity → priority
 

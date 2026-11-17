@@ -92,7 +92,7 @@ Rules consume normalized events. The LLM is NOT involved in deciding whether a g
 ### Stage F — Intervention priority (deterministic, explainable)
 
 - **Not a clinical risk score.** We do not claim a validated patient-risk model. We compute an *intervention priority* for coordinator triage.
-- Formula (visible in UI): `priority_score = gap_severity_weight × overdue_factor × evidence_confidence × actionability_weight`, with `gap_type_weight` as a tie-breaker.
+- Formula (visible in UI): `gap_priority_score = gap_severity_weight × overdue_factor × evidence_confidence × actionability_weight`, with `gap_type_weight` as a tie-breaker. The patient's rank is `patient_priority_score` (primary gap + bounded bonus). See `research/build-readiness/priority-engine.md`.
 - Bands: CRITICAL / HIGH / MEDIUM / LOW derived from score thresholds (documented in priority-engine.md).
 - Output: ranked queue (top-K, default 5) with per-patient headline "why."
 

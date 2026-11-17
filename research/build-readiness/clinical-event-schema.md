@@ -52,7 +52,8 @@ This is the **exact JSON contract** emitted by the LLM extraction stage (Stage B
 ```json
 { "modality": "CT | MRI | X-ray | PET | mammogram | ultrasound | other",
   "body_region": "string",
-  "result_summary": "string (factual, from doc)" }
+  "result_summary": "string (factual, from doc)",
+  "series_status": "explicit_series | explicit_one_off | unknown" }
 ```
 
 ### consult
@@ -69,8 +70,25 @@ This is the **exact JSON contract** emitted by the LLM extraction stage (Stage B
   "test_name_normalized": "string (from alias map)",
   "value": "number | string | null",
   "unit": "string | null",
-  "abnormal": "boolean | null" }
+  "abnormal": "boolean | null",
+  "series_status": "explicit_series | explicit_one_off | unknown" }
 ```
+
+#### `series_status` (Fix 5 — explicit, never inferred)
+
+The duplicate-test rule needs to know whether a repeated test was *intended* as a series. The model must **not** infer clinical intent. It may only report what the document says.
+
+| Value | Set only when | Example source text |
+|---|---|---|
+| `explicit_series` | The document explicitly states an ongoing/repeating schedule. | "Weekly CBC for 6 weeks" · "Serial A1c every 3 months" |
+| `explicit_one_off` | The document explicitly states a single occurrence. | "One-time CBC today" · "Single A1c check" |
+| `unknown` | **Default.** Nothing in the text addresses repetition. | "CBC with differential: WBC 5.8…" |
+
+Rules:
+- Absence of a statement → `unknown`. Never guess.
+- `unknown` is treated as *not* an intentional series by the duplicate rule (so a genuine duplicate still flags), which is the conservative direction for a safety tool.
+- The field may also be set as a document-level flag (`record.series_status`) that events inherit; event-level always wins.
+- Extraction prompt: "If the document does not explicitly describe a repeated schedule, set series_status to unknown. Do not infer intent."
 
 ### medication_start / medication_stop
 ```json
@@ -106,7 +124,7 @@ This is the **exact JSON contract** emitted by the LLM extraction stage (Stage B
 Stored in `lib/monitoring/drug-lab-map.ts`:
 - metformin → [a1c, bmp] (window 90 days)
 - warfarin → [inr] (window 7 days)
-- tamoxifen/anastrozole → [annual oncology follow-up] (window 365 days, flagged if no oncology consult within 365 of start)
+- tamoxifen/anastrozole → [annual oncology follow-up] (window 365 days; a gap is reportable **only after** the 365 days elapse — before that it is a `pending_monitoring` note, never a gap)
 - (extend as needed; keep small and defensible)
 
 ## Validation rules (Stage E pre-check)
@@ -116,6 +134,7 @@ Stored in `lib/monitoring/drug-lab-map.ts`:
 - `date` is valid and within plausible range (1900–today+1).
 - `confidence` in [0,1].
 - `event_type` is in the enum.
+- `series_status`, if present, is in the enum; anything else → coerced to `unknown`.
 - Events failing validation are dropped and logged; never partially accepted.
 
 ## What the LLM must NOT do

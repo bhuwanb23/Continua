@@ -12,14 +12,44 @@ The most damaging judge question is: *"How do you know the AI actually found the
 |---|---|
 | Panel | 80 synthetic patients (same panel used in the demo) |
 | Documents | ~400–600 cross-provider records |
-| Ground-truth gaps | ~80 total |
-| — missed follow-ups | ~30 |
-| — duplicate tests | ~25 |
-| — medication monitoring gaps | ~25 |
-| Patients with no gaps | ~60 (true negatives, for precision) |
+| Patients with ≥1 gap | **40** (target range 35–45) |
+| Patients with no gaps | **40** (target range 35–45 true negatives) |
+| Ground-truth gaps | **70** total (target range 60–80) |
+| — missed follow-ups | 28 |
+| — duplicate tests | 22 |
+| — medication monitoring gaps | 20 |
 | Ground truth file | `data/eval-set/ground_truth.json` (frozen, versioned, held out from prompt tuning where feasible) |
 
+**Why the distribution changed (Fix 4).** The earlier draft had ~80 gaps across only ~20 positive patients — about four planted gaps per positive patient, using three gap types. That makes the benchmark artificially concentrated: detectors would be scored mostly on the densest charts and precision would look better than it is. A 40/40 positive/negative split with 70 gaps (~1.75 gaps per positive) is closer to a real panel and forces the rules to survive realistic negative pressure.
+
 **Frozen** means: once the ground truth is written and the pipeline first run, the data and labels do not change. Prompt changes are re-run against the same frozen set. No editing ground truth to match outputs.
+
+## Deliberate composition of the set
+
+Every category below must appear in the frozen set, because each one is a specific way a detector can be wrong.
+
+**Positive patients (40):**
+
+| Category | Count | Purpose |
+|---|---|---|
+| Isolated single-gap patients | 22 | Clean positives; a miss here is a real recall failure. |
+| Multi-gap patients (2–3 gaps) | 18 | Tests patient-level aggregation and the priority bonus. |
+| Includes: specialty-mismatch positives | 6 | Cardiology referral with only a PCP visit → **is** a gap. A trap for recall: looks satisfied, isn't. |
+| Includes: noisy test aliases | ≥10 events | "CBC w/ diff" vs "Complete Blood Count"; tests normalization, not the LLM. |
+
+**Negative patients (40) — hard negatives:**
+
+| Category | Cases | Purpose |
+|---|---|---|
+| Completed referrals (referral + consult inside window) | 10 | Must **not** flag. |
+| Legitimate repeat tests with `series_status: explicit_series` | 8 | Must **not** flag. |
+| Discontinued medications before the window closed | 6 | Must **not** flag. |
+| Not-yet-elapsed monitoring windows | 8 | Must **not** flag (the Fix 1 class of error). |
+| Completely unrelated / clean charts | 20 | Baseline true negatives. |
+
+> **Case counts overlap.** Several negative patients carry two negative patterns (e.g. a completed referral *and* an explicit series), so the 52 listed negative cases are distributed across 40 negative patients. Do not add the column to derive a patient total.
+
+Hard negatives are the point of the harness. A rule that only sees clean positives will score near-perfect precision and fall apart on a real panel.
 
 ## Ground-truth record shape
 
@@ -98,6 +128,7 @@ If a target is missed, we report the actual number and explain the failure mode.
 
 ## Protocol
 
+0. Confirm the panel composition matches the table above (40 positive / 40 negative / 70 gaps) before freezing.
 1. Generate synthetic panel with planted gaps (seeded; deterministic).
 2. Write ground truth before running the pipeline (prevents label leakage).
 3. Run pipeline → collect reported gaps.
@@ -113,7 +144,9 @@ If a target is missed, we report the actual number and explain the failure mode.
 
 ## What we will and won't claim
 
-**Will claim:** "On our frozen synthetic benchmark of 80 patients and ~80 planted gaps, detectors achieved [measured precision/recall/F1] with [measured]% grounding."
+**Will claim:** "On our frozen synthetic benchmark of 80 patients (40 with planted gaps, 40 true negatives) and 70 planted gaps, detectors achieved [measured precision/recall/F1] with [measured]% grounding."
+
+**Will not claim** a savings figure from this benchmark: latency is measured, the 12-minute manual baseline is an assumption (see `api-contracts.md` §8).
 
 **Will not claim:** clinical validation, FDA clearance, real-world efficacy, or generalization to real EHR data. The benchmark is synthetic by design.
 

@@ -19,8 +19,8 @@ Panel summary + KPIs.
   "name": "Oncology demo panel",
   "owner": "sarah",
   "patient_count": 80,
-  "flagged_patient_count": 12,
-  "gap_counts": { "missed_followup": 8, "duplicate_test": 5, "med_monitoring": 6 },
+  "flagged_patient_count": 39,
+  "gap_counts": { "missed_followup": 27, "duplicate_test": 21, "med_monitoring": 19 },
   "top_patient_ids": ["uuid", "uuid", "uuid", "uuid", "uuid"],
   "generated_at": "2026-11-17T10:00:00Z",
   "disclaimer": "Synthetic demo data. For coordinator verification only. Not medical advice."
@@ -45,10 +45,10 @@ List/search patients.
       "sex": "F",
       "primary_diagnosis": "Breast cancer — post-surgical",
       "last_contact_date": "2026-04-20",
-      "gap_count": 2,
+      "gap_count": 3,
       "top_gap_type": "missed_followup",
       "priority_band": "CRITICAL",
-      "priority_score": 84
+      "patient_priority_score": 74
     }
   ],
   "disclaimer": "..."
@@ -67,21 +67,36 @@ Patient header + summary.
   "age": 54,
   "sex": "F",
   "primary_diagnosis": "Breast cancer — post-surgical",
-  "risk_level": "high",
-  "last_contact_date": "2026-04-20",
+  "last_contact_date": "2026-04-28",
   "priority_band": "CRITICAL",
-  "priority_score": 84,
+  "patient_priority_score": 74,
+  "top_gap": {
+    "gap_id": "uuid",
+    "type": "missed_followup",
+    "gap_priority_score": 70
+  },
   "priority_breakdown": {
-    "severity_weight": 1.0,
-    "overdue_factor": 1.75,
-    "evidence_confidence": 0.96,
-    "actionability_weight": 1.0,
-    "gap_type_weight": 1.0,
-    "raw_score": 1.68
+    "patient_raw_score": 1.488,
+    "primary_gap_raw_score": 1.392,
+    "additional_gap_bonus": 0.096,
+    "factors": {
+      "severity_weight": 1.0,
+      "overdue_factor": 1.45,
+      "evidence_confidence": 0.96,
+      "actionability_weight": 1.0,
+      "gap_type_weight": 1.0
+    }
   },
   "disclaimer": "..."
 }
 ```
+
+**Terminology contract (frozen).**
+
+- `patient_priority_score` — the patient's queue rank score (primary gap + bounded bonus).
+- `gap_priority_score` — the score of a single gap. Only ever appears under a gap object or `top_gap`.
+- The bare field name `priority_score` **must not be used**. It previously meant both things, which made the API and the seed case disagree (84 vs 89).
+- `risk_level` **must not exist** anywhere in the API or UI. Continua does not predict clinical risk; it ranks intervention priority.
 
 ## 4. GET /api/patients/{patientId}/timeline
 
@@ -124,21 +139,21 @@ Verified gaps for one patient, with priority.
       "type": "missed_followup",
       "severity": "high",
       "title": "Missed oncology follow-up",
-      "why": "Referral to oncology placed 2026-04-18; no oncology consult found within 45 days.",
-      "overdue_days": 45,
+      "why": "Referral to oncology placed 2026-03-25; 45-day window elapsed 2026-05-09 with no oncology consult found.",
+      "overdue_days": 27,
       "window_days": 45,
       "evidence": [
         {
           "doc_id": "uuid",
           "provider": "Dr. A. Patel — Primary Care",
-          "date": "2026-04-18",
-          "quoted_span": "Referral to Medical Oncology for post-surgical evaluation."
+          "date": "2026-03-25",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation."
         }
       ],
       "recommended_action": "Verify: contact patient and confirm oncology follow-up.",
       "estimated_impact": "Recovered referral (1)",
       "priority_band": "CRITICAL",
-      "priority_score": 84,
+      "gap_priority_score": 70,
       "confidence": 0.96,
       "detector": "referral_engine_v1",
       "grounded": true
@@ -164,10 +179,14 @@ Prioritized coordinator queue.
       "name": "Maria Chen",
       "age": 54,
       "priority_band": "CRITICAL",
-      "priority_score": 84,
-      "headline": "Missed oncology follow-up — 45 days overdue after imaging.",
-      "top_gap_id": "uuid",
-      "top_gap_type": "missed_followup",
+      "patient_priority_score": 74,
+      "headline": "Missed oncology follow-up — 27 days past the 45-day window after imaging.",
+      "top_gap": {
+        "gap_id": "uuid",
+        "type": "missed_followup",
+        "gap_priority_score": 70,
+        "severity": "high"
+      },
       "recommended_action": "Verify: contact patient and confirm oncology follow-up."
     }
   ],
@@ -192,11 +211,11 @@ Evidence deep-dive (source spans).
       "doc_type": "referral",
       "provider": "Dr. A. Patel — Primary Care",
       "provider_type": "pcp",
-      "date": "2026-04-18",
-      "quoted_span": "Referral to Medical Oncology for post-surgical evaluation.",
+      "date": "2026-03-25",
+      "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation.",
       "span_verified": true,
       "verification_score": 1.0,
-      "source_text_excerpt": "…Referral to Medical Oncology for post-surgical evaluation. Please schedule within 45 days…"
+      "source_text_excerpt": "…Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days…"
     }
   ],
   "reasoning": "A referral to oncology exists with a 45-day expected window. No consult or follow-up event with specialty oncology was extracted within that window.",
@@ -209,27 +228,55 @@ Evidence deep-dive (source spans).
 
 ## 8. GET /api/metrics?panelId=demo
 
-Impact summary (product metrics).
+Impact summary. **Baseline assumptions and measured latency are separate fields and must never be merged into a single "savings" number.**
 
 **200**
 ```json
 {
   "panel_id": "demo",
-  "patient_count": 80,
-  "patients_reviewed": 80,
-  "gaps_detected": 19,
-  "patients_with_gaps": 12,
-  "by_type": { "missed_followup": 8, "duplicate_test": 5, "med_monitoring": 6 },
-  "time_baseline_min_per_patient": 12,
-  "time_with_system_sec_per_patient": 8,
-  "estimated_hours_saved": 15.2,
-  "referrals_recovered": 1,
-  "duplicate_tests_avoided": 1,
-  "monitoring_gaps_caught": 1,
-  "estimated_cost_avoided_usd": 45,
-  "disclaimer": "..."
+
+  "counted": {
+    "patient_count": 80,
+    "patients_reviewed": 80,
+    "gaps_detected": 67,
+    "patients_with_gaps": 39,
+    "by_type": { "missed_followup": 27, "duplicate_test": 21, "med_monitoring": 19 },
+    "note": "Illustrative shape; real counts come from the pipeline run, measured against 70 planted gaps / 40 positive patients.",
+    "referrals_recovered": 1,
+    "duplicate_tests_avoided": 1,
+    "monitoring_gaps_caught": 1
+  },
+
+  "baseline": {
+    "baseline_review_time_min": 12,
+    "baseline_type": "scenario_assumption",
+    "baseline_source": "Coordinator interview figures cited in research/problems/care-continuity.md; not measured in this prototype."
+  },
+
+  "measured": {
+    "measured_panel_synthesis_sec": 41.2,
+    "measured_summary_latency_sec": 8.1,
+    "measured_patient_detail_sec": 0.4,
+    "measured_at": "2026-11-17T10:00:00Z"
+  },
+
+  "modeled": {
+    "modeled_time_saved_hours": 14.9,
+    "modeled_label": "Modeled time savings based on demo assumptions, not a measured workflow study.",
+    "modeled_formula": "(baseline_review_time_min - measured_summary_latency_sec/60) × patients_reviewed / 60"
+  },
+
+  "disclaimer": "Synthetic demo data. Baselines are assumptions; only latency is measured."
 }
 ```
+
+**Field rules (frozen).**
+
+- `baseline.*` — assumptions only, always carrying `baseline_type: "scenario_assumption"`.
+- `measured.*` — produced by the running pipeline; never hardcoded.
+- `modeled.*` — derived arithmetic, always labeled as modeled.
+- The UI **must not** display "12 min → 8 sec" as an established result. It may display it as *"modeled: 12 min manual review assumption → 8.1 s measured synthesis."*
+- If `measured` values are absent (pipeline not run), `modeled` must be `null` with `status: "not_measured"`.
 
 ## 9. GET /api/eval
 

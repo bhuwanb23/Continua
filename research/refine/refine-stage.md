@@ -75,7 +75,7 @@ Why this wording is stronger than "CareGap AI":
 
 ## 6. Measurable Outcomes (ROI story — for Jad)
 
-- Chart review time: **12 min → 8 sec per patient.**
+- Chart review time: **12 min → 8 sec per patient.** *(Claim discipline, added at Build Readiness: the 12 min baseline is a scenario assumption from coordinator research; the 8 s is measured system latency. Present as modeled, never as a measured workflow study — see `research/build-readiness/api-contracts.md` §8.)*
 - Care gaps caught per 100 patients reviewed: **+X.**
 - Referrals closed / completed: **+X%.**
 - Duplicate tests avoided: **$X saved.**

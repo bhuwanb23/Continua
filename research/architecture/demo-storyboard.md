@@ -42,6 +42,8 @@ Every scene exists to set up the wow line. Format: time · visual · voiceover (
 
 ## Production notes
 
+- **Claim discipline (Fix 6):** "12 minutes" is a scenario assumption and "8 seconds" is measured system latency. Spoken as narrative they are fine; anywhere they appear as a *result* (impact screen, slide, Devpost text) they must be labeled — "modeled from a 12-minute manual-review assumption; 8.1 s measured synthesis." Never "we saved 15 hours per panel" as an established finding.
+
 - Pre-cache all LLM outputs for the demo panel → demo runs deterministically even with no internet.
 - The wow line must be spoken AND on-screen. Do not rush it.
 - Keep on-screen text minimal; let VO carry narrative.

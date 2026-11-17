@@ -7,8 +7,8 @@ The formula is deterministic and displayed in the UI. Every ranked patient can a
 ## Formula (v1, locked)
 
 ```
-priority_score =
-    severity_weight(gap.severity)          // 0.10 – 1.00
+gap_priority_score (raw) =
+    severity_weight(gap.severity)          // 0.30 – 1.00
   × overdue_factor(gap.overdue_days)       // 1.00 – 2.00
   × gap.evidence_confidence                // 0.00 – 1.00
   × actionability_weight(gap.type)         // 0.75 – 1.00
@@ -16,7 +16,7 @@ priority_score =
 ```
 
 All factors multiply. Result is in [0, ~2.0]. Normalize to 0–100 for display:
-`display_score = round(100 × priority_score / 2.0)` — labeled "Priority score (relative)", never "risk score".
+`display = round(100 × raw / 2.0)` — labeled "Intervention priority (relative)", never "risk score".
 
 ### Factor definitions
 
@@ -62,8 +62,8 @@ overdue_factor = 1.0 + min(overdue_days / 60, 1.0)     // caps at 2.0 at 60+ day
 A patient may have multiple gaps.
 
 ```
-patient_priority = max(gap priority_score)
-                 + 0.10 × (sum of remaining gap priority_scores, capped at 0.5)
+patient_priority_score (raw) = max(gap_priority_score of patient's gaps)
+                             + 0.10 × (sum of remaining gap_priority_scores, capped at 0.5)
 ```
 
 - Primary gap drives the rank (so a single CRITICAL gap outranks several minor ones).
@@ -81,27 +81,53 @@ patient_priority = max(gap priority_score)
 
 Bands are relative triage labels, not clinical acuity. UI must label them "Intervention priority" and include the "for coordinator verification" note.
 
-## Worked example (Maria)
+## Terminology (frozen — Fix 3)
 
-- Missed oncology follow-up, high severity: severity_weight 1.00
-- 45 days overdue: overdue_factor = 1 + min(45/60, 1) = 1.75
-- evidence_confidence 0.96
-- actionability 1.00
-- gap_type 1.00
+Two different numbers, two different names. They must never share a field.
 
+| Concept | Field | Scope |
+|---|---|---|
+| A single gap's contribution | `gap_priority_score` | Inside a gap object, or under `top_gap` |
+| The patient's queue rank | `patient_priority_score` | Patient object, queue item |
+
+The bare name `priority_score` is **forbidden** — it previously meant both, which is why the API said 84 and the seed case said 89.
+
+## Worked example (Maria, after Fix 1)
+
+Maria's primary gap is a missed oncology follow-up. Referral 2026-03-25, window 45 days (elapsed 2026-05-09), demo date 2026-06-05 → **27 days overdue**.
+
+**Gap 1 — missed oncology follow-up**
 ```
-priority = 1.00 × 1.75 × 0.96 × 1.00 × 1.00 = 1.68
-display  = round(100 × 1.68 / 2.0) = 84  → CRITICAL
+1.00 (high) × 1.45 (1 + min(27/60, 1)) × 0.96 × 1.00 × 1.00 = 1.392
+gap_priority_score = round(100 × 1.392 / 2.0) = 70  →  CRITICAL
+```
+
+**Gap 2 — duplicate CBC** (8 days apart, two providers)
+```
+0.30 (low) × 1.13 (1 + 8/60) × 0.94 × 0.75 × 0.90 = 0.216  →  11  →  LOW
+```
+
+**Gap 3 — metformin monitoring** (A1c/BMP due 2026-05-11, 25 days overdue)
+```
+0.60 (med) × 1.42 (1 + 25/60) × 0.95 × 0.95 × 0.97 = 0.744  →  37  →  MEDIUM
+```
+
+**Patient**
+```
+patient_raw = 1.392 + 0.10 × (0.744 + 0.216) = 1.488
+patient_priority_score = round(100 × 1.488 / 2.0) = 74  →  CRITICAL
 ```
 
 UI shows:
 
 ```
-Maria Chen · Priority: CRITICAL (84)
-WHY  Missed oncology follow-up — 45 days overdue
-     Evidence confidence: 0.96 · Source: 2026-04-18 referral (Dr. A. Patel)
+Maria Chen · Intervention priority: CRITICAL (74)
+WHY  Missed oncology follow-up — 27 days past the 45-day window
+     Evidence confidence: 0.96 · Source: 2026-03-25 referral (Dr. A. Patel)
 ACT  Verify: contact patient and confirm oncology follow-up.
 ```
+
+> The earlier 84/89 figures came from the removed tamoxifen gap. If you see 84/89 in any other document, that document is stale.
 
 ## Determinism & testability
 

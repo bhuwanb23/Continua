@@ -6,18 +6,20 @@ The technical-depth signal for judge Shreyansh (UTSA CARE AI fellow, AAAI 2026 c
 
 | Metric | Baseline | Target | How shown |
 |---|---|---|---|
-| Chart review time per patient | 12 min | 8 sec (synthesis) | Impact summary (Screen 7) |
+| Chart review time per patient | 12 min (**assumption**, `baseline_type: scenario_assumption`) | measured synthesis latency (label as measured) | Impact summary (Screen 7), fields kept separate |
 | Patients reviewed per panel | 80 | 80 (all) | Dashboard |
 | Patients surfaced needing action | unknown | top 5 | Dashboard queue |
-| Care gaps detected per panel | 0 (missed) | 19 across 12 patients (demo) | Dashboard |
+| Care gaps detected per panel | 0 (missed) | measured against 70 planted gaps / 40 positive patients (demo panel) | Dashboard |
 | Referrals recovered | 0 | ≥1 | Impact summary |
 | Duplicate tests avoided | 0 | ≥1 (≈$ cost) | Impact summary |
 | Monitoring gaps caught | 0 | ≥1 | Impact summary |
-| Time saved per panel | — | ≈15 hours | Impact summary |
+| Time saved per panel | — | ≈15 h **modeled** (not measured) | Impact summary, labeled "modeled time savings based on demo assumptions" |
+
+> **Fix 6:** the 12-minute baseline is a scenario assumption from research interviews, and the system-side number must be a measured latency. Neither may be presented as an established productivity result. See `research/build-readiness/api-contracts.md` §8 for the frozen field split (`baseline` / `measured` / `modeled`).
 
 ## 2. AI quality metrics (eval harness — FR-10)
 
-Labeled eval set: ~20 synthetic patients with **planted, known gaps** (ground truth). Run detectors; compare.
+Labeled eval set: **40 synthetic patients with planted gaps and 40 true negatives, 70 gaps total** (ground truth). Run detectors; compare. The 40/40 split deliberately includes hard negatives (completed referrals, explicit series, discontinued meds, specialty mismatch, not-yet-elapsed windows) so precision is not measured only on dense charts. Full composition: `research/build-readiness/evaluation-spec.md`.
 
 | Metric | Definition | Target |
 |---|---|---|

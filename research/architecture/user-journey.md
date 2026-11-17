@@ -28,7 +28,7 @@
 | 4 | Clicks Maria → patient detail: unified timeline (surgery → radiology → labs → meds) + gaps + evidence snippets + recommended action. | 10 sec | Timeline reconstructed, gaps cited. |
 | 5 | Clicks "Mark as actioned / schedule follow-up" (or copies the recommended action). | 5 sec | Action recorded (demo: local state). |
 | 6 | Returns to queue; handles #2, #3. | — | — |
-| 7 | Views impact summary: "1 referral recovered, 1 duplicate CBC avoided, 1 monitoring gap caught. Chart review 12 min → 8 sec." | 0 sec | ROI metric. |
+| 7 | Views impact summary: "1 referral recovered, 1 duplicate CBC avoided, 1 monitoring gap caught. Modeled 12 min manual review assumption vs 8.1 s measured synthesis." | 0 sec | Impact summary (assumption and measurement labeled separately). |
 
 **Total time to identify + understand top 5:** ~1–2 minutes (vs. hours). Sarah catches the patient she missed yesterday — the wow moment.
 

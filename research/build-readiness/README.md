@@ -1,6 +1,8 @@
 # Build Readiness Package — Continua
 
-> Stage status: Research ✅ · Define ✅ · Refine ✅ · Ideation ✅ · Architecture & Product Planning ✅ (locked, with 4 review corrections) · **Build Readiness ✅ (this folder)** · Implementation ⏳
+> Stage status: Research ✅ · Define ✅ · Refine ✅ · Ideation ✅ · Architecture & Product Planning ✅ (locked, 4 review corrections) · **Build Readiness ✅ (this folder, frozen after 6 review corrections)** · Implementation ⏭️ next
+>
+> **First implementation milestone: intelligence engine without UI** — dataset → schema validation → 3 deterministic detectors → evidence grounding → intervention priority → frozen eval run → inspect actual P/R/F1 → only then the dashboard.
 
 These are **implementation assets only** — no new features, no redesign. They freeze interfaces so implementation can proceed directly. Architecture corrections applied:
 
@@ -22,6 +24,17 @@ These are **implementation assets only** — no new features, no redesign. They 
 | `demo-seed-case.md` | Complete Maria oncology demo story: 5–8 synthetic records, hidden gaps, expected timeline/detection/evidence/action. |
 | `acceptance-tests.md` | Given/When/Then acceptance tests for every P0 feature. |
 
+## Review pass 2 — six corrections applied (frozen after these)
+
+| # | Correction | Where |
+|---|---|---|
+| 1 | Maria's tamoxifen monitoring gap was logically impossible (365-day window, 44 days elapsed). Replaced with an overdue metformin→A1c window (25 days past due); tamoxifen is context only. Rule 3 now has a hard "not-yet-elapsed = not a gap" clause. | `demo-seed-case.md` (v2), `gap-rules.md` Rule 3 |
+| 2 | `risk_level` removed from the model and API. No clinical-risk terminology anywhere. | `api-contracts.md` §3, `architecture/data-schema.md`, AT-7.5 |
+| 3 | `priority_score` overloaded. Frozen as `patient_priority_score` (queue rank) vs `gap_priority_score` (single gap, incl. under `top_gap`). | `priority-engine.md`, `api-contracts.md` §3, AT-7.6 |
+| 4 | Ground truth was over-concentrated (~80 gaps on ~20 patients). Now 80 patients: 40 positive / 40 negative, 70 gaps, with deliberate hard negatives. | `evaluation-spec.md`, `synthetic-data-spec.md`, AT-12.5 |
+| 5 | Duplicate rule referenced an undefined `intentional_series` flag. Replaced with `series_status: explicit_series \| explicit_one_off \| unknown`, extraction-only, never inferred. | `clinical-event-schema.md`, `gap-rules.md` Rule 2, AT-5.5 |
+| 6 | "12 min → 8 sec" presented as established savings. Split into `baseline` (assumption), `measured` (latency), `modeled` (labeled arithmetic). | `api-contracts.md` §8, `architecture/ux-flow.md`, `architecture/evaluation-metrics.md`, AT-11.x |
+
 ## Corrections applied to the architecture docs
 
 | Correction | Where applied |
@@ -35,12 +48,19 @@ These are **implementation assets only** — no new features, no redesign. They 
 ## Frozen pipeline (do not deviate)
 
 ```
-Documents
-  → LLM structured extraction
-  → normalized events
-  → deterministic gap detection
+Synthetic messy records
+  → LLM extraction
+  → schema validation
+  → clinical-event normalization
+  → evidence-grounded event store
+  → ┌ deterministic rule engines ┐
+    │ referral follow-up          │
+    │ duplicate testing           │
+    │ medication monitoring       │
+    └─────────────────────────────┘
   → evidence verification
-  → intervention prioritization
+  → explainable intervention priority
+  → coordinator queue (80 patients → 5 actions)
   → LLM/plain-language explanation
   → UI
 ```

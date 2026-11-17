@@ -14,7 +14,6 @@ Two storage modes: **Supabase Postgres** (primary, for credibility) and **in-mem
 | `age` | int | |
 | `sex` | enum (M/F/other) | |
 | `primary_diagnosis` | text | e.g., "Breast cancer — post-surgical" |
-| `risk_level` | enum (high/med/low) | clinical weight input |
 | `last_contact_date` | date | |
 | `panel_id` | uuid (FK Panel) | |
 | `created_at` | timestamptz | |
@@ -41,6 +40,7 @@ Two storage modes: **Supabase Postgres** (primary, for credibility) and **in-mem
 | `doc_type` | enum | note/referral/lab_result/imaging_report/med_list |
 | `text` | text | free-text note (the source of truth) |
 | `structured` | jsonb | optional {meds:[], labs:[], referrals:[]} |
+| `series_status` | enum | null \| explicit_series \| explicit_one_off \| unknown — document-level repetition flag inherited by lab/imaging events |
 | `created_at` | timestamptz | |
 
 ### TimelineEvent (derived, cached)
@@ -70,8 +70,9 @@ Two storage modes: **Supabase Postgres** (primary, for credibility) and **in-mem
 | `evidence` | jsonb | `[{doc_id, quoted_span, confidence}]` |
 | `recommended_action` | text | |
 | `estimated_impact` | text | "recovered referral" / "$X avoided" / "order A1c" |
-| `detector` | text | rule+llm identifier |
-| `confidence` | float | |
+| `detector` | text | rule identifier (e.g. referral_engine_v1) |
+| `confidence` | float | extraction confidence × verification score |
+| `gap_priority_score` | int | computed; display 0–100 (see priority-engine.md) |
 | `created_at` | timestamptz | |
 
 ### PrioritizedQueue (derived, cached per panel)
@@ -82,10 +83,13 @@ Two storage modes: **Supabase Postgres** (primary, for credibility) and **in-mem
 | `panel_id` | uuid (FK) | |
 | `rank` | int | 1..K |
 | `patient_id` | uuid (FK) | |
-| `risk_score` | float | |
+| `patient_priority_score` | int | computed display score 0–100 |
+| `priority_band` | enum | CRITICAL/HIGH/MEDIUM/LOW |
 | `headline` | text | one-line "why this patient today" |
 | `top_gap_id` | uuid (FK Gap) | |
 | `generated_at` | timestamptz | |
+
+> No `risk_level` and no `risk_score` column exists anywhere. Continua ranks **intervention priority**, not clinical risk.
 
 ### EvalResult (dev/demo only)
 
