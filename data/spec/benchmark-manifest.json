@@ -1,0 +1,62 @@
+{
+  "spec_version": "1.0",
+  "eval_set_id": "continua-eval-v1",
+  "evaluation_as_of_date": "2026-06-05",
+  "panel": {
+    "patient_count": 80,
+    "document_count_range": [400, 600],
+    "positive_patients": 40,
+    "negative_patients": 40,
+    "ground_truth_gaps": 70,
+    "by_type": {
+      "missed_followup": 28,
+      "duplicate_test": 22,
+      "med_monitoring": 20
+    },
+    "gaps_per_positive_patient_avg": 1.75
+  },
+  "positive_composition": {
+    "isolated_single_gap_patients": 22,
+    "multi_gap_patients_2_to_3": 18,
+    "specialty_mismatch_positives": 6,
+    "noisy_alias_events_min": 10,
+    "notes": "Specialty-mismatch positives: cardiology referral with only a PCP visit IS a gap (trap for recall)."
+  },
+  "negative_composition": {
+    "completed_referrals": 10,
+    "explicit_series_legitimate_repeats": 8,
+    "discontinued_meds_before_window": 6,
+    "not_yet_elapsed_windows": 8,
+    "clean_charts": 20,
+    "note": "Case counts overlap across 40 negative patients (52 listed cases distributed across 40 patients). Do not sum to derive a patient total."
+  },
+  "hard_negative_families": [
+    { "id": "HN-01", "name": "completed_referral", "description": "Referral + matching consult inside the window → must not flag." },
+    { "id": "HN-02", "name": "wrong_specialty_neighbour", "description": "Cardiology referral with a completed PCP visit → still a gap (positive trap), but a PCP referral satisfied by a PCP visit is not." },
+    { "id": "HN-03", "name": "referral_inside_window", "description": "Referral placed recently, window not yet elapsed → must not flag." },
+    { "id": "HN-04", "name": "explicit_series", "description": "Two CBCs 8 days apart both series_status=explicit_series → must not flag." },
+    { "id": "HN-05", "name": "same_day_duplicate", "description": "Same-day same-provider same-test → treated as one order, must not flag." },
+    { "id": "HN-06", "name": "imaging_different_region", "description": "Same modality, different body region within window → must not flag." },
+    { "id": "HN-07", "name": "med_stopped_early", "description": "Medication stopped before window closed → must not flag." },
+    { "id": "HN-08", "name": "alias_covered_monitoring", "description": "Lab present under an alias within window → must not flag (tests normalization)." },
+    { "id": "HN-09", "name": "boundary_monitoring", "description": "Lab resulted exactly on the due date → within window, must not flag." },
+    { "id": "HN-10", "name": "malformed_event", "description": "Event missing source_doc_id or invalid date → dropped in validation, never becomes a gap." }
+  ],
+  "ground_truth_shape": {
+    "patient_id": "uuid",
+    "type": "missed_followup | duplicate_test | med_monitoring",
+    "source_doc_ids": ["uuid"],
+    "expected_window_days": 45,
+    "notes": "optional rationale"
+  },
+  "matching_rule": "v2: patient_id equal AND type equal AND >=1 cited source_doc_id overlap; one reported gap matches at most one ground-truth gap (greedy best overlap first).",
+  "pass_criteria_targets": {
+    "precision_per_type_min": 0.80,
+    "recall_per_type_min": 0.70,
+    "macro_f1_min": 0.75,
+    "grounding_accuracy": 1.00,
+    "extraction_accuracy_min": 0.90,
+    "panel_latency_sec_max": 60
+  },
+  "notes": "Generated manifest is canonical. No symmetry forcing. Counts are targets within the stated ranges (35-45 positive, 35-45 negative, 60-80 gaps)."
+}

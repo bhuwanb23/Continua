@@ -1,0 +1,21 @@
+{
+  "spec_version": "1.0",
+  "spec_name": "Continua Specification",
+  "frozen_stamp": "CONTINUA SPECIFICATION v1.0: FROZEN",
+  "evaluation_as_of_date": "2026-06-05",
+  "dataset": "continua-synth-v1",
+  "eval": "continua-eval-v1",
+  "extractor": "extractor-v1",
+  "detector": "gaps-v1",
+  "priority": "priority-v1",
+  "api": "v1",
+  "monitoring_policy": "synthetic_demo_policy_v1",
+  "components": {
+    "referral_engine": "referral_engine_v1",
+    "duplicate_engine": "duplicate_engine_v1",
+    "monitoring_engine": "monitoring_engine_v1"
+  },
+  "claim_classes": ["baseline", "measured", "modeled", "sourced"],
+  "hard_negative_families": 10,
+  "frozen_at": "2026-11-17"
+}

@@ -1,0 +1,19 @@
+{
+  "run_at": null,
+  "panel_id": "demo",
+  "ground_truth_gaps": 70,
+  "reported_gaps": 0,
+  "per_type": {
+    "missed_followup": { "precision": null, "recall": null, "f1": null, "tp": 0, "fp": 0, "fn": 0 },
+    "duplicate_test": { "precision": null, "recall": null, "f1": null, "tp": 0, "fp": 0, "fn": 0 },
+    "med_monitoring": { "precision": null, "recall": null, "f1": null, "tp": 0, "fp": 0, "fn": 0 }
+  },
+  "macro_f1": null,
+  "micro_f1": null,
+  "grounding_accuracy": null,
+  "unsupported_claim_rate": null,
+  "extraction_accuracy": null,
+  "latency": { "panel_p50_sec": null, "panel_p95_sec": null, "single_patient_sec": null },
+  "status": "not_run",
+  "note": "Phase 0 is a specification release gate; no implementation exists yet. Measured numbers will be populated when the pipeline runs in Phase 1 against the frozen benchmark manifest."
+}

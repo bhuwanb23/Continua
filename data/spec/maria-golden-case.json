@@ -1,0 +1,141 @@
+{
+  "spec_version": "1.0",
+  "evaluation_as_of_date": "2026-06-05",
+  "monitoring_policy": "synthetic_demo_policy_v1",
+  "patient": {
+    "patient_id": "P-001-maria",
+    "display_id": "Maria Chen",
+    "name": "Maria Chen",
+    "age": 54,
+    "sex": "F",
+    "primary_diagnosis": "Breast cancer — post-surgical (left breast); T2DM (comorbidity)",
+    "last_contact_date": "2026-04-28",
+    "panel": "Oncology demo panel"
+  },
+  "records": [
+    { "doc_id": "R1", "date": "2026-02-10", "doc_type": "note", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "text": "54F with type 2 diabetes, A1c 8.1%. Starting metformin 1000 mg twice daily. Plan: recheck A1c and BMP in 90 days to assess response and renal function." },
+    { "doc_id": "R2", "date": "2026-03-04", "doc_type": "note", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "text": "New diagnosis of invasive ductal carcinoma, left breast, on screening mammogram. Discussed surgical options. Referred to surgical oncology. Patient anxious but engaged. Plan: lumpectomy with sentinel node biopsy." },
+    { "doc_id": "R3", "date": "2026-03-18", "doc_type": "note", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "text": "Underwent left lumpectomy with sentinel lymph node biopsy on 2026-03-18. Pathology: invasive ductal carcinoma, 1.8 cm, grade 2, ER+/PR+, HER2-negative, 0/2 nodes positive. Margins clear. Plan: adjuvant radiation and endocrine therapy." },
+    { "doc_id": "R4", "date": "2026-03-25", "doc_type": "referral", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "text": "Post-operative visit. Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days. Patient to be contacted by coordinator." },
+    { "doc_id": "R5", "date": "2026-04-18", "doc_type": "imaging_report", "provider": "Regional Imaging Center", "provider_type": "imaging", "text": "Bilateral diagnostic mammogram and breast ultrasound for post-surgical baseline. Post-surgical changes left breast. No suspicious mass or recurrence identified. Recommend clinical correlation and oncology follow-up per treating team." },
+    { "doc_id": "R6", "date": "2026-04-20", "doc_type": "lab_result", "provider": "Metro Lab Services", "provider_type": "lab", "text": "CBC with differential: WBC 5.8, Hgb 12.4, Plt 248. Within normal limits." },
+    { "doc_id": "R7", "date": "2026-04-22", "doc_type": "med_list", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "text": "Started tamoxifen 20 mg daily for ER+ breast cancer. Discussed side effects including VTE risk. Annual gynecologic/oncology follow-up recommended." },
+    { "doc_id": "R8", "date": "2026-04-28", "doc_type": "lab_result", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "text": "Repeat CBC with differential ordered at follow-up visit: WBC 5.9, Hgb 12.5, Plt 251. Within normal limits. No clinical indication documented for repeat at this interval." }
+  ],
+  "events": [
+    { "event_id": "E1", "patient_id": "P-001-maria", "date": "2026-02-10", "event_type": "medication_start", "description": "Metformin 1000 mg twice daily started for T2DM", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "source_doc_id": "R1", "source_span": "Starting metformin 1000 mg twice daily.", "confidence": 0.95, "phase": "Medications", "typed": { "drug_raw": "metformin", "drug_normalized": "metformin", "dose": "1000 mg twice daily", "route": null, "reason": "type 2 diabetes" } },
+    { "event_id": "E2", "patient_id": "P-001-maria", "date": "2026-03-04", "event_type": "consult", "description": "New IDC diagnosis; surgical options discussed", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "source_doc_id": "R2", "source_span": "New diagnosis of invasive ductal carcinoma, left breast, on screening mammogram.", "confidence": 0.96, "phase": "Surgery", "typed": { "specialty": "pcp", "clinician": "Dr. A. Patel", "summary": "New IDC diagnosis", "completed": true } },
+    { "event_id": "E3", "patient_id": "P-001-maria", "date": "2026-03-18", "event_type": "surgery", "description": "Left lumpectomy with sentinel lymph node biopsy", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "source_doc_id": "R3", "source_span": "Underwent left lumpectomy with sentinel lymph node biopsy on 2026-03-18.", "confidence": 0.97, "phase": "Surgery", "typed": { "procedure": "lumpectomy", "site": "left breast", "outcome": "0/2 nodes positive, margins clear" } },
+    { "event_id": "E4", "patient_id": "P-001-maria", "date": "2026-03-25", "event_type": "referral", "description": "Referral to medical oncology for adjuvant therapy evaluation", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "source_doc_id": "R4", "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days.", "confidence": 0.96, "phase": "Oncology", "typed": { "specialty": "oncology", "reason": "adjuvant therapy evaluation", "expected_window_days": 45, "status": "placed" } },
+    { "event_id": "E5", "patient_id": "P-001-maria", "date": "2026-04-18", "event_type": "imaging", "description": "Bilateral diagnostic mammogram and breast ultrasound", "provider": "Regional Imaging Center", "provider_type": "imaging", "source_doc_id": "R5", "source_span": "Bilateral diagnostic mammogram and breast ultrasound for post-surgical baseline.", "confidence": 0.97, "phase": "Radiology", "typed": { "modality": "mammogram", "body_region": "breast", "result_summary": "Post-surgical changes left breast; no suspicious mass or recurrence", "series_status": "unknown" } },
+    { "event_id": "E6", "patient_id": "P-001-maria", "date": "2026-04-20", "event_type": "lab_result", "description": "CBC with differential", "provider": "Metro Lab Services", "provider_type": "lab", "source_doc_id": "R6", "source_span": "CBC with differential: WBC 5.8, Hgb 12.4, Plt 248. Within normal limits.", "confidence": 0.94, "phase": "Labs", "typed": { "test_name_raw": "CBC with differential", "test_name_normalized": "cbc", "value": null, "unit": null, "abnormal": false, "series_status": "unknown" } },
+    { "event_id": "E7", "patient_id": "P-001-maria", "date": "2026-04-22", "event_type": "medication_start", "description": "Tamoxifen 20 mg daily started for ER+ breast cancer", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "source_doc_id": "R7", "source_span": "Started tamoxifen 20 mg daily for ER+ breast cancer.", "confidence": 0.95, "phase": "Medications", "typed": { "drug_raw": "tamoxifen", "drug_normalized": "tamoxifen", "dose": "20 mg daily", "route": null, "reason": "ER+ breast cancer" } },
+    { "event_id": "E8", "patient_id": "P-001-maria", "date": "2026-04-28", "event_type": "lab_result", "description": "Repeat CBC with differential", "provider": "Dr. A. Patel — Primary Care", "provider_type": "pcp", "source_doc_id": "R8", "source_span": "Repeat CBC with differential ordered at follow-up visit: WBC 5.9, Hgb 12.5, Plt 251.", "confidence": 0.94, "phase": "Labs", "typed": { "test_name_raw": "CBC with differential", "test_name_normalized": "cbc", "value": null, "unit": null, "abnormal": false, "series_status": "unknown" } }
+  ],
+  "context_only": {
+    "tamoxifen": {
+      "drug": "tamoxifen",
+      "start_date": "2026-04-22",
+      "window_days": 365,
+      "due_date": "2027-04-22",
+      "days_elapsed": 44,
+      "days_remaining": 321,
+      "state": "pending",
+      "is_gap": false,
+      "note": "365-day window not elapsed; emits pending_monitoring note only. Never a gap before 2027-04-22."
+    }
+  },
+  "gaps": [
+    {
+      "gap_id": "G1",
+      "gap_type": "missed_followup",
+      "severity": "high",
+      "title": "Missed oncology follow-up",
+      "trigger_event_ids": ["E4"],
+      "window_days": 45,
+      "due_date": "2026-05-09",
+      "overdue_days": 27,
+      "evidence": [{ "doc_id": "R4", "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days.", "event_id": "E4" }],
+      "recommended_coordinator_action": "Verify: contact patient and confirm oncology follow-up.",
+      "estimated_impact": "Recovered referral (1)",
+      "priority": {
+        "severity_weight": 1.0,
+        "overdue_factor": 1.45,
+        "evidence_confidence": 0.96,
+        "actionability_weight": 1.0,
+        "gap_type_weight": 1.0,
+        "raw": 1.392,
+        "gap_priority_score": 70,
+        "priority_band": "CRITICAL",
+        "detector_version": "referral_engine_v1",
+        "grounded": true
+      }
+    },
+    {
+      "gap_id": "G2",
+      "gap_type": "duplicate_test",
+      "severity": "low",
+      "title": "Duplicate CBC",
+      "trigger_event_ids": ["E6", "E8"],
+      "window_days": 14,
+      "days_between": 8,
+      "evidence": [
+        { "doc_id": "R6", "quoted_span": "CBC with differential: WBC 5.8, Hgb 12.4, Plt 248. Within normal limits.", "event_id": "E6" },
+        { "doc_id": "R8", "quoted_span": "Repeat CBC with differential ordered at follow-up visit: WBC 5.9, Hgb 12.5, Plt 251.", "event_id": "E8" }
+      ],
+      "recommended_coordinator_action": "Review: reconcile the repeat CBC; confirm no clinical indication.",
+      "estimated_impact": "Duplicate test avoided (1)",
+      "priority": {
+        "severity_weight": 0.3,
+        "overdue_factor": 1.1333333333333333,
+        "evidence_confidence": 0.94,
+        "actionability_weight": 0.75,
+        "gap_type_weight": 0.9,
+        "raw": 0.21569999999999998,
+        "gap_priority_score": 11,
+        "priority_band": "LOW",
+        "detector_version": "duplicate_engine_v1",
+        "grounded": true
+      }
+    },
+    {
+      "gap_id": "G3",
+      "gap_type": "med_monitoring",
+      "severity": "med",
+      "title": "Metformin monitoring overdue (A1c/BMP)",
+      "trigger_event_ids": ["E1"],
+      "window_days": 90,
+      "due_date": "2026-05-11",
+      "overdue_days": 25,
+      "evidence": [{ "doc_id": "R1", "quoted_span": "Starting metformin 1000 mg twice daily. Plan: recheck A1c and BMP in 90 days to assess response and renal function.", "event_id": "E1" }],
+      "recommended_coordinator_action": "Coordinate: confirm A1c/BMP was drawn or schedule with PCP.",
+      "estimated_impact": "Monitoring gap caught (1)",
+      "priority": {
+        "severity_weight": 0.6,
+        "overdue_factor": 1.4166666666666667,
+        "evidence_confidence": 0.95,
+        "actionability_weight": 0.95,
+        "gap_type_weight": 0.97,
+        "raw": 0.7441041666666667,
+        "gap_priority_score": 37,
+        "priority_band": "MEDIUM",
+        "detector_version": "monitoring_engine_v1",
+        "grounded": true
+      }
+    }
+  ],
+  "patient_priority": {
+    "primary_gap_id": "G1",
+    "primary_gap_raw": 1.392,
+    "additional_gap_bonus": 0.096,
+    "patient_raw": 1.488,
+    "patient_priority_score": 74,
+    "priority_band": "CRITICAL"
+  },
+  "ground_truth": [
+    { "patient_id": "P-001-maria", "type": "missed_followup", "source_doc_ids": ["R4"], "expected_window_days": 45, "notes": "Referral to medical oncology 2026-03-25; window elapses 2026-05-09; no oncology consult by 2026-06-05 (27 days overdue)." },
+    { "patient_id": "P-001-maria", "type": "duplicate_test", "source_doc_ids": ["R6", "R8"], "expected_window_days": 14, "notes": "CBC 2026-04-20 and 2026-04-28, 8 days apart, two providers, no documented series intent (series_status unknown)." },
+    { "patient_id": "P-001-maria", "type": "med_monitoring", "source_doc_ids": ["R1"], "expected_window_days": 90, "notes": "Metformin started 2026-02-10; A1c/BMP expected by 2026-05-11; no A1c or BMP resulted by 2026-06-05 (25 days overdue)." }
+  ],
+  "notes": "Numbers changed from the earlier 84/89 draft: with the impossible tamoxifen gap removed, Maria computes to 74 (patient) / 70 (top gap). The frozen contract is field separation, not the literal 84/89."
+}
