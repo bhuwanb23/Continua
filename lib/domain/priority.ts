@@ -17,7 +17,7 @@ export interface GapPriority {
   factors: GapPriorityFactors;
 }
 
-/** The patient's queue rank. Never a clinical risk score. */
+/** The patient's queue rank. Never a clinical risk score. safety-allow: negation */
 export interface PatientInterventionPriority {
   patient_id: string;
   patient_priority_score: number;

@@ -44,7 +44,9 @@ describe("T4 schema validation", () => {
   });
 
   it("rejects a bare priority_score field shape", () => {
-    const { gap_priority_score: _score, ...withoutScore } = validGap;
+    const withoutScore = Object.fromEntries(
+      Object.entries(validGap).filter(([key]) => key !== "gap_priority_score"),
+    );
     const result = GapSchema.safeParse({ ...withoutScore, priority_score: 70 });
     expect(result.success).toBe(false);
   });

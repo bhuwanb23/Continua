@@ -243,56 +243,69 @@ No invented coverage target.
 ## Phase 1 final release checklist
 
 ### Foundation
-- [ ] Runtime frozen
-- [ ] Package manager frozen
-- [ ] Lockfile committed
-- [ ] Repository structure complete
-- [ ] App shell boots
+- [x] Runtime frozen (`docs/build/toolchain.md`)
+- [x] Package manager frozen (npm + `package-lock.json`)
+- [x] Lockfile committed
+- [x] Repository structure complete
+- [x] App shell boots
 
 ### Contracts
-- [ ] P0 domain types implemented
-- [ ] Runtime schemas exist
-- [ ] Version manifest centralized
-- [ ] Gap/patient priorities separated
-- [ ] Claim classifications defined
+- [x] P0 domain types implemented (`lib/domain/`)
+- [x] Runtime schemas exist (`lib/schemas/`, Zod)
+- [x] Version manifest centralized (`lib/domain/versions.ts`)
+- [x] Gap/patient priorities separated (`GapPriority` / `PatientInterventionPriority`)
+- [x] Claim classifications defined (`MEASURED` / `MODELED` / `SCENARIO_ASSUMPTION` / `EXTERNAL_RESEARCH`)
 
 ### Determinism
-- [ ] Fixed clock
-- [ ] Seedable randomness interface
-- [ ] Stable IDs
-- [ ] Fixture aliases separated from UUIDs
-- [ ] Cache version semantics defined
+- [x] Fixed clock (`FixedClock`, 2026-06-05)
+- [x] Seedable randomness interface (`SeededRandomSource`, mulberry32)
+- [x] Stable IDs (SHA-256 → UUID v5 shape)
+- [x] Fixture aliases separated from UUIDs (`fixture_key`)
+- [x] Cache version semantics defined (`assertCacheCompatible`)
 
 ### Engineering
-- [ ] Error hierarchy
-- [ ] Structured logging
-- [ ] Repository interfaces
-- [ ] Extraction interface
-- [ ] Demo cache abstraction
+- [x] Error hierarchy (`lib/errors/`)
+- [x] Structured logging with redaction (`lib/logging/`)
+- [x] Repository interfaces + in-memory/JSON implementations
+- [x] Extraction interface + fixture implementation
+- [x] Demo cache abstraction
 
 ### Quality
-- [ ] lint passes
-- [ ] typecheck passes
-- [ ] tests pass
-- [ ] safety check passes
-- [ ] spec check passes
-- [ ] build passes
-- [ ] CI passes
+- [x] lint passes (0 errors, 0 warnings)
+- [x] typecheck passes (strict, 0 errors)
+- [x] tests pass (37 tests, 9 files)
+- [x] safety check passes
+- [x] spec check passes
+- [x] data + env checks pass
+- [x] build passes (`next build`)
+- [x] CI workflow committed (steps verified locally with `npm run validate`)
 
 ### Safety
-- [ ] synthetic-data banner
-- [ ] no PHI
-- [ ] no secrets
-- [ ] no EHR integration claims
-- [ ] no clinical-risk terminology
-- [ ] no autonomous clinical actions
+- [x] synthetic-data banner (global in `app/layout.tsx`)
+- [x] no PHI (synthetic-only, fixtures are non-clinical)
+- [x] no secrets (`.env*` ignored, redaction, public projection test)
+- [x] no EHR integration claims
+- [x] no clinical-risk terminology (safety scan)
+- [x] no autonomous clinical actions
 
 ### Reproducibility
-- [ ] README setup exact
-- [ ] `.env.example` complete
-- [ ] clean clone tested
-- [ ] ADRs committed
-- [ ] Phase-1 handoff recorded
+- [x] README setup exact
+- [x] `.env.example` complete
+- [x] clean clone tested (`npm ci` + `validate` + `build` in a fresh copy)
+- [x] ADRs committed (ADR-001 … ADR-006)
+- [x] Phase-1 handoff recorded
+
+## Gate results
+
+| Gate | Result |
+|---|---|
+| A — Specification inheritance | PASS |
+| B — Determinism | PASS |
+| C — Testability | PASS |
+| D — Repository health (`npm run validate`) | PASS |
+| E — Build (`npm run build`) | PASS |
+| F — Clean clone | PASS |
+| G — Safety baseline | PASS |
 
 ## Exit condition
 
@@ -303,3 +316,13 @@ If yes, stamp: `CONTINUA PHASE 1: ENGINEERING FOUNDATION FROZEN`.
 ## Handoff to Phase 2
 
 Phase 2 receives: stable IDs, fixed clock, seedable randomness, runtime schemas, repository/storage interfaces, tests, CI — and builds the 80-patient synthetic dataset, 400–600 messy cross-provider documents, planted positives, adversarial negatives, deterministic manifests, and data-quality gates. Phase 2 should not need to solve project tooling.
+
+---
+
+## Status
+
+**CONTINUA PHASE 1: ENGINEERING FOUNDATION FROZEN**
+
+Frozen 2026-11-17. All seven gates (A–G) pass. Clean-clone reproduction was verified with `npm ci` + `npm run validate` + `npm run build` in a fresh copy of the repository.
+
+Known limitation: `npm audit` could not run in the local environment because the npm registry is configured over plaintext HTTP (the audit endpoint returned 426). The CI workflow runs it against HTTPS. No advisory result was observed locally; this is an environment limitation, not a clean audit.
