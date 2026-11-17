@@ -26,10 +26,12 @@ This folder contains the **Ideation Validation** outputs — five stress-tests o
 
 5. **The name should evoke the moment, not the mechanism.** (naming-sprint) "Continuity Workbench" describes how it works. Names like **Catch, Continua, Triage, CloseLoop, Lumen** evoke what it *does*. Test any name in the sentence: *"____ found what Sarah missed in 8 seconds."*
 
-## Decision Gate (user's call)
+## Decision Gate — RESOLVED (2026-11-17)
 
-- **Option A — Lock AI Continuity Workbench** and move to Architecture. Viable only if we add (a) the wow moment, (b) a technical-depth signal (eval/grounding), and (c) a quantified leakage metric.
-- **Option B — Pivot** to a stronger healthcare concept (e.g., Referral Radar, Oncology Navigator, Discharge Bridge) before spending engineering effort. Best if optimizing for a single judge's strength.
-- **Option C — Hybridize** two ideas into a stronger version. Recommended by the synthesis: Continuity Workbench's prioritized queue + Referral Intelligence's quantified leakage metric + Oncology's emotional depth + the "wow" moment + a brandable name (Catch / Continua / Triage / CloseLoop / Lumen).
+**Decision: Option C — Oncology Continuity Workbench.** Formalized in `research/architecture/README.md` (Decision Lock) and the rest of `research/architecture/`.
 
-**The next authorized step (once you choose A/B/C):** Architecture & build planning — scaffold the project skeleton and build the 90-second demo path first. No code has been written.
+- Option A (Generic Continuity Workbench): rejected for hackathon — too broad, weaker demo moment, harder ROI metric.
+- Option B (Referral Radar): absorbed as the ROI/leakage-metric layer inside Option C.
+- Option C (Oncology Continuity Workbench): **LOCKED.** Continuity Workbench architecture + Referral Intelligence's quantified leakage metric + Oncology's emotional depth + the "wow" moment + working name "Continua."
+
+**Architecture & Product Planning is now complete.** Build is the next authorized step. No code has been written yet.
