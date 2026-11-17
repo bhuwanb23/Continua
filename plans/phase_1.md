@@ -1,113 +1,305 @@
 # Phase 1 — Repository & Engineering Foundation
 
-> Depends on: Phase 0 (frozen contracts) · Unblocks: Phase 2 (dataset)
-> Gate: **clean clone boots, lints, typechecks, and tests pass**
+> Depends on: Phase 0 (frozen contracts) · Unblocks: Phase 2 (synthetic dataset)
+> Gate: **clean clone installs, validates, lints, typechecks, tests, builds, and boots**
 
-## Objective
+Phase 0 freezes what Continua means. Phase 1 builds the engineering substrate that makes every later phase reproducible: a clean clone must install, validate configuration, generate/use seeded fixtures, run tests, and start the application without tribal knowledge.
 
-Create the skeleton once, and keep it boring. No product decisions here, no UI polish. The only goal is that a stranger (or a judge) can clone, install, and run a green pipeline shell without reading your mind.
+## Phase mission
+
+Build a deterministic, typed, testable, reproducible engineering foundation on which the intelligence engine can be implemented without changing product contracts.
+
+**Phase 1 does not implement care-gap intelligence.** It establishes repository architecture, application skeleton, package/version policy, TypeScript contracts, environment configuration, testing infrastructure, deterministic IDs/time/randomness, logging/error conventions, demo-cache interfaces, CI gates, deployment skeleton, documentation, and clean-clone reproducibility.
+
+## Definition of Done
+
+A developer with only the repository and README can: clone → install → create `.env.local` from template → run validation → run lint/typecheck/tests → start the application → open the local Continua shell, without asking the original developer anything.
+
+The phase passes only when all of the following hold:
+
+- Clean install succeeds.
+- Next.js application starts.
+- Strict TypeScript passes with zero errors.
+- ESLint passes.
+- Unit-test runner passes.
+- Environment variables are schema-validated.
+- No secret exists in Git.
+- Frozen Phase 0 types have code representations.
+- All clocks are injectable.
+- Randomness is seedable.
+- Stable IDs are reproducible.
+- API error contract exists centrally.
+- Clinical disclaimer exists centrally.
+- Fixture/demo-cache interfaces exist.
+- No real clinical intelligence has accidentally been implemented.
+- CI executes mandatory checks.
+- Production build succeeds.
+- Fresh-clone reproduction passes.
+
+## Non-goals (explicitly NOT Phase 1)
+
+Synthetic 80-patient dataset · LLM extraction · clinical extraction prompts · gap detectors · medication-monitoring rules · evidence verifier · priority formula · benchmark execution · Supabase production schema · polished dashboard · Maria's visual timeline · EHR/FHIR integration · authentication · patient portal · real PHI · OpenAI calls · clinical interpretation.
+
+**Stub interfaces are allowed. Business logic is not.**
+
+## Repository layout (this repo)
+
+The app lives at the repository root (alongside the frozen `docs/spec/` and `data/spec/`). The conceptual `continua/` root in the source brief maps here.
+
+```
+app/                 api/, patients/, evaluation/, methodology/, layout.tsx, page.tsx, globals.css
+components/          ui/, layout/, queue/, patient/, evidence/, shared/
+lib/
+  domain/            patient, record, clinical-event, gap, evidence, priority, evaluation, api, versions, claim
+  schemas/           Zod schemas for P0 boundaries
+  extraction/        ClinicalEventExtractor interface + fixture impl
+  normalization/     (placeholder)
+  detectors/         (placeholder)
+  evidence/          (placeholder)
+  priority/          (placeholder)
+  evaluation/        (placeholder)
+  repositories/      interfaces + in-memory/json
+  cache/             demo-cache contract
+  config/            env.ts
+  logging/           logger.ts
+  errors/            AppError hierarchy
+  time/              clock.ts
+  ids/               deterministic ids + fixture keys
+  random/            RandomSource + seeded mulberry32
+  safety/            disclaimer + forbidden-term checks
+data/
+  spec/              Phase-0 artifacts (frozen)
+  synthetic/         placeholder
+  eval-set/          placeholder
+  fixtures/          minimal non-clinical fixtures
+  demo-cache/        placeholder
+scripts/             validate-spec.ts, validate-data.ts, validate-env.ts, check-safety.ts, verify-determinism.ts
+tests/               unit/, contract/, integration/, fixtures/, e2e/
+docs/                spec/, architecture/, development/, decisions/, build/
+.github/workflows/   ci.yml
+.env.example · .gitignore · package.json · tsconfig.json · README.md
+```
 
 ## Sub-phases
 
-### 1.1 Stack scaffold
+| Subphase | Workstream | Result |
+|---|---|---|
+| 1.0 | Preconditions | Phase 0 freeze verified |
+| 1.1 | Toolchain | Runtime/package baseline + lockfile |
+| 1.2 | Repository | Canonical tree |
+| 1.3 | Next.js shell | Runnable application |
+| 1.4 | TypeScript | Strict type boundary |
+| 1.5 | Domain contracts | Phase-0 specs represented in code |
+| 1.6 | Runtime schemas | Zod validation at P0 boundaries |
+| 1.7 | Environment | Validated configuration |
+| 1.8 | Determinism | Clock, IDs, randomness |
+| 1.9 | Logging/errors | Shared operational semantics |
+| 1.10 | Data abstraction | Repository/cache contracts |
+| 1.11 | AI boundary | Provider-independent extractor interface |
+| 1.12 | Testing | Test pyramid foundation |
+| 1.13 | Fixtures | Synthetic-only fixture conventions |
+| 1.14 | Quality gates | lint/typecheck/build/test |
+| 1.15 | Safety checks | Prohibited-term + spec validators |
+| 1.16 | CI | Automated validation |
+| 1.17 | Security baseline | Secret/PHI/dependency safeguards |
+| 1.18 | Deployment | Production build + Vercel-ready skeleton |
+| 1.19 | Documentation | Clean-clone developer experience + ADRs |
+| 1.20 | Acceptance gate | Foundation frozen |
 
-- Next.js (App Router) + TypeScript strict mode.
-- Tailwind CSS configured, no custom design system yet.
-- Supabase client wrapper (project creation can wait until Phase 10; the interface must exist now).
-- LLM client abstraction (`lib/llm/`) with one provider implemented and a `MockProvider` for tests.
-- Vercel project linked; preview deploy works from `main`.
+### 1.0 Preconditions
 
-**Output:** repo boots with `npm run dev`, deploys a blank shell.
+Verify `docs/spec/` + `data/spec/` exist, contradiction register has 0 OPEN / 0 PROPOSED, and the version constants are present. If not, stop.
 
-### 1.2 Directory structure
+### 1.1 Runtime & toolchain
 
-Create exactly this, even if folders are empty with `.gitkeep`:
+- Node.js LTS (24.x), npm (lockfile authoritative: `package-lock.json`).
+- Next.js + React + TypeScript + Tailwind CSS + Zod + Vitest + ESLint.
+- `package.json` scripts: `dev`, `build`, `start`, `lint`, `typecheck`, `test`, `test:watch`, `test:e2e`, `validate`.
+- `npm run validate` = lint + typecheck + unit/contract tests + spec/data/safety checks.
+- `docs/build/toolchain.md` records exact versions.
 
-```
-app/
-components/
-lib/
-  llm/
-  extraction/
-  normalization/
-  detectors/
-  evidence/
-  priority/
-  eval/
-  types/
-data/
-  synthetic/
-  eval-set/
-  demo-cache/
-scripts/
-tests/
-docs/
-```
+### 1.2 Repository architecture
 
-**Rule:** no file outside this layout without a one-line justification in the PR/commit.
+Create the tree above; empty future directories carry `.gitkeep`.
 
-### 1.3 Engineering gates (local CI)
+### 1.3 Application shell
 
-- `npm run lint` — ESLint, zero warnings policy for new code.
-- `npm run typecheck` — `tsc --noEmit`, strict.
-- `npm run test` — Vitest (or Jest), one trivial passing test so the gate is real.
-- `npm run check` — runs all three in sequence.
+Pages `/`, `/patients`, `/evaluation`, `/methodology` with controlled placeholders. Global banner: **"Synthetic demo data. No real patient information. For coordinator verification only."** No final queue. Gate: pages load, navigation works, no console errors, banner visible.
 
-**Output:** a single command that must be green before any phase gate is claimed.
+### 1.4 Strict TypeScript
 
-### 1.4 Environment validation
+`strict`, `noImplicitAny`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitReturns`. No `any` for domain models; use `unknown` at boundaries + validation.
 
-- `.env.example` with `OPENAI_API_KEY`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `DEMO_MODE`.
-- `lib/env.ts` validates at boot and fails loudly with an actionable message.
-- Read-only/demo mode must start with **no** `OPENAI_API_KEY` (needed for Phase 10).
-- `.env` gitignored; no secrets in repo ever.
+### 1.5 Domain contracts
 
-### 1.5 Determinism harness
+`lib/domain/` — `Patient`, `Record`, `ClinicalEvent`, `Gap`, `Evidence`, `GapPriority`, `PatientInterventionPriority`, `EvalResult`, `ApiError`, `VersionMetadata`, `ClaimClass`. Exactly three `GapType`s, four `PriorityBand`s, frozen `EventType`s. No component-local enums. No `RiskScore`. No ambiguous `priorityScore`.
 
-- `lib/util/prng.ts` — seeded PRNG (e.g. mulberry32) used by all generators.
-- `scripts/verify-determinism.ts` — regenerates artifacts twice and diffs them.
-- Fixed default seed recorded in `scripts/config.ts`.
+### 1.6 Runtime schema validation
 
-**Output:** "same seed → byte-identical output" is a testable claim from day one.
+Zod schemas: `ClinicalEventSchema`, `GapSchema`, `EvidenceSchema`, `EvalResultSchema`, `ApiErrorSchema`, `VersionMetadataSchema`. Validation only, no clinical logic.
 
-### 1.6 Shared types package
+### 1.7 Environment configuration
 
-- `lib/types.ts` — `GapType`, `PriorityBand`, `EventType`, `Patient`, `Record`, `TimelineEvent`, `Gap`, `QueueItem`, `Metrics`, `EvalReport`.
-- Types derived from `research/build-readiness/api-contracts.md` § Types — do not invent shapes here.
+`.env.example` + `lib/config/env.ts` (Zod). All access through the validator; no scattered `process.env.X`. Secrets (`KEY`/`SECRET`/`TOKEN`/`PASSWORD`) never use `NEXT_PUBLIC_`. Demo/cached mode boots without an LLM key; a missing key on a live path throws `ConfigError: LLM provider not configured.`
 
-### 1.7 Repo hygiene
+### 1.8 Determinism
 
-- README stub with: what this is, how to run, synthetic-data disclaimer.
-- `.gitignore`, `.nvmrc`/`engines`, license note.
-- Branch convention (`main` protected by habit, not by tooling) and commit style noted in `docs/CONTRIBUTING.md`.
+- `Clock` interface, `SystemClock`, `FixedClock` (benchmark date `2026-06-05`).
+- `RandomSource` interface + `SeededRandomSource` (mulberry32).
+- Deterministic IDs derived from stable inputs (UUID v5-style / SHA-256); human fixture keys (`P-001-maria`, `R4`) separate from machine UUIDs.
+- Gate: same fixture/ID operation twice → identical identifiers.
 
-## Deliverables
+### 1.9 Logging & errors
 
-| Artifact | Exists when |
+Structured logger (`timestamp`, `level`, `request_id`, `stage`, optional `patient_id`/`duration_ms`/`version`, `message`); never logs secrets/PHI. `AppError` hierarchy (`ConfigError`, `ValidationError`, `NotFoundError`, `PipelineError`, `DataIntegrityError`, `GroundingError`) mapping to `{ error: { code, message } }` without stack traces/prompts/secrets.
+
+### 1.10 Persistence & repository interfaces
+
+`PatientRepository`, `RecordRepository`, `TimelineRepository`, `GapRepository`, `EvaluationRepository`, `DemoCacheRepository`; Phase 1 implementations: in-memory and JSON-file.
+
+### 1.11 Demo cache contract
+
+Cached artifact types for panel, patients, records, timelines, gaps, queue, impact, evaluation, carrying `cache_version`, `dataset_version`, `detector_version`, `priority_version`, `generated_at`. Stale cache on version mismatch is detectable and rejected.
+
+### 1.12 AI provider boundary
+
+`ClinicalEventExtractor` interface (input: synthetic record(s); output: validated extraction result). `FixtureClinicalEventExtractor` for deterministic tests. No LLM implementation in Phase 1.
+
+### 1.13 Test foundation
+
+Vitest: `tests/unit`, `tests/contract`, `tests/integration`. Playwright config stub for later E2E. Test matrix T1–T10:
+
+| ID | Test |
 |---|---|
-| `package.json` with `lint` / `typecheck` / `test` / `check` | scripts run green |
-| `lib/env.ts` | boot fails clearly on missing config |
-| `lib/types.ts` | imports compile across `lib/` |
-| `lib/util/prng.ts` | determinism script passes |
-| Vercel preview | URL loads shell |
+| T1 | demo mode + no LLM key → app config boots |
+| T2 | FixedClock → `2026-06-05` |
+| T3 | same inputs twice → same UUID |
+| T4 | invalid `GapType` → schema validation fails |
+| T5 | unknown resource → structured 404 via error contract |
+| T6 | server secret never exposed through public config |
+| T7 | synthetic-data disclaimer present globally |
+| T8 | version manifest validates |
+| T9 | cache artifact with incompatible version is rejected |
+| T10 | forbidden terminology check catches `risk_level` / "clinical risk score" |
 
-## Gate — exit criteria
+### 1.14 Quality gates
 
-- [ ] Fresh clone → `npm install` → `npm run check` passes with zero manual steps.
-- [ ] App boots without `OPENAI_API_KEY` (demo mode).
-- [ ] App boots **with** a key and the mock provider is selectable by env.
-- [ ] Determinism script produces identical output on two consecutive runs.
-- [ ] No secret, no real patient data, no vendor SDK beyond the approved stack.
-- [ ] `lib/types.ts` matches the frozen API contract field names exactly (`patient_priority_score`, `gap_priority_score`).
+`lint` (ESLint), `typecheck` (`tsc --noEmit`), `test` (Vitest), `build` (Next production). `validate` chains lint + typecheck + tests + spec/data/safety checks.
 
-## Risks & anti-patterns
+### 1.15 Safety static checks
 
-| Risk | Mitigation |
+`scripts/check-safety.ts` flags prohibited claims (diagnoses, recommends treatment, clinically validated, connects to Epic, patient risk score, orders medication) with a small documentation allowlist.
+
+### 1.16 CI
+
+`.github/workflows/ci.yml`: install exact deps → lint → typecheck → tests → spec/data/safety checks → production build. No deploy on failed validation.
+
+### 1.17 Security baseline
+
+`.env*` ignored except `.env.example`; secret-pattern scan (`api_key`, `Bearer`, `sk-`, `password`, `MRN`, `SSN`); dependency audit; no hardcoded credentials; no external healthcare connections; no telemetry containing record text; server-only LLM secrets.
+
+### 1.18 Deployment skeleton
+
+Production build succeeds; `/` loads; demo mode configurable; no required external data service for the shell. Vercel-ready (`next build` output).
+
+### 1.19 Documentation + ADRs
+
+README (problem, what Continua does, safety, architecture, setup, env table, testing, spec link, current status). ADR-001 … ADR-006 (hybrid AI+deterministic reasoning, synthetic-only data, fixed benchmark clock, deterministic demo cache, separate gap/patient priority, no EHR in MVP).
+
+### 1.20 Acceptance gate
+
+Gates A–G (spec inheritance, determinism, testability, repository health, build, clean clone, safety) all PASS. Stamp `CONTINUA PHASE 1: ENGINEERING FOUNDATION FROZEN`.
+
+## Phase 1 benchmarks (engineering quality)
+
+| Metric | Required |
 |---|---|
-| Adding libraries "for later" | Only Next.js, Tailwind, one LLM SDK, one DB client, one test runner. Anything else needs a reason. |
-| Schema drift between types and contracts | Types are transcribed from the contract file; a test asserts the field names exist. |
-| Environment friction on another machine | Test setup on a second clean directory before leaving this phase. |
+| TypeScript errors | 0 |
+| Lint errors | 0 |
+| Failing Phase-1 tests | 0 |
+| Production build failures | 0 |
+| Required external services for tests | 0 |
+| Required LLM calls for tests | 0 |
+| Exposed secrets | 0 |
+| Real PHI records | 0 |
+| Undefined P0 enum duplication | 0 |
+| Reproducible deterministic-ID tests | 100% |
+| Clean-clone setup success | 100% |
+| Safety/disclaimer checks | 100% |
+| CI required checks green | 100% |
+
+No invented coverage target.
+
+## Failure modes to avoid
+
+1. Building the UI because it feels productive.
+2. Implementing LLM calls early.
+3. Tight coupling to Supabase.
+4. Using the system clock in clinical paths.
+5. Duplicate domain models.
+6. Fake production architecture (Kafka/K8s/microservices/Redis).
+7. Premature HIPAA claims.
+
+## Phase 1 final release checklist
+
+### Foundation
+- [ ] Runtime frozen
+- [ ] Package manager frozen
+- [ ] Lockfile committed
+- [ ] Repository structure complete
+- [ ] App shell boots
+
+### Contracts
+- [ ] P0 domain types implemented
+- [ ] Runtime schemas exist
+- [ ] Version manifest centralized
+- [ ] Gap/patient priorities separated
+- [ ] Claim classifications defined
+
+### Determinism
+- [ ] Fixed clock
+- [ ] Seedable randomness interface
+- [ ] Stable IDs
+- [ ] Fixture aliases separated from UUIDs
+- [ ] Cache version semantics defined
+
+### Engineering
+- [ ] Error hierarchy
+- [ ] Structured logging
+- [ ] Repository interfaces
+- [ ] Extraction interface
+- [ ] Demo cache abstraction
+
+### Quality
+- [ ] lint passes
+- [ ] typecheck passes
+- [ ] tests pass
+- [ ] safety check passes
+- [ ] spec check passes
+- [ ] build passes
+- [ ] CI passes
+
+### Safety
+- [ ] synthetic-data banner
+- [ ] no PHI
+- [ ] no secrets
+- [ ] no EHR integration claims
+- [ ] no clinical-risk terminology
+- [ ] no autonomous clinical actions
+
+### Reproducibility
+- [ ] README setup exact
+- [ ] `.env.example` complete
+- [ ] clean clone tested
+- [ ] ADRs committed
+- [ ] Phase-1 handoff recorded
+
+## Exit condition
+
+Do not evaluate Phase 1 on how much Continua visually does. The product may still appear almost empty, and that is correct. The real test: **can we implement the entire intelligence stack on top of this repository without changing fundamental types, clocks, IDs, configuration, test infrastructure, error semantics, or module boundaries?**
+
+If yes, stamp: `CONTINUA PHASE 1: ENGINEERING FOUNDATION FROZEN`.
 
 ## Handoff to Phase 2
 
-Phase 2 uses `lib/util/prng.ts` for generation and `lib/types.ts` for shape. Nothing else from Phase 1 should be touched.
+Phase 2 receives: stable IDs, fixed clock, seedable randomness, runtime schemas, repository/storage interfaces, tests, CI — and builds the 80-patient synthetic dataset, 400–600 messy cross-provider documents, planted positives, adversarial negatives, deterministic manifests, and data-quality gates. Phase 2 should not need to solve project tooling.
