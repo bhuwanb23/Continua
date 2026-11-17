@@ -101,3 +101,10 @@ The "universal healthcare platform" idea was rejected as a 10-year industry prob
 ### Risk to watch
 - Real exchanged data is messy (C-CDA/PDF, duplicates, missing). Lean into it: messy input is the point; AI cleaning it is the value. Use synthetic but realistic messy inputs.
 - "Is this just a summary tool?" → No: it's a decision-support system converting messy cross-provider info into actionable recommendations with measurable financial impact. Summary is the delivery mechanism; care-gap detection + recommendation is the value.
+
+### v2 Refinement (locked in `research/refine/refine-stage.md`)
+- v1 above is patient-level synthesis; v2 reframes as **coordinator-level prioritization**: "Of my 80 patients, which 5 need me TODAY, why, and what should I do?"
+- Primary user locked: **Care Coordinator** (not physician/hospital/patient).
+- Three gaps only: missed specialist follow-up · duplicate testing · medication monitoring gap.
+- Product name is a *working thesis* only ("AI Continuity Workbench for Care Coordinators"); the locked asset is the problem space, not the label.
+- See `research/refine/refine-stage.md` for the full locked demo, ROI metrics, scope guardrails, and differentiation answer.
