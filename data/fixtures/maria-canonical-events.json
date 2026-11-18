@@ -1,0 +1,323 @@
+{
+  "schema_version": "clinical-event-v1",
+  "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+  "fixture_key": "P-001-maria",
+  "metadata": {
+    "clinical_event_schema": "clinical-event-v1",
+    "normalization_version": "normalization-v1",
+    "extractor_version": "truth-events-v1"
+  },
+  "events": [
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "f928b6e6-1dc7-5219-8b56-b940527ee6ea",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "Primary care follow-up for diabetes",
+      "source": {
+        "source_doc_id": "925b8102-db65-594a-84c9-093c3e28bc76",
+        "source_span": "54F with type 2 diabetes, A1c 8.1%.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.95,
+      "normalization_version": "normalization-v1",
+      "event_type": "consult",
+      "typed": {
+        "specialty_raw": "primary_care",
+        "specialty_normalized": "primary_care",
+        "mode": "unknown",
+        "completion_status": "completed"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "00e5d6c8-ab1a-5aa7-8ed6-59b9adebc3bc",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "Metformin 1000 mg twice daily started",
+      "source": {
+        "source_doc_id": "925b8102-db65-594a-84c9-093c3e28bc76",
+        "source_span": "Starting metformin 1000 mg twice daily.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.95,
+      "normalization_version": "normalization-v1",
+      "event_type": "medication_start",
+      "typed": {
+        "drug_raw": "metformin",
+        "drug_normalized": "metformin",
+        "dose": "1000 mg twice daily",
+        "reason": "type 2 diabetes"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "be7f80b5-d06b-53a2-bde0-a0efd6c2fb20",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "New IDC diagnosis; surgical options discussed",
+      "source": {
+        "source_doc_id": "d47d9ede-8f1a-5b0f-ba59-3249aeddc57e",
+        "source_span": "New diagnosis of invasive ductal carcinoma, left breast, on screening mammogram.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.96,
+      "normalization_version": "normalization-v1",
+      "event_type": "consult",
+      "typed": {
+        "specialty_raw": "primary_care",
+        "specialty_normalized": "primary_care",
+        "mode": "unknown",
+        "completion_status": "completed"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "d2d6a71b-d380-594a-ae08-e0b165cf3296",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "provider_id": "df85db94-8eb4-559b-a419-74ac8cd419e2",
+      "provider_display": "Dr. Teresa Vaughn",
+      "provider_type": "specialist",
+      "description": "Left lumpectomy with sentinel lymph node biopsy",
+      "source": {
+        "source_doc_id": "f66fb0f1-17e7-512a-ab3b-c6f6b3ac5cf7",
+        "source_span": "Underwent left lumpectomy with sentinel lymph node biopsy on 2026-03-18.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.97,
+      "normalization_version": "normalization-v1",
+      "event_type": "surgery",
+      "typed": {
+        "procedure_raw": "lumpectomy",
+        "procedure_normalized": "lumpectomy",
+        "site": "left breast"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "a80089cc-f2d9-5b8e-9aca-a4dc918c43c5",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "Referral to medical oncology for adjuvant therapy evaluation",
+      "source": {
+        "source_doc_id": "e86df95a-6952-5f96-a276-5c3c7f4f3395",
+        "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.96,
+      "normalization_version": "normalization-v1",
+      "event_type": "referral",
+      "typed": {
+        "specialty_raw": "oncology",
+        "specialty_normalized": "oncology",
+        "reason": "adjuvant therapy evaluation",
+        "expected_window_days": 45,
+        "window_source": "document",
+        "status": "placed"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "46e47348-63e9-5357-aa3b-7a31d932a381",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-04-18",
+      "date_precision": "day",
+      "provider_id": "a33e2451-534f-565f-a3a0-1bc159517954",
+      "provider_display": "Cedar Ridge Imaging",
+      "provider_type": "imaging",
+      "description": "Bilateral diagnostic mammogram and breast ultrasound",
+      "source": {
+        "source_doc_id": "20eaf734-05ca-5b27-a969-4b860da5750f",
+        "source_span": "Bilateral diagnostic mammogram and breast ultrasound for post-surgical baseline.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.97,
+      "normalization_version": "normalization-v1",
+      "event_type": "imaging",
+      "typed": {
+        "modality_raw": "mammogram",
+        "modality_normalized": "mammogram",
+        "body_region_raw": "breast",
+        "body_region_normalized": "breast",
+        "series_status": "unknown"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "0fbaa1ec-8984-5c2f-a47e-dab0a7fcd121",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "provider_id": "1aa7921c-a6ca-5e90-8d19-55bd7437ddc2",
+      "provider_display": "Metro Lab Services",
+      "provider_type": "lab",
+      "description": "CBC with differential",
+      "source": {
+        "source_doc_id": "53636809-5946-57b5-9d2d-2d145222c24d",
+        "source_span": "CBC with differential: WBC 5.8, Hgb 12.4, Plt 248. Within normal limits.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.94,
+      "normalization_version": "normalization-v1",
+      "event_type": "lab_result",
+      "typed": {
+        "test_name_raw": "CBC with differential",
+        "test_code_normalized": "cbc",
+        "series_status": "unknown"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "e906aaa3-ff0b-5cca-9a06-4e30afdb947a",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "Tamoxifen 20 mg daily started",
+      "source": {
+        "source_doc_id": "33a26ee7-a0c0-5367-9207-8b53fe7aa245",
+        "source_span": "Started tamoxifen 20 mg daily for ER+ breast cancer.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.95,
+      "normalization_version": "normalization-v1",
+      "event_type": "medication_start",
+      "typed": {
+        "drug_raw": "tamoxifen",
+        "drug_normalized": "tamoxifen",
+        "dose": "20 mg daily",
+        "reason": "ER+ breast cancer"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "bea5e300-8da3-5d22-af5b-e11927623e2b",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "Repeat CBC with differential",
+      "source": {
+        "source_doc_id": "666e404a-9e5d-5d8d-a1ee-1be97d8fe67f",
+        "source_span": "Repeat CBC with differential ordered at follow-up visit: WBC 5.9, Hgb 12.5, Plt 251. Within normal limits. No clinical indication documented for repeat at this interval.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.94,
+      "normalization_version": "normalization-v1",
+      "event_type": "lab_result",
+      "typed": {
+        "test_name_raw": "CBC with differential",
+        "test_code_normalized": "cbc",
+        "series_status": "unknown"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "17f13e6b-3d70-5ae7-ac5d-f0b44171d34b",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-05-02",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "Primary care follow-up",
+      "source": {
+        "source_doc_id": "f1c055ab-8330-5b8e-892b-08c6ed0c8763",
+        "source_span": "Primary care follow-up.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.95,
+      "normalization_version": "normalization-v1",
+      "event_type": "consult",
+      "typed": {
+        "specialty_raw": "primary_care",
+        "specialty_normalized": "primary_care",
+        "mode": "unknown",
+        "completion_status": "completed"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "eea562d7-a3a6-50a1-b3f0-add56f4c8411",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "provider_id": "d3f82e9c-c8c5-5b99-97ed-808d4eec766c",
+      "provider_display": "Dr. Lena Ortiz",
+      "provider_type": "pcp",
+      "description": "Routine phone follow-up",
+      "source": {
+        "source_doc_id": "2460462e-dbe9-5dbd-8d87-b092b02f6d6f",
+        "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.95,
+      "normalization_version": "normalization-v1",
+      "event_type": "followup",
+      "typed": {
+        "topic": "routine",
+        "mode": "unknown",
+        "status": "completed"
+      }
+    },
+    {
+      "schema_version": "clinical-event-v1",
+      "event_id": "b5bd952e-ac34-5fbe-959d-f93635575c03",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "date": "2026-05-08",
+      "date_precision": "day",
+      "provider_id": "1aa7921c-a6ca-5e90-8d19-55bd7437ddc2",
+      "provider_display": "Metro Lab Services",
+      "provider_type": "lab",
+      "description": "Thyroid stimulating hormone",
+      "source": {
+        "source_doc_id": "648f3dd7-6f49-5fc3-9ca9-d4f769e5d9b8",
+        "source_span": "TSH: 2.1 mIU/L.",
+        "verification_method": "exact",
+        "verification_score": 1
+      },
+      "extraction_confidence": 0.94,
+      "normalization_version": "normalization-v1",
+      "event_type": "lab_result",
+      "typed": {
+        "test_name_raw": "TSH",
+        "test_code_normalized": "tsh",
+        "series_status": "unknown"
+      }
+    }
+  ],
+  "event_hash": "aa66b042cf41294b68535b0a359fc056e253a4f518947ff19b4903807ca7e013"
+}

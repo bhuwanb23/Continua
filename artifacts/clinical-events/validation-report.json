@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "schema_version": "clinical-event-v1",
+  "normalization_version": "normalization-v1",
+  "truth_events": 484,
+  "accepted_events": 484,
+  "rejected_events": 0,
+  "extraction_gold_events": 130,
+  "extraction_gold_representable": 130,
+  "rejection_counts": {},
+  "event_hash": "2c0f59f87bf8162d69c6ea08716e5bce7cd970a3966d25819ab5eb2f5f02dfd6",
+  "rejected": []
+}
