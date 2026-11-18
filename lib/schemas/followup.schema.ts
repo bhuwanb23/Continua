@@ -1,0 +1,1 @@
+export { FollowupPayloadSchema } from "./index";

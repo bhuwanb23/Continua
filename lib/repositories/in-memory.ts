@@ -1,5 +1,5 @@
 import type {
-  ClinicalEvent,
+  CanonicalClinicalEvent,
   EvalResult,
   Gap,
   Patient,
@@ -14,6 +14,7 @@ import type {
   RecordRepository,
   TimelineRepository,
 } from "./types";
+import { sortClinicalEvents } from "@/lib/clinical-events";
 
 export class InMemoryPatientRepository implements PatientRepository {
   private readonly patients = new Map<string, Patient>();
@@ -42,10 +43,10 @@ export class InMemoryRecordRepository implements RecordRepository {
 }
 
 export class InMemoryTimelineRepository implements TimelineRepository {
-  constructor(private readonly events: ClinicalEvent[] = []) {}
+  constructor(private readonly events: CanonicalClinicalEvent[] = []) {}
 
-  async listByPatient(patientId: string): Promise<ClinicalEvent[]> {
-    return this.events.filter((event) => event.patient_id === patientId);
+  async listByPatient(patientId: string): Promise<CanonicalClinicalEvent[]> {
+    return sortClinicalEvents(this.events.filter((event) => event.patient_id === patientId));
   }
 }
 

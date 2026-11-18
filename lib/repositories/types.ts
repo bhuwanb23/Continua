@@ -1,5 +1,5 @@
 import type {
-  ClinicalEvent,
+  CanonicalClinicalEvent,
   EvalResult,
   Gap,
   Patient,
@@ -17,7 +17,7 @@ export interface RecordRepository {
 }
 
 export interface TimelineRepository {
-  listByPatient(patientId: string): Promise<ClinicalEvent[]>;
+  listByPatient(patientId: string): Promise<CanonicalClinicalEvent[]>;
 }
 
 export interface GapRepository {

@@ -5,6 +5,8 @@ export const EXTRACTOR_VERSION = "extractor-v1" as const;
 export const DETECTOR_VERSION = "gaps-v1" as const;
 export const PRIORITY_VERSION = "priority-v1" as const;
 export const API_VERSION = "v1" as const;
+export const CLINICAL_EVENT_SCHEMA_VERSION = "clinical-event-v1" as const;
+export const NORMALIZATION_VERSION = "normalization-v1" as const;
 
 /**
  * Frozen benchmark clock. Clinical rules must never call `new Date()` directly.
@@ -19,6 +21,8 @@ export interface VersionMetadata {
   detector_version: string;
   priority_version: string;
   api_version: string;
+  clinical_event_schema: string;
+  normalization_version: string;
 }
 
 export const VERSION_METADATA: VersionMetadata = {
@@ -29,4 +33,6 @@ export const VERSION_METADATA: VersionMetadata = {
   detector_version: DETECTOR_VERSION,
   priority_version: PRIORITY_VERSION,
   api_version: API_VERSION,
+  clinical_event_schema: CLINICAL_EVENT_SCHEMA_VERSION,
+  normalization_version: NORMALIZATION_VERSION,
 };

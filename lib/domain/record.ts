@@ -7,6 +7,7 @@ export const DOC_TYPES = [
   "imaging_report",
   "medication_list",
   "discharge_summary",
+  "followup",
   "other",
 ] as const;
 

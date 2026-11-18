@@ -1,4 +1,5 @@
 import type { ExtractionResult, SourceRecord } from "@/lib/domain";
+import { canonicalizeClinicalEvents } from "@/lib/clinical-events";
 
 export interface ExtractionInput {
   records: SourceRecord[];
@@ -22,7 +23,21 @@ export class FixtureClinicalEventExtractor implements ClinicalEventExtractor {
     this.version = result.extractor_version;
   }
 
-  async extract(_input: ExtractionInput): Promise<ExtractionResult> {
-    return this.result;
+  async extract(input: ExtractionInput): Promise<ExtractionResult> {
+    const patientId = input.records[0]?.patient_id;
+    if (!patientId) return { ...this.result, events: [] };
+    const canonical = canonicalizeClinicalEvents(this.result.events, {
+      patient_id: patientId,
+      records: input.records,
+      extractor_version: this.version,
+    });
+    return {
+      ...this.result,
+      events: canonical.accepted,
+      extraction_confidence:
+        canonical.accepted.length === 0
+          ? this.result.extraction_confidence
+          : canonical.accepted.reduce((sum, event) => sum + event.extraction_confidence, 0) / canonical.accepted.length,
+    };
   }
 }

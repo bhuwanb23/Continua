@@ -1,0 +1,1 @@
+export { ConsultPayloadSchema } from "./index";

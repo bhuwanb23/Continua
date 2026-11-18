@@ -1,0 +1,1 @@
+export { LabResultPayloadSchema } from "./index";

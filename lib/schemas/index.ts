@@ -2,7 +2,16 @@ import { z } from "zod";
 
 const isoDate = z
   .string()
-  .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD");
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD")
+  .refine((value) => {
+    const [year, month, day] = value.split("-").map(Number);
+    const parsed = new Date(Date.UTC(year ?? 0, (month ?? 0) - 1, day ?? 0));
+    return (
+      parsed.getUTCFullYear() === year &&
+      parsed.getUTCMonth() === (month ?? 0) - 1 &&
+      parsed.getUTCDate() === day
+    );
+  }, "Expected a real calendar date");
 
 const isoDateTime = z.string().datetime();
 
@@ -14,6 +23,8 @@ export const VersionMetadataSchema = z.object({
   detector_version: z.string().min(1),
   priority_version: z.string().min(1),
   api_version: z.string().min(1),
+  clinical_event_schema: z.literal("clinical-event-v1"),
+  normalization_version: z.literal("normalization-v1"),
 });
 
 export const GapTypeSchema = z.enum([
@@ -25,14 +36,14 @@ export const GapTypeSchema = z.enum([
 export const PriorityBandSchema = z.enum(["CRITICAL", "HIGH", "MEDIUM", "LOW"]);
 
 export const EventTypeSchema = z.enum([
-  "surgery",
-  "imaging",
+  "referral",
   "consult",
+  "followup",
   "lab_result",
+  "imaging",
   "medication_start",
   "medication_stop",
-  "referral",
-  "followup",
+  "surgery",
 ]);
 
 export const SeriesStatusSchema = z.enum([
@@ -48,6 +59,7 @@ export const ProviderTypeSchema = z.enum([
   "imaging",
   "pharmacy",
   "other",
+  "unknown",
 ]);
 
 export const ClaimClassSchema = z.enum([
@@ -78,6 +90,7 @@ export const SourceRecordSchema = z.object({
     "imaging_report",
     "medication_list",
     "discharge_summary",
+    "followup",
     "other",
   ]),
   provider: z.string().min(1),
@@ -89,7 +102,7 @@ export const SourceRecordSchema = z.object({
   synthetic: z.literal(true),
 });
 
-export const ClinicalEventSchema = z.object({
+export const LegacyClinicalEventSchema = z.object({
   event_id: z.string().uuid(),
   patient_id: z.string().uuid(),
   event_type: EventTypeSchema,
@@ -102,9 +115,145 @@ export const ClinicalEventSchema = z.object({
   confidence: z.number().min(0).max(1),
   series_status: SeriesStatusSchema,
   typed: z
-    .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
+    .record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.null()]))
     .optional(),
 });
+
+const datePrecisionSchema = z.enum(["day", "month"]);
+const seriesStatusSchema = z.enum(["explicit_series", "explicit_one_off", "unknown"]);
+const verificationMethodSchema = z.enum(["exact", "fuzzy"]);
+const nonEmptyString = z.string().min(1);
+const optionalNullableString = z.string().min(1).nullable().optional();
+
+const eventSourceSchema = z
+  .object({
+    source_doc_id: nonEmptyString,
+    source_span: nonEmptyString.max(300),
+    span_start: z.number().int().nonnegative().optional(),
+    span_end: z.number().int().nonnegative().optional(),
+    verification_method: verificationMethodSchema,
+    verification_score: z.number().min(0.85).max(1),
+  })
+  .strict()
+  .superRefine((source, ctx) => {
+    if (source.span_start !== undefined && source.span_end !== undefined && source.span_end < source.span_start) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: "span_end must be >= span_start", path: ["span_end"] });
+    }
+    if (source.verification_method === "exact" && source.verification_score !== 1) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: "exact provenance must have score 1", path: ["verification_score"] });
+    }
+  });
+
+export const ReferralPayloadSchema = z
+  .object({
+    specialty_raw: nonEmptyString,
+    specialty_normalized: nonEmptyString,
+    reason: z.string().max(500).optional(),
+    expected_window_days: z.number().int().nonnegative(),
+    window_source: z.enum(["document", "benchmark_policy"]),
+    status: z.enum(["placed", "completed", "cancelled", "unknown"]),
+  })
+  .strict();
+
+export const ConsultPayloadSchema = z
+  .object({
+    specialty_raw: nonEmptyString,
+    specialty_normalized: nonEmptyString,
+    clinician: nonEmptyString.optional(),
+    mode: z.enum(["in_person", "telehealth", "phone", "unknown"]),
+    completion_status: z.enum(["completed", "cancelled", "unknown"]),
+  })
+  .strict();
+
+export const FollowupPayloadSchema = z
+  .object({
+    topic: nonEmptyString.optional(),
+    specialty_normalized: nonEmptyString.optional(),
+    mode: z.enum(["in_person", "telehealth", "phone", "message", "unknown"]),
+    status: z.enum(["scheduled", "completed", "missed", "cancelled", "unknown"]),
+  })
+  .strict();
+
+export const LabResultPayloadSchema = z
+  .object({
+    test_name_raw: nonEmptyString,
+    test_code_normalized: nonEmptyString,
+    value: z.union([z.number(), z.string(), z.null()]).optional(),
+    unit: optionalNullableString,
+    abnormal: z.boolean().nullable().optional(),
+    series_status: seriesStatusSchema,
+  })
+  .strict();
+
+export const ImagingPayloadSchema = z
+  .object({
+    modality_raw: nonEmptyString,
+    modality_normalized: z.enum(["ct", "mri", "xray", "pet", "mammogram", "ultrasound", "other"]),
+    body_region_raw: nonEmptyString,
+    body_region_normalized: nonEmptyString.optional(),
+    result_summary: z.string().max(1000).optional(),
+    series_status: seriesStatusSchema,
+  })
+  .strict();
+
+export const MedicationStartPayloadSchema = z
+  .object({
+    drug_raw: nonEmptyString,
+    drug_normalized: nonEmptyString,
+    dose: optionalNullableString,
+    route: optionalNullableString,
+    reason: optionalNullableString,
+  })
+  .strict();
+
+export const MedicationStopPayloadSchema = z
+  .object({
+    drug_raw: nonEmptyString,
+    drug_normalized: nonEmptyString,
+    stop_reason: optionalNullableString,
+  })
+  .strict();
+
+export const SurgeryPayloadSchema = z
+  .object({
+    procedure_raw: nonEmptyString,
+    procedure_normalized: nonEmptyString.optional(),
+    site: nonEmptyString.optional(),
+    outcome_summary: z.string().max(1000).optional(),
+  })
+  .strict();
+
+const canonicalEventBase = {
+  schema_version: z.literal("clinical-event-v1"),
+  event_id: nonEmptyString,
+  patient_id: nonEmptyString,
+  date: isoDate,
+  date_precision: datePrecisionSchema,
+  provider_id: nonEmptyString.optional(),
+  provider_display: nonEmptyString.optional(),
+  provider_type: ProviderTypeSchema,
+  description: nonEmptyString.max(200),
+  source: eventSourceSchema,
+  extraction_confidence: z.number().finite().min(0).max(1),
+  normalization_version: nonEmptyString,
+};
+
+export const ClinicalEventSchema = z.discriminatedUnion("event_type", [
+  z.object({ ...canonicalEventBase, event_type: z.literal("referral"), typed: ReferralPayloadSchema }).strict(),
+  z.object({ ...canonicalEventBase, event_type: z.literal("consult"), typed: ConsultPayloadSchema }).strict(),
+  z.object({ ...canonicalEventBase, event_type: z.literal("followup"), typed: FollowupPayloadSchema }).strict(),
+  z.object({ ...canonicalEventBase, event_type: z.literal("lab_result"), typed: LabResultPayloadSchema }).strict(),
+  z.object({ ...canonicalEventBase, event_type: z.literal("imaging"), typed: ImagingPayloadSchema }).strict(),
+  z
+    .object({ ...canonicalEventBase, event_type: z.literal("medication_start"), typed: MedicationStartPayloadSchema })
+    .strict(),
+  z
+    .object({ ...canonicalEventBase, event_type: z.literal("medication_stop"), typed: MedicationStopPayloadSchema })
+    .strict(),
+  z.object({ ...canonicalEventBase, event_type: z.literal("surgery"), typed: SurgeryPayloadSchema }).strict(),
+]);
+
+export const ClinicalEventV1Schema = ClinicalEventSchema;
 
 export const GapEvidenceRefSchema = z.object({
   doc_id: z.string().uuid(),
@@ -181,7 +330,7 @@ export const FixtureSchema = z.object({
   synthetic: z.literal(true),
   patient: PatientSchema,
   records: z.array(SourceRecordSchema).min(1),
-  events: z.array(ClinicalEventSchema).min(1),
+  events: z.array(LegacyClinicalEventSchema).min(1),
 });
 
 export const ApiErrorSchema = z.object({
