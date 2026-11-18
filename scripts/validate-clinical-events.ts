@@ -53,12 +53,12 @@ function writeMariaFixture(
     throw new Error(`Maria canonical fixture rejected ${result.rejected.length} events`);
   }
   const output = {
-    schema_version: "clinical-event-v1",
+    schema_version: "clinical-event-v1" as const,
     patient_id: maria.patient_id,
     fixture_key: maria.fixture_key,
     metadata: {
-      clinical_event_schema: "clinical-event-v1",
-      normalization_version: "normalization-v1",
+      clinical_event_schema: "clinical-event-v1" as const,
+      normalization_version: "normalization-v1" as const,
       extractor_version: "truth-events-v1",
     },
     events: sortClinicalEvents(result.accepted),
