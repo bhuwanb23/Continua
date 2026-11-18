@@ -1,15 +1,15 @@
 {
-  "schema_version": "clinical-event-v1",
+  "schema_version": "clinical-event-v1.1",
   "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
   "fixture_key": "P-001-maria",
   "metadata": {
-    "clinical_event_schema": "clinical-event-v1",
+    "clinical_event_schema": "clinical-event-v1.1",
     "normalization_version": "normalization-v1",
     "extractor_version": "truth-events-v1"
   },
   "events": [
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "f928b6e6-1dc7-5219-8b56-b940527ee6ea",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-02-10",
@@ -21,11 +21,14 @@
       "source": {
         "source_doc_id": "925b8102-db65-594a-84c9-093c3e28bc76",
         "source_span": "54F with type 2 diabetes, A1c 8.1%.",
+        "span_start": 0,
+        "span_end": 35,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.95,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "consult",
       "typed": {
         "specialty_raw": "primary_care",
@@ -35,7 +38,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "00e5d6c8-ab1a-5aa7-8ed6-59b9adebc3bc",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-02-10",
@@ -47,11 +50,14 @@
       "source": {
         "source_doc_id": "925b8102-db65-594a-84c9-093c3e28bc76",
         "source_span": "Starting metformin 1000 mg twice daily.",
+        "span_start": 36,
+        "span_end": 75,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.95,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "medication_start",
       "typed": {
         "drug_raw": "metformin",
@@ -61,7 +67,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "be7f80b5-d06b-53a2-bde0-a0efd6c2fb20",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-03-04",
@@ -73,11 +79,14 @@
       "source": {
         "source_doc_id": "d47d9ede-8f1a-5b0f-ba59-3249aeddc57e",
         "source_span": "New diagnosis of invasive ductal carcinoma, left breast, on screening mammogram.",
+        "span_start": 0,
+        "span_end": 80,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.96,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "consult",
       "typed": {
         "specialty_raw": "primary_care",
@@ -87,7 +96,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "d2d6a71b-d380-594a-ae08-e0b165cf3296",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-03-18",
@@ -99,11 +108,14 @@
       "source": {
         "source_doc_id": "f66fb0f1-17e7-512a-ab3b-c6f6b3ac5cf7",
         "source_span": "Underwent left lumpectomy with sentinel lymph node biopsy on 2026-03-18.",
+        "span_start": 0,
+        "span_end": 72,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.97,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "surgery",
       "typed": {
         "procedure_raw": "lumpectomy",
@@ -112,7 +124,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "a80089cc-f2d9-5b8e-9aca-a4dc918c43c5",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-03-25",
@@ -124,11 +136,14 @@
       "source": {
         "source_doc_id": "e86df95a-6952-5f96-a276-5c3c7f4f3395",
         "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days.",
+        "span_start": 22,
+        "span_end": 158,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.96,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "referral",
       "typed": {
         "specialty_raw": "oncology",
@@ -140,7 +155,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "46e47348-63e9-5357-aa3b-7a31d932a381",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-04-18",
@@ -152,11 +167,14 @@
       "source": {
         "source_doc_id": "20eaf734-05ca-5b27-a969-4b860da5750f",
         "source_span": "Bilateral diagnostic mammogram and breast ultrasound for post-surgical baseline.",
+        "span_start": 0,
+        "span_end": 80,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.97,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "imaging",
       "typed": {
         "modality_raw": "mammogram",
@@ -167,7 +185,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "0fbaa1ec-8984-5c2f-a47e-dab0a7fcd121",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-04-20",
@@ -179,11 +197,14 @@
       "source": {
         "source_doc_id": "53636809-5946-57b5-9d2d-2d145222c24d",
         "source_span": "CBC with differential: WBC 5.8, Hgb 12.4, Plt 248. Within normal limits.",
+        "span_start": 0,
+        "span_end": 72,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.94,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "lab_result",
       "typed": {
         "test_name_raw": "CBC with differential",
@@ -192,7 +213,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "e906aaa3-ff0b-5cca-9a06-4e30afdb947a",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-04-22",
@@ -204,11 +225,14 @@
       "source": {
         "source_doc_id": "33a26ee7-a0c0-5367-9207-8b53fe7aa245",
         "source_span": "Started tamoxifen 20 mg daily for ER+ breast cancer.",
+        "span_start": 0,
+        "span_end": 52,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.95,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "medication_start",
       "typed": {
         "drug_raw": "tamoxifen",
@@ -218,7 +242,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "bea5e300-8da3-5d22-af5b-e11927623e2b",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-04-28",
@@ -230,11 +254,14 @@
       "source": {
         "source_doc_id": "666e404a-9e5d-5d8d-a1ee-1be97d8fe67f",
         "source_span": "Repeat CBC with differential ordered at follow-up visit: WBC 5.9, Hgb 12.5, Plt 251. Within normal limits. No clinical indication documented for repeat at this interval.",
+        "span_start": 0,
+        "span_end": 169,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.94,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "lab_result",
       "typed": {
         "test_name_raw": "CBC with differential",
@@ -243,7 +270,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "17f13e6b-3d70-5ae7-ac5d-f0b44171d34b",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-05-02",
@@ -255,11 +282,14 @@
       "source": {
         "source_doc_id": "f1c055ab-8330-5b8e-892b-08c6ed0c8763",
         "source_span": "Primary care follow-up.",
+        "span_start": 0,
+        "span_end": 23,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.95,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "consult",
       "typed": {
         "specialty_raw": "primary_care",
@@ -269,7 +299,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "eea562d7-a3a6-50a1-b3f0-add56f4c8411",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-05-06",
@@ -281,11 +311,14 @@
       "source": {
         "source_doc_id": "2460462e-dbe9-5dbd-8d87-b092b02f6d6f",
         "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+        "span_start": 82,
+        "span_end": 143,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.95,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "followup",
       "typed": {
         "topic": "routine",
@@ -294,7 +327,7 @@
       }
     },
     {
-      "schema_version": "clinical-event-v1",
+      "schema_version": "clinical-event-v1.1",
       "event_id": "b5bd952e-ac34-5fbe-959d-f93635575c03",
       "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
       "date": "2026-05-08",
@@ -306,11 +339,14 @@
       "source": {
         "source_doc_id": "648f3dd7-6f49-5fc3-9ca9-d4f769e5d9b8",
         "source_span": "TSH: 2.1 mIU/L.",
+        "span_start": 84,
+        "span_end": 99,
         "verification_method": "exact",
         "verification_score": 1
       },
       "extraction_confidence": 0.94,
       "normalization_version": "normalization-v1",
+      "mention_context": "unknown",
       "event_type": "lab_result",
       "typed": {
         "test_name_raw": "TSH",
@@ -319,5 +355,5 @@
       }
     }
   ],
-  "event_hash": "2ba3adfec896680c237c241932be11f9bc5f3f0adcc5739889f50207fd07c51d"
+  "event_hash": "74ecb081069030b7d3b38a6e85e9d93292eca16393ffcb5a55d727262b9f83c1"
 }

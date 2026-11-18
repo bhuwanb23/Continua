@@ -1,13 +1,13 @@
-import type { CanonicalClinicalEvent, ClinicalEventRejection, SourceRecord } from "@/lib/domain";
+import type { CanonicalClinicalEvent, ClinicalEventRejection } from "@/lib/domain";
 import { ClinicalEventSchema } from "@/lib/schemas";
 import { EVALUATION_AS_OF_DATE, NORMALIZATION_VERSION } from "@/lib/domain/versions";
 import { isIsoDate, daysBetween } from "@/lib/evaluation/temporal";
-import { verifySourceSpan } from "@/lib/evidence/span-match";
+import { verifyProvenance } from "@/lib/provenance";
 import { rejectClinicalEvent } from "./rejection";
 
 export interface ClinicalEventValidationContext {
   patient_id: string;
-  records: SourceRecord[];
+  records: import("@/lib/domain").SourceRecord[];
   evaluation_as_of_date?: string;
   normalization_version?: string;
 }
@@ -45,47 +45,25 @@ export function validateClinicalEvent(
   }
 
   const event = parsed.data as CanonicalClinicalEvent;
-  const record = context.records.find((item) => item.source_doc_id === event.source.source_doc_id);
-  if (!record) {
+  const provenance = verifyProvenance(
+    {
+      source_doc_id: event.source.source_doc_id,
+      patient_id: event.patient_id,
+      source_span: event.source.source_span,
+      ...(event.source.span_start !== undefined ? { span_start: event.source.span_start } : {}),
+      ...(event.source.span_end !== undefined ? { span_end: event.source.span_end } : {}),
+    },
+    { patient_id: context.patient_id, records: context.records },
+  );
+  if (!provenance.ok) {
     return {
       accepted: null,
-      rejection: rejectClinicalEvent("CE-004", "Source document does not exist.", candidate),
-    };
-  }
-  if (record.patient_id !== event.patient_id || event.patient_id !== context.patient_id) {
-    return {
-      accepted: null,
-      rejection: rejectClinicalEvent("CE-005", "Source document or event belongs to another patient.", candidate),
-    };
-  }
-
-  if (event.source.span_start !== undefined && event.source.span_end !== undefined) {
-    if (event.source.span_end > record.text.length) {
-      return {
-        accepted: null,
-        rejection: rejectClinicalEvent("CE-006", "Source span offsets exceed the source document.", candidate),
-      };
-    }
-    const rangedText = record.text.slice(event.source.span_start, event.source.span_end);
-    const rangedVerification = verifySourceSpan(event.source.source_span, rangedText);
-    if (!rangedVerification.supported) {
-      return {
-        accepted: null,
-        rejection: rejectClinicalEvent("CE-006", "Recorded source offsets do not match the source span.", candidate),
-      };
-    }
-  }
-
-  const span = verifySourceSpan(event.source.source_span, record.text);
-  if (!span.supported) {
-    return {
-      accepted: null,
-      rejection: rejectClinicalEvent("CE-006", "Source span could not be verified at the required threshold.", candidate),
+      rejection: rejectClinicalEvent(provenance.code, provenance.reason, candidate),
     };
   }
 
   if (
-    event.source.verification_method !== span.method ||
+    event.source.verification_method !== provenance.source.verification_method ||
     (event.source.verification_method === "fuzzy" && event.source.verification_score < 0.85)
   ) {
     return {
@@ -114,11 +92,7 @@ export function validateClinicalEvent(
 
   const verifiedEvent: CanonicalClinicalEvent = {
     ...event,
-    source: {
-      ...event.source,
-      verification_method: span.method,
-      verification_score: span.score,
-    },
+    source: provenance.source,
   };
   return { accepted: verifiedEvent, rejection: null };
 }

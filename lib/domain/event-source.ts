@@ -11,7 +11,7 @@ export interface EventSource {
 }
 
 export interface ClinicalEventMetadata {
-  schema_version: "clinical-event-v1";
+  schema_version: import("./versions").ClinicalEventSchemaVersion;
   normalization_version: string;
   extractor_version: string;
 }

@@ -1,4 +1,5 @@
 import type { EventSource } from "./event-source";
+import type { ClinicalEventSchemaVersion } from "./versions";
 import type {
   ConsultPayload,
   DatePrecision,
@@ -9,6 +10,7 @@ import type {
   LabResultPayload,
   MedicationStartPayload,
   MedicationStopPayload,
+  MentionContext,
   ProviderType,
   ReferralPayload,
   SeriesStatus,
@@ -18,10 +20,12 @@ import type {
 export {
   DATE_PRECISIONS,
   EVENT_TYPES,
+  MENTION_CONTEXTS,
   PROVIDER_TYPES,
   SERIES_STATUSES,
   type DatePrecision,
   type EventType,
+  type MentionContext,
   type ProviderType,
   type SeriesStatus,
 } from "./event-types";
@@ -48,7 +52,7 @@ export interface LegacyClinicalEvent {
 }
 
 export interface ClinicalEventV1Base {
-  schema_version: "clinical-event-v1";
+  schema_version: ClinicalEventSchemaVersion;
   event_id: string;
   patient_id: string;
   event_type: EventType;
@@ -61,6 +65,8 @@ export interface ClinicalEventV1Base {
   source: EventSource;
   extraction_confidence: number;
   normalization_version: string;
+  /** v1.1: document temporal context of the extracted fact; never a clinical judgment. */
+  mention_context?: MentionContext;
   typed: EventPayload;
 }
 

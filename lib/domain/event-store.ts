@@ -1,4 +1,5 @@
 import type { CanonicalClinicalEvent } from "./clinical-event";
+import type { ClinicalEventSchemaVersion } from "./versions";
 
 export const REJECTION_CODES = [
   "CE-001",
@@ -26,7 +27,7 @@ export interface ClinicalEventStore {
   accepted: CanonicalClinicalEvent[];
   rejected: ClinicalEventRejection[];
   metadata: {
-    clinical_event_schema: "clinical-event-v1";
+    clinical_event_schema: ClinicalEventSchemaVersion;
     normalization_version: string;
     extractor_version: string;
   };

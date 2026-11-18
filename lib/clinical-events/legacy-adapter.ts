@@ -1,4 +1,6 @@
-import type { CanonicalClinicalEvent, LegacyClinicalEvent } from "@/lib/domain";
+import type { CanonicalClinicalEvent, LegacyClinicalEvent, MentionContext } from "@/lib/domain";
+import { MENTION_CONTEXTS } from "@/lib/domain";
+import { CLINICAL_EVENT_SCHEMA_VERSION } from "@/lib/domain/versions";
 import { NORMALIZATION_VERSION } from "@/lib/normalization";
 import type { EventPayload } from "@/lib/domain/event-types";
 import { normalizeClinicalEvent } from "./normalize";
@@ -12,10 +14,16 @@ function stringValue(values: unknown[], fallback = "unknown"): string {
   return typeof value === "string" ? value : fallback;
 }
 
+function mentionContextValue(value: unknown): MentionContext {
+  return typeof value === "string" && (MENTION_CONTEXTS as readonly string[]).includes(value)
+    ? (value as MentionContext)
+    : "unknown";
+}
+
 export function legacyEventToCanonical(event: LegacyClinicalEvent): CanonicalClinicalEvent {
   const typed = record(event);
   const base = {
-    schema_version: "clinical-event-v1" as const,
+    schema_version: CLINICAL_EVENT_SCHEMA_VERSION,
     event_id: event.event_id,
     patient_id: event.patient_id,
     event_type: event.event_type,
@@ -33,6 +41,7 @@ export function legacyEventToCanonical(event: LegacyClinicalEvent): CanonicalCli
     },
     extraction_confidence: event.confidence,
     normalization_version: NORMALIZATION_VERSION,
+    mention_context: mentionContextValue(typed["mention_context"]),
   };
 
   let payload: EventPayload;
@@ -143,6 +152,7 @@ export function canonicalEventToLegacy(event: CanonicalClinicalEvent): LegacyCli
   const legacyTyped = Object.fromEntries(
     Object.entries(typed).filter(([, value]) => value !== undefined),
   ) as Record<string, string | number | boolean | null>;
+  if (event.mention_context !== undefined) legacyTyped["mention_context"] = event.mention_context;
   const specialty =
     typeof typed["specialty_raw"] === "string"
       ? typed["specialty_raw"]

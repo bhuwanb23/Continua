@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "schema_version": "clinical-event-v1",
+  "schema_version": "clinical-event-v1.1",
   "normalization_version": "normalization-v1",
   "truth_events": 484,
   "accepted_events": 484,
@@ -8,8 +8,8 @@
   "extraction_gold_events": 130,
   "extraction_gold_representable": 130,
   "rejection_counts": {},
-  "event_hash": "b7a8f8ed6e75567d4025d01f496cf15974fb7c011b949982c633002f9dbd18a4",
-  "schema_hash": "81d40e2820f4d99d1924484813246fba30f7af30807357feff4c757c35f22ad4",
+  "event_hash": "0f2e02a38af4296bbf9da418dd232aa571669e3c476364a829b87efe817e9dca",
+  "schema_hash": "7a20ae6185147e49fc67545e22738ab8f9ea2a3911fd7472fbe3192e3206a3ad",
   "accepted_events_with_provenance": 484,
   "unsupported_spans_accepted": 0,
   "schema_violations_accepted": 0,

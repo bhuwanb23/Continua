@@ -1,6 +1,6 @@
 {
   "title": "CONTINUA CLINICAL EVENT MODEL v1",
-  "schema": "clinical-event-v1",
+  "schema": "clinical-event-v1.1",
   "normalization": "normalization-v1",
   "phase3_gold": {
     "representable": 130,
@@ -10,7 +10,7 @@
     "accepted_with_valid_provenance": 484,
     "unsupported_spans_accepted": 0
   },
-  "schema_hash": "81d40e2820f4d99d1924484813246fba30f7af30807357feff4c757c35f22ad4",
+  "schema_hash": "7a20ae6185147e49fc67545e22738ab8f9ea2a3911fd7472fbe3192e3206a3ad",
   "detector_sufficiency": {
     "missed_followup": true,
     "duplicate_testing": true,

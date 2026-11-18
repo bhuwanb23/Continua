@@ -2,6 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 import type { CanonicalClinicalEvent, ClinicalEventRejection, LegacyClinicalEvent, SourceRecord } from "@/lib/domain";
+import { CLINICAL_EVENT_SCHEMA_VERSION, type ClinicalEventSchemaVersion } from "@/lib/domain/versions";
 import { canonicalizeClinicalEvents, hashClinicalEvents, sortClinicalEvents } from "@/lib/clinical-events";
 import { ClinicalEventSchema } from "@/lib/schemas";
 import { verifySourceSpan } from "@/lib/evidence/span-match";
@@ -32,10 +33,10 @@ function writeMariaFixture(
   records: SourceRecord[],
   events: LegacyClinicalEvent[],
 ): {
-  schema_version: "clinical-event-v1";
+  schema_version: ClinicalEventSchemaVersion;
   patient_id: string;
   fixture_key: string;
-  metadata: { clinical_event_schema: "clinical-event-v1"; normalization_version: "normalization-v1"; extractor_version: string };
+  metadata: { clinical_event_schema: ClinicalEventSchemaVersion; normalization_version: "normalization-v1"; extractor_version: string };
   events: CanonicalClinicalEvent[];
   event_hash: string;
 } {
@@ -53,11 +54,11 @@ function writeMariaFixture(
     throw new Error(`Maria canonical fixture rejected ${result.rejected.length} events`);
   }
   const output = {
-    schema_version: "clinical-event-v1" as const,
+    schema_version: CLINICAL_EVENT_SCHEMA_VERSION,
     patient_id: maria.patient_id,
     fixture_key: maria.fixture_key,
     metadata: {
-      clinical_event_schema: "clinical-event-v1" as const,
+      clinical_event_schema: CLINICAL_EVENT_SCHEMA_VERSION,
       normalization_version: "normalization-v1" as const,
       extractor_version: "truth-events-v1",
     },
@@ -185,10 +186,10 @@ function main(): void {
   const maria = patients.find((patient) => patient.fixture_key === "P-001-maria");
   const mariaFixtureValid = Boolean(
     maria &&
-      mariaFixture.schema_version === "clinical-event-v1" &&
+      mariaFixture.schema_version === CLINICAL_EVENT_SCHEMA_VERSION &&
       mariaFixture.patient_id === maria.patient_id &&
       mariaFixture.fixture_key === maria.fixture_key &&
-      mariaFixture.metadata.clinical_event_schema === "clinical-event-v1" &&
+      mariaFixture.metadata.clinical_event_schema === CLINICAL_EVENT_SCHEMA_VERSION &&
       mariaFixture.metadata.normalization_version === "normalization-v1" &&
       mariaFixture.events.length > 0 &&
       mariaFixture.events.every((event) => ClinicalEventSchema.safeParse(event).success) &&
@@ -209,7 +210,7 @@ function main(): void {
     Object.values(detectorSufficiency).every(Boolean);
   const report = {
     status: phase4Pass ? "PASS" : "FAIL",
-    schema_version: "clinical-event-v1",
+    schema_version: CLINICAL_EVENT_SCHEMA_VERSION,
     normalization_version: "normalization-v1",
     truth_events: truthEvents.length,
     accepted_events: accepted.length,

@@ -6,7 +6,7 @@ export const TEST_EVENT_ID = "00000000-0000-5000-8000-000000000003";
 
 export function canonicalEvent(overrides: Partial<CanonicalClinicalEvent> = {}): CanonicalClinicalEvent {
   return {
-    schema_version: "clinical-event-v1",
+    schema_version: "clinical-event-v1.1",
     event_id: TEST_EVENT_ID,
     patient_id: TEST_PATIENT_ID,
     event_type: "referral",
@@ -23,6 +23,7 @@ export function canonicalEvent(overrides: Partial<CanonicalClinicalEvent> = {}):
     },
     extraction_confidence: 0.95,
     normalization_version: "normalization-v1",
+    mention_context: "unknown",
     typed: {
       specialty_raw: "Medical Oncology",
       specialty_normalized: "oncology",

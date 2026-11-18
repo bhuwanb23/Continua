@@ -1,5 +1,16 @@
 # Continua Spec CHANGELOG
 
+## v1.1 — clinical-event schema amendment (2026-11-18)
+
+- `docs/spec/clinical-event-schema.md` §9: optional `mention_context`
+  (`contemporaneous | historical_reference | unknown`, default `unknown`) on
+  the canonical base envelope; schema identifier `clinical-event-v1.1`.
+  Required by `plans/phase_5.md` §5.34–5.36 (occurrence vs historical mention).
+- Backward compatible: `clinical-event-v1` envelopes remain valid inputs;
+  event identity namespace and `event_id` values unchanged; no frozen
+  benchmark artifact pins the pre-amendment serialized event hash.
+- The v1.0 frozen contract set and its FROZEN stamp are otherwise untouched.
+
 ## v1.0 (frozen 2026-11-17)
 
 ### 0.0 — Preflight

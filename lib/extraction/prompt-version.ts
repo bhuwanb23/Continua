@@ -1,0 +1,1 @@
+export const PROMPT_VERSION = "extraction-prompt-v1";

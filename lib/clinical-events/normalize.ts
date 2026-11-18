@@ -1,4 +1,5 @@
 import type { CanonicalClinicalEvent, EventPayload } from "@/lib/domain";
+import { CLINICAL_EVENT_SCHEMA_VERSION } from "@/lib/domain/versions";
 import {
   normalizeBodyRegion,
   normalizeImagingModality,
@@ -70,6 +71,8 @@ export function normalizeClinicalEvent(event: CanonicalClinicalEvent): Canonical
 
   return {
     ...event,
+    schema_version: CLINICAL_EVENT_SCHEMA_VERSION,
+    mention_context: event.mention_context ?? "unknown",
     typed: normalized as unknown as CanonicalClinicalEvent["typed"],
   } as unknown as CanonicalClinicalEvent;
 }

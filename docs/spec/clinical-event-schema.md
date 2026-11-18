@@ -167,3 +167,39 @@ Stored in `lib/monitoring/drug-lab-map.ts`:
 | `recommended_action` | `recommended_coordinator_action` | gap/API |
 | `detector` | `detector_version` | gap/API |
 | `display_id` vs `patient_id` | `patient_id` (UUID) canonical; `display_id` optional label | patient |
+## 9. v1.1 amendment — mention_context (2026-11-18, Phase 5 prerequisite)
+
+Versioned amendment required by `plans/phase_5.md` §5.34–5.36. The v1.0 frozen
+body above is unchanged; this section extends it. Schema version identifier:
+`clinical-event-v1.1`. Both `clinical-event-v1` and `clinical-event-v1.1`
+envelopes remain valid inputs; canonicalization always emits the current
+version (`clinical-event-v1.1`).
+
+### Field
+
+Optional base-envelope field on every canonical event:
+
+```
+mention_context: "contemporaneous" | "historical_reference" | "unknown"
+```
+
+- Default when absent: `unknown`. Legacy events without the field adapt to `unknown`.
+- Semantics: **document temporal context**, not a clinical judgment.
+  - `contemporaneous` — the document reports the event as occurring in its own context (a lab report reporting its own result, a referral note placing the referral).
+  - `historical_reference` — the document mentions an earlier event ("Reviewed CBC from 04/20", copy-forward prose).
+  - `unknown` — the text does not make the temporal context explicit. Never inferred from repeated dates alone.
+- The extractor may set this field from explicit textual evidence only; it must cite the supporting span like any other fact.
+
+### Reconciliation rules (Phase 5)
+
+- A `historical_reference` event whose fingerprint matches an existing canonical occurrence attaches as additional provenance; it never creates a new occurrence.
+- A `historical_reference` with no matching occurrence is retained conservatively with `mention_context: "historical_reference"`.
+- `unknown` events are retained separately unless fingerprint and result value are identical; similarity alone never merges events.
+
+### Identity stability
+
+Event identity (`identifyClinicalEvent`) keeps the `clinical-event-v1`
+namespace and does not hash `schema_version` or `mention_context`. All
+existing `event_id` values, gold matching, and benchmark hashes are unchanged
+by this amendment. Serialized event hashes change only because the envelope
+gains fields; no frozen artifact pins the pre-amendment event hash.

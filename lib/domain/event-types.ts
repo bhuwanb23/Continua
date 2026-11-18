@@ -14,6 +14,9 @@ export type EventType = (typeof EVENT_TYPES)[number];
 export const SERIES_STATUSES = ["explicit_series", "explicit_one_off", "unknown"] as const;
 export type SeriesStatus = (typeof SERIES_STATUSES)[number];
 
+export const MENTION_CONTEXTS = ["contemporaneous", "historical_reference", "unknown"] as const;
+export type MentionContext = (typeof MENTION_CONTEXTS)[number];
+
 export const PROVIDER_TYPES = ["pcp", "specialist", "lab", "imaging", "pharmacy", "other", "unknown"] as const;
 export type ProviderType = (typeof PROVIDER_TYPES)[number];
 

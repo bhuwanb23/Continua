@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const isoDate = z
+export const isoDate = z
   .string()
   .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD")
   .refine((value) => {
@@ -23,7 +23,7 @@ export const VersionMetadataSchema = z.object({
   detector_version: z.string().min(1),
   priority_version: z.string().min(1),
   api_version: z.string().min(1),
-  clinical_event_schema: z.literal("clinical-event-v1"),
+  clinical_event_schema: z.enum(["clinical-event-v1", "clinical-event-v1.1"]),
   normalization_version: z.literal("normalization-v1"),
 });
 
@@ -237,7 +237,7 @@ export const SurgeryPayloadSchema = z
   .strict();
 
 const canonicalEventBase = {
-  schema_version: z.literal("clinical-event-v1"),
+  schema_version: z.enum(["clinical-event-v1", "clinical-event-v1.1"]),
   event_id: z.string().uuid(),
   patient_id: z.string().uuid(),
   date: isoDate,
@@ -249,6 +249,7 @@ const canonicalEventBase = {
   source: eventSourceSchema,
   extraction_confidence: z.number().finite().min(0).max(1),
   normalization_version: z.literal("normalization-v1"),
+  mention_context: z.enum(["contemporaneous", "historical_reference", "unknown"]).optional(),
 };
 
 export const ClinicalEventSchema = z.discriminatedUnion("event_type", [

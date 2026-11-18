@@ -5,7 +5,9 @@ export const EXTRACTOR_VERSION = "extractor-v1" as const;
 export const DETECTOR_VERSION = "gaps-v1" as const;
 export const PRIORITY_VERSION = "priority-v1" as const;
 export const API_VERSION = "v1" as const;
-export const CLINICAL_EVENT_SCHEMA_VERSION = "clinical-event-v1" as const;
+export const CLINICAL_EVENT_SCHEMA_VERSIONS = ["clinical-event-v1", "clinical-event-v1.1"] as const;
+export type ClinicalEventSchemaVersion = (typeof CLINICAL_EVENT_SCHEMA_VERSIONS)[number];
+export const CLINICAL_EVENT_SCHEMA_VERSION = "clinical-event-v1.1" as const satisfies ClinicalEventSchemaVersion;
 export const NORMALIZATION_VERSION = "normalization-v1" as const;
 
 /**
