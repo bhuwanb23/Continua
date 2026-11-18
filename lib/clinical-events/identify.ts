@@ -6,7 +6,7 @@ export interface EventIdentityInput {
   source_doc_id: string;
   event_type: string;
   date: string;
-  source_local_index?: number;
+  source_local_identity?: number | string;
 }
 
 export function identifyClinicalEvent(input: EventIdentityInput): string {
@@ -16,11 +16,11 @@ export function identifyClinicalEvent(input: EventIdentityInput): string {
     input.source_doc_id,
     input.event_type,
     input.date,
-    String(input.source_local_index ?? 0),
+    String(input.source_local_identity ?? "default"),
   );
 }
 
-export function withStableEventId(event: CanonicalClinicalEvent, sourceLocalIndex = 0): CanonicalClinicalEvent {
+export function withStableEventId(event: CanonicalClinicalEvent, sourceLocalIdentity = "default"): CanonicalClinicalEvent {
   return {
     ...event,
     event_id: identifyClinicalEvent({
@@ -28,7 +28,7 @@ export function withStableEventId(event: CanonicalClinicalEvent, sourceLocalInde
       source_doc_id: event.source.source_doc_id,
       event_type: event.event_type,
       date: event.date,
-      source_local_index: sourceLocalIndex,
+      source_local_identity: sourceLocalIdentity,
     }),
   };
 }

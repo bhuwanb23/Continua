@@ -20,7 +20,7 @@ export function eventFingerprint(event: CanonicalClinicalEvent): string {
   } else if (event.event_type === "followup") {
     parts.push(value(event, "topic"), value(event, "specialty_normalized"));
   }
-  return parts.join("|").toLowerCase();
+  return JSON.stringify(parts.map((part) => part.toLowerCase()));
 }
 
 export interface EventGroup {
@@ -49,5 +49,14 @@ export function groupEvents(events: CanonicalClinicalEvent[]): EventGroup[] {
       supporting_source_doc_ids: [event.source.source_doc_id],
     });
   }
-  return [...groups.values()];
+  return [...groups.values()]
+    .map((group) => ({
+      ...group,
+      representative_event: [...events]
+        .filter((event) => eventFingerprint(event) === group.fingerprint)
+        .sort((left, right) => left.event_id.localeCompare(right.event_id))[0] ?? group.representative_event,
+      supporting_event_ids: [...group.supporting_event_ids].sort(),
+      supporting_source_doc_ids: [...group.supporting_source_doc_ids].sort(),
+    }))
+    .sort((left, right) => left.fingerprint.localeCompare(right.fingerprint));
 }

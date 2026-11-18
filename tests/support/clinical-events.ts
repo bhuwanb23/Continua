@@ -1,10 +1,14 @@
 import type { CanonicalClinicalEvent } from "@/lib/domain";
 
+export const TEST_PATIENT_ID = "00000000-0000-5000-8000-000000000001";
+export const TEST_SOURCE_DOC_ID = "00000000-0000-5000-8000-000000000002";
+export const TEST_EVENT_ID = "00000000-0000-5000-8000-000000000003";
+
 export function canonicalEvent(overrides: Partial<CanonicalClinicalEvent> = {}): CanonicalClinicalEvent {
   return {
     schema_version: "clinical-event-v1",
-    event_id: "event-1",
-    patient_id: "patient-1",
+    event_id: TEST_EVENT_ID,
+    patient_id: TEST_PATIENT_ID,
     event_type: "referral",
     date: "2026-04-18",
     date_precision: "day",
@@ -12,7 +16,7 @@ export function canonicalEvent(overrides: Partial<CanonicalClinicalEvent> = {}):
     provider_type: "specialist",
     description: "Oncology referral placed",
     source: {
-      source_doc_id: "doc-1",
+      source_doc_id: TEST_SOURCE_DOC_ID,
       source_span: "Referral to Medical Oncology.",
       verification_method: "exact",
       verification_score: 1,

@@ -122,12 +122,22 @@ export const LegacyClinicalEventSchema = z.object({
 const datePrecisionSchema = z.enum(["day", "month"]);
 const seriesStatusSchema = z.enum(["explicit_series", "explicit_one_off", "unknown"]);
 const verificationMethodSchema = z.enum(["exact", "fuzzy"]);
+const specialtyCodeSchema = z.enum([
+  "oncology",
+  "cardiology",
+  "endocrinology",
+  "primary_care",
+  "surgery",
+  "imaging",
+  "laboratory",
+  "pharmacy",
+]);
 const nonEmptyString = z.string().min(1);
 const optionalNullableString = z.string().min(1).nullable().optional();
 
 const eventSourceSchema = z
   .object({
-    source_doc_id: nonEmptyString,
+    source_doc_id: z.string().uuid(),
     source_span: nonEmptyString.max(300),
     span_start: z.number().int().nonnegative().optional(),
     span_end: z.number().int().nonnegative().optional(),
@@ -136,6 +146,9 @@ const eventSourceSchema = z
   })
   .strict()
   .superRefine((source, ctx) => {
+    if ((source.span_start === undefined) !== (source.span_end === undefined)) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: "span_start and span_end must be supplied together" });
+    }
     if (source.span_start !== undefined && source.span_end !== undefined && source.span_end < source.span_start) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: "span_end must be >= span_start", path: ["span_end"] });
     }
@@ -168,7 +181,7 @@ export const ConsultPayloadSchema = z
 export const FollowupPayloadSchema = z
   .object({
     topic: nonEmptyString.optional(),
-    specialty_normalized: nonEmptyString.optional(),
+    specialty_normalized: specialtyCodeSchema.optional(),
     mode: z.enum(["in_person", "telehealth", "phone", "message", "unknown"]),
     status: z.enum(["scheduled", "completed", "missed", "cancelled", "unknown"]),
   })
@@ -225,17 +238,17 @@ export const SurgeryPayloadSchema = z
 
 const canonicalEventBase = {
   schema_version: z.literal("clinical-event-v1"),
-  event_id: nonEmptyString,
-  patient_id: nonEmptyString,
+  event_id: z.string().uuid(),
+  patient_id: z.string().uuid(),
   date: isoDate,
   date_precision: datePrecisionSchema,
-  provider_id: nonEmptyString.optional(),
+  provider_id: z.string().uuid().optional(),
   provider_display: nonEmptyString.optional(),
   provider_type: ProviderTypeSchema,
   description: nonEmptyString.max(200),
   source: eventSourceSchema,
   extraction_confidence: z.number().finite().min(0).max(1),
-  normalization_version: nonEmptyString,
+  normalization_version: z.literal("normalization-v1"),
 };
 
 export const ClinicalEventSchema = z.discriminatedUnion("event_type", [

@@ -1,5 +1,5 @@
 import type {
-  ClinicalEvent,
+  CanonicalClinicalEvent,
   EvalResult,
   Gap,
   Patient,
@@ -38,7 +38,7 @@ export type PanelCache = CachedArtifact<PanelSummary>;
 export type PatientsCache = CachedArtifact<Patient[]>;
 export type PatientPrioritiesCache = CachedArtifact<PatientInterventionPriority[]>;
 export type RecordsCache = CachedArtifact<SourceRecord[]>;
-export type TimelinesCache = CachedArtifact<ClinicalEvent[]>;
+export type TimelinesCache = CachedArtifact<CanonicalClinicalEvent[]>;
 export type GapsCache = CachedArtifact<Gap[]>;
 export type QueueCache = CachedArtifact<QueueItem[]>;
 export type ImpactCache = CachedArtifact<ImpactSummary>;

@@ -8,6 +8,46 @@
   "extraction_gold_events": 130,
   "extraction_gold_representable": 130,
   "rejection_counts": {},
-  "event_hash": "2c0f59f87bf8162d69c6ea08716e5bce7cd970a3966d25819ab5eb2f5f02dfd6",
+  "event_hash": "b7a8f8ed6e75567d4025d01f496cf15974fb7c011b949982c633002f9dbd18a4",
+  "schema_hash": "81d40e2820f4d99d1924484813246fba30f7af30807357feff4c757c35f22ad4",
+  "accepted_events_with_provenance": 484,
+  "unsupported_spans_accepted": 0,
+  "schema_violations_accepted": 0,
+  "risk_or_diagnosis_fields": 0,
+  "detector_decision_fields": 0,
+  "supported_event_types": {
+    "expected": 8,
+    "represented": 8,
+    "values": [
+      "referral",
+      "consult",
+      "followup",
+      "lab_result",
+      "imaging",
+      "medication_start",
+      "medication_stop",
+      "surgery"
+    ]
+  },
+  "maria_fixture_valid": true,
+  "normalization_aliases": {
+    "lab": {
+      "defined": 21,
+      "mapped": 6
+    },
+    "medication": {
+      "defined": 11,
+      "mapped": 5
+    },
+    "specialty": {
+      "defined": 28,
+      "mapped": 8
+    }
+  },
+  "detector_sufficiency": {
+    "missed_followup": true,
+    "duplicate_testing": true,
+    "medication_monitoring": true
+  },
   "rejected": []
 }

@@ -1,6 +1,5 @@
 import type { CanonicalClinicalEvent, EventPayload } from "@/lib/domain";
 import {
-  NORMALIZATION_VERSION,
   normalizeBodyRegion,
   normalizeImagingModality,
   normalizeLab,
@@ -8,8 +7,15 @@ import {
   normalizeSpecialty,
 } from "@/lib/normalization";
 
-function asRecord(payload: EventPayload): Record<string, unknown> {
-  return payload as unknown as Record<string, unknown>;
+export class NormalizationFailure extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "NormalizationFailure";
+  }
+}
+
+function asRecord(payload: EventPayload | unknown): Record<string, unknown> {
+  return payload && typeof payload === "object" ? (payload as Record<string, unknown>) : {};
 }
 
 export function normalizeClinicalEvent(event: CanonicalClinicalEvent): CanonicalClinicalEvent {
@@ -17,27 +23,40 @@ export function normalizeClinicalEvent(event: CanonicalClinicalEvent): Canonical
   let normalized: Record<string, unknown> = { ...payload };
 
   if ("specialty_raw" in payload) {
+    const specialty = normalizeSpecialty(String(payload["specialty_raw"]));
+    if (!specialty) throw new NormalizationFailure("Specialty alias is not mapped.");
     normalized = {
       ...normalized,
-      specialty_normalized: normalizeSpecialty(String(payload["specialty_raw"])) ?? "unknown",
+      specialty_normalized: specialty,
     };
   }
+  if (event.event_type === "followup" && typeof payload["specialty_normalized"] === "string") {
+    const specialty = normalizeSpecialty(payload["specialty_normalized"]);
+    if (!specialty) throw new NormalizationFailure("Follow-up specialty alias is not mapped.");
+    normalized = { ...normalized, specialty_normalized: specialty };
+  }
   if ("test_name_raw" in payload) {
+    const testCode = normalizeLab(String(payload["test_name_raw"]));
+    if (!testCode) throw new NormalizationFailure("Laboratory alias is not mapped.");
     normalized = {
       ...normalized,
-      test_code_normalized: normalizeLab(String(payload["test_name_raw"])) ?? "unknown",
+      test_code_normalized: testCode,
     };
   }
   if ("drug_raw" in payload) {
+    const medication = normalizeMedication(String(payload["drug_raw"]));
+    if (!medication) throw new NormalizationFailure("Medication alias is not mapped.");
     normalized = {
       ...normalized,
-      drug_normalized: normalizeMedication(String(payload["drug_raw"])) ?? "unknown",
+      drug_normalized: medication,
     };
   }
   if ("modality_raw" in payload) {
+    const modality = normalizeImagingModality(String(payload["modality_raw"]));
+    if (!modality) throw new NormalizationFailure("Imaging modality alias is not mapped.");
     normalized = {
       ...normalized,
-      modality_normalized: normalizeImagingModality(String(payload["modality_raw"])) ?? "other",
+      modality_normalized: modality,
       body_region_normalized:
         normalizeBodyRegion(String(payload["body_region_raw"])) ?? String(payload["body_region_raw"]).trim().toLowerCase(),
     };
@@ -51,7 +70,6 @@ export function normalizeClinicalEvent(event: CanonicalClinicalEvent): Canonical
 
   return {
     ...event,
-    normalization_version: NORMALIZATION_VERSION,
     typed: normalized as unknown as CanonicalClinicalEvent["typed"],
   } as unknown as CanonicalClinicalEvent;
 }

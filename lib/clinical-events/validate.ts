@@ -18,6 +18,13 @@ export interface ClinicalEventValidationResult {
 }
 
 function rejectionForSchema(candidate: unknown, issue: string): ClinicalEventRejection {
+  const normalizationVersion =
+    candidate && typeof candidate === "object"
+      ? (candidate as { normalization_version?: unknown }).normalization_version
+      : undefined;
+  if (normalizationVersion !== undefined && normalizationVersion !== NORMALIZATION_VERSION) {
+    return rejectClinicalEvent("CE-009", "Unsupported normalization version.", candidate, "normalization");
+  }
   const eventType =
     candidate && typeof candidate === "object" && "event_type" in candidate
       ? (candidate as { event_type?: unknown }).event_type
@@ -50,6 +57,23 @@ export function validateClinicalEvent(
       accepted: null,
       rejection: rejectClinicalEvent("CE-005", "Source document or event belongs to another patient.", candidate),
     };
+  }
+
+  if (event.source.span_start !== undefined && event.source.span_end !== undefined) {
+    if (event.source.span_end > record.text.length) {
+      return {
+        accepted: null,
+        rejection: rejectClinicalEvent("CE-006", "Source span offsets exceed the source document.", candidate),
+      };
+    }
+    const rangedText = record.text.slice(event.source.span_start, event.source.span_end);
+    const rangedVerification = verifySourceSpan(event.source.source_span, rangedText);
+    if (!rangedVerification.supported) {
+      return {
+        accepted: null,
+        rejection: rejectClinicalEvent("CE-006", "Recorded source offsets do not match the source span.", candidate),
+      };
+    }
   }
 
   const span = verifySourceSpan(event.source.source_span, record.text);

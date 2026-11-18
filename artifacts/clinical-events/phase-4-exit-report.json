@@ -1,0 +1,53 @@
+{
+  "title": "CONTINUA CLINICAL EVENT MODEL v1",
+  "schema": "clinical-event-v1",
+  "normalization": "normalization-v1",
+  "phase3_gold": {
+    "representable": 130,
+    "total": 130
+  },
+  "provenance": {
+    "accepted_with_valid_provenance": 484,
+    "unsupported_spans_accepted": 0
+  },
+  "schema_hash": "81d40e2820f4d99d1924484813246fba30f7af30807357feff4c757c35f22ad4",
+  "detector_sufficiency": {
+    "missed_followup": true,
+    "duplicate_testing": true,
+    "medication_monitoring": true
+  },
+  "supported_event_types": {
+    "expected": 8,
+    "represented": 8,
+    "values": [
+      "referral",
+      "consult",
+      "followup",
+      "lab_result",
+      "imaging",
+      "medication_start",
+      "medication_stop",
+      "surgery"
+    ]
+  },
+  "maria_fixture_valid": true,
+  "safety": {
+    "risk_or_diagnosis_fields": 0,
+    "detector_decision_fields": 0
+  },
+  "normalization_aliases": {
+    "lab": {
+      "defined": 21,
+      "mapped": 6
+    },
+    "medication": {
+      "defined": 11,
+      "mapped": 5
+    },
+    "specialty": {
+      "defined": 28,
+      "mapped": 8
+    }
+  },
+  "status": "PASS"
+}

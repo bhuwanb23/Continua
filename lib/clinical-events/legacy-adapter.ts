@@ -1,6 +1,7 @@
 import type { CanonicalClinicalEvent, LegacyClinicalEvent } from "@/lib/domain";
 import { NORMALIZATION_VERSION } from "@/lib/normalization";
 import type { EventPayload } from "@/lib/domain/event-types";
+import { normalizeClinicalEvent } from "./normalize";
 
 function record(event: LegacyClinicalEvent): Record<string, unknown> {
   return event.typed ?? {};
@@ -23,7 +24,7 @@ export function legacyEventToCanonical(event: LegacyClinicalEvent): CanonicalCli
     provider_id: event.provider_id,
     provider_display: event.provider,
     provider_type: event.provider_type,
-    description: event.description.slice(0, 200),
+    description: event.description,
     source: {
       source_doc_id: event.source_doc_id,
       source_span: event.source_span,
@@ -47,7 +48,7 @@ export function legacyEventToCanonical(event: LegacyClinicalEvent): CanonicalCli
             : typeof event.window_days === "number"
               ? event.window_days
               : 30,
-        window_source: typeof typed["expected_window_days"] === "number" ? "document" : "benchmark_policy",
+        window_source: typed["window_source"] === "benchmark_policy" ? "benchmark_policy" : "document",
         status: stringValue([typed["status"]], "unknown") as "placed" | "completed" | "cancelled" | "unknown",
       } as EventPayload;
       break;
@@ -134,12 +135,33 @@ export function legacyEventToCanonical(event: LegacyClinicalEvent): CanonicalCli
       break;
   }
 
-  return { ...base, typed: payload } as CanonicalClinicalEvent;
+  return normalizeClinicalEvent({ ...base, typed: payload } as CanonicalClinicalEvent);
 }
 
 export function canonicalEventToLegacy(event: CanonicalClinicalEvent): LegacyClinicalEvent {
   const typed = event.typed as unknown as Record<string, string | number | boolean | null>;
-  return {
+  const legacyTyped = Object.fromEntries(
+    Object.entries(typed).filter(([, value]) => value !== undefined),
+  ) as Record<string, string | number | boolean | null>;
+  const specialty =
+    typeof typed["specialty_raw"] === "string"
+      ? typed["specialty_raw"]
+      : typeof typed["specialty_normalized"] === "string"
+        ? typed["specialty_normalized"]
+        : undefined;
+  const windowDays = typeof typed["expected_window_days"] === "number" ? typed["expected_window_days"] : undefined;
+  if (event.event_type === "imaging") {
+    if (typeof typed["modality_raw"] === "string") legacyTyped["modality"] = typed["modality_raw"];
+    if (typeof typed["body_region_raw"] === "string") legacyTyped["body_region"] = typed["body_region_raw"];
+  }
+  if (event.event_type === "surgery") {
+    if (typeof typed["procedure_raw"] === "string") legacyTyped["procedure"] = typed["procedure_raw"];
+    if (typeof typed["outcome_summary"] === "string") legacyTyped["outcome"] = typed["outcome_summary"];
+  }
+  if (event.event_type === "followup" && typeof typed["specialty_normalized"] === "string") {
+    legacyTyped["specialty"] = typed["specialty_normalized"];
+  }
+  const legacy: LegacyClinicalEvent = {
     event_id: event.event_id,
     patient_id: event.patient_id,
     event_type: event.event_type,
@@ -147,12 +169,17 @@ export function canonicalEventToLegacy(event: CanonicalClinicalEvent): LegacyCli
     description: event.description,
     provider: event.provider_display ?? "Unknown provider",
     provider_type: event.provider_type,
+    ...(specialty === undefined ? {} : { specialty }),
+    ...(windowDays === undefined ? {} : { window_days: windowDays }),
     source_doc_id: event.source.source_doc_id,
     source_span: event.source.source_span,
     confidence: event.extraction_confidence,
+    date_precision: event.date_precision,
     series_status: "series_status" in typed && typeof typed["series_status"] === "string"
       ? (typed["series_status"] as LegacyClinicalEvent["series_status"])
       : "unknown",
-    typed,
+    typed: legacyTyped,
   };
+  if (event.provider_id !== undefined) legacy.provider_id = event.provider_id;
+  return legacy;
 }
