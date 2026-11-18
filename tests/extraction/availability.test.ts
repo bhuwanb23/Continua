@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { SourceRecord } from "@/lib/domain";
-import { ConfigError, loadEnv } from "@/lib/config/env";
+import { loadEnv } from "@/lib/config/env";
+import { ConfigError } from "@/lib/errors";
 import { extractPatient } from "@/lib/extraction/batch";
 import { LlmDocumentExtractor } from "@/lib/extraction/llm-extractor";
 import { createLlmProvider, LlmRequestError, type LlmProvider } from "@/lib/extraction/provider";

@@ -73,7 +73,7 @@ describe("prompt injection stays data", () => {
     const result = await extractPatient(new LlmDocumentExtractor(provider, { logger }), [record]);
     expect(result.status).toBe("COMPLETE");
     expect(result.store.accepted).toHaveLength(1);
-    const event = result.store.accepted[0] as Record<string, unknown>;
+    const event = result.store.accepted[0];
     expect(event).not.toHaveProperty("patient_risk");
     expect(event).not.toHaveProperty("gap_type");
     expect(event).not.toHaveProperty("priority");
