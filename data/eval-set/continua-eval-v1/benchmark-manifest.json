@@ -1,0 +1,71 @@
+{
+  "dataset_version": "continua-synth-v1",
+  "eval_version": "continua-eval-v1",
+  "evaluation_as_of_date": "2026-06-05",
+  "frozen_at": "2026-11-18",
+  "status": "frozen",
+  "patient_count": 80,
+  "document_count": 485,
+  "provider_count": 26,
+  "positive_patients": 42,
+  "negative_patients": 38,
+  "total_gaps": 66,
+  "gap_counts": {
+    "missed_followup": 26,
+    "duplicate_test": 20,
+    "med_monitoring": 20
+  },
+  "hard_negative": {
+    "scenario_count": 35,
+    "family_count": 13,
+    "families": [
+      "alias_covered_monitoring",
+      "boundary_monitoring",
+      "completed_referral",
+      "completed_status",
+      "duplicated_document",
+      "explicit_series",
+      "imaging_different_region",
+      "med_stopped_early",
+      "missing_provider",
+      "partial_date",
+      "referral_inside_window",
+      "repeated_lab_outside_window",
+      "telehealth_completion"
+    ]
+  },
+  "extraction_gold": {
+    "patient_count": 12,
+    "event_count": 130
+  },
+  "partitions": {
+    "dev": 20,
+    "final": 60,
+    "overlap": 0
+  },
+  "matching_rule": {
+    "version": "v2",
+    "semantics": {
+      "patient_id": "exact",
+      "gap_type": "exact normalized enum",
+      "identity": "all fields present in truth identity must match prediction identity",
+      "evidence": "at least one acceptable truth doc must be cited as valid evidence",
+      "assignment": "one-to-one, deterministic greedy best score",
+      "duplicate_prediction": "counted as false positive"
+    }
+  },
+  "hashes": {
+    "ground_truth_sha256": "3a0deb04396a9c6a51208d56c04a59c878fb7199d58cbe7e8cc4b338a5f1a5f2",
+    "negative_manifest_sha256": "9b72b523728fced7bb901c6a99523b76d3301d0dfba8e07dbde051095f5990a9",
+    "extraction_gold_sha256": "d74e758c32f5499235aa47145ff06f858ca0dcc411a1385ca833ac1624bec284",
+    "partitions_sha256": "f605254c355c09373b8c7eb83ee65475a6af7210f84303633b46cfa34565428c",
+    "benchmark_contracts_sha256": "e77b81a9f3745b593be38a3256a85942cfb1f34d8ee72905b8055aa368dd1f55",
+    "evaluation_config_sha256": "d822c52cb0c823678e1c87c270560c23b524508265515dfc816fb12d565b871a"
+  },
+  "freeze": {
+    "stamp": "CONTINUA PHASE 3: continua-eval-v1 FROZEN",
+    "policy": "Any label, identity, partition, date, expected-outcome, matching-semantics, or metric-definition change requires continua-eval-v2.",
+    "frozen_at": "2026-11-18",
+    "contract_source": "Derived from frozen Phase 2 labels without changing any planted-gap, negative, or gold label."
+  }
+}

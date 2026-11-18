@@ -29,7 +29,12 @@
     "hash:dataset": "tsx scripts/hash-dataset.ts",
     "characterize:data": "tsx scripts/characterize-dataset.ts",
     "verify:determinism": "tsx scripts/verify-determinism.ts",
-    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset"
+    "build:benchmark": "tsx scripts/build-benchmark-contracts.ts",
+    "eval": "tsx scripts/eval.ts",
+    "validate:benchmark": "tsx scripts/validate-benchmark.ts",
+    "audit:benchmark-leakage": "tsx scripts/audit-benchmark-leakage.ts",
+    "hash:benchmark": "tsx scripts/hash-benchmark.ts",
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark"
   },
   "dependencies": {
     "next": "15.5.29",
