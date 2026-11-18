@@ -38,4 +38,14 @@ describe("latency evaluation contract", () => {
       }),
     ).toThrow("latency.panel_p95_ms");
   });
+
+  it("rejects a p95 lower than its p50", () => {
+    expect(() =>
+      validateLatencyMetrics({
+        ...emptyLatencyMetrics(),
+        panel_p50_ms: 50,
+        panel_p95_ms: 40,
+      }),
+    ).toThrow("p95_ms must be at least p50");
+  });
 });

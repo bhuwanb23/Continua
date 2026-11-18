@@ -1,4 +1,5 @@
 import type { GapPrediction, GapIdentity, MatchAssignment, MatchResult, TruthGap } from "./types";
+import { daysBetween, isIsoDate } from "./temporal";
 
 export interface MatchOptions {
   /** Require at least one acceptable evidence document when truth has evidence. */
@@ -112,12 +113,9 @@ export function predictionEvidenceDocIds(evidence: unknown): string[] {
   return [...new Set(ids)];
 }
 
-function safeDaysBetween(left: string | undefined, right: string | undefined): number {
-  if (!left || !right) return 0;
-  const a = Date.parse(`${left}T00:00:00Z`);
-  const b = Date.parse(`${right}T00:00:00Z`);
-  if (Number.isNaN(a) || Number.isNaN(b)) return 0;
-  return Math.abs(Math.round((a - b) / 86_400_000));
+function safeDaysBetween(left: string | undefined, right: string | undefined): number | null {
+  if (!left || !right || !isIsoDate(left) || !isIsoDate(right)) return null;
+  return Math.abs(daysBetween(left, right));
 }
 
 export function matchPredictions(
@@ -158,11 +156,8 @@ export function matchPredictions(
       if (truthDue) {
         if (typeof prediction.due_date !== "string" || prediction.due_date.length === 0) continue;
       }
-      const temporalDelta = truthDue
-        ? safeDaysBetween(truthDue, prediction.due_date)
-        : config.maxTemporalDeltaDays === 0
-          ? 0
-          : safeDaysBetween(truthDue, prediction.due_date);
+      const temporalDelta = truthDue ? safeDaysBetween(truthDue, prediction.due_date) : 0;
+      if (temporalDelta === null) continue;
       if (temporalDelta > config.maxTemporalDeltaDays) continue;
 
       candidates.push({

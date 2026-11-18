@@ -209,9 +209,9 @@ function main(): void {
   const grounding = evaluateGrounding(selectedPredictions, records);
   const grounded = filterGroundedPredictions(selectedPredictions, records);
   const effectivePredictions = grounded.displayed;
-  const matches = matchPredictions(truthGaps, effectivePredictions);
-  const detection = computeDetectionMetrics(truthGaps, effectivePredictions, matches);
-  const hardNegatives = computeHardNegativePassRate(negatives, effectivePredictions);
+  const matches = matchPredictions(truthGaps, selectedPredictions);
+  const detection = computeDetectionMetrics(truthGaps, selectedPredictions, matches);
+  const hardNegatives = computeHardNegativePassRate(negatives, selectedPredictions);
   const extraction = selectedExtraction
     ? matchExtractionEvents(gold, selectedExtraction, { records })
     : unmeasuredExtraction(gold.length);
@@ -233,7 +233,7 @@ function main(): void {
   priority.metamorphic_self_check = runMetamorphicPriorityTests(referencePriorityScore).passed;
 
   const errors = [
-    ...classifyGapDetectionErrors(truthGaps, effectivePredictions, matches, grounding.results),
+    ...classifyGapDetectionErrors(truthGaps, selectedPredictions, matches, grounding.results),
     ...(selectedExtraction
       ? classifyExtractionErrors(
           extraction,
@@ -272,7 +272,7 @@ function main(): void {
     status: "completed",
     metadata,
     truth_gaps: truthGaps.length,
-    predictions: effectivePredictions.length,
+    predictions: selectedPredictions.length,
     grounding_suppression: {
       submitted_predictions: selectedPredictions.length,
       displayed_predictions: effectivePredictions.length,

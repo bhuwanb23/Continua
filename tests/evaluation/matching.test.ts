@@ -78,6 +78,11 @@ describe("one-to-one gap matching", () => {
     expect(result.truePositives).toBe(0);
   });
 
+  it("rejects an invalid declared due date", () => {
+    const result = matchPredictions([truthGap()], [gapPrediction({ due_date: "not-a-date" })]);
+    expect(result.truePositives).toBe(0);
+  });
+
   it("rejects same patient and type with wrong trigger occurrence", () => {
     expect(
       occurrenceMatches(truthGap(), gapPrediction({ trigger_event_ids: ["other-trigger"], due_date: "2026-06-02" })),

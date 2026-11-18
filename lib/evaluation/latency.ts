@@ -15,6 +15,20 @@ export function validateLatencyMetrics(latency: LatencyMetrics): void {
       throw new Error(`Invalid latency.${key}: ${String(value)}`);
     }
   }
+  if (
+    latency.single_patient_p50_ms !== null &&
+    latency.single_patient_p95_ms !== null &&
+    latency.single_patient_p95_ms < latency.single_patient_p50_ms
+  ) {
+    throw new Error("latency.single_patient_p95_ms must be at least p50");
+  }
+  if (
+    latency.panel_p50_ms !== null &&
+    latency.panel_p95_ms !== null &&
+    latency.panel_p95_ms < latency.panel_p50_ms
+  ) {
+    throw new Error("latency.panel_p95_ms must be at least p50");
+  }
   if (latency.live_or_cached !== "live" && latency.live_or_cached !== "cached" && latency.live_or_cached !== "unknown") {
     throw new Error(`Invalid latency.live_or_cached: ${String(latency.live_or_cached)}`);
   }

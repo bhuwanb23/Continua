@@ -43,9 +43,6 @@ function executableSource(line: string): string | null {
   return withoutTrailingComment.trim().length > 0 ? withoutTrailingComment : null;
 }
 
-/** ISO datetimes like `2026-06-05T00:00:00.000Z` must not be confused with scenario ids `T02`. */
-const ISO_INSTANT_PATTERN = /T\d{2}:\d{2}:\d{2}/;
-
 const violations: string[] = [];
 let scanned = 0;
 
@@ -65,10 +62,8 @@ for (const base of runtimeRoots) {
         for (const pattern of FIXTURE_PATTERNS) {
           if (pattern.test(code)) violations.push(`${rel}:${index + 1} contains a fixture-specific branch or key`);
         }
-        if (!ISO_INSTANT_PATTERN.test(code)) {
-          for (const pattern of SCENARIO_PATTERNS) {
-            if (pattern.test(code)) violations.push(`${rel}:${index + 1} contains an evaluation scenario literal`);
-          }
+        for (const pattern of SCENARIO_PATTERNS) {
+          if (pattern.test(code)) violations.push(`${rel}:${index + 1} contains an evaluation scenario literal`);
         }
         for (const pattern of RUNTIME_LABEL_FIELDS) {
           if (pattern.test(code)) violations.push(`${rel}:${index + 1} exposes an evaluation label field to runtime`);
