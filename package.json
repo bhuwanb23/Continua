@@ -35,7 +35,12 @@
     "audit:benchmark-leakage": "tsx scripts/audit-benchmark-leakage.ts",
     "hash:benchmark": "tsx scripts/hash-benchmark.ts",
     "validate:clinical-events": "tsx scripts/validate-clinical-events.ts",
-    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events"
+    "run:extraction": "tsx scripts/run-extraction.ts",
+    "eval:extraction": "tsx scripts/eval-extraction.ts",
+    "inspect:extraction": "tsx scripts/inspect-extraction-errors.ts",
+    "build:extraction-cache": "tsx scripts/build-extraction-cache.ts",
+    "validate:extraction": "tsx scripts/validate-extraction.ts",
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction"
   },
   "dependencies": {
     "next": "15.5.29",

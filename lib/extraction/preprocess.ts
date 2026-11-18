@@ -3,8 +3,8 @@ import type { DocType, ProviderType, SourceRecord } from "@/lib/domain";
 
 /**
  * Whitelisted extraction input. Only information legitimately available from
- * the record reaches the extractor — never fixture keys, scenario labels,
- * difficulty, or ground truth.
+ * the record reaches the extractor — never fixture keys or benchmark/truth
+ * metadata.
  */
 export interface ExtractionEnvelope {
   document_id: string;

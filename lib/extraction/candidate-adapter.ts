@@ -100,7 +100,15 @@ export function adaptCandidateEvent(
     provider_display: candidate.provider_display ?? context.record.provider,
     provider_type: candidate.provider_type ?? context.record.provider_type,
     description: candidate.description,
-    source: context.source,
+    // Offsets are withheld until after identification so event identity stays
+    // span-based, identical to the legacy truth path; validation re-attaches
+    // server-computed offsets.
+    source: {
+      source_doc_id: context.source.source_doc_id,
+      source_span: context.source.source_span,
+      verification_method: context.source.verification_method,
+      verification_score: context.source.verification_score,
+    },
     extraction_confidence: candidate.confidence,
     normalization_version: NORMALIZATION_VERSION,
     mention_context: candidate.mention_context,
