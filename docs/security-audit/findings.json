@@ -1,0 +1,97 @@
+{
+  "findings": [
+    {
+      "id": "F-001",
+      "status": "needs_validation",
+      "title": "Benchmark labels are committed in the same repository",
+      "severity": null,
+      "affected": "data/eval-set/continua-eval-v1/{ground_truth.json,negative_manifest.json,extraction_gold.json,benchmark-contracts.json,partitions.json}",
+      "evidence": "The repository tracks planted gap labels, negative cases, extraction gold, identities, and dev/final partitions.",
+      "boundary": "Repository consumers may read hidden benchmark answers if the repository is shared or published.",
+      "missing_fact": "Whether this repository is public, shared, or access-controlled.",
+      "recommendation": "If blind evaluation is required, store labels in a separate access-controlled artifact and ship only public inputs in the application repository."
+    },
+    {
+      "id": "F-002",
+      "status": "confirmed",
+      "title": "Evaluator and benchmark-bundle code is importable from the runtime source tree",
+      "severity": "low",
+      "affected": "lib/evaluation/index.ts, lib/evaluation/benchmark-bundle.ts",
+      "evidence": "lib/evaluation exports loadBenchmarkBundle, which reads data/eval-set files. Runtime leakage audits rely on textual references rather than a module boundary.",
+      "boundary": "A future app import could bundle benchmark labels into client or server runtime.",
+      "recommendation": "Move evaluator code to tools/ or a separate package and enforce the boundary with ESLint/CI."
+    },
+    {
+      "id": "F-003",
+      "status": "confirmed",
+      "title": "Logger redacts secret values only when their field names match a secret pattern",
+      "severity": "low",
+      "affected": "lib/logging/logger.ts",
+      "evidence": "redact() checks SECRET_PATTERN.test(name) but not values.",
+      "boundary": "A secret logged under a non-secret field name would be emitted.",
+      "recommendation": "Avoid logging arbitrary values; add an explicit allowlist or value-level redaction for known secret patterns."
+    },
+    {
+      "id": "F-004",
+      "status": "confirmed",
+      "title": "Security headers omit Content-Security-Policy and HSTS",
+      "severity": "low",
+      "affected": "next.config.ts",
+      "evidence": "headers() sets nosniff, frame-options, referrer policy, and permissions policy, but no CSP or Strict-Transport-Security.",
+      "boundary": "Browser hardening is weaker than necessary for a production deployment.",
+      "recommendation": "Add a restrictive CSP and HSTS when the app is deployed over HTTPS."
+    },
+    {
+      "id": "F-005",
+      "status": "confirmed",
+      "title": "Evaluation output directory is not ignored by Git",
+      "severity": "low",
+      "affected": ".gitignore",
+      "evidence": ".gitignore does not include artifacts/.",
+      "boundary": "Generated predictions and reports can be accidentally committed.",
+      "recommendation": "Add artifacts/ to .gitignore."
+    },
+    {
+      "id": "F-006",
+      "status": "confirmed",
+      "title": "CI does not run Phase 3 benchmark integrity gates",
+      "severity": "low",
+      "affected": ".github/workflows/ci.yml",
+      "evidence": "CI runs check:leakage but not validate:benchmark, audit:benchmark-leakage, or hash:benchmark.",
+      "boundary": "Benchmark tampering or leakage regressions may not fail CI.",
+      "recommendation": "Add the three Phase 3 benchmark commands to CI."
+    },
+    {
+      "id": "F-007",
+      "status": "confirmed",
+      "title": "Benchmark leakage audit can ignore fixture keys in comments",
+      "severity": "informational",
+      "affected": "scripts/audit-benchmark-leakage.ts",
+      "evidence": "The scanner skips lines whose trimmed text starts with //, *, or /*.",
+      "boundary": "A comment can contain a fixture key without failing the audit.",
+      "recommendation": "This does not affect runtime behavior; document the exception or scan comments separately."
+    },
+    {
+      "id": "F-008",
+      "status": "needs_validation",
+      "title": "Dependency vulnerability status was not verified offline",
+      "severity": null,
+      "affected": "package.json, package-lock.json",
+      "evidence": "npm audit failed because the registry endpoint required HTTPS/TLS upgrade; the local environment could not complete the check.",
+      "boundary": "Known vulnerable dependency versions may be present.",
+      "missing_fact": "A successful npm audit or equivalent offline advisory database result.",
+      "recommendation": "Run npm audit in CI or an environment with registry access."
+    },
+    {
+      "id": "F-009",
+      "status": "needs_validation",
+      "title": "File-based utilities accept arbitrary paths without containment",
+      "severity": null,
+      "affected": "lib/repositories/json-file.ts, scripts/eval.ts",
+      "evidence": "readJsonFile and eval CLI read user-supplied paths without validating containment.",
+      "boundary": "If these utilities are ever exposed to untrusted input, path traversal is possible.",
+      "missing_fact": "Whether any future API or untrusted caller will pass paths to these utilities.",
+      "recommendation": "Add path containment if these utilities become reachable from untrusted callers."
+    }
+  ]
+}

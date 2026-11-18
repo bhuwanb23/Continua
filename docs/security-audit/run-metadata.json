@@ -1,0 +1,12 @@
+{
+  "run_id": "run-1",
+  "repo": "continua",
+  "target": "C:/Users/bhuwan.bhawarlal/Desktop/projects/dfw",
+  "source_ref": "290dfeb (dirty worktree; Phase 3 uncommitted changes)",
+  "profile": "standard",
+  "scope_paths": ["app", "components", "lib", "scripts", "tests", "data", "next.config.ts", ".env.example", ".github/workflows/ci.yml"],
+  "budget": null,
+  "execution_policy": "sandboxed-source-and-local-only",
+  "run_status": "complete",
+  "selected_companion_files": []
+}

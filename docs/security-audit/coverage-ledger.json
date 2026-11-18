@@ -1,0 +1,60 @@
+{
+  "units": [
+    {
+      "id": "web-api-health",
+      "surface": "app/api/health/route.ts",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "Reviewed output projection and env handling."
+    },
+    {
+      "id": "config-env",
+      "surface": "lib/config/env.ts",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "Reviewed secret/public boundary."
+    },
+    {
+      "id": "repositories",
+      "surface": "lib/repositories/*",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "No SQL; path-based file reads are operator-controlled."
+    },
+    {
+      "id": "leakage-boundary",
+      "surface": "scripts/check-leakage.ts and scripts/audit-benchmark-leakage.ts",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "Runtime has no benchmark/generator imports."
+    },
+    {
+      "id": "security-headers",
+      "surface": "next.config.ts",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "CSP and HSTS absent."
+    },
+    {
+      "id": "ci-pipeline",
+      "surface": ".github/workflows/ci.yml",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "Phase 3 gates omitted."
+    },
+    {
+      "id": "repository-hygiene",
+      "surface": ".gitignore",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "artifacts not ignored."
+    },
+    {
+      "id": "logging",
+      "surface": "lib/logging/logger.ts",
+      "status": "covered",
+      "owner": "manual",
+      "notes": "Name-based secret redaction only."
+    }
+  ]
+}
