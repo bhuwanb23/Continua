@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { identityMatches, matchPredictions } from "@/lib/evaluation/matching";
+import { identityMatches, matchPredictions, occurrenceMatches } from "@/lib/evaluation/matching";
 import { gapPrediction, truthGap } from "../support/evaluation";
 
 describe("one-to-one gap matching", () => {
@@ -69,5 +69,24 @@ describe("one-to-one gap matching", () => {
       [gapPrediction({ evidence: [{ doc_id: "unrelated", quoted_span: "unrelated" }] })],
     );
     expect(result.falseNegatives).toBe(1);
+  });
+
+  it("rejects a prediction that omits the declared due date when truth has one", () => {
+    const prediction = gapPrediction();
+    delete prediction.due_date;
+    const result = matchPredictions([truthGap()], [prediction]);
+    expect(result.truePositives).toBe(0);
+  });
+
+  it("rejects same patient and type with wrong trigger occurrence", () => {
+    expect(
+      occurrenceMatches(truthGap(), gapPrediction({ trigger_event_ids: ["other-trigger"], due_date: "2026-06-02" })),
+    ).toBe(false);
+    const withIdentityEvents = truthGap({
+      identity: { specialty: "oncology", event_ids: ["trigger-1", "anchor-2"] },
+    });
+    expect(
+      occurrenceMatches(withIdentityEvents, gapPrediction({ trigger_event_ids: ["anchor-2"], due_date: "2026-06-02" })),
+    ).toBe(true);
   });
 });

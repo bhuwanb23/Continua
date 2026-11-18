@@ -136,10 +136,16 @@ export function evaluatePriority(
     formula_applied: checks.every(Boolean),
     confidence_band_cap: cases.every((value) => bandCapped(value.priority_band, value.confidence)),
     overdue_monotonicity: !failures.some((failure) => failure.code === "PRIO-02"),
+    metamorphic_self_check: null,
     failures,
     precision_at_5: precisionAtK(ranked, k),
     coverage_at_5: coverageAtK(ranked, k, truthIds),
   };
+}
+
+/** Reference scorer used only to verify the evaluator's metamorphic contract. */
+export function referencePriorityScore(value: PriorityCase): number {
+  return 50 + Math.min(value.overdue_days, 30) * 0.5 + value.confidence * 10;
 }
 
 /**

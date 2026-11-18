@@ -59,6 +59,7 @@ export function gapPrediction(overrides: Partial<GapPrediction> = {}): GapPredic
     trigger_event_ids: ["trigger-1"],
     identity: { specialty: "oncology" },
     evidence: [{ doc_id: "doc-1", quoted_span: "Referral to Medical Oncology", verification_method: "exact", verification_score: 1 }],
+    due_date: "2026-06-02",
     detector_version: "gaps-v1",
     ...overrides,
   };

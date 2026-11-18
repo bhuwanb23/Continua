@@ -396,6 +396,8 @@ export interface PriorityEvaluation {
   formula_applied: boolean;
   confidence_band_cap: boolean;
   overdue_monotonicity: boolean;
+  /** Reference metamorphic self-check (evaluator contract, not detector output). */
+  metamorphic_self_check: boolean | null;
   failures: PriorityInvariantFailure[];
   precision_at_5: number | null;
   coverage_at_5: number | null;
@@ -427,6 +429,11 @@ export interface EvaluationReport {
   metadata: EvaluationRunMetadata;
   truth_gaps: number;
   predictions: number;
+  grounding_suppression: {
+    submitted_predictions: number;
+    displayed_predictions: number;
+    suppressed_predictions: number;
+  };
   gap_detection: Record<GapType, PerTypeMetrics>;
   macro_f1: number | null;
   micro_f1: number | null;

@@ -1,16 +1,23 @@
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { computeBenchmarkHashes, loadBenchmarkBundle } from "@/lib/evaluation/benchmark-bundle";
 import { assertFiniteMetrics, computeDetectionMetrics, computeHardNegativePassRate } from "@/lib/evaluation/metrics";
 import { matchExtractionEvents } from "@/lib/evaluation/extraction-matching";
-import { evaluateGrounding } from "@/lib/evaluation/grounding";
+import { evaluateGrounding, filterGroundedPredictions } from "@/lib/evaluation/grounding";
 import { matchPredictions, normalizeGapType } from "@/lib/evaluation/matching";
-import { evaluatePriority, type PriorityCase } from "@/lib/evaluation/priority";
+import {
+  evaluatePriority,
+  referencePriorityScore,
+  runMetamorphicPriorityTests,
+  type PriorityCase,
+} from "@/lib/evaluation/priority";
 import { classifyExtractionErrors, classifyGapDetectionErrors, summarizeErrors } from "@/lib/evaluation/taxonomy";
+import { validateLatencyMetrics } from "@/lib/evaluation/latency";
+import { assertBenchmarkValid } from "@/lib/evaluation/validate-benchmark";
 import { DATASET_VERSION, EVALUATION_AS_OF_DATE, EVAL_VERSION, type PartitionName } from "@/lib/evaluation/config";
 import { PRIORITY_VERSION } from "@/lib/domain/versions";
 import type {
-  BenchmarkContracts,
   EvaluationReport,
   EvaluationRunMetadata,
   ExtractionMetrics,
@@ -18,12 +25,9 @@ import type {
   GapPrediction,
   LatencyMetrics,
   PartitionsFile,
-  SourceRecordLike,
 } from "@/lib/evaluation/types";
 
 const root = process.cwd();
-const evalDir = join(root, "data", "eval-set", "continua-eval-v1");
-const datasetDir = join(root, "data", "synthetic", "continua-synth-v1");
 
 interface CliOptions {
   partition: PartitionName | "demo";
@@ -176,9 +180,12 @@ function main(): void {
     process.exit(1);
   }
 
-  const contracts = readJson<BenchmarkContracts>(join(evalDir, "benchmark-contracts.json"));
-  const partitions = readJson<PartitionsFile>(join(evalDir, "partitions.json"));
-  const records = readJson<{ records: SourceRecordLike[] }>(join(datasetDir, "records.json")).records;
+  const benchmark = loadBenchmarkBundle();
+  const validation = assertBenchmarkValid(benchmark, { hashes: computeBenchmarkHashes() });
+  for (const warning of validation.warnings) console.warn(`warning: ${warning}`);
+  const contracts = benchmark.contracts;
+  const partitions = benchmark.partitions;
+  const records = benchmark.records;
   const predictionFile = readJson<PredictionFile | GapPrediction[]>(options.predictionsPath);
   const rawPredictions = Array.isArray(predictionFile) ? predictionFile : predictionFile.predictions;
   const predictions = normalizePredictions(rawPredictions);
@@ -188,6 +195,7 @@ function main(): void {
       ? null
       : (predictionFile.extraction_predictions ?? null);
   const latency = Array.isArray(predictionFile) ? emptyLatency() : { ...emptyLatency(), ...(predictionFile.latency ?? {}) };
+  validateLatencyMetrics(latency);
 
   const allowedPatients = partitionPatientIds(options.partition, partitions);
   const inPartition = (patientId: string): boolean => allowedPatients === null || allowedPatients.has(patientId);
@@ -198,16 +206,18 @@ function main(): void {
   const selectedPredictions = predictions.filter((prediction) => inPartition(prediction.patient_id));
   const selectedExtraction = extractionPredictions?.filter((event) => inPartition(event.patient_id)) ?? null;
 
-  const matches = matchPredictions(truthGaps, selectedPredictions);
-  const detection = computeDetectionMetrics(truthGaps, selectedPredictions, matches);
-  const hardNegatives = computeHardNegativePassRate(negatives, selectedPredictions);
   const grounding = evaluateGrounding(selectedPredictions, records);
+  const grounded = filterGroundedPredictions(selectedPredictions, records);
+  const effectivePredictions = grounded.displayed;
+  const matches = matchPredictions(truthGaps, effectivePredictions);
+  const detection = computeDetectionMetrics(truthGaps, effectivePredictions, matches);
+  const hardNegatives = computeHardNegativePassRate(negatives, effectivePredictions);
   const extraction = selectedExtraction
     ? matchExtractionEvents(gold, selectedExtraction, { records })
     : unmeasuredExtraction(gold.length);
 
   const truthByPrediction = new Map(matches.assignments.map((assignment) => [assignment.prediction_id, assignment.truth_gap_id]));
-  const priorityCases: PriorityCase[] = selectedPredictions
+  const priorityCases: PriorityCase[] = effectivePredictions
     .filter((prediction) => typeof prediction.gap_priority_score === "number" && typeof prediction.priority_band === "string")
     .map((prediction) => ({
       gap_id: prediction.prediction_id,
@@ -219,10 +229,11 @@ function main(): void {
       priority_band: prediction.priority_band as string,
       truth_gap_id: truthByPrediction.get(prediction.prediction_id) ?? null,
     }));
-  const priority = evaluatePriority(priorityCases);
+  const priority = evaluatePriority(priorityCases, { score: referencePriorityScore });
+  priority.metamorphic_self_check = runMetamorphicPriorityTests(referencePriorityScore).passed;
 
   const errors = [
-    ...classifyGapDetectionErrors(truthGaps, selectedPredictions, matches, grounding.results),
+    ...classifyGapDetectionErrors(truthGaps, effectivePredictions, matches, grounding.results),
     ...(selectedExtraction
       ? classifyExtractionErrors(
           extraction,
@@ -261,7 +272,12 @@ function main(): void {
     status: "completed",
     metadata,
     truth_gaps: truthGaps.length,
-    predictions: selectedPredictions.length,
+    predictions: effectivePredictions.length,
+    grounding_suppression: {
+      submitted_predictions: selectedPredictions.length,
+      displayed_predictions: effectivePredictions.length,
+      suppressed_predictions: grounded.suppressed.length,
+    },
     gap_detection: detection.per_type,
     macro_f1: detection.macro_f1,
     micro_f1: detection.micro_f1,
@@ -294,6 +310,7 @@ function main(): void {
       formula_applied: priority.formula_applied,
       confidence_band_cap: priority.confidence_band_cap,
       overdue_monotonicity: priority.overdue_monotonicity,
+      metamorphic_self_check: priority.metamorphic_self_check,
       precision_at_5: priority.precision_at_5,
       coverage_at_5: priority.coverage_at_5,
     },
@@ -306,7 +323,11 @@ function main(): void {
   const outDir = options.outputDir ?? join(root, "artifacts", "eval", runId);
   mkdirSync(outDir, { recursive: true });
   writeJson(join(outDir, "metadata.json"), metadata);
-  writeJson(join(outDir, "predictions.json"), { predictions: selectedPredictions });
+  writeJson(join(outDir, "predictions.json"), {
+    submitted_predictions: selectedPredictions,
+    displayed_predictions: effectivePredictions,
+    suppressed_predictions: grounded.suppressed,
+  });
   writeJson(join(outDir, "extraction-results.json"), {
     ...report.extraction,
     matches: extraction.matches,
@@ -328,7 +349,8 @@ function main(): void {
   writeJson(join(outDir, "eval-report.json"), report);
 
   console.log(`Evaluation complete: ${runId}`);
-  console.log(`  partition: ${options.partition} (${truthGaps.length} truth gaps, ${selectedPredictions.length} predictions)`);
+  console.log(`  partition: ${options.partition} (${truthGaps.length} truth gaps, ${effectivePredictions.length} displayed predictions)`);
+  console.log(`  grounding suppression: ${grounded.suppressed.length} of ${selectedPredictions.length}`);
   console.log(`  macro F1: ${report.macro_f1 ?? "not measured"}`);
   console.log(`  hard-negative pass rate: ${report.hard_negative_pass_rate ?? "not measured"}`);
   console.log(`  grounding: ${report.grounding.grounded_gap_rate ?? "not measured"}`);

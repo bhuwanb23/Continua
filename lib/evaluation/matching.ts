@@ -53,6 +53,35 @@ export function identityMatches(truthIdentity: GapIdentity | undefined, predicti
   return true;
 }
 
+function eventIdList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((item): item is string => typeof item === "string" && item.length > 0);
+}
+
+function truthOccurrenceEventIds(truth: TruthGap): string[] {
+  const ids = new Set<string>();
+  if (truth.trigger?.event_id) ids.add(truth.trigger.event_id);
+  for (const id of eventIdList(truth.identity?.event_ids)) ids.add(id);
+  return [...ids];
+}
+
+function predictionOccurrenceEventIds(prediction: GapPrediction): string[] {
+  const ids = new Set<string>(prediction.trigger_event_ids ?? []);
+  for (const id of eventIdList(prediction.identity?.event_ids)) ids.add(id);
+  return [...ids];
+}
+
+/**
+ * When truth declares trigger or identity event ids, the prediction must cite the
+ * same occurrence — not merely the same patient and gap type.
+ */
+export function occurrenceMatches(truth: TruthGap, prediction: GapPrediction): boolean {
+  const required = truthOccurrenceEventIds(truth);
+  if (required.length === 0) return true;
+  const cited = new Set(predictionOccurrenceEventIds(prediction));
+  return required.some((id) => cited.has(id));
+}
+
 export function truthEvidenceDocIds(truth: Pick<TruthGap, "required_evidence_doc_ids" | "acceptable_evidence_doc_ids" | "source_doc_ids">): string[] {
   const ids = new Set<string>();
   for (const id of truth.acceptable_evidence_doc_ids ?? []) ids.add(id);
@@ -116,6 +145,7 @@ export function matchPredictions(
       if (prediction.patient_id !== truth.patient_id) continue;
       if (prediction.gap_type !== truth.gap_type) continue;
       if (!identityMatches(truth.identity, prediction.identity)) continue;
+      if (!occurrenceMatches(truth, prediction)) continue;
 
       const cited = predictionEvidenceDocIds(prediction.evidence);
       const overlap = acceptable.filter((docId) => cited.includes(docId));
@@ -123,7 +153,16 @@ export function matchPredictions(
 
       const triggerIds = new Set(prediction.trigger_event_ids ?? []);
       const triggerOverlap = (truth.trigger ? [truth.trigger.event_id] : []).filter((id) => triggerIds.has(id)).length;
-      const temporalDelta = safeDaysBetween(truth.temporal?.due_date, prediction.due_date);
+
+      const truthDue = truth.temporal?.due_date;
+      if (truthDue) {
+        if (typeof prediction.due_date !== "string" || prediction.due_date.length === 0) continue;
+      }
+      const temporalDelta = truthDue
+        ? safeDaysBetween(truthDue, prediction.due_date)
+        : config.maxTemporalDeltaDays === 0
+          ? 0
+          : safeDaysBetween(truthDue, prediction.due_date);
       if (temporalDelta > config.maxTemporalDeltaDays) continue;
 
       candidates.push({
