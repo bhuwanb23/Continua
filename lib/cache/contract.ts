@@ -8,6 +8,12 @@ export interface CacheMetadata {
   detector_version: string;
   priority_version: string;
   generated_at: string;
+  /** Phase 5 extraction slots; optional so Phase 1 caches stay compatible. */
+  extractor_version?: string;
+  prompt_version?: string;
+  schema_version?: string;
+  model_id?: string;
+  normalization_version?: string;
 }
 
 export interface CachedArtifact<T> {
