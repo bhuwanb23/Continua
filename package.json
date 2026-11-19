@@ -66,6 +66,8 @@
     "diff:demo-cache": "tsx scripts/diff-demo-cache.ts",
     "inspect:demo-cache": "tsx scripts/inspect-demo-cache.ts",
     "freeze:demo-cache": "tsx scripts/freeze-demo-cache.ts",
+    "validate:api": "tsx scripts/validate-api.ts",
+    "freeze:api": "tsx scripts/freeze-api.ts",
     "benchmark:dev": "tsx scripts/benchmark-dev.ts",
     "benchmark:final": "tsx scripts/benchmark-final.ts",
     "benchmark:baselines": "tsx scripts/benchmark-baselines.ts",
@@ -75,7 +77,7 @@
     "verify:benchmark-artifact": "tsx scripts/verify-benchmark-artifact.ts",
     "validate:benchmark-run": "tsx scripts/validate-benchmark-run.ts",
     "freeze:benchmark": "tsx scripts/freeze-benchmark.ts",
-    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction && npm run validate:detectors && npm run validate:evidence && npm run validate:priority && npm run validate:demo-cache"
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction && npm run validate:detectors && npm run validate:evidence && npm run validate:priority && npm run validate:demo-cache && npm run validate:api"
   },
   "dependencies": {
     "next": "15.5.29",
