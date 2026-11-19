@@ -40,7 +40,14 @@
     "inspect:extraction": "tsx scripts/inspect-extraction-errors.ts",
     "build:extraction-cache": "tsx scripts/build-extraction-cache.ts",
     "validate:extraction": "tsx scripts/validate-extraction.ts",
-    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction"
+    "run:detectors": "tsx scripts/run-detectors.ts",
+    "eval:detectors": "tsx scripts/eval-detectors.ts",
+    "inspect:detectors": "tsx scripts/inspect-gap-errors.ts",
+    "benchmark:detectors": "tsx scripts/benchmark-detectors.ts",
+    "benchmark:detector-performance": "tsx scripts/benchmark-detector-performance.ts",
+    "validate:detectors": "tsx scripts/validate-detectors.ts",
+    "freeze:detectors": "tsx scripts/freeze-detectors.ts",
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction && npm run validate:detectors"
   },
   "dependencies": {
     "next": "15.5.29",

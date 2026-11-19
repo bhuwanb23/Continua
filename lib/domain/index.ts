@@ -1,4 +1,5 @@
 export * from "./api";
+export * from "./candidate-gap";
 export * from "./claim";
 export * from "./clinical-event";
 export * from "./event-source";
