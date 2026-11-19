@@ -26,13 +26,13 @@ The full AT text is inherited from `research/build-readiness/acceptance-tests.md
 | AT-5.8 | determinism | KEEP |
 | AT-5.9 | multi-lab single gap | KEEP |
 | AT-6.1 – AT-6.4 | evidence grounding, Level A/B, suppression | KEEP; `quoted_span`, `span_verified`, `verification_score` |
-| AT-7.1 | Maria 70 (gap) / 74 (patient) | KEEP; field names `gap_priority_score` / `patient_priority_score` |
-| AT-7.2 | confidence <0.6 → band capped MEDIUM | KEEP |
-| AT-7.3 | priority_breakdown with five factors | KEEP |
+| AT-7.1 | Maria priority from the frozen formula | AMENDED; values are computed by `priority-v1` (Maria 77/33/26, patient 69/P2) |
+| AT-7.2 | evidence confidence cap | SUPERSEDED; evidence is an eligibility gate, not a multiplier |
+| AT-7.3 | priority_breakdown with three frozen factors | AMENDED; severity, temporal, actionability |
 | AT-7.4 | "Intervention priority" label | KEEP |
 | AT-7.5 | no `risk_level` / `risk_score` / "clinical risk score" | KEEP |
 | AT-7.6 | no bare `priority_score` | KEEP |
-| AT-8.1 – AT-8.3 | queue, Maria rank 1, score 74 | KEEP |
+| AT-8.1 – AT-8.3 | deterministic queue, formula-derived score, empirical rank | AMENDED; Maria rank #1 is not required |
 | AT-9.x (eval) | measured or `not_run`; no invented numbers | KEEP; matching rule v2 |
 | AT-10.x | safety / action language | KEEP; action verbs include schedule |
 | AT-11.1 – AT-11.3 | claim classes baseline/measured/modeled | KEEP |

@@ -1,5 +1,22 @@
 # Continua Spec CHANGELOG
 
+## v1.2 — priority-v1 workflow amendment (2026-11-19)
+
+- `docs/spec/priority-engine.md`: replaces the v1.0 five-factor draft with the
+  frozen three-factor `priority-v1` formula (severity × temporal × actionability),
+  exact theoretical normalization (`1.50` gap, `1.80` patient), capped secondary
+  aggregation, and deterministic tie order. Required by `plans/phase_8.md`.
+- `docs/spec/terminology.md` §3: workflow bands are `P1 | P2 | P3 | P4 | NONE`.
+  `CRITICAL/HIGH/MEDIUM/LOW` is retired for priority output because `CRITICAL`
+  can be read as clinical acuity.
+- `docs/spec/api-contract-v1.md`: priority query/type bands amended. Existing
+  JSON examples are marked shape-only where they show superseded values.
+- `lib/domain/gap.ts` and `lib/schemas/index.ts`: priority band enum amended.
+- Field-name freeze is unchanged: `gap_priority_score`, `patient_priority_score`,
+  `priority_band`, `priority_breakdown`; bare `priority_score` remains forbidden.
+- Arithmetic: gap maximum `1.50`, patient maximum `1.80`, secondary cap `0.30`.
+  `priority-v1` remains the version identifier in `data/spec/versions.json`.
+
 ## v1.1 — clinical-event schema amendment (2026-11-18)
 
 - `docs/spec/clinical-event-schema.md` §9: optional `mention_context`

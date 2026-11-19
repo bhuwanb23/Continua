@@ -19,7 +19,7 @@
   "evidence": [{ "doc_id": "uuid", "quoted_span": "string", "event_id": "uuid" }],
   "recommended_coordinator_action": "verify/contact/review/coordinate/schedule/confirm/reconcile (plain language)",
   "estimated_impact": "string",
-  "priority_band": "CRITICAL | HIGH | MEDIUM | LOW",
+  "priority_band": "P1 | P2 | P3 | P4 | NONE",
   "gap_priority_score": 0,
   "confidence": 0.0,
   "detector_version": "string (versioned id)",

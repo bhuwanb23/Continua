@@ -21,16 +21,20 @@ Two different numbers, two different names. They must never share a field. The b
 | A single gap's contribution | `gap_priority_score` | Inside a gap object, or under `top_gap` |
 | The patient's queue rank | `patient_priority_score` | Patient object, queue item |
 
-## 3. Priority bands
+## 3. Priority bands (SPEC-1.2 amendment)
 
 | Band | Display score range |
 |---|---|
-| CRITICAL | ≥ 70 |
-| HIGH | 50 – 69 |
-| MEDIUM | 30 – 49 |
-| LOW | < 30 |
+| P1 | 80 – 100 |
+| P2 | 60 – 79 |
+| P3 | 35 – 59 |
+| P4 | 1 – 34 |
+| NONE | 0 |
 
-Bands are relative triage labels, never clinical acuity. UI must label them "Intervention priority".
+Bands describe coordinator queue position, never clinical acuity. UI labels:
+P1 · Act first, P2 · High priority, P3 · Review, P4 · Low priority. `CRITICAL` is
+retired for priority output. `NONE` means no verified coordination issue; it must
+not be described as low risk.
 
 ## 4. Gap types (frozen enum)
 

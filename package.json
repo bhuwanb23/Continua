@@ -54,7 +54,14 @@
     "build:evidence": "tsx scripts/build-evidence-artifacts.ts",
     "validate:evidence": "tsx scripts/validate-evidence.ts",
     "freeze:evidence": "tsx scripts/freeze-evidence.ts",
-    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction && npm run validate:detectors && npm run validate:evidence"
+    "build:priority": "tsx scripts/build-priority.ts",
+    "eval:priority": "tsx scripts/eval-priority.ts",
+    "sensitivity:priority": "tsx scripts/sensitivity-priority.ts",
+    "inspect:priority": "tsx scripts/inspect-ranking.ts",
+    "benchmark:priority-performance": "tsx scripts/benchmark-priority-performance.ts",
+    "validate:priority": "tsx scripts/validate-priority.ts",
+    "freeze:priority": "tsx scripts/freeze-priority.ts",
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction && npm run validate:detectors && npm run validate:evidence && npm run validate:priority"
   },
   "dependencies": {
     "next": "15.5.29",

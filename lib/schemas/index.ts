@@ -33,7 +33,7 @@ export const GapTypeSchema = z.enum([
   "med_monitoring",
 ]);
 
-export const PriorityBandSchema = z.enum(["CRITICAL", "HIGH", "MEDIUM", "LOW"]);
+export const PriorityBandSchema = z.enum(["P1", "P2", "P3", "P4", "NONE"]);
 
 export const EventTypeSchema = z.enum([
   "referral",

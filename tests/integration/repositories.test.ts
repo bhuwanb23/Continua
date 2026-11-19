@@ -49,7 +49,7 @@ const gap: Gap = {
   ],
   recommended_coordinator_action: "Verify: contact patient.",
   estimated_impact: "Recovered referral (1)",
-  priority_band: "CRITICAL",
+  priority_band: "P1",
   gap_priority_score: 70,
   confidence: 0.96,
   detector_version: "referral_engine_v1",

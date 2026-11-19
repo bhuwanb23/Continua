@@ -10,7 +10,7 @@
     "accepted_with_valid_provenance": 484,
     "unsupported_spans_accepted": 0
   },
-  "schema_hash": "7a20ae6185147e49fc67545e22738ab8f9ea2a3911fd7472fbe3192e3206a3ad",
+  "schema_hash": "f81002357de457f08c97ae4d4860af845fb7f4a7907ce134c7b6ee28153fc270",
   "detector_sufficiency": {
     "missed_followup": true,
     "duplicate_testing": true,

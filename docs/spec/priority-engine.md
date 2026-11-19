@@ -1,140 +1,195 @@
-# Priority Engine — Continua Spec v1.0 (Explainable Intervention Priority)
+# Priority Engine — Continua Spec v1.0 · SPEC-1.2 amendment (priority-v1)
 
-**This is NOT a clinical risk score.** We have no validated training data and do not claim one. What we compute is an **intervention priority** for coordinator triage: given a set of detected, evidence-verified gaps, which patient should the coordinator look at first?
+> **Controlled amendment, 2026-11-19.** Phase 8 replaces the earlier priority
+> formula and clinical-sounding bands. Field names remain frozen. This document
+> is the canonical priority contract for `priority-v1`.
 
-The formula is deterministic and displayed in the UI. Every ranked patient can answer "why is this #1?" with numbers the coordinator (and judge) can see. Resolves C-004, C-005, C-006, C-010.
+**This is a workflow intervention priority, not a clinical risk score.** There is
+no validated training data and no prediction of harm, deterioration, or outcome.
+The engine answers one narrow question: given Phase 7 verified coordination
+gaps, which patient should the coordinator inspect first, and why?
 
-## 1. Formula (v1, locked)
+The formula is deterministic, local, and printed in the queue. It makes no LLM
+calls, reads no documents, and uses no ground-truth labels at runtime.
+
+## 1. Input boundary
+
+Only `VerifiedGap v1` objects participate. A candidate gap, suppressed gap,
+failed evidence bundle, stale gap set, or manually constructed "gap-like" object
+is rejected before scoring.
+
+Eligibility requires `grounded: true`, `evidence-v1` verified with zero failures,
+100% required-claim coverage, frozen `gaps-v1`/`gap-policy-v1` versions, a
+current event-store hash, and a matching frozen evaluation date.
+
+Ineligible items are reported as `NOT RANKED`. They never receive a low score.
+
+## 2. Formula (v1, locked)
 
 ```
-gap_priority_score (raw) =
-    severity_weight(gap.severity)          // 0.30 – 1.00
-  × overdue_factor(gap.overdue_days)       // 1.00 – 2.00
-  × gap.evidence_confidence                // 0.00 – 1.00
-  × actionability_weight(gap.type)         // 0.75 – 1.00
-  × gap_type_weight(gap.type)              // tie-breaker, 0.90 – 1.00
+raw_gap_priority =
+    severity_weight(gap.severity)
+  × temporal_factor(gap.gap_type, gap.overdue_days)
+  × actionability_weight(gap.gap_type)
 ```
 
-All factors multiply. Result is in [0, ~2.0]. Normalize to 0–100 for display:
+Evidence is **not** a multiplier. Phase 7 already decided whether evidence was
+acceptable; letting extraction confidence move patient order would reintroduce
+poorly calibrated ranking. Gap-type weight is also excluded: v1 does not assert
+that one verified workflow item is inherently more important than another.
 
-`display = round(100 × raw / 2.0)` — labeled "Intervention priority (relative)", never "risk score".
-
-## 2. Factor definitions
-
-**severity_weight**
+### Severity weights
 
 | severity | weight |
-|---|---|
+|---|---:|
 | high | 1.00 |
-| med | 0.60 |
-| low | 0.30 |
+| medium | 0.70 |
+| low | 0.45 |
 
-**overdue_factor** — urgency grows with how long the gap has been open.
+These are workflow significance constants, not medical coefficients.
+
+### Temporal factor
+
+For `missed_followup` and `med_monitoring`:
+
+| overdue days | factor |
+|---|---:|
+| not overdue (`< 1`) | 0.75 |
+| 1–7 | 1.00 |
+| 8–30 | 1.15 |
+| 31–60 | 1.30 |
+| 61–90 | 1.40 |
+| > 90 | 1.50 |
+
+For `duplicate_test`, the temporal factor is `1.00`. A repeat-test interval is
+not an overdue duration, and the detector has already applied the series window.
+
+### Actionability weights
+
+| gap type | class | weight |
+|---|---|---:|
+| `missed_followup` | direct coordinator action | 1.00 |
+| `med_monitoring` | direct coordinator action | 0.95 |
+| `duplicate_test` | review with provider | 0.85 |
+
+Actionability is a frozen workflow-policy mapping, never assigned dynamically
+from text.
+
+## 3. Gap normalization
+
+The theoretical maximum is derived from the frozen factor bounds, not the
+observed panel:
 
 ```
-overdue_factor = 1.0 + min(overdue_days / 60, 1.0)     // caps at 2.0 at 60+ days
+MAX_RAW_GAP = max(severity) × max(temporal) × max(actionability)
+            = 1.00 × 1.50 × 1.00
+            = 1.50
+
+gap_priority_score = round(100 × raw_gap_priority / 1.50)
 ```
-`overdue_days <= 0` → 1.0 (not yet overdue / early warning).
 
-For duplicate tests, `overdue_days` is undefined; use `days_between` as the urgency proxy in `overdue_factor` (divide by 60 the same way, cap at 1.0).
+The result is an integer from 0 to 100. A gap cannot receive `NONE`.
 
-**evidence_confidence**
+## 4. Patient aggregation
 
-- `evidence_confidence = extraction_confidence × verification_score`
-- extraction_confidence: mean confidence of the events the rule used.
-- verification_score: 1.0 if all citations verified in Stage E; 0.6 if span fuzzy-matched (0.85–0.99); gap dropped if <0.85.
+One urgent verified issue must dominate; many weak issues must not buy the top
+of the queue.
 
-**actionability_weight** — how directly the coordinator can act today.
+```
+ordered = patient's gaps sorted by raw score, then overdue days, then gap_id
+patient_raw_priority =
+    ordered[0].raw
+  + min(
+      SECONDARY_FACTOR × sum(ordered[1..].raw),
+      SECONDARY_BONUS_CAP
+    )
 
-| gap type | weight | rationale |
+SECONDARY_FACTOR   = 0.10
+SECONDARY_BONUS_CAP = 0.30
+```
+
+Theoretical patient maximum:
+
+```
+MAX_RAW_PATIENT = 1.50 + 0.30 = 1.80
+patient_priority_score = round(100 × patient_raw_priority / 1.80)
+```
+
+A patient with zero verified gaps receives `patient_priority_score = 0` and
+`priority_band = NONE`. The UI says "No verified continuity issues found." It
+must not label that patient low risk.
+
+## 5. Workflow bands
+
+Bands are absolute, not panel-relative. Scores do not change when unrelated
+patients enter or leave the panel.
+
+| band | display score | queue meaning |
 |---|---|---|
-| missed_followup | 1.00 | One call schedules the visit; closes the loop. |
-| med_monitoring | 0.95 | One lab order request resolves; high clinical relevance. |
-| duplicate_test | 0.75 | Prevents waste, but often needs provider conversation; less urgent. |
+| P1 | 80–100 | Act first |
+| P2 | 60–79 | High priority |
+| P3 | 35–59 | Review |
+| P4 | 1–34 | Low priority |
+| NONE | 0 | No verified coordination issue |
 
-**gap_type_weight** (tie-breaker only)
+`CRITICAL` is retired for priority output because it can be read as clinical
+acuity. A score/band mismatch is `PR-012`.
 
-| gap type | weight |
-|---|---|
-| missed_followup | 1.00 |
-| med_monitoring | 0.97 |
-| duplicate_test | 0.90 |
+## 6. Deterministic order
 
-## 3. Patient-level score
+1. `patient_priority_score` descending
+2. top verified gap `raw_score` descending
+3. top gap overdue days descending (0 where not applicable)
+4. verified gap count descending
+5. `patient_id` ascending, byte order
 
-A patient may have multiple gaps.
+No locale comparison, name order, random tie, or insertion order is allowed.
+
+## 7. Explanation contract
+
+Every queue item exposes:
+
+- the top verified gap and its workflow severity
+- `severity_weight`, `temporal_factor`, `actionability_weight`
+- overdue days or repeat-test interval
+- the top gap raw and display arithmetic
+- the patient aggregation raw and display arithmetic
+- the bounded secondary bonus
+- the recommended coordinator action
+- the number of other verified issues
+
+A coordinator can reproduce the score with arithmetic. "The model thinks this
+patient is important" is not an acceptable explanation.
+
+## 8. Version and staleness
+
+Every priority object carries:
 
 ```
-patient_priority_score (raw) = max(gap_priority_score of patient's gaps)
-                             + 0.10 × (sum of remaining gap_priority_scores, capped at 0.5)
+priority_version       = priority-v1
+evidence_version       = evidence-v1
+detector_version       = gaps-v1
+verified_gap_set_hash  = sha256(stable eligible gap set)
+evaluation_as_of_date  = 2026-06-05
 ```
 
-- Primary gap drives the rank (so a single CRITICAL gap outranks several minor ones).
-- Additional gaps add a bounded bonus (max +0.5), so multi-gap patients surface but don't get inflated.
-- `headline` = the primary gap's one-line "why" (LLM explanation, grounded).
+If the verified gap set changes, the hash changes and the prior ranking is stale
+(`PR-011`). Recompute; never silently reuse a queue from another gap set.
 
-## 4. Priority bands (for UI badges)
+## 9. Non-goals
 
-| band | score range (display 0–100) |
-|---|---|
-| CRITICAL | ≥ 70 |
-| HIGH | 50 – 69 |
-| MEDIUM | 30 – 49 |
-| LOW | < 30 |
+- Not mortality, readmission, deterioration, treatment response, or prognosis.
+- Not a probability that a patient will "fall through the cracks".
+- Not a substitute for coordinator judgment.
+- Not panel-relative: the same gap receives the same score in any panel.
+- Not demographic: name, age, sex, race, ethnicity, ZIP, insurance, income,
+  provider identity, hospital identity, and diagnosis are prohibited inputs.
 
-Bands are relative triage labels, not clinical acuity. UI must label them "Intervention priority" and include the "for coordinator verification" note.
+## 10. Why this differs from the v1.0 draft
 
-## 5. Terminology (frozen — Fix 3)
-
-Two different numbers, two different names. They must never share a field.
-
-| Concept | Field | Scope |
-|---|---|---|
-| A single gap's contribution | `gap_priority_score` | Inside a gap object, or under `top_gap` |
-| The patient's queue rank | `patient_priority_score` | Patient object, queue item |
-
-The bare name `priority_score` is **forbidden** — it previously meant both, which is why the API said 84 and the seed case said 89.
-
-## 6. Worked example (Maria, after Fix 1)
-
-Maria's primary gap is a missed oncology follow-up. Referral 2026-03-25, window 45 days (elapsed 2026-05-09), demo date 2026-06-05 → **27 days overdue**.
-
-**Gap 1 — missed oncology follow-up**
-```
-1.00 (high) × 1.45 (1 + min(27/60, 1)) × 0.96 × 1.00 × 1.00 = 1.392
-gap_priority_score = round(100 × 1.392 / 2.0) = 70  →  CRITICAL
-```
-
-**Gap 2 — duplicate CBC** (8 days apart, two providers)
-```
-0.30 (low) × 1.13 (1 + 8/60) × 0.94 × 0.75 × 0.90 = 0.216  →  11  →  LOW
-```
-
-**Gap 3 — metformin monitoring** (A1c/BMP due 2026-05-11, 25 days overdue)
-```
-0.60 (med) × 1.42 (1 + 25/60) × 0.95 × 0.95 × 0.97 = 0.744  →  37  →  MEDIUM
-```
-
-**Patient**
-```
-patient_raw = 1.392 + 0.10 × (0.744 + 0.216) = 1.488
-patient_priority_score = round(100 × 1.488 / 2.0) = 74  →  CRITICAL
-```
-
-## 7. Determinism & testability
-
-- Pure function `computePriority(gap, now)` — no LLM, no randomness.
-- Unit-testable: given a gap fixture, expected score is exact.
-- Tuning constants live in `lib/priority/config.ts` with the table above as the default.
-
-## 8. Guardrails
-
-- If `evidence_confidence < 0.6`, cap the band at MEDIUM even if the raw score is higher (weak evidence shouldn't top the queue).
-- If `overdue_days` is undefined (duplicate tests), use `days_between` as the urgency proxy.
-- Never display a score without its factor breakdown available (tooltip or detail view).
-
-## 9. What this is NOT
-
-- Not a validated clinical risk model; no training data, no calibration claim.
-- Not a prediction of patient harm.
-- Not a substitute for coordinator judgment. It orders the queue; the coordinator decides.
+The v1.0 draft used five multiplied factors, including evidence confidence and
+a gap-type weight, with `CRITICAL/HIGH/MEDIUM/LOW` bands. Phase 7 changed the
+evidence boundary: ranked items are already verified, so another confidence
+multiplier adds noise rather than safety. The five-factor draft also normalized
+against `2.0`, while its true bound was higher. `priority-v1` uses the exact
+three-factor formula above and theoretical normalization.

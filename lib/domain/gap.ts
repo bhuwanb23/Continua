@@ -6,7 +6,11 @@ export const GAP_TYPES = [
 
 export type GapType = (typeof GAP_TYPES)[number];
 
-export const PRIORITY_BANDS = ["CRITICAL", "HIGH", "MEDIUM", "LOW"] as const;
+/**
+ * SPEC-1.2 workflow bands. P1–P4 describe coordinator queue position; they
+ * are not clinical acuity labels. NONE means no verified coordination gap.
+ */
+export const PRIORITY_BANDS = ["P1", "P2", "P3", "P4", "NONE"] as const;
 
 export type PriorityBand = (typeof PRIORITY_BANDS)[number];
 

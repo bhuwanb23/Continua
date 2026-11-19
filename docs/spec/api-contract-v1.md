@@ -1,5 +1,10 @@
 # API Contract v1 — Continua Spec v1.0
 
+> **SPEC-1.2 amendment:** `priority_band` values are now `P1 | P2 | P3 | P4 | NONE`.
+> The JSON examples below are retained for field-name shape and may show the
+> superseded v1.0 labels/scores. `docs/spec/priority-engine.md` is canonical for
+> priority arithmetic and bands.
+
 Frozen interfaces. Next.js Route Handlers. All responses JSON. All endpoints scoped to one panel (`/api/panels/{panelId}/...`); MVP has a single demo panel (`demo`). Resolves C-017, C-022, C-023, C-025.
 
 Conventions:
@@ -32,7 +37,7 @@ Panel summary + KPIs.
 
 List/search patients.
 
-**Query params:** `query` (name substring), `gap_type` (one of 3), `priority` (CRITICAL/HIGH/MEDIUM/LOW), `limit` (default 50), `offset` (default 0).
+**Query params:** `query` (name substring), `gap_type` (one of 3), `priority` (P1/P2/P3/P4/NONE), `limit` (default 50), `offset` (default 0).
 
 **200**
 ```json
@@ -339,7 +344,7 @@ Record coordinator action (P1; local state only).
 ## Types (shared)
 
 - `GapType = "missed_followup" | "duplicate_test" | "med_monitoring"`
-- `PriorityBand = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW"`
+- `PriorityBand = "P1" | "P2" | "P3" | "P4" | "NONE"`
 - `EventType = "surgery" | "imaging" | "consult" | "lab_result" | "medication_start" | "medication_stop" | "referral" | "followup"`
 
 Shared in `lib/types.ts`; API and UI import the same types.
