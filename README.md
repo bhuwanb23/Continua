@@ -20,7 +20,30 @@ The extraction layer turns records into structured events. Deterministic rules d
 
 - Synthetic data only. No real PHI, no EHR integration, no autonomous clinical action.
 - Continua ranks **intervention priority** for coordinator triage — it does not predict clinical risk.
-- Clinical intelligence is **not implemented yet** (Phase 1 is the engineering foundation).
+- No clinical validation and no patient-outcome claim. This is a synthetic-data prototype.
+
+## Proof & impact
+
+Measured on the frozen synthetic benchmark `continua-benchmark-v1` (run
+`benchmark-20261119-1400-14edc3e-final`, held-out `final` partition, 41 truth gaps):
+
+| Claim | Class | Value |
+| --- | --- | --- |
+| Held-out Macro F1 | MEASURED | 1.00 |
+| Hard-negative pass rate | MEASURED | 1.00 (29/29) |
+| Displayed-gap grounding | MEASURED | 1.00 (41 gaps) |
+| Top-5 truth precision | MEASURED | 5/5 |
+
+Extraction is fixture replay, so these numbers validate pipeline plumbing and
+determinism, not live-model quality. Every value is registered in
+`lib/claims/registry.ts`; `npm run validate:claims` checks it against the frozen
+artifact, and `npm run export:claims` writes the submission export.
+
+Operational impact is **modeled, not measured**: 20 patients/day × 2 minutes
+redirected × 20 days = 13.33 hours/month under stated assumptions. No dollar,
+clinical-outcome, or time-saved claim is made.
+
+Surfaces: `/demo` (flagship story), `/evaluation` (proof), `/insights` (impact model).
 
 ## Architecture
 
@@ -79,4 +102,9 @@ The frozen contract lives in [`docs/spec/SPEC-v1.0.md`](docs/spec/SPEC-v1.0.md) 
 
 ## Current status
 
-Phase 1 engineering foundation. Clinical intelligence is **not** implemented yet. The shell exists to prove the repository installs, validates, tests, builds, and boots.
+Phases 0–14 are complete: synthetic dataset and frozen spec, extraction contracts,
+deterministic detectors, evidence verification, intervention priority, frozen demo
+cache and API v1, coordinator UX, flagship demo, and the proof & impact layer.
+
+Not built: FHIR integration, real PHI handling, hospital deployment, clinical trial,
+EHR write-back, autonomous care decisions. See `docs/impact/limitations.md`.

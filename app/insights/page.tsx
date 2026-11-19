@@ -1,78 +1,66 @@
-"use client";
+import Link from "next/link";
+import { ImpactCalculator } from "@/components/impact/ImpactCalculator";
+import { AssumptionLedger } from "@/components/impact/AssumptionLedger";
+import { ExternalEvidence } from "@/components/impact/ExternalEvidence";
 
-import { useEffect, useState } from "react";
-import { api } from "@/lib/ui/api";
-import type { ImpactMetric, MetricsResponse } from "@/lib/api/dto";
+export const metadata = {
+  title: "Impact model · Continua",
+};
 
-const BUCKETS: Array<{ key: keyof MetricsResponse; label: string; description: string }> = [
-  { key: "measured", label: "Measured", description: "Observed from the frozen snapshot or benchmark." },
-  { key: "modeled", label: "Modeled", description: "Derived from stored values with stated assumptions." },
-  { key: "scenario_assumptions", label: "Scenario assumptions", description: "Inputs we assumed, not measured." },
-  { key: "external_research", label: "External research", description: "Cited background, not panel-specific." },
-];
-
-export default function InsightsPage() {
-  const [data, setData] = useState<MetricsResponse | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let cancelled = false;
-    api
-      .metrics()
-      .then((result) => {
-        if (!cancelled) setData(result);
-      })
-      .catch((err) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : "Failed to load");
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  if (loading) return <p className="text-slate-500">Loading impact metrics…</p>;
-  if (error || !data) {
-    return <div className="rounded-lg border border-red-200 bg-red-50 p-5 text-sm text-red-800">{error}</div>;
-  }
-
+export default function ImpactPage() {
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold text-ink">Impact</h1>
-        <p className="mt-1 text-sm text-slate-600">
-          Every metric carries its evidence class so estimates cannot masquerade as measurements.
+      <header>
+        <h1 className="text-2xl font-semibold text-ink">Modeled operational impact</h1>
+        <p className="mt-1 max-w-3xl text-sm text-slate-600">
+          This page separates what Continua measured from what we assume about coordinator
+          workflow. Every number below is either a frozen benchmark result shown elsewhere or a
+          scenario assumption you can edit. Nothing here is a patient-outcome or financial savings
+          claim.
         </p>
-      </div>
+      </header>
 
-      {BUCKETS.map((bucket) => {
-        const rows = (data[bucket.key] as ImpactMetric[] | undefined) ?? [];
-        if (rows.length === 0) return null;
-        return (
-          <section key={bucket.key} className="rounded-xl border border-slate-200 bg-white p-5">
-            <h2 className="text-lg font-semibold text-ink">{bucket.label}</h2>
-            <p className="mt-1 text-xs text-slate-500">{bucket.description}</p>
-            <ul className="mt-4 space-y-3">
-              {rows.map((row) => (
-                <li key={row.metric} className="border-t border-slate-100 pt-3 first:border-t-0 first:pt-0">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <p className="font-medium text-ink">{row.metric.replace(/_/g, " ")}</p>
-                    <p className="text-lg font-semibold text-teal-700">
-                      {row.value}
-                      <span className="ml-1 text-xs font-normal text-slate-500">{row.unit}</span>
-                    </p>
-                  </div>
-                  {row.source ? <p className="mt-1 text-xs text-slate-500">{row.source}</p> : null}
-                  {row.basis ? <p className="mt-1 text-xs text-slate-500">{row.basis}</p> : null}
-                </li>
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+      <ImpactCalculator />
+
+      <AssumptionLedger />
+
+      <section className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-amber-900">
+        <h2 className="text-lg font-semibold">What this model does not claim</h2>
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">
+          <li>No clinical outcome, avoided hospitalization, or lives-saved model.</li>
+          <li>No dollar savings: no wage or cost assumption is applied.</li>
+          <li>
+            No measured human review time: we have not run a usability study, so assisted review
+            time stays a scenario assumption.
+          </li>
+          <li>
+            System latency is never substituted for coordinator review time. Cached API reads are
+            not analysis time.
+          </li>
+        </ul>
+      </section>
+
+      <ExternalEvidence />
+
+      <section className="rounded-xl border border-slate-200 bg-white p-5 text-sm">
+        <h2 className="text-lg font-semibold text-ink">Superseded legacy figure</h2>
+        <p className="mt-2 text-slate-700">
+          The Phase-10 cache contains an older modeled figure
+          (<code>impact.json</code>: 13.2 hours from 12 minutes × 66 verified gaps). That model
+          multiplied a per-gap assumption by the verified-gap count and subtracted no assisted
+          review time, so Phase 14 does not surface it as a claim. This page computes its model
+          from the single pure function in <code>lib/impact/model.ts</code>.
+        </p>
+      </section>
+
+      <nav className="flex flex-wrap gap-3 text-sm">
+        <Link className="rounded-md border border-slate-300 px-3 py-1.5 font-medium" href="/evaluation">
+          Benchmark proof
+        </Link>
+        <Link className="rounded-md border border-slate-300 px-3 py-1.5 font-medium" href="/methodology">
+          Methodology
+        </Link>
+      </nav>
     </div>
   );
 }

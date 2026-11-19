@@ -1,0 +1,27 @@
+# Approved claims
+
+Total: 21
+
+| Claim ID | Classification | Value | Unit | Surfaces |
+| --- | --- | --- | --- | --- |
+| benchmark-macro-f1 | MEASURED | 1.00 | F1 | evaluation, demo, readme, submission |
+| benchmark-micro-f1 | MEASURED | 1.00 | F1 | evaluation, demo, readme, submission |
+| detector-missed-followup-f1 | MEASURED | 1.00 | F1 | evaluation, demo, readme, submission |
+| detector-duplicate-test-f1 | MEASURED | 1.00 | F1 | evaluation, demo, readme, submission |
+| detector-med-monitoring-f1 | MEASURED | 1.00 | F1 | evaluation, demo, readme, submission |
+| hard-negative-pass-rate | MEASURED | 1.00 | rate | evaluation, demo, readme, submission |
+| displayed-gap-grounding | MEASURED | 1.00 | rate | evaluation, demo, readme, submission |
+| unsupported-displayed-claims | MEASURED | 0 | count | evaluation, demo, readme, submission |
+| top5-verified | MEASURED | 5/5 | count | evaluation, demo, readme, submission |
+| top5-truth-precision | MEASURED | 5/5 | count | evaluation, demo, readme, submission |
+| demographic-invariance-violations | MEASURED | 0 | count | evaluation, demo, readme, submission |
+| cached-queue-latency-p50 | MEASURED | 1.6514 | ms | evaluation, readme |
+| live-pipeline-latency-p50 | MEASURED | 8.3956 | ms | evaluation, readme |
+| modeled-redirected-time | MODELED | — | minutes | impact, demo |
+| assumption-patients-reviewed-per-day | SCENARIO_ASSUMPTION | 20 | patients | impact |
+| assumption-baseline-review-minutes | SCENARIO_ASSUMPTION | 8 | minutes | impact |
+| assumption-assisted-review-minutes | SCENARIO_ASSUMPTION | 6 | minutes | impact |
+| assumption-working-days-per-month | SCENARIO_ASSUMPTION | 20 | days | impact |
+| future-fhir-integration | FUTURE_TARGET | — |  | readme, submission |
+| future-real-ehr-deployment | FUTURE_TARGET | — |  | readme, submission |
+| future-clinical-validation | FUTURE_TARGET | — |  | readme, submission |

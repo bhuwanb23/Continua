@@ -4,7 +4,9 @@ const links = [
   { href: "/", label: "Overview" },
   { href: "/patients", label: "Patients" },
   { href: "/evaluation", label: "Evaluation" },
+  { href: "/insights", label: "Impact" },
   { href: "/methodology", label: "Methodology" },
+  { href: "/demo", label: "Demo" },
 ] as const;
 
 export function SiteHeader() {
@@ -14,7 +16,7 @@ export function SiteHeader() {
         <Link href="/" className="text-lg font-semibold text-brand">
           Continua
         </Link>
-        <nav aria-label="Primary" className="flex gap-4 text-sm">
+        <nav aria-label="Primary" className="flex flex-wrap justify-end gap-x-4 gap-y-1 text-sm">
           {links.map((link) => (
             <Link
               key={link.href}

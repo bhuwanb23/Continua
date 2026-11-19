@@ -326,10 +326,35 @@ export function DemoClient() {
               <li className="rounded-lg bg-slate-50 p-3">Evidence verification → only verified gaps shown</li>
               <li className="rounded-lg bg-slate-50 p-3">Intervention priority → ranked review queue</li>
             </ol>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              <div className="rounded-lg border border-slate-200 p-3">
+                <p className="text-xs uppercase tracking-wide text-slate-500">Held-out Macro F1</p>
+                <p className="text-xl font-semibold text-ink">
+                  {(data.evaluation.evaluation.end_to_end?.macro_f1 as number | null)?.toFixed(2) ??
+                    "Not measured"}
+                </p>
+                <p className="text-xs text-slate-500">41 truth gaps · fixture replay</p>
+              </div>
+              <div className="rounded-lg border border-slate-200 p-3">
+                <p className="text-xs uppercase tracking-wide text-slate-500">Hard-negative pass</p>
+                <p className="text-xl font-semibold text-ink">
+                  {(() => {
+                    const rate = data.evaluation.evaluation.hard_negatives?.verified_pass_rate as
+                      | number
+                      | null
+                      | undefined;
+                    return rate === null || rate === undefined
+                      ? "Not measured"
+                      : `${(rate * 100).toFixed(0)}%`;
+                  })()}
+                </p>
+                <p className="text-xs text-slate-500">29 adversarial cases</p>
+              </div>
+            </div>
             <p className="mt-4 text-xs text-slate-500">
               Frozen synthetic benchmark · {data.evaluation.evaluation.benchmark_version} ·{" "}
               {data.evaluation.evaluation.benchmark_run_id} · status{" "}
-              {data.evaluation.evaluation.status}
+              {data.evaluation.evaluation.status}. Measured numbers, not live-model quality.
             </p>
             <ul className="mt-2 space-y-1 text-sm text-slate-700">
               {data.evaluation.evaluation.limitations.slice(0, 3).map((limitation) => (

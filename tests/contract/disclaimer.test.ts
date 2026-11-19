@@ -14,8 +14,10 @@ describe("T7 synthetic-data disclosure", () => {
     expect(DISCLAIMER).toContain("Not medical advice");
   });
 
-  it("renders the banner in the root layout", () => {
+  it("renders the banner on every page through the root layout", () => {
     const layout = readFileSync(join(process.cwd(), "app", "layout.tsx"), "utf8");
-    expect(layout).toContain("SyntheticDataBanner");
+    expect(layout).toContain("AppShell");
+    const shell = readFileSync(join(process.cwd(), "components", "layout", "AppShell.tsx"), "utf8");
+    expect(shell).toContain("SyntheticDataBanner");
   });
 });
