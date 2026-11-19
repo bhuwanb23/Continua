@@ -27,7 +27,7 @@ import { evaluateEndToEnd } from "./end-to-end";
 import { buildErrorAttribution, buildFailureFunnel } from "./funnel";
 import { runCorruptionBenchmark } from "./corruption";
 import { buildBaselineReport } from "./baselines";
-import { buildExtractedEventIdMap } from "./event-identity";
+import { buildExtractedEventIdMap, type ExtractedEventLike } from "./event-identity";
 import { buildAblationReport } from "./ablations";
 import { runLatencyBenchmark } from "./latency";
 import { buildCostReport } from "./cost";
@@ -159,7 +159,7 @@ export function runBenchmark(options: {
     event_store_hash: extracted.event_store_hash,
   });
 
-  const extractedEventIdMap = buildExtractedEventIdMap(extracted.events as any);
+  const extractedEventIdMap = buildExtractedEventIdMap(extracted.events as unknown as ExtractedEventLike[]);
   function remapCandidate(candidate: (typeof extracted.candidates)[number]): void {
     candidate.trigger_event_ids = candidate.trigger_event_ids.map((id) => extractedEventIdMap.get(id) ?? id);
     candidate.identity = {
@@ -294,7 +294,7 @@ export function runBenchmark(options: {
     partition: config.partition,
     extractedPath: config.extracted_events_path,
   });
-  const secondMap = buildExtractedEventIdMap(secondExtracted.events as any);
+  const secondMap = buildExtractedEventIdMap(secondExtracted.events as unknown as ExtractedEventLike[]);
   for (const candidate of secondExtracted.candidates) {
     candidate.trigger_event_ids = candidate.trigger_event_ids.map((id) => secondMap.get(id) ?? id);
     candidate.identity = {

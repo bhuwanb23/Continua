@@ -40,6 +40,10 @@ export class InMemoryRecordRepository implements RecordRepository {
   async listByPatient(patientId: string): Promise<SourceRecord[]> {
     return this.records.filter((record) => record.patient_id === patientId);
   }
+
+  async getById(sourceDocId: string): Promise<SourceRecord | null> {
+    return this.records.find((record) => record.source_doc_id === sourceDocId) ?? null;
+  }
 }
 
 export class InMemoryTimelineRepository implements TimelineRepository {

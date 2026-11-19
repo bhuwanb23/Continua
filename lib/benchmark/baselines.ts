@@ -6,9 +6,6 @@ import { dueDate, daysBetween } from "@/lib/evaluation/temporal";
 import type { BaselineEntry, BaselineReport, LayerStatus } from "./types";
 import { providerState } from "./metadata";
 
-function eventDate(event: CanonicalClinicalEvent): string {
-  return event.date;
-}
 
 function typed(event: CanonicalClinicalEvent): Record<string, unknown> {
   return event.typed as unknown as Record<string, unknown>;

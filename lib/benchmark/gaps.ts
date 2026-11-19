@@ -1,6 +1,5 @@
 import type { CandidateGap, GapVerificationResult, VerifiedGap } from "@/lib/domain";
 import type {
-  DetectionMetrics,
   GapGroundingResult,
   GapPrediction,
   GroundingMetrics,
