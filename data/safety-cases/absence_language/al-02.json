@@ -1,0 +1,8 @@
+{
+  "case_id": "AL-02",
+  "family": "absence_language",
+  "severity": "medium",
+  "description": "Unscoped or absolute absence copy is rejected",
+  "check": "absolute_absence_copy_rejected",
+  "expected": "pass"
+}

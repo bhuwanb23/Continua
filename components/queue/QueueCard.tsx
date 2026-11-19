@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { QueueItem } from "@/components/queue/PriorityBadge";
 import { PriorityBadge } from "@/components/queue/PriorityBadge";
+import { SafetyNote } from "@/components/safety/SafetyNote";
 
 export function QueueCard({ item }: { item: QueueItem }) {
   return (
@@ -18,6 +19,7 @@ export function QueueCard({ item }: { item: QueueItem }) {
           </p>
         </div>
         <PriorityBadge band={item.priority_band} label={item.priority_label} />
+        <SafetyNote kind="priority" className="mt-2" />
       </div>
       <div className="mt-3">
         <p className="font-medium text-ink">{item.headline}</p>

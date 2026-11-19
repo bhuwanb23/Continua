@@ -1,0 +1,8 @@
+{
+  "case_id": "HO-02",
+  "family": "human_oversight",
+  "severity": "low",
+  "description": "No autonomous action endpoints exist",
+  "check": "no_autonomous_endpoints",
+  "expected": "pass"
+}

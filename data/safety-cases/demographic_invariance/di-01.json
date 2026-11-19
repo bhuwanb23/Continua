@@ -1,0 +1,8 @@
+{
+  "case_id": "DI-01",
+  "family": "demographic_invariance",
+  "severity": "medium",
+  "description": "Priority labels contain no clinical risk wording",
+  "check": "priority_labels_safe",
+  "expected": "pass"
+}

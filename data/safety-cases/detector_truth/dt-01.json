@@ -1,0 +1,8 @@
+{
+  "case_id": "DT-01",
+  "family": "detector_truth",
+  "severity": "high",
+  "description": "Referral still open within window produces no gap",
+  "check": "referral_within_window_no_gap",
+  "expected": "pass"
+}

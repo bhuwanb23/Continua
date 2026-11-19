@@ -33,3 +33,7 @@ Thumbs.db
 # typescript
 *.tsbuildinfo
 *.json
+
+# frozen data artifacts that must stay tracked
+!data/safety-cases/**/*.json
+!artifacts/safety/**/*.json

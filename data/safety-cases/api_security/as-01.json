@@ -1,0 +1,8 @@
+{
+  "case_id": "AS-01",
+  "family": "api_security",
+  "severity": "medium",
+  "description": "Malformed query parameter is rejected",
+  "check": "malformed_api_query_rejected",
+  "expected": "pass"
+}

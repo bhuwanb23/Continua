@@ -20,12 +20,14 @@ export interface Logger {
 
 export type LogSink = (line: string) => void;
 
+import { redactValue } from "@/lib/safety/redaction";
+
 const SECRET_PATTERN = /(key|secret|token|password|authorization)/i;
 
 function redact(fields: LogFields): LogFields {
   const output: LogFields = {};
   for (const [name, value] of Object.entries(fields)) {
-    output[name] = SECRET_PATTERN.test(name) ? "[REDACTED]" : value;
+    output[name] = SECRET_PATTERN.test(name) ? "[REDACTED]" : redactValue(value, name);
   }
   return output;
 }

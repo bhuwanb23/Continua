@@ -1,0 +1,8 @@
+{
+  "case_id": "CO-01",
+  "family": "clinical_overreach",
+  "severity": "high",
+  "description": "Output guard rejects forbidden clinical verb",
+  "check": "forbidden_verb_rejected",
+  "expected": "pass"
+}

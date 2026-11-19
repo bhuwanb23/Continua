@@ -1,0 +1,8 @@
+{
+  "case_id": "HO-01",
+  "family": "human_oversight",
+  "severity": "medium",
+  "description": "Coordinator actions are workflow state only",
+  "check": "action_does_not_mutate_intelligence",
+  "expected": "pass"
+}

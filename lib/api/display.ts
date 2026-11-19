@@ -34,7 +34,7 @@ export function gapSummary(gap: VerifiedGap): string {
 export function absenceDescription(check: AbsenceDeepDive): string {
   const types = check.event_types.map((type) => type.replaceAll("_", " ")).join(" or ");
   const identity = check.normalized_identity.replace(/^[a-z_]+:/i, "").replaceAll("|", " or ");
-  return `No matching ${types} for ${identity} within the verification window`;
+  return `No matching ${types} for ${identity} within the verification window in the available records`;
 }
 
 export function sourceExcerpt(excerpt: string): string {

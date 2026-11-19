@@ -1,0 +1,8 @@
+{
+  "case_id": "CF-01",
+  "family": "cache_fail_closed",
+  "severity": "high",
+  "description": "Tampered evidence bundle fails validation",
+  "check": "tampered_evidence_bundle_fails",
+  "expected": "pass"
+}

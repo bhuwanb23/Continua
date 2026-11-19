@@ -1,0 +1,8 @@
+{
+  "case_id": "CF-02",
+  "family": "cache_fail_closed",
+  "severity": "high",
+  "description": "Hand-edited queue fails validation",
+  "check": "tampered_queue_fails",
+  "expected": "pass"
+}

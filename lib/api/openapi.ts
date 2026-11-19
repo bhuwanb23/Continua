@@ -64,7 +64,7 @@ export function buildOpenApiDocument(): Record<string, unknown> {
       version: "v1",
       description:
         "Read-only coordination intelligence over the frozen continua-demo-cache-v1 snapshot. Synthetic data only. " +
-        "No endpoint exposes benchmark ground truth, candidate gaps, model internals, or clinical risk scores.",
+        "No endpoint exposes benchmark ground truth, candidate gaps, model internals, or clinical risk scores.", // safety-allow
     },
     servers: [{ url: "/" }],
     tags: [

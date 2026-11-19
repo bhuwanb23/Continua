@@ -1,0 +1,8 @@
+{
+  "case_id": "EI-02",
+  "family": "extraction_injection",
+  "severity": "high",
+  "description": "Prompt forbids gap and risk fields",
+  "check": "prompt_forbids_gap_fields",
+  "expected": "pass"
+}

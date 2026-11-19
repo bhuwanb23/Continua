@@ -1,0 +1,8 @@
+{
+  "case_id": "AM-02",
+  "family": "authority_matrix",
+  "severity": "medium",
+  "description": "Diagnosis is forbidden",
+  "check": "authority_diagnosis_forbidden",
+  "expected": "pass"
+}

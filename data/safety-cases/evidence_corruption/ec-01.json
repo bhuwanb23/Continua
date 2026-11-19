@@ -1,0 +1,8 @@
+{
+  "case_id": "EC-01",
+  "family": "evidence_corruption",
+  "severity": "critical",
+  "description": "Tampered quoted span fails span verification",
+  "check": "bad_span_evidence_suppressed",
+  "expected": "pass"
+}

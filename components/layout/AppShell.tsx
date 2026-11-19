@@ -3,6 +3,7 @@ import { SyntheticDataBanner } from "@/components/layout/SyntheticDataBanner";
 
 const nav = [
   { href: "/", label: "Today", hint: "Queue" },
+  { href: "/demo", label: "Demo", hint: "Walkthrough" },
   { href: "/patients", label: "Patients", hint: "Directory" },
   { href: "/insights", label: "Insights", hint: "Impact" },
   { href: "/evaluation", label: "Evaluation", hint: "Benchmark" },

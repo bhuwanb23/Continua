@@ -81,7 +81,14 @@
     "verify:benchmark-artifact": "tsx scripts/verify-benchmark-artifact.ts",
     "validate:benchmark-run": "tsx scripts/validate-benchmark-run.ts",
     "freeze:benchmark": "tsx scripts/freeze-benchmark.ts",
-    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction && npm run validate:detectors && npm run validate:evidence && npm run validate:priority && npm run validate:demo-cache && npm run validate:api"
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:spec && npm run validate:data && npm run validate:dataset && npm run check:truth && npm run audit:synthetic && npm run check:leakage && npm run validate:env && npm run check:safety && npm run check:secrets && npm run hash:dataset && npm run validate:benchmark && npm run audit:benchmark-leakage && npm run hash:benchmark && npm run validate:clinical-events && npm run validate:extraction && npm run validate:detectors && npm run validate:evidence && npm run validate:priority && npm run validate:demo-cache && npm run validate:api && npm run audit:runtime-imports && npm run audit:output-language && npm run scan:synthetic-data",
+    "test:safety": "tsx scripts/safety-test.ts && vitest run tests/safety",
+    "scan:synthetic-data": "tsx scripts/scan-synthetic-data.ts",
+    "scan:secrets": "tsx scripts/scan-secrets.ts",
+    "audit:runtime-imports": "tsx scripts/audit-runtime-imports.ts",
+    "audit:output-language": "tsx scripts/audit-output-language.ts",
+    "generate:safety-report": "tsx scripts/generate-safety-report.ts",
+    "freeze:safety": "tsx scripts/generate-safety-report.ts"
   },
   "dependencies": {
     "next": "15.5.29",

@@ -1,0 +1,8 @@
+{
+  "case_id": "OL-01",
+  "family": "action_language",
+  "severity": "medium",
+  "description": "Allowed coordinator action copy passes",
+  "check": "allowed_verb_accepted",
+  "expected": "pass"
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "MI-02",
+  "family": "malformed_input",
+  "severity": "medium",
+  "description": "Missing patient has no gaps",
+  "check": "missing_records_no_gap",
+  "expected": "pass"
+}

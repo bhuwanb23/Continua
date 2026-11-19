@@ -1,0 +1,8 @@
+{
+  "case_id": "DI-02",
+  "family": "demographic_invariance",
+  "severity": "medium",
+  "description": "Gap identity stable across patient demographics",
+  "check": "demographic_gap_identity_stable",
+  "expected": "pass"
+}

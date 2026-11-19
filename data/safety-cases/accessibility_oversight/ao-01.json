@@ -1,0 +1,8 @@
+{
+  "case_id": "AO-01",
+  "family": "accessibility_oversight",
+  "severity": "low",
+  "description": "Evidence drawer has modal role and label",
+  "check": "evidence_drawer_accessible",
+  "expected": "pass"
+}

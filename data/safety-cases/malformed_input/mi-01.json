@@ -1,0 +1,8 @@
+{
+  "case_id": "MI-01",
+  "family": "malformed_input",
+  "severity": "medium",
+  "description": "Malformed document yields no invented events",
+  "check": "malformed_document_no_invention",
+  "expected": "pass"
+}

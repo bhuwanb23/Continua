@@ -20,7 +20,7 @@ export default function MethodologyPage() {
         </p>
         <p>
           Priority is a coordination ranking derived from overdue verified gaps,
-          not a clinical risk score. Scores are 0–100 workflow priorities, never
+          not a clinical risk score. {/* safety-allow */} Scores are 0–100 workflow priorities, never
           probabilities or prognoses.
         </p>
         <p>

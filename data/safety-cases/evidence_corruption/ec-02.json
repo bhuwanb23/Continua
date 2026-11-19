@@ -1,0 +1,8 @@
+{
+  "case_id": "EC-02",
+  "family": "evidence_corruption",
+  "severity": "critical",
+  "description": "Missing source document fails verification",
+  "check": "missing_source_document_suppressed",
+  "expected": "pass"
+}

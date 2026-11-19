@@ -11,6 +11,7 @@ import type {
   TimelineResponse,
 } from "@/lib/api/dto";
 import { PriorityBadge } from "@/components/queue/PriorityBadge";
+import { SafetyNote } from "@/components/safety/SafetyNote";
 
 export default function PatientWorkspace() {
   const params = useParams<{ patientId: string }>();
@@ -155,6 +156,7 @@ export default function PatientWorkspace() {
                 <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-700">
                   {gap.workflow_severity}
                 </span>
+                <SafetyNote kind="gap_card" />
               </div>
               <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-600">
                 <PriorityBadge band={gap.priority_band} label={gap.priority_label} />
@@ -166,7 +168,10 @@ export default function PatientWorkspace() {
                 <button
                   type="button"
                   onClick={() => openEvidence(gap.gap_id)}
-                  className="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+                  aria-haspopup="dialog"
+                  aria-expanded={evidence !== null}
+                  aria-controls="evidence-drawer"
+                  className="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700"
                 >
                   {evidenceLoading ? "Loading…" : "View evidence"}
                 </button>
@@ -189,11 +194,16 @@ export default function PatientWorkspace() {
 
       {evidence ? (
         <div
+          id="evidence-drawer"
           role="dialog"
           aria-modal="true"
           aria-label="Evidence drawer"
+          tabIndex={-1}
           className="fixed inset-0 z-50 flex justify-end bg-black/30"
           onClick={() => setEvidence(null)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setEvidence(null);
+          }}
         >
           <aside
             className="h-full w-full max-w-xl overflow-y-auto bg-white p-6 shadow-xl"
@@ -204,7 +214,8 @@ export default function PatientWorkspace() {
               <button
                 type="button"
                 onClick={() => setEvidence(null)}
-                className="rounded-md px-2 py-1 text-slate-500 hover:bg-slate-100"
+                autoFocus
+                className="rounded-md px-2 py-1 text-slate-500 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700"
                 aria-label="Close evidence"
               >
                 ✕
@@ -239,6 +250,7 @@ export default function PatientWorkspace() {
                 </li>
               ))}
             </ul>
+            <div className="mt-3"><SafetyNote kind="evidence_drawer" /></div>
             <h3 className="mt-4 text-sm font-semibold text-ink">Absence checks</h3>
             <ul className="mt-2 space-y-2 text-sm text-slate-700">
               {evidence.absence_checks.map((check, index) => (

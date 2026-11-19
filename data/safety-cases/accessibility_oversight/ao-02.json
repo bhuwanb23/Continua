@@ -1,0 +1,8 @@
+{
+  "case_id": "AO-02",
+  "family": "accessibility_oversight",
+  "severity": "low",
+  "description": "Safety note labels present in UI",
+  "check": "safety_labels_present",
+  "expected": "pass"
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "AL-01",
+  "family": "absence_language",
+  "severity": "medium",
+  "description": "Absence copy scoped to available records passes",
+  "check": "absence_scoped_copy_accepted",
+  "expected": "pass"
+}

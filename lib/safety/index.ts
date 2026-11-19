@@ -5,11 +5,6 @@ export interface ForbiddenTerm {
   pattern: RegExp;
 }
 
-/**
- * Patterns that must never appear in product copy or code.
- * Documentation that explicitly discusses what the system does NOT do
- * is exempted via ALLOWLISTED_PATHS in scripts/check-safety.ts.
- */
 export const FORBIDDEN_TERMS: ForbiddenTerm[] = [
   { label: "risk_level", pattern: /\brisk_level\b/i },
   { label: "clinical risk score", pattern: /clinical risk score/i },
@@ -39,3 +34,16 @@ export function scanText(text: string): Finding[] {
   }
   return findings;
 }
+
+export * from "./version";
+export * from "./intended-use";
+export * from "./prohibited-use";
+export * from "./authority";
+export * from "./action-language";
+export * from "./data-classification";
+export * from "./synthetic-only";
+export * from "./output-guard";
+export * from "./redaction";
+export * from "./audit";
+export * from "./incident";
+export * from "./risk-register";

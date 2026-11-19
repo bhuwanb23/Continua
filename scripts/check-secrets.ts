@@ -9,7 +9,12 @@ const extensions = new Set([".ts", ".tsx", ".js", ".jsx", ".json"]);
  * This test deliberately constructs a fake secret to prove it never reaches
  * the public config projection.
  */
-const allowlist = new Set(["tests/unit/env.test.ts", "scripts/check-secrets.ts"]);
+const allowlist = new Set([
+  "tests/unit/env.test.ts",
+  "scripts/check-secrets.ts",
+  // Redaction patterns must name the identifiers they remove.
+  "lib/safety/redaction.ts",
+]);
 
 const patterns: Array<{ label: string; pattern: RegExp }> = [
   { label: "openai-style key", pattern: /\bsk-[A-Za-z0-9_-]{12,}\b/ },

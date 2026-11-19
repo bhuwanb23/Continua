@@ -1,0 +1,8 @@
+{
+  "case_id": "WP-01",
+  "family": "wrong_patient",
+  "severity": "critical",
+  "description": "Evidence swapped to another patient is suppressed",
+  "check": "wrong_patient_evidence_suppressed",
+  "expected": "pass"
+}

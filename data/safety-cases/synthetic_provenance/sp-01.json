@@ -1,0 +1,8 @@
+{
+  "case_id": "SP-01",
+  "family": "synthetic_provenance",
+  "severity": "critical",
+  "description": "Frozen dataset provenance verifies",
+  "check": "synthetic_provenance_verified",
+  "expected": "pass"
+}

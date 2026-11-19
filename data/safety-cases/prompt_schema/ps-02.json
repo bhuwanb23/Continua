@@ -1,0 +1,8 @@
+{
+  "case_id": "PS-02",
+  "family": "prompt_schema",
+  "severity": "high",
+  "description": "Extraction schema forbids additional properties",
+  "check": "extraction_schema_strict",
+  "expected": "pass"
+}

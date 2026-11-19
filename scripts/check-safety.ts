@@ -6,8 +6,17 @@ const root = process.cwd();
 const roots = ["app", "components", "lib"];
 const extensions = new Set([".ts", ".tsx", ".js", ".jsx", ".mdx"]);
 
-/** The scanner's own pattern table necessarily contains the terms it flags. */
-const allowlist = new Set(["lib/safety/index.ts"]);
+/**
+ * Files that enumerate prohibited terms by design: the scanner pattern table and
+ * the safety policy contract. They define what the system must not say, so they
+ * necessarily name those terms. Product copy remains fully scanned.
+ */
+const allowlist = new Set([
+  "lib/safety/index.ts",
+  "lib/safety/action-language.ts",
+  "lib/safety/authority.ts",
+  "lib/safety/intended-use.ts",
+]);
 
 function walk(dir: string): string[] {
   const entries = readdirSync(dir);

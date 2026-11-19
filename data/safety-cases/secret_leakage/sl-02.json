@@ -1,0 +1,8 @@
+{
+  "case_id": "SL-02",
+  "family": "secret_leakage",
+  "severity": "high",
+  "description": "Secret scan finds no committed secrets",
+  "check": "secret_scan_clean",
+  "expected": "pass"
+}

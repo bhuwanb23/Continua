@@ -1,0 +1,8 @@
+{
+  "case_id": "EI-01",
+  "family": "extraction_injection",
+  "severity": "high",
+  "description": "Extraction envelope marks synthetic true",
+  "check": "extraction_synthetic_flag",
+  "expected": "pass"
+}

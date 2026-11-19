@@ -1,0 +1,8 @@
+{
+  "case_id": "OL-02",
+  "family": "action_language",
+  "severity": "medium",
+  "description": "Risk prediction language is rejected",
+  "check": "risk_prediction_rejected",
+  "expected": "pass"
+}

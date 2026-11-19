@@ -1,0 +1,8 @@
+{
+  "case_id": "BL-02",
+  "family": "benchmark_leakage",
+  "severity": "medium",
+  "description": "API responses contain no truth tokens",
+  "check": "api_no_truth_tokens",
+  "expected": "pass"
+}

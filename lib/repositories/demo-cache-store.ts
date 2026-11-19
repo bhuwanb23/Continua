@@ -1,6 +1,8 @@
 import { performance } from "node:perf_hooks";
 import type { Patient } from "@/lib/domain";
 import { buildDemoCacheIndexes, type DemoCacheIndexes } from "@/lib/cache/indexes";
+import { verifyCacheSyntheticBoundary, loadDatasetProvenance } from "@/lib/safety/synthetic-only";
+import { auditGapCopy } from "@/lib/safety/output-guard";
 import { loadBenchmarkReport, loadBenchmarkVerifiedGaps } from "@/lib/cache/benchmark-report";
 import {
   cacheDirFor,
@@ -96,6 +98,17 @@ export class DemoCacheStore {
       const benchmarkGaps = this.options.benchmarkGaps ?? loadBenchmarkVerifiedGaps();
       const validation = validateLoadedCache(cache, frozenReport, benchmarkGaps);
       const failures = validation.flatMap((check) => check.failures.map((failure) => `${check.name}: ${failure}`));
+      const boundary = verifyCacheSyntheticBoundary({
+        panelSynthetic: cache.panel.synthetic,
+        manifestDatasetVersion: cache.manifest.dataset_version,
+        records: cache.records,
+        datasetProvenance: loadDatasetProvenance(),
+      });
+      if (!boundary.ok) failures.push(...boundary.failures.map((failure) => `synthetic boundary: ${failure}`));
+      const copyAudit = auditGapCopy(cache.verifiedGaps);
+      if (!copyAudit.passed) {
+        failures.push(...copyAudit.issues.map((issue) => `output language: ${issue.gap_id} ${issue.field} ${issue.code}`));
+      }
       const validationDuration = performance.now() - startedAt;
       if (failures.length > 0) {
         this.state = "INVALID";

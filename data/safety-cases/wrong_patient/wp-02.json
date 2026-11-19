@@ -1,0 +1,8 @@
+{
+  "case_id": "WP-02",
+  "family": "wrong_patient",
+  "severity": "high",
+  "description": "Stale event-store hash suppresses candidate",
+  "check": "stale_event_store_suppressed",
+  "expected": "pass"
+}

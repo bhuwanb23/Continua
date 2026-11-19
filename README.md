@@ -18,9 +18,15 @@ The extraction layer turns records into structured events. Deterministic rules d
 
 ## Safety
 
-- Synthetic data only. No real PHI, no EHR integration, no autonomous clinical action.
+- Synthetic data only (`continua-synth-v1`). No real PHI, no EHR integration, no autonomous clinical action.
 - Continua ranks **intervention priority** for coordinator triage — it does not predict clinical risk.
 - No clinical validation and no patient-outcome claim. This is a synthetic-data prototype.
+- Not HIPAA compliant, not HIPAA certified, and not "HIPAA-safe". The synthetic boundary is enforced at cache startup.
+
+Safety controls are frozen as `continua-safety-v1`: intended and prohibited use contracts, an AI authority
+matrix, output-language and absence-scoping guards, synthetic provenance verification, benchmark-truth
+isolation, a 40-case adversarial corpus across 20 families, and release gates A–K. See
+[`docs/safety/`](docs/safety/) and [`artifacts/safety/`](artifacts/safety/).
 
 ## Proof & impact
 
@@ -92,6 +98,8 @@ Secrets must never use the `NEXT_PUBLIC_` prefix. All environment access goes th
 ```bash
 npm run validate      # lint + typecheck + tests + spec/data/env/safety checks
 npm run test          # unit + contract + integration
+npm run test:safety   # static audits + 40-case adversarial corpus + safety tests
+npm run generate:safety-report   # rebuild artifacts/safety release artifacts
 npm run test:e2e      # Playwright (later phases)
 npm run build         # production build
 ```
@@ -102,9 +110,10 @@ The frozen contract lives in [`docs/spec/SPEC-v1.0.md`](docs/spec/SPEC-v1.0.md) 
 
 ## Current status
 
-Phases 0–14 are complete: synthetic dataset and frozen spec, extraction contracts,
+Phases 0–15 are complete: synthetic dataset and frozen spec, extraction contracts,
 deterministic detectors, evidence verification, intervention priority, frozen demo
-cache and API v1, coordinator UX, flagship demo, and the proof & impact layer.
+cache and API v1, coordinator UX, flagship demo, the proof & impact layer, and the
+frozen safety, privacy & responsible-AI layer (`continua-safety-v1`).
 
 Not built: FHIR integration, real PHI handling, hospital deployment, clinical trial,
 EHR write-back, autonomous care decisions. See `docs/impact/limitations.md`.

@@ -1,0 +1,8 @@
+{
+  "case_id": "SL-01",
+  "family": "secret_leakage",
+  "severity": "critical",
+  "description": "Logger redacts secret-named fields",
+  "check": "logger_redacts_secrets",
+  "expected": "pass"
+}

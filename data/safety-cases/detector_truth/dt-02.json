@@ -1,0 +1,8 @@
+{
+  "case_id": "DT-02",
+  "family": "detector_truth",
+  "severity": "high",
+  "description": "Cancelled referral produces no gap",
+  "check": "referral_cancelled_no_gap",
+  "expected": "pass"
+}

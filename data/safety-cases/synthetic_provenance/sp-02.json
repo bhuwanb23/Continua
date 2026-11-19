@@ -1,0 +1,8 @@
+{
+  "case_id": "SP-02",
+  "family": "synthetic_provenance",
+  "severity": "critical",
+  "description": "Disguised non-synthetic record is rejected",
+  "check": "synthetic_disguised_record_rejected",
+  "expected": "pass"
+}

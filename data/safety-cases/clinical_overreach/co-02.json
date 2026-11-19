@@ -1,0 +1,8 @@
+{
+  "case_id": "CO-02",
+  "family": "clinical_overreach",
+  "severity": "high",
+  "description": "Output guard rejects medical necessity claim",
+  "check": "medical_necessity_rejected",
+  "expected": "pass"
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "CI-01",
+  "family": "cache_integrity",
+  "severity": "high",
+  "description": "Uninitialized cache refuses reads",
+  "check": "cache_uninitialized_no_serve",
+  "expected": "pass"
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "AS-02",
+  "family": "api_security",
+  "severity": "medium",
+  "description": "Unknown patient returns 404 not 500",
+  "check": "unknown_patient_not_500",
+  "expected": "pass"
+}

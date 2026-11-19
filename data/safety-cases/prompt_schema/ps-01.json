@@ -1,0 +1,8 @@
+{
+  "case_id": "PS-01",
+  "family": "prompt_schema",
+  "severity": "high",
+  "description": "Candidate schema rejects injected gap fields",
+  "check": "injection_field_rejected",
+  "expected": "pass"
+}
