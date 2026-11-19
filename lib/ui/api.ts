@@ -1,5 +1,6 @@
 import type {
   EvaluationResponse,
+  EvidenceResponse,
   GapSummary,
   GapsResponse,
   ImpactMetric,
@@ -37,6 +38,7 @@ export const api = {
   patient: (patientId: string) => get<PatientResponse>(`/api/v1/patients/${patientId}`),
   timeline: (patientId: string) => get<TimelineResponse>(`/api/v1/patients/${patientId}/timeline`),
   gaps: (patientId: string) => get<GapsResponse>(`/api/v1/patients/${patientId}/gaps`),
+  evidence: (gapId: string) => get<EvidenceResponse>(`/api/v1/evidence/${gapId}`),
   metrics: (panelId = "demo") => get<MetricsResponse>(`/api/v1/metrics?panelId=${panelId}`),
   evaluation: () => get<EvaluationResponse>("/api/v1/evaluation"),
 };
