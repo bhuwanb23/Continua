@@ -37,6 +37,8 @@ function candidateFor(
     patient_id: start.patient_id,
     gap_type: "med_monitoring",
     detector_version: "gaps-v1",
+    policy_version: context.policy_version,
+    ...(context.event_store_hash ? { event_store_hash: context.event_store_hash } : {}),
     severity: monitoringSeverity(overdue),
     identity: { drug, monitoring_target: entry.target, event_ids: [start.event_id] },
     trigger_event_ids: [start.event_id],

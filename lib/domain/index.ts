@@ -12,4 +12,5 @@ export * from "./patient";
 export * from "./priority";
 export * from "./provenance";
 export * from "./record";
+export * from "./verified-gap";
 export * from "./versions";

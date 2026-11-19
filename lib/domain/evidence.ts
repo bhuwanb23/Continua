@@ -2,7 +2,7 @@ import type { ProviderType } from "./clinical-event";
 
 export type VerificationScore = 1.0 | 0.6;
 
-export interface EvidenceItem {
+export interface LegacyEvidenceItem {
   doc_id: string;
   provider: string;
   provider_type: ProviderType;

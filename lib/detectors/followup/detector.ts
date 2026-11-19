@@ -37,6 +37,8 @@ function candidateFor(referral: ReferralEvent, context: DetectionContext): Misse
     patient_id: referral.patient_id,
     gap_type: "missed_followup",
     detector_version: "gaps-v1",
+    policy_version: context.policy_version,
+    ...(context.event_store_hash ? { event_store_hash: context.event_store_hash } : {}),
     severity: followupSeverity(specialty),
     identity: { specialty, event_ids: [referral.event_id] },
     trigger_event_ids: [referral.event_id],

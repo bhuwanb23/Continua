@@ -40,6 +40,8 @@ interface CandidateGapBase {
   patient_id: string;
   gap_type: GapType;
   detector_version: CandidateDetectorVersion;
+  policy_version: typeof GAP_POLICY_VERSION;
+  event_store_hash?: string;
   severity: CandidateSeverity;
   identity: CandidateGapIdentity;
   trigger_event_ids: string[];
@@ -118,6 +120,7 @@ export interface DetectionContext {
   evaluation_as_of_date: string;
   policy_version: typeof GAP_POLICY_VERSION;
   detector_version: CandidateDetectorVersion;
+  event_store_hash?: string;
 }
 
 export interface GapDetector {

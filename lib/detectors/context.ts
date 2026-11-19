@@ -5,6 +5,7 @@ import { isIsoDate } from "./common/dates";
 
 export function createDetectionContext(
   evaluationAsOfDate: string = EVALUATION_AS_OF_DATE,
+  options: { event_store_hash?: string } = {},
 ): DetectionContext {
   if (!isIsoDate(evaluationAsOfDate)) {
     throw new Error(`Invalid evaluation_as_of_date: ${evaluationAsOfDate}`);
@@ -13,5 +14,6 @@ export function createDetectionContext(
     evaluation_as_of_date: evaluationAsOfDate,
     policy_version: GAP_POLICY_VERSION,
     detector_version: DETECTOR_VERSION,
+    ...(options.event_store_hash ? { event_store_hash: options.event_store_hash } : {}),
   };
 }

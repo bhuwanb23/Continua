@@ -43,6 +43,8 @@ function candidateFor(
     patient_id: patientId,
     gap_type: "duplicate_test",
     detector_version: "gaps-v1",
+    policy_version: context.policy_version,
+    ...(context.event_store_hash ? { event_store_hash: context.event_store_hash } : {}),
     severity: duplicateSeverity(episode.diagnostic_kind, dayGap, episode.occurrences.length),
     identity: { ...identityFor(episode.normalized_identity), event_ids: eventIds },
     trigger_event_ids: eventIds,

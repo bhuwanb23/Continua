@@ -23,6 +23,7 @@ export interface SourceRecord {
   provider_type: ProviderType;
   date: string;
   text: string;
+  content_hash?: string;
   dataset_version: string;
   generator_version: string;
   synthetic: true;

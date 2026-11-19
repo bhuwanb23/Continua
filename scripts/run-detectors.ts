@@ -145,13 +145,13 @@ function main(): void {
     options.runId ?? `gaps-${options.mode}-${options.partition}-${timestamp.replace(/[-:.]/g, "").slice(0, 15)}`,
   );
   const outDir = options.outputDir ?? join(root, "artifacts", "detectors", runId);
-  const context = createDetectionContext(EVALUATION_AS_OF_DATE);
+  const inputHash = hashClinicalEvents(events);
+  const context = createDetectionContext(EVALUATION_AS_OF_DATE, { event_store_hash: inputHash });
 
   const started = performance.now();
   const candidates = detectCandidateGaps(events, context);
   const runtimeMs = performance.now() - started;
   const predictions = candidatesToPredictions(candidates);
-  const inputHash = hashClinicalEvents(events);
   const candidateHash = createHash("sha256")
     .update(JSON.stringify(candidates.map((candidate) => candidate.gap_id)))
     .digest("hex");
