@@ -259,6 +259,8 @@ export const ActionResponseSchema = z.object({
   disclaimer: DisclaimerSchema,
 });
 
+export type GapSummary = z.infer<typeof GapSummarySchema>;
+export type ImpactMetric = z.infer<typeof ImpactMetricSchema>;
 export type PanelResponse = z.infer<typeof PanelResponseSchema>;
 export type PatientListResponse = z.infer<typeof PatientListResponseSchema>;
 export type PatientResponse = z.infer<typeof PatientResponseSchema>;
