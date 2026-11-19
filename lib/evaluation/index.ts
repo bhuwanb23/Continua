@@ -10,3 +10,4 @@ export * from "./taxonomy";
 export * from "./validate-benchmark";
 export * from "./benchmark-bundle";
 export * from "./latency";
+export * from "./leakage";
