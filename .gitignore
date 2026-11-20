@@ -42,3 +42,4 @@ Thumbs.db
 !artifacts/performance/**/*.json
 !artifacts/demo/**/*.json
 !artifacts/visual/**/*.json
+!artifacts/reproducibility/**/*.json

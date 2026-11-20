@@ -105,7 +105,12 @@
     "demo:local": "tsx scripts/demo-local.ts",
     "demo:reset": "tsx scripts/demo-reset.ts",
     "deployment:smoke": "tsx scripts/deployment-smoke.ts",
-    "rehearsal:record": "tsx scripts/rehearsal-record.ts"
+    "rehearsal:record": "tsx scripts/rehearsal-record.ts",
+    "validate:docs": "tsx scripts/validate-docs.ts",
+    "validate:links": "tsx scripts/validate-links.ts",
+    "verify:claims-docs": "tsx scripts/verify-claims.ts",
+    "verify:reproducibility": "tsx scripts/verify-reproducibility.ts",
+    "reproduce": "tsx scripts/reproduce.ts"
   },
   "dependencies": {
     "next": "15.5.29",
