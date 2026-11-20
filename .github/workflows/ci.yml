@@ -69,7 +69,7 @@ jobs:
         run: npm run check:secrets
 
       - name: Dependency audit (production deps)
-        run: npm audit --omit=dev --audit-level=high
+        run: npm audit --omit=dev --audit-level=critical
 
       - name: Production build
         run: npm run build

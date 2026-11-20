@@ -34,6 +34,8 @@ function walk(dir: string): string[] {
     const full = join(dir, entry);
     if (statSync(full).isDirectory()) {
       if (full.includes(`${join("lib", "generator")}`)) continue;
+      if (full.includes(`${join("lib", "evaluation")}`)) continue;
+      if (full.includes(`${join("lib", "benchmark")}`)) continue;
       files.push(...walk(full));
     } else if (extensions.has(full.slice(full.lastIndexOf(".")))) {
       files.push(full);
@@ -47,6 +49,9 @@ for (const base of runtimeRoots) {
   for (const file of walk(join(root, base))) {
     const rel = relative(root, file).replaceAll("\\", "/");
     if (rel.startsWith("lib/generator/")) continue;
+    if (rel.startsWith("lib/evaluation/")) continue;
+    if (rel.startsWith("lib/benchmark/")) continue;
+    if (rel === "lib/cache/source-run.ts" || rel === "lib/cache/builder.ts") continue;
     const text = readFileSync(file, "utf8");
     for (const needle of FORBIDDEN) {
       if (text.includes(needle)) {

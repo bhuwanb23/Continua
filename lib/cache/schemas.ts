@@ -16,7 +16,7 @@ export const CacheManifestSchema = z.object({
   patient_count: z.number().int().nonnegative(),
   generated_at: z.string().min(1),
   git_commit: z.string().min(1),
-  artifacts: z.record(z.object({ sha256: z.string().length(64), bytes: z.number().int().nonnegative() })),
+  artifacts: z.record(z.string(), z.object({ sha256: z.string().length(64), bytes: z.number().int().nonnegative() })),
   manifest_sha256: z.string().length(64),
 });
 
