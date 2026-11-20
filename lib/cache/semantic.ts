@@ -4,7 +4,7 @@ import { canonicalStringify } from "./canonical-json";
 import { sha256Text } from "./hashes";
 
 /** Keys whose values are build timestamps, not cache semantics (Phase 10.25). */
-const VOLATILE_KEYS = new Set(["generated_at", "built_at", "finalized_at"]);
+const VOLATILE_KEYS = new Set(["generated_at", "built_at", "finalized_at", "git_commit"]);
 
 function stripVolatile(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stripVolatile);

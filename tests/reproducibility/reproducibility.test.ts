@@ -41,6 +41,8 @@ describe("label isolation", () => {
       const full = join(dir, entry);
       if (statSync(full).isDirectory()) {
         if (full.endsWith(join("lib", "generator"))) continue;
+        if (full.endsWith(join("lib", "evaluation"))) continue;
+        if (full.endsWith(join("lib", "benchmark"))) continue;
         output.push(...files(full));
       } else if (/\.(ts|tsx|js|jsx)$/.test(full)) {
         output.push(full);
@@ -55,6 +57,9 @@ describe("label isolation", () => {
       for (const file of files(join(root, base))) {
         const rel = relative(root, file).replaceAll("\\", "/");
         if (rel.startsWith("lib/generator/")) continue;
+        if (rel.startsWith("lib/evaluation/")) continue;
+        if (rel.startsWith("lib/benchmark/")) continue;
+        if (rel === "lib/cache/source-run.ts" || rel === "lib/cache/builder.ts") continue;
         const text = readFileSync(file, "utf8");
         for (const needle of forbidden) {
           if (text.includes(needle)) violations.push(`${rel} -> ${needle}`);

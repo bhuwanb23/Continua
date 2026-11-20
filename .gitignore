@@ -38,7 +38,7 @@ Thumbs.db
 !data/safety-cases/**/*.json
 !artifacts/safety/**/*.json
 !artifacts/reliability/**/*.json
-!artifacts/reliability/**/*.webm
+!artifacts/**/*.webm
 !artifacts/performance/**/*.json
 !artifacts/demo/**/*.json
 !artifacts/visual/**/*.json
