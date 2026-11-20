@@ -1,0 +1,13 @@
+{
+  "version": "continua-visual-v1",
+  "generated_at": "2026-11-20T06:40:00.000Z",
+  "unapproved_raw_colors": 0,
+  "priority_label_inconsistencies": 0,
+  "verified_label_inconsistencies": 0,
+  "clinical_risk_visual_semantics": 0,
+  "blocking_contrast_failures": 0,
+  "color_only_meanings": 0,
+  "supported_viewports": ["1440x900", "1280x720", "1024x768", "390x844", "320x568"],
+  "canonical_screenshots": 0,
+  "status": "PARTIAL"
+}

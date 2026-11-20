@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SyntheticDataBanner } from "@/components/layout/SyntheticDataBanner";
+import { ContinuaWordmark } from "@/components/brand/ContinuaWordmark";
 
 const nav = [
   { href: "/", label: "Today", hint: "Queue" },
@@ -17,8 +18,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <div className="flex flex-1">
         <aside className="hidden w-56 shrink-0 border-r border-slate-200 bg-white md:block">
           <div className="sticky top-0 px-4 py-5">
-            <Link href="/" className="text-lg font-semibold text-brand">
-              Continua
+            <Link href="/" aria-label="Continua home">
+              <ContinuaWordmark />
             </Link>
             <p className="mt-1 text-xs text-slate-500">Continuity intelligence</p>
             <nav aria-label="Primary" className="mt-6 space-y-1">

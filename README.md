@@ -124,7 +124,7 @@ The frozen contract lives in [`docs/spec/SPEC-v1.0.md`](docs/spec/SPEC-v1.0.md) 
 
 ## Current status
 
-Phases 0–17 are complete: synthetic dataset and frozen spec, extraction contracts,
+Phases 0–18 are complete: synthetic dataset and frozen spec, extraction contracts,
 deterministic detectors, evidence verification, intervention priority, frozen demo
 cache and API v1, coordinator UX, flagship demo, the proof & impact layer, the
 frozen safety, privacy & responsible-AI layer (`continua-safety-v1`), the frozen

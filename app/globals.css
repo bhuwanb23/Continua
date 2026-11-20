@@ -14,3 +14,14 @@ body {
 body {
   @apply bg-paper text-ink antialiased;
 }
+
+:root {
+  --continua-ink: #0f172a;
+  --continua-teal: #0f766e;
+  --continua-amber: #b45309;
+  --continua-green: #166534;
+  --continua-red: #b91c1c;
+  --continua-surface: #ffffff;
+  --continua-canvas: #f8fafc;
+  --continua-border: #e2e8f0;
+}

@@ -41,3 +41,4 @@ Thumbs.db
 !artifacts/reliability/**/*.webm
 !artifacts/performance/**/*.json
 !artifacts/demo/**/*.json
+!artifacts/visual/**/*.json
