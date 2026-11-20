@@ -110,7 +110,8 @@
     "validate:links": "tsx scripts/validate-links.ts",
     "verify:claims-docs": "tsx scripts/verify-claims.ts",
     "verify:reproducibility": "tsx scripts/verify-reproducibility.ts",
-    "reproduce": "tsx scripts/reproduce.ts"
+    "reproduce": "tsx scripts/reproduce.ts",
+    "validate:submission": "tsx scripts/validate-submission.ts"
   },
   "dependencies": {
     "next": "15.5.29",
