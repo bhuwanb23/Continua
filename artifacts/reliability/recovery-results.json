@@ -1,0 +1,61 @@
+{
+  "version": "continua-reliability-v1",
+  "generated_from": "scripts/reliability-demo-drill.ts",
+  "note": "Prototype rehearsal reliability only. No production uptime, availability, or HIPAA claim.",
+  "run_at": "2026-11-19T17:29:22.295Z",
+  "hosted_deployment": "NOT_TESTED (no hosted deployment available from this environment)",
+  "simulated_hosted_failure": true,
+  "local_cache_boot_seconds": 0.112,
+  "local_cache_boot_ok": true,
+  "local_p0_path_seconds": 0.137,
+  "local_p0_path_ok": true,
+  "recorded_backup": "artifacts/reliability/backup-walkthrough.webm",
+  "drills": [
+    {
+      "id": "A",
+      "scenario": "Hosted app fails before demo",
+      "fallback": "local_cached_app",
+      "target_seconds": 15,
+      "measured_seconds": 0.112,
+      "passed": true,
+      "notes": "Simulated hosted failure. Frozen cache startup PASS; 80 patients; 5-item queue."
+    },
+    {
+      "id": "B",
+      "scenario": "Hosted app fails mid-demo",
+      "fallback": "local_cached_app",
+      "target_seconds": 15,
+      "measured_seconds": 0.137,
+      "passed": true,
+      "notes": "Simulated mid-demo hosted failure. Local P0 route path PASS; Maria rank 27."
+    },
+    {
+      "id": "C",
+      "scenario": "Maria route fails",
+      "fallback": "local_cached_app",
+      "target_seconds": 10,
+      "measured_seconds": 0,
+      "passed": true,
+      "notes": "Browser drill passed: failed evidence request showed explicit error; retry rendered the real bundle. Reused browser artifact, not independently timed."
+    },
+    {
+      "id": "D",
+      "scenario": "Evaluation page fails",
+      "fallback": "canonical_evaluation_screenshot",
+      "target_seconds": 10,
+      "measured_seconds": 0,
+      "passed": true,
+      "notes": "Browser drill passed: frozen evaluation page rendered benchmark provenance and limitations. Reused browser artifact, not independently timed."
+    },
+    {
+      "id": "E",
+      "scenario": "Screen-share browser crashes",
+      "fallback": "recorded_video",
+      "target_seconds": 10,
+      "measured_seconds": 0,
+      "passed": true,
+      "notes": "Recorded six-scene walkthrough verified as WebM (256 KB). Playback not independently timed."
+    }
+  ],
+  "status": "PASS"
+}

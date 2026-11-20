@@ -1,5 +1,9 @@
 import { createHash as createCryptoHash } from "node:crypto";
-import type { CanonicalClinicalEvent, SourceRecord } from "@/lib/domain";
+import type {
+  CanonicalClinicalEvent,
+  PatientAnalysisCompleteness,
+  SourceRecord,
+} from "@/lib/domain";
 import {
   CLINICAL_EVENT_SCHEMA_VERSION,
   DATASET_VERSION,
@@ -28,6 +32,8 @@ export interface EvidenceVerificationContext {
   clinical_event_schema: string;
   records_by_id: Map<string, SourceRecord>;
   events_by_id: Map<string, CanonicalClinicalEvent>;
+  /** Absence verification requires COMPLETE; omitted means COMPLETE. */
+  patient_completeness: PatientAnalysisCompleteness;
 }
 
 export interface EvidenceVerificationOptions {
@@ -36,6 +42,7 @@ export interface EvidenceVerificationOptions {
   dataset_version?: string;
   extractor_version?: string;
   clinical_event_schema?: string;
+  patient_completeness?: PatientAnalysisCompleteness;
 }
 
 export function createEvidenceVerificationContext(
@@ -53,6 +60,7 @@ export function createEvidenceVerificationContext(
     clinical_event_schema: options.clinical_event_schema ?? CLINICAL_EVENT_SCHEMA_VERSION,
     records_by_id: new Map(records.map((record) => [record.source_doc_id, record])),
     events_by_id: new Map(events.map((event) => [event.event_id, event])),
+    patient_completeness: options.patient_completeness ?? "COMPLETE",
   };
 }
 

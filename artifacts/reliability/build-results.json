@@ -1,0 +1,21 @@
+{
+  "command": "npm run build",
+  "clean_next_directory": true,
+  "exit_code": 0,
+  "duration_ms": 300485,
+  "status": "PASS",
+  "output_tail": [
+    "├ ○ /insights                              1.49 kB         108 kB",
+    "├ ○ /methodology                             158 B         103 kB",
+    "├ ○ /patients                              2.03 kB         108 kB",
+    "└ ƒ /patients/[patientId]                  3.88 kB         110 kB",
+    "+ First Load JS shared by all               103 kB",
+    "  ├ chunks/255-73938ce8a8eac1ad.js         46.6 kB",
+    "  ├ chunks/4bd1b696-c023c6e3521b1417.js    54.2 kB",
+    "  └ other shared chunks (total)            1.99 kB",
+    "",
+    "",
+    "○  (Static)   prerendered as static content",
+    "ƒ  (Dynamic)  server-rendered on demand"
+  ]
+}

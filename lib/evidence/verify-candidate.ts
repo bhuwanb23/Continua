@@ -10,6 +10,11 @@ import { buildEvidenceDeepDive, buildStructuredRationale, verifiedGapTitle } fro
 import { buildSuppressionRecord } from "./suppress";
 import { internalStatusFor, verifyEvidenceBundle } from "./verify-gap";
 import type { EvidenceVerificationContext } from "./version";
+import {
+  ABSENCE_SUPPRESSED_REASON,
+  canUseAbsenceReasoning,
+  isAbsenceDerivedGap,
+} from "@/lib/reliability/completeness";
 
 function verifiedGapFor(
   candidate: CandidateGap,
@@ -54,6 +59,17 @@ export function verifyCandidateGap(
     !candidate.patient_id ||
     !Array.isArray(candidate.evidence_refs);
   const collected = collectEvidence(candidate, context);
+  if (
+    isAbsenceDerivedGap(candidate.gap_type) &&
+    !canUseAbsenceReasoning(context.patient_completeness)
+  ) {
+    collected.bundle.failures.push({
+      code: "EV-008",
+      stage: "absence",
+      message: ABSENCE_SUPPRESSED_REASON,
+    });
+    collected.bundle.verification_status = "failed";
+  }
   if (malformed) {
     collected.bundle.failures.push({
       code: "EV-012",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { api } from "@/lib/ui/api";
@@ -12,6 +12,7 @@ import type {
 } from "@/lib/api/dto";
 import { PriorityBadge } from "@/components/queue/PriorityBadge";
 import { SafetyNote } from "@/components/safety/SafetyNote";
+import { createLatestRequestGuard } from "@/lib/ui/latest-request";
 
 export default function PatientWorkspace() {
   const params = useParams<{ patientId: string }>();
@@ -23,11 +24,20 @@ export default function PatientWorkspace() {
   const [loading, setLoading] = useState(true);
   const [evidence, setEvidence] = useState<EvidenceResponse | null>(null);
   const [evidenceLoading, setEvidenceLoading] = useState(false);
+  const [evidenceError, setEvidenceError] = useState<string | null>(null);
   const [actionStatus, setActionStatus] = useState<string | null>(null);
+  const [reloadKey, setReloadKey] = useState(0);
+  const evidenceGuard = useRef(createLatestRequestGuard());
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
+    setError(null);
+    setPatient(null);
+    setTimeline(null);
+    setGaps([]);
+    setEvidence(null);
+    setEvidenceError(null);
     Promise.all([api.patient(patientId), api.timeline(patientId), api.gaps(patientId)])
       .then(([p, t, g]) => {
         if (cancelled) return;
@@ -44,27 +54,53 @@ export default function PatientWorkspace() {
     return () => {
       cancelled = true;
     };
-  }, [patientId]);
+  }, [patientId, reloadKey]);
+
+  useEffect(() => {
+    const guard = evidenceGuard.current;
+    return () => guard.cancel();
+  }, []);
 
   async function openEvidence(gapId: string) {
+    const token = evidenceGuard.current.begin();
     setEvidenceLoading(true);
+    setEvidenceError(null);
+    setEvidence(null);
     try {
-      const response = await fetch(`/api/v1/evidence/${gapId}`);
-      setEvidence(await response.json());
+      const response = await fetch(`/api/v1/evidence/${gapId}`, { signal: token.signal });
+      if (!token.isCurrent()) return;
+      if (!response.ok) {
+        setEvidenceError("Evidence couldn't be loaded. Try again.");
+        return;
+      }
+      const body = (await response.json()) as EvidenceResponse;
+      if (token.isCurrent()) setEvidence(body);
+    } catch (err) {
+      if (!token.isCurrent()) return;
+      if (err instanceof Error && err.name === "AbortError") return;
+      setEvidenceError("Evidence couldn't be loaded. Try again.");
     } finally {
-      setEvidenceLoading(false);
+      if (token.isCurrent()) setEvidenceLoading(false);
     }
   }
 
   async function recordAction(gapId: string, action: "acknowledged" | "contacted" | "reviewed") {
     setActionStatus(null);
-    const response = await fetch(`/api/v1/gaps/${gapId}/actions`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ action }),
-    });
-    const body = await response.json();
-    setActionStatus(response.ok ? `Recorded: ${body.action}` : `Failed: ${body?.error?.code ?? response.status}`);
+    try {
+      const response = await fetch(`/api/v1/gaps/${gapId}/actions`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ action }),
+      });
+      const body = await response.json();
+      setActionStatus(
+        response.ok
+          ? `Recorded: ${body.action}`
+          : `Couldn't save workflow status. ${body?.error?.code ?? response.status}`,
+      );
+    } catch {
+      setActionStatus("Couldn't save workflow status. Existing verified issues are unchanged.");
+    }
   }
 
   if (loading) return <p className="text-slate-500">Loading patient…</p>;
@@ -74,8 +110,15 @@ export default function PatientWorkspace() {
         <Link href="/patients" className="text-sm text-brand hover:underline">
           ← Back to patients
         </Link>
-        <div className="rounded-lg border border-red-200 bg-red-50 p-5 text-sm text-red-800">
-          Could not load patient. {error}
+        <div role="alert" className="rounded-lg border border-red-200 bg-red-50 p-5 text-sm text-red-800">
+          <p>Could not load patient. {error}</p>
+          <button
+            type="button"
+            onClick={() => setReloadKey((value) => value + 1)}
+            className="mt-3 rounded-md border border-red-300 px-3 py-1.5 font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700"
+          >
+            Try again
+          </button>
         </div>
       </div>
     );
@@ -188,9 +231,25 @@ export default function PatientWorkspace() {
               </div>
             </article>
           ))}
-          {actionStatus ? <p className="text-sm text-teal-700">{actionStatus}</p> : null}
+          {actionStatus ? <p role="status" className="text-sm text-teal-700">{actionStatus}</p> : null}
+          {evidenceError ? (
+            <div role="alert" className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+              {evidenceError}
+            </div>
+          ) : null}
         </section>
       </div>
+
+      {evidenceLoading ? (
+        <div
+          id="evidence-drawer-loading"
+          role="status"
+          aria-live="polite"
+          className="rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-600"
+        >
+          Loading evidence…
+        </div>
+      ) : null}
 
       {evidence ? (
         <div

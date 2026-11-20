@@ -28,6 +28,16 @@ matrix, output-language and absence-scoping guards, synthetic provenance verific
 isolation, a 40-case adversarial corpus across 20 families, and release gates A–K. See
 [`docs/safety/`](docs/safety/) and [`artifacts/safety/`](artifacts/safety/).
 
+## Reliability
+
+Reliability is frozen as `continua-reliability-v1`: a failure taxonomy (R0–R3),
+test-only fault injection, a completeness gate that suppresses absence-derived
+gaps for partial analyses, fail-closed cache and evidence checks, bounded retries,
+and rehearsed local/evaluation/recorded demo fallbacks. See
+[`docs/reliability/`](docs/reliability/) and [`artifacts/reliability/`](artifacts/reliability/).
+The report contains 102 reliability tests, 14 injected faults, a 50-run P0 soak,
+and five recovery drills. No hosted uptime or HIPAA claim is made.
+
 ## Proof & impact
 
 Measured on the frozen synthetic benchmark `continua-benchmark-v1` (run
@@ -100,7 +110,11 @@ npm run validate      # lint + typecheck + tests + spec/data/env/safety checks
 npm run test          # unit + contract + integration
 npm run test:safety   # static audits + 40-case adversarial corpus + safety tests
 npm run generate:safety-report   # rebuild artifacts/safety release artifacts
-npm run test:e2e      # Playwright (later phases)
+npm run test:reliability  # reliability suite with JSON artifact
+npm run reliability:browser  # Chromium behavior matrix + artifact
+npm run reliability:drill    # recovery drills A-E
+npm run freeze:reliability   # golden, faults, soak, tests, browser, drills, report
+npm run test:e2e      # Playwright
 npm run build         # production build
 ```
 
@@ -110,10 +124,11 @@ The frozen contract lives in [`docs/spec/SPEC-v1.0.md`](docs/spec/SPEC-v1.0.md) 
 
 ## Current status
 
-Phases 0–15 are complete: synthetic dataset and frozen spec, extraction contracts,
+Phases 0–16 are complete: synthetic dataset and frozen spec, extraction contracts,
 deterministic detectors, evidence verification, intervention priority, frozen demo
-cache and API v1, coordinator UX, flagship demo, the proof & impact layer, and the
-frozen safety, privacy & responsible-AI layer (`continua-safety-v1`).
+cache and API v1, coordinator UX, flagship demo, the proof & impact layer, the
+frozen safety, privacy & responsible-AI layer (`continua-safety-v1`), and the
+frozen reliability layer (`continua-reliability-v1`).
 
 Not built: FHIR integration, real PHI handling, hospital deployment, clinical trial,
 EHR write-back, autonomous care decisions. See `docs/impact/limitations.md`.

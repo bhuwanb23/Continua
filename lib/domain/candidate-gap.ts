@@ -116,11 +116,19 @@ export interface MedicationMonitoringCandidate extends CandidateGapBase {
 
 export type CandidateGap = MissedFollowupCandidate | DuplicateTestCandidate | MedicationMonitoringCandidate;
 
+export const PATIENT_ANALYSIS_COMPLETENESS = ["COMPLETE", "PARTIAL", "FAILED"] as const;
+export type PatientAnalysisCompleteness = (typeof PATIENT_ANALYSIS_COMPLETENESS)[number];
+
 export interface DetectionContext {
   evaluation_as_of_date: string;
   policy_version: typeof GAP_POLICY_VERSION;
   detector_version: CandidateDetectorVersion;
   event_store_hash?: string;
+  /**
+   * Absence-derived detectors require a COMPLETE analysis. Omitted means the
+   * frozen benchmark/demo pathway, which is COMPLETE by construction.
+   */
+  patient_completeness?: PatientAnalysisCompleteness;
 }
 
 export interface GapDetector {

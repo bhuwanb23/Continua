@@ -41,10 +41,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="flex min-w-0 flex-1 flex-col">
           <header className="border-b border-slate-200 bg-white md:hidden">
             <div className="flex items-center justify-between px-4 py-3">
-              <Link href="/" className="text-lg font-semibold text-brand">
+              <Link href="/" className="shrink-0 text-lg font-semibold text-brand">
                 Continua
               </Link>
-              <nav aria-label="Primary mobile" className="flex gap-3 text-sm">
+              <nav
+                aria-label="Primary mobile"
+                className="flex min-w-0 flex-1 flex-wrap justify-end gap-x-3 gap-y-1 text-sm"
+              >
                 {nav.map((item) => (
                   <Link key={item.href} href={item.href} className="text-slate-600 hover:text-ink">
                     {item.label}

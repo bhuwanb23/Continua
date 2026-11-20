@@ -37,3 +37,5 @@ Thumbs.db
 # frozen data artifacts that must stay tracked
 !data/safety-cases/**/*.json
 !artifacts/safety/**/*.json
+!artifacts/reliability/**/*.json
+!artifacts/reliability/**/*.webm

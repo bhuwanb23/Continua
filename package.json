@@ -88,7 +88,15 @@
     "audit:runtime-imports": "tsx scripts/audit-runtime-imports.ts",
     "audit:output-language": "tsx scripts/audit-output-language.ts",
     "generate:safety-report": "tsx scripts/generate-safety-report.ts",
-    "freeze:safety": "tsx scripts/generate-safety-report.ts"
+    "freeze:safety": "tsx scripts/generate-safety-report.ts",
+    "test:reliability": "tsx scripts/reliability-test.ts",
+    "reliability:golden": "tsx scripts/reliability-golden.ts",
+    "reliability:faults": "tsx scripts/reliability-faults.ts",
+    "reliability:soak": "tsx scripts/reliability-soak.ts",
+    "reliability:browser": "tsx scripts/reliability-browser.ts",
+    "reliability:drill": "tsx scripts/reliability-demo-drill.ts",
+    "reliability:report": "tsx scripts/generate-reliability-report.ts",
+    "freeze:reliability": "npm run reliability:golden && npm run reliability:faults && npm run reliability:soak && npm run test:reliability && npm run reliability:browser && npm run reliability:drill && npm run reliability:report"
   },
   "dependencies": {
     "next": "15.5.29",

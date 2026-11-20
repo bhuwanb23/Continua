@@ -1,4 +1,5 @@
 import type { CandidateGap, CanonicalClinicalEvent, DetectionContext } from "@/lib/domain";
+import { gateAbsenceGaps } from "@/lib/reliability/completeness";
 import { dedupeCandidateGaps } from "./common/dedupe";
 import { duplicateDetector } from "./duplicate/detector";
 import { followupDetector } from "./followup/detector";
@@ -18,14 +19,21 @@ export * from "./followup/matching";
 export * from "./monitoring/registry";
 export * from "./monitoring/completion";
 
-/** The only cross-detector entry point. Different gap types never merge. */
+/**
+ * The only cross-detector entry point. Different gap types never merge.
+ *
+ * Phase-16 completeness invariant: absence-derived detectors are gated on a
+ * COMPLETE analysis. An omitted completeness means the frozen benchmark/demo
+ * pathway, which is COMPLETE by construction.
+ */
 export function detectCandidateGaps(
   events: CanonicalClinicalEvent[],
   context: DetectionContext,
 ): CandidateGap[] {
-  return dedupeCandidateGaps([
+  const candidates = dedupeCandidateGaps([
     ...followupDetector.detect(events, context),
     ...duplicateDetector.detect(events, context),
     ...monitoringDetector.detect(events, context),
   ]);
+  return gateAbsenceGaps(candidates, context.patient_completeness ?? "COMPLETE").gaps;
 }

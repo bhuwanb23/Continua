@@ -88,13 +88,14 @@ export async function executeDemoSourceRun(): Promise<DemoSourceRun> {
     event_id: eventIdMap.get(event.event_id) ?? event.event_id,
   })) as CanonicalClinicalEvent[];
 
-  const candidates = detectCandidateGaps(
-    remappedEvents,
-    createDetectionContext(DEMO_CACHE_EVALUATION_DATE, { event_store_hash: eventStoreHash }),
-  );
+  const candidates = detectCandidateGaps(remappedEvents, {
+    ...createDetectionContext(DEMO_CACHE_EVALUATION_DATE, { event_store_hash: eventStoreHash }),
+    patient_completeness: "COMPLETE",
+  });
   const context = createEvidenceVerificationContext(remappedEvents, records, {
     evaluation_as_of_date: DEMO_CACHE_EVALUATION_DATE,
     event_store_hash: eventStoreHash,
+    patient_completeness: "COMPLETE",
   });
   const verification = verifyCandidateGaps(candidates, context);
   const verifiedGaps = verification

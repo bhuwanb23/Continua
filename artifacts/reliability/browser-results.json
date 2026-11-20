@@ -1,0 +1,86 @@
+{
+  "version": "continua-reliability-v1",
+  "generated_from": "scripts/reliability-browser-results.ts",
+  "note": "Prototype rehearsal reliability only. No production uptime, availability, or HIPAA claim.",
+  "run_at": "2026-11-20T05:53:06.230Z",
+  "engine": "Playwright 1.51.1 · Chromium 134",
+  "browsers": {
+    "chrome": "PASS"
+  },
+  "edge": "NOT_RUN",
+  "firefox": "N/A",
+  "safari": "N/A",
+  "viewports": [
+    "390x844",
+    "1280x720 (Desktop Chrome)"
+  ],
+  "total_specs": 10,
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "flaky": 0,
+  "duration_ms": 109921.02,
+  "specs": [
+    {
+      "file": "coordinator-flow.spec.ts",
+      "title": "opens the panel, sees the prioritized queue, and reviews a patient",
+      "status": "PASS",
+      "duration_ms": 16257
+    },
+    {
+      "file": "coordinator-flow.spec.ts",
+      "title": "remains readable at a narrow viewport without horizontal overflow",
+      "status": "PASS",
+      "duration_ms": 13905
+    },
+    {
+      "file": "degraded-states.spec.ts",
+      "title": "patient load failure offers a usable retry",
+      "status": "PASS",
+      "duration_ms": 16444
+    },
+    {
+      "file": "degraded-states.spec.ts",
+      "title": "evidence failure is explicit and recoverable",
+      "status": "PASS",
+      "duration_ms": 22634
+    },
+    {
+      "file": "fallback.spec.ts",
+      "title": "the flagship demo falls back honestly when its API is unavailable",
+      "status": "PASS",
+      "duration_ms": 11888
+    },
+    {
+      "file": "fallback.spec.ts",
+      "title": "the frozen evaluation remains reachable as the proof fallback",
+      "status": "PASS",
+      "duration_ms": 9178
+    },
+    {
+      "file": "maria-demo.spec.ts",
+      "title": "Maria workspace shows three verified issues and grounded evidence",
+      "status": "PASS",
+      "duration_ms": 10896
+    },
+    {
+      "file": "offline-demo.spec.ts",
+      "title": "the P0 demo makes no external network requests",
+      "status": "PASS",
+      "duration_ms": 5799
+    },
+    {
+      "file": "offline-demo.spec.ts",
+      "title": "a total API outage produces a truthful panel error, not empty data",
+      "status": "PASS",
+      "duration_ms": 5346
+    },
+    {
+      "file": "record-backup.spec.ts",
+      "title": "records the six-scene flagship walkthrough",
+      "status": "PASS",
+      "duration_ms": 15281
+    }
+  ],
+  "status": "PASS"
+}
