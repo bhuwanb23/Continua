@@ -96,7 +96,16 @@
     "reliability:browser": "tsx scripts/reliability-browser.ts",
     "reliability:drill": "tsx scripts/reliability-demo-drill.ts",
     "reliability:report": "tsx scripts/generate-reliability-report.ts",
-    "freeze:reliability": "npm run reliability:golden && npm run reliability:faults && npm run reliability:soak && npm run test:reliability && npm run reliability:browser && npm run reliability:drill && npm run reliability:report"
+    "freeze:reliability": "npm run reliability:golden && npm run reliability:faults && npm run reliability:soak && npm run test:reliability && npm run reliability:browser && npm run reliability:drill && npm run reliability:report",
+    "profile:demo": "tsx scripts/profile-demo.ts",
+    "benchmark:api": "tsx scripts/benchmark-api.ts",
+    "benchmark:pages": "tsx scripts/benchmark-pages.ts",
+    "demo:warm": "tsx scripts/demo-warm.ts",
+    "demo:check": "tsx scripts/demo-check.ts",
+    "demo:local": "tsx scripts/demo-local.ts",
+    "demo:reset": "tsx scripts/demo-reset.ts",
+    "deployment:smoke": "tsx scripts/deployment-smoke.ts",
+    "rehearsal:record": "tsx scripts/rehearsal-record.ts"
   },
   "dependencies": {
     "next": "15.5.29",

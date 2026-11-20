@@ -1,0 +1,50 @@
+{
+  "version": "continua-demo-release-candidate-v1",
+  "generated_at": "2026-11-20T06:23:41.733Z",
+  "runs": 20,
+  "measurements": {
+    "panel": {
+      "p50_ms": 0.21,
+      "p95_ms": 0.53,
+      "max_ms": 159.12,
+      "min_ms": 0.12
+    },
+    "queue": {
+      "p50_ms": 0.31,
+      "p95_ms": 1.2,
+      "max_ms": 2.48,
+      "min_ms": 0.23
+    },
+    "patient": {
+      "p50_ms": 0.23,
+      "p95_ms": 0.93,
+      "max_ms": 1.18,
+      "min_ms": 0.14
+    },
+    "timeline": {
+      "p50_ms": 0.45,
+      "p95_ms": 0.97,
+      "max_ms": 14.01,
+      "min_ms": 0.3
+    },
+    "gaps": {
+      "p50_ms": 0.3,
+      "p95_ms": 0.46,
+      "max_ms": 1.32,
+      "min_ms": 0.18
+    },
+    "evidence": {
+      "p50_ms": 0.33,
+      "p95_ms": 0.62,
+      "max_ms": 1.41,
+      "min_ms": 0.23
+    },
+    "evaluation": {
+      "p50_ms": 0.35,
+      "p95_ms": 1.57,
+      "max_ms": 2.78,
+      "min_ms": 0.23
+    }
+  },
+  "status": "PASS"
+}

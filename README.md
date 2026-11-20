@@ -124,11 +124,13 @@ The frozen contract lives in [`docs/spec/SPEC-v1.0.md`](docs/spec/SPEC-v1.0.md) 
 
 ## Current status
 
-Phases 0–16 are complete: synthetic dataset and frozen spec, extraction contracts,
+Phases 0–17 are complete: synthetic dataset and frozen spec, extraction contracts,
 deterministic detectors, evidence verification, intervention priority, frozen demo
 cache and API v1, coordinator UX, flagship demo, the proof & impact layer, the
-frozen safety, privacy & responsible-AI layer (`continua-safety-v1`), and the
-frozen reliability layer (`continua-reliability-v1`).
+frozen safety, privacy & responsible-AI layer (`continua-safety-v1`), the frozen
+reliability layer (`continua-reliability-v1`), and the demo release candidate
+(`continua-demo-release-candidate-v1`) with performance budgets, warm/check/reset
+commands, and deployment smoke tooling.
 
 Not built: FHIR integration, real PHI handling, hospital deployment, clinical trial,
 EHR write-back, autonomous care decisions. See `docs/impact/limitations.md`.

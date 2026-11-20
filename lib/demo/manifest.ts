@@ -1,0 +1,25 @@
+export interface ReleaseManifest {
+  release_candidate: string;
+  generated_at: string;
+  flagship_patient_id: string;
+  flagship_gap_id: string;
+  backup_patient_id: string;
+  backup_gap_id: string;
+  llm_required: false;
+  external_db_required: false;
+  synthetic: true;
+}
+
+export function buildReleaseManifest(): ReleaseManifest {
+  return {
+    release_candidate: "continua-demo-release-candidate-v1",
+    generated_at: new Date().toISOString(),
+    flagship_patient_id: "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+    flagship_gap_id: "77c292e1-e3d2-52f8-9e5c-d7fdd38cee41",
+    backup_patient_id: "2e747376-7b45-5793-802a-247bc9ccd60f",
+    backup_gap_id: "8ece28d5-1220-5f60-9f2e-b4dc5ff6b94b",
+    llm_required: false,
+    external_db_required: false,
+    synthetic: true,
+  };
+}

@@ -12,8 +12,13 @@ import type {
   TimelineResponse,
 } from "@/lib/api/dto";
 
+const API_BASE =
+  typeof window === "undefined"
+    ? process.env.NEXT_PUBLIC_APP_URL ?? "http://127.0.0.1:3000"
+    : "";
+
 async function get<T>(path: string): Promise<T> {
-  const response = await fetch(path, { cache: "no-store" });
+  const response = await fetch(`${API_BASE}${path}`, { cache: "no-store" });
   if (!response.ok) {
     const body = await response.text();
     throw new Error(`${response.status} ${body.slice(0, 200)}`);

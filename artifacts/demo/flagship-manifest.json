@@ -1,0 +1,29 @@
+{
+  "phase": "13",
+  "experience": "Continua Oncology Flagship Experience v1",
+  "status": "implemented",
+  "flagship_patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+  "flagship_patient_name": "Maria Chen",
+  "demo_flagship_gap_id": "77c292e1-e3d2-52f8-9e5c-d7fdd38cee41",
+  "demo_flagship_gap_title": "Missed Oncology follow-up",
+  "cache_maria_flagship_gap_id": "6c55444c-b2fb-5f94-aabf-8f2905c141e0",
+  "cache_pointer_note": "maria.json stores mariaGaps[0] (duplicate CBC). Frozen artifacts and ranking were not modified; the demo surfaces Maria's verified missed-oncology gap.",
+  "actual_panel_rank": 27,
+  "backup_patient_id": "2e747376-7b45-5793-802a-247bc9ccd60f",
+  "backup_gap_id": "8ece28d5-1220-5f60-9f2e-b4dc5ff6b94b",
+  "scenes": 6,
+  "demo_route": "/demo",
+  "reset_route": "/demo?reset=1",
+  "evidence_interactions": 1,
+  "primary_demo_llm_calls": 0,
+  "primary_demo_external_db_calls": 0,
+  "data_source": "continua-api-v1 (frozen cache)",
+  "synthetic": true,
+  "gateway": {
+    "flagship_gap": "PASS",
+    "evidence_path": "PASS",
+    "rank_not_forced": "PASS",
+    "fallback_patient": "PASS",
+    "regression_tests": "PASS (12)"
+  }
+}

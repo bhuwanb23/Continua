@@ -1,0 +1,14 @@
+{
+  "version": "continua-demo-release-candidate-v1",
+  "generated_at": "2026-11-20T06:34:04.430Z",
+  "automated_e2e": {
+    "passed": 10,
+    "total": 10
+  },
+  "human_full_rehearsals": 0,
+  "human_technical_failures": 0,
+  "median_demo_seconds": null,
+  "worst_accepted_seconds": null,
+  "status": "PARTIAL",
+  "note": "Human rehearsals are not automated by this repository. Automated E2E and fallback drills are recorded; human rehearsal counts must be filled after live practice."
+}
