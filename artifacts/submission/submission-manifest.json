@@ -1,0 +1,14 @@
+{
+  "submission_version": "continua-submission-v1",
+  "git_commit": "not-recorded",
+  "git_tag": "not-created",
+  "demo_url": "not-configured",
+  "video_url": "artifacts/reliability/backup-walkthrough.webm",
+  "benchmark_run_id": "benchmark-20261119-1400-14edc3e-final",
+  "cache_version": "continua-demo-cache-v1",
+  "docs_version": "continua-docs-v1",
+  "safety_version": "continua-safety-v1",
+  "submitted_at": null,
+  "official_deadline": null,
+  "status": "DRAFT"
+}

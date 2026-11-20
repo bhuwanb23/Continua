@@ -1,0 +1,9 @@
+{
+  "version": "continua-judge-v1",
+  "reliability_tests": 102,
+  "injected_faults": 14,
+  "unsafe_failures": 0,
+  "browser_specs": 10,
+  "recovery_drills": 5,
+  "status": "PASS"
+}

@@ -1,0 +1,8 @@
+{
+  "residual_risks": [
+    "No hosted deployment tested",
+    "Edge/Firefox/Safari not in configured matrix",
+    "Human rehearsals pending"
+  ],
+  "status": "ACCEPTED"
+}

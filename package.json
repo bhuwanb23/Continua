@@ -111,7 +111,9 @@
     "verify:claims-docs": "tsx scripts/verify-claims.ts",
     "verify:reproducibility": "tsx scripts/verify-reproducibility.ts",
     "reproduce": "tsx scripts/reproduce.ts",
-    "validate:submission": "tsx scripts/validate-submission.ts"
+    "validate:submission": "tsx scripts/validate-submission.ts",
+    "validate:release": "tsx scripts/validate-release.ts",
+    "check:artifact-tracking": "tsx scripts/check-artifact-tracking.ts"
   },
   "dependencies": {
     "next": "15.5.29",

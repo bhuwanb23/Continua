@@ -43,3 +43,6 @@ Thumbs.db
 !artifacts/demo/**/*.json
 !artifacts/visual/**/*.json
 !artifacts/reproducibility/**/*.json
+!artifacts/submission/**/*.json
+!artifacts/judging/**/*.json
+!artifacts/release/**/*.json

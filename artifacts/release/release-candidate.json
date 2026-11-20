@@ -1,0 +1,11 @@
+{
+  "release_candidate": "continua-final-release-candidate-v1",
+  "git_commit": "not-recorded",
+  "git_tag": "not-created",
+  "cache_version": "continua-demo-cache-v1",
+  "reliability_version": "continua-reliability-v1",
+  "docs_version": "continua-docs-v1",
+  "visual_version": "continua-visual-v1",
+  "safety_version": "continua-safety-v1",
+  "status": "GO"
+}

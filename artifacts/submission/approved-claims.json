@@ -1,0 +1,10 @@
+{
+  "claims": [
+    "Synthetic data only",
+    "No real PHI",
+    "No clinical validation",
+    "No live LLM required for judge path",
+    "No external database required for judge path"
+  ],
+  "status": "PASS"
+}
