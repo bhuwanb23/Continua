@@ -30,7 +30,7 @@ Hard-negative view:  PASS (29/29, 11 families)
 Baseline comparison: PASS (naive 0.44; LLM-only not run)
 Ablations:           PASS (listed with Δ = 0.00 and explicit findings)
 Failure analysis:    PASS (0 FP / 0 FN, normalization 29.5% disclosed)
-Latency distinction: PASS (cached 1.6514 ms vs live not measured)
+Latency distinction: PASS (cached 1.7859 ms vs live not measured)
 ```
 
 ## Impact

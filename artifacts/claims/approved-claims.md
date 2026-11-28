@@ -15,8 +15,8 @@ Total: 21
 | top5-verified | MEASURED | 5/5 | count | evaluation, demo, readme, submission |
 | top5-truth-precision | MEASURED | 5/5 | count | evaluation, demo, readme, submission |
 | demographic-invariance-violations | MEASURED | 0 | count | evaluation, demo, readme, submission |
-| cached-queue-latency-p50 | MEASURED | 1.6514 | ms | evaluation, readme |
-| live-pipeline-latency-p50 | MEASURED | 8.3956 | ms | evaluation, readme |
+| cached-queue-latency-p50 | MEASURED | 1.7859 | ms | evaluation, readme |
+| live-pipeline-latency-p50 | MEASURED | 3.9105 | ms | evaluation, readme |
 | modeled-redirected-time | MODELED | — | minutes | impact, demo |
 | assumption-patients-reviewed-per-day | SCENARIO_ASSUMPTION | 20 | patients | impact |
 | assumption-baseline-review-minutes | SCENARIO_ASSUMPTION | 8 | minutes | impact |
