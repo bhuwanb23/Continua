@@ -2,6 +2,7 @@
   "name": "continua",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "overrides": {
     "postcss": "8.4.49"
   },
@@ -12,6 +13,8 @@
   },
   "scripts": {
     "dev": "next dev",
+    "demo:prepare": "tsx scripts/run-extraction.ts --partition final --extractor fixture --run-id phase6-extracted-final && tsx scripts/run-extraction.ts --partition dev --extractor fixture --run-id phase9-fixture-dev && tsx scripts/benchmark-dev.ts --run-id benchmark-dev-smoke && tsx scripts/benchmark-final.ts --run-id benchmark-20261119-1400-14edc3e-final --allow-dirty && tsx scripts/build-demo-cache.ts",
+    "build:demo": "npm run demo:prepare && next build",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",

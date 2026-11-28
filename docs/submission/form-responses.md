@@ -38,8 +38,10 @@ auditable and safer.
 What's next:
 Documentation, reproducibility, and deployment hardening.
 
-GitHub: repository URL
+GitHub: https://github.com/bhuwanb23/Continua
 
-Demo: hosted or local production build
+Demo: LIVE_DEMO_URL (local: `npm ci && npm run dev`)
 
-Video: `artifacts/reliability/backup-walkthrough.webm`
+Video: VIDEO_URL (backup: `artifacts/reliability/backup-walkthrough.webm`)
+
+Full paste-ready Devpost copy: [`DEVPOST_SUBMISSION.md`](DEVPOST_SUBMISSION.md)

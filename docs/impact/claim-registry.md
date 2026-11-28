@@ -33,8 +33,8 @@ Only `APPROVED` claims may appear in final artifacts. `DRAFT`, `VALIDATED`, and
 | top5-verified | MEASURED | 5/5 | architecture |
 | top5-truth-precision | MEASURED | 5/5 | performance |
 | demographic-invariance-violations | MEASURED | 0 | input mutation |
-| cached-queue-latency-p50 | MEASURED | 1.6514 ms | cached read path |
-| live-pipeline-latency-p50 | MEASURED | 8.3956 ms | fixture replay |
+| cached-queue-latency-p50 | MEASURED | 1.7859 ms | cached read path |
+| live-pipeline-latency-p50 | MEASURED | 3.9105 ms | fixture replay |
 | modeled-redirected-time | MODELED | formula | 4 assumptions |
 | assumption-patients-reviewed-per-day | SCENARIO_ASSUMPTION | 20 | — |
 | assumption-baseline-review-minutes | SCENARIO_ASSUMPTION | 8 | — |

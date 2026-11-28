@@ -16,7 +16,7 @@ audit covers this string.
 ## Attack B — "You're calling cached retrieval AI latency."
 
 Defense: `/evaluation` shows "Live single-patient pipeline: Not measured" beside
-"Cached queue API: 1.6514 ms p50", with copy stating cached reads are coordinator
+"Cached queue API: 1.7859 ms p50", with copy stating cached reads are coordinator
 read-path latency, not AI processing. The impact model has no latency input, and
 `tests/impact/imp.test.ts` asserts that.
 

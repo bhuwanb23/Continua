@@ -199,7 +199,7 @@ curl -s 'http://localhost:3000/api/v1/metrics?panelId=demo' | jq '.measured[0]'
 ```json
 {
   "metric": "cache_queue_read_p50_ms",
-  "value": 1.6514,
+  "value": 1.7859,
   "unit": "ms",
   "classification": "MEASURED",
   "source": "frozen Phase-9 benchmark latency.json (cached_queue_read_parse.p50_ms)"

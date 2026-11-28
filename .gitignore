@@ -46,3 +46,12 @@ Thumbs.db
 !artifacts/submission/**/*.json
 !artifacts/judging/**/*.json
 !artifacts/release/**/*.json
+# frozen demo pipeline outputs (served by the app; must ship with the repo)
+!data/demo-cache/**/*.json
+!artifacts/extraction/phase6-extracted-final/*.json
+!artifacts/extraction/phase9-fixture-dev/*.json
+!artifacts/benchmark/**/*.json
+!vercel.json
+!docs/api/openapi.json
+!artifacts/api/*.json
+*.zip

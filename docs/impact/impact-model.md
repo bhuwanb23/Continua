@@ -31,7 +31,7 @@ information-search and issue-triage time.
 
 ## What the model must never do
 
-- Subtract system latency from manual review time. A cached queue read of 1.6514 ms is
+- Subtract system latency from manual review time. A cached queue read of 1.7859 ms is
   not a human workflow duration.
 - Model patient outcomes, avoided hospitalizations, prevented progression, or lives
   saved.

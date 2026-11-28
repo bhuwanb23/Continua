@@ -12,8 +12,8 @@ study has been run, so no row can be promoted to `MEASURED`.
 
 ## What is deliberately not an assumption
 
-- **System latency** is measured separately (cached queue read p50 1.6514 ms; fixture
-  pipeline p50 8.3956 ms) and never enters the impact formula.
+- **System latency** is measured separately (cached queue read p50 1.7859 ms; fixture
+  pipeline p50 3.9105 ms) and never enters the impact formula.
 - **Panel size** (80) is a frozen dataset property, not a business assumption.
 - **Verified gaps** (41 in the benchmark run; 66 verified gaps in the 80-patient demo
   cache) are counted, not assumed.

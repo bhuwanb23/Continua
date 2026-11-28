@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620" role="img" aria-label="Continua architecture">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .t { font-family: Inter, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .h { font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .s { font-size: 12px; fill: #475569; }
+      .lane { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; fill: #0f766e; }
+      .tag { font-size: 11px; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="1280" height="620" rx="20" fill="#f8fafc"/>
+  <text x="40" y="48" class="t" font-size="22" font-weight="700" fill="#0f172a">How Continua works</text>
+  <text x="40" y="72" class="t s">AI only extracts facts. Deterministic rules decide gaps. Every displayed gap must survive evidence verification before it can be ranked.</text>
+
+  <!-- BUILD lane -->
+  <rect x="24" y="96" width="1232" height="300" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="44" y="124" class="t lane">BUILD TIME · reproducible pipeline · npm run demo:prepare</text>
+
+  <g class="t">
+    <!-- 1 -->
+    <rect x="44" y="146" width="168" height="112" rx="12" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="60" y="174" class="h" font-size="14">Fragmented records</text>
+    <text x="60" y="196" class="s">Primary care, surgery,</text>
+    <text x="60" y="212" class="s">imaging, labs, meds,</text>
+    <text x="60" y="228" class="s">referral notes</text>
+    <text x="60" y="246" class="s" fill="#0f766e">80 synthetic patients</text>
+
+    <!-- 2 -->
+    <rect x="240" y="146" width="168" height="112" rx="12" fill="#ecfeff" stroke="#67e8f9"/>
+    <text x="256" y="174" class="h">Extraction</text>
+    <text x="256" y="196" class="s">Unstructured text →</text>
+    <text x="256" y="212" class="s">typed clinical events</text>
+    <text x="256" y="230" class="s">Pluggable: fixture replay</text>
+    <text x="256" y="246" class="s">or optional LLM</text>
+
+    <!-- 3 -->
+    <rect x="436" y="146" width="168" height="112" rx="12" fill="#f0fdfa" stroke="#5eead4"/>
+    <text x="452" y="174" class="h">Normalize &amp;</text>
+    <text x="452" y="192" class="h">reconcile</text>
+    <text x="452" y="214" class="s">Dedupe sources, one</text>
+    <text x="452" y="230" class="s">canonical, source-linked</text>
+    <text x="452" y="246" class="s">patient journey</text>
+
+    <!-- 4 -->
+    <rect x="632" y="146" width="168" height="112" rx="12" fill="#f0fdfa" stroke="#5eead4"/>
+    <text x="648" y="174" class="h">Gap detectors</text>
+    <text x="648" y="196" class="s">Deterministic rules:</text>
+    <text x="648" y="212" class="s">• missed follow-up</text>
+    <text x="648" y="228" class="s">• medication monitoring</text>
+    <text x="648" y="244" class="s">• duplicate tests</text>
+
+    <!-- 5 -->
+    <rect x="828" y="146" width="168" height="112" rx="12" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="844" y="174" class="h">Evidence verifier</text>
+    <text x="844" y="196" class="s">Every claim → exact</text>
+    <text x="844" y="212" class="s">source span + window +</text>
+    <text x="844" y="228" class="s">absence search</text>
+    <text x="844" y="246" class="s" fill="#b45309">Unverifiable → suppressed</text>
+
+    <!-- 6 -->
+    <rect x="1024" y="146" width="212" height="112" rx="12" fill="#f0fdfa" stroke="#5eead4"/>
+    <text x="1040" y="174" class="h">Intervention priority</text>
+    <text x="1040" y="196" class="s">Severity × overdue time ×</text>
+    <text x="1040" y="212" class="s">actionability. Verified gaps</text>
+    <text x="1040" y="228" class="s">only. No demographics,</text>
+    <text x="1040" y="244" class="s">no clinical-risk prediction</text>
+  </g>
+  <g stroke="#0f766e" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="212" y1="202" x2="236" y2="202"/>
+    <line x1="408" y1="202" x2="432" y2="202"/>
+    <line x1="604" y1="202" x2="628" y2="202"/>
+    <line x1="800" y1="202" x2="824" y2="202"/>
+    <line x1="996" y1="202" x2="1020" y2="202"/>
+  </g>
+
+  <!-- cache + benchmark -->
+  <g class="t">
+    <rect x="636" y="292" width="600" height="80" rx="12" fill="#0f766e"/>
+    <text x="660" y="322" font-size="15" font-weight="700" fill="#ffffff">Frozen demo cache · continua-demo-cache-v1</text>
+    <text x="660" y="344" font-size="12" fill="#ccfbf1">Hashed manifest · 8 integrity checks (hashes, cross-refs, queue, benchmark identity, leakage)</text>
+    <text x="660" y="360" font-size="12" fill="#ccfbf1">Fails closed: partial or invalid data is never served</text>
+
+    <rect x="44" y="292" width="560" height="80" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-dasharray="5 4"/>
+    <text x="64" y="322" class="h">Benchmark &amp; audits</text>
+    <text x="64" y="344" class="s">Held-out final partition · hard-negative cases · grounding · demographic invariance</text>
+    <text x="64" y="360" class="s">Leakage, safety-language, secrets and synthetic-data scans in CI</text>
+  </g>
+  <path d="M1130 258 V 288" stroke="#0f766e" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M604 332 H 632" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrowGray)"/>
+
+  <!-- SERVE lane -->
+  <rect x="24" y="416" width="1232" height="180" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="44" y="444" class="t lane">RUNTIME · read-only · no LLM, no database, no credentials</text>
+  <path d="M936 372 V 470" stroke="#0f766e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g class="t">
+    <rect x="44" y="466" width="360" height="110" rx="12" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="64" y="494" class="h">Next.js 15 App Router · TypeScript</text>
+    <text x="64" y="516" class="s">Zod-validated contracts · strict types</text>
+    <text x="64" y="534" class="s">805 Vitest tests · Playwright E2E</text>
+    <text x="64" y="552" class="s">Deployable as-is to Vercel</text>
+
+    <rect x="436" y="466" width="360" height="110" rx="12" fill="#f0fdfa" stroke="#5eead4"/>
+    <text x="456" y="494" class="h">Coordinator UI</text>
+    <text x="456" y="516" class="s">Today queue · Patient journey timeline</text>
+    <text x="456" y="534" class="s">Evidence drawer · Evaluation · Impact</text>
+    <text x="456" y="552" class="s">Guided 6-scene demo mode</text>
+
+    <rect x="828" y="470" width="408" height="106" rx="12" fill="#ecfeff" stroke="#67e8f9"/>
+    <text x="848" y="498" class="h">REST API · /api/v1</text>
+    <text x="848" y="520" class="s">panels · queue · patients · timeline · gaps</text>
+    <text x="848" y="538" class="s">evidence · actions · metrics · evaluation</text>
+    <text x="848" y="556" class="s">health · readiness · OpenAPI document</text>
+  </g>
+  <g stroke="#0f766e" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="826" y1="521" x2="800" y2="521"/>
+  </g>
+</svg>
