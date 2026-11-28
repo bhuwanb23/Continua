@@ -1,0 +1,299 @@
+{
+  "stamp": "CONTINUA PHASE 11: continua-api-v1 FROZEN",
+  "phase": "11",
+  "api_version": "v1",
+  "cache_version": "continua-demo-cache-v1",
+  "patient_count": 80,
+  "generated_at": "2026-11-28T02:55:03.435Z",
+  "status": "PASS",
+  "routes": {
+    "p0": [
+      "GET /api/v1/panels/{panelId}",
+      "GET /api/v1/panels/{panelId}/patients",
+      "GET /api/v1/panels/{panelId}/queue",
+      "GET /api/v1/patients/{patientId}",
+      "GET /api/v1/patients/{patientId}/timeline",
+      "GET /api/v1/patients/{patientId}/gaps",
+      "GET /api/v1/evidence/{gapId}",
+      "GET /api/v1/metrics",
+      "GET /api/v1/evaluation",
+      "GET /api/v1/health",
+      "GET /api/v1/readiness"
+    ],
+    "p1": [
+      "POST /api/v1/gaps/{gapId}/actions"
+    ]
+  },
+  "checks": [
+    {
+      "name": "cold api request",
+      "passed": true,
+      "detail": "60.69ms including cache validation"
+    },
+    {
+      "name": "p0 routes",
+      "passed": true,
+      "detail": "11/11 returned 200"
+    },
+    {
+      "name": "disclaimer coverage",
+      "passed": true,
+      "detail": "9/9 clinical responses carry the disclaimer"
+    },
+    {
+      "name": "CT-01 patient count",
+      "passed": true,
+      "detail": "80 vs 80"
+    },
+    {
+      "name": "CT-02 gap counts",
+      "passed": true,
+      "detail": "{\"missed_followup\":26,\"duplicate_test\":20,\"med_monitoring\":20}"
+    },
+    {
+      "name": "CT-03 patient gap counts",
+      "passed": true,
+      "detail": "80 patients cross-checked"
+    },
+    {
+      "name": "CT-04 queue ordering",
+      "passed": true,
+      "detail": "5 queue entries match the cached priority ordering"
+    },
+    {
+      "name": "CT-05/06 gap identity",
+      "passed": true,
+      "detail": "2 verified gaps cross-checked"
+    },
+    {
+      "name": "CT-07 evaluation equality",
+      "passed": true,
+      "detail": "benchmark-20261119-1400-14edc3e-final · macro F1 1"
+    },
+    {
+      "name": "CT-08 metric classification",
+      "passed": true,
+      "detail": "4 metrics classified"
+    },
+    {
+      "name": "evidence ownership",
+      "passed": true,
+      "detail": "2 sources verified against record ownership"
+    },
+    {
+      "name": "no hidden labels",
+      "passed": true,
+      "detail": "no ground-truth, scenario, or candidate tokens in clinical payloads"
+    },
+    {
+      "name": "no risk terminology",
+      "passed": true,
+      "detail": "0 occurrences"
+    },
+    {
+      "name": "explicit score names",
+      "passed": true,
+      "detail": "patient_priority_score and gap_priority_score both present"
+    },
+    {
+      "name": "input validation",
+      "passed": true,
+      "detail": "unknown enum 400 · oversized limit clamped to 100"
+    },
+    {
+      "name": "path traversal",
+      "passed": true,
+      "detail": "status 400, never a filesystem path"
+    },
+    {
+      "name": "error safety",
+      "passed": true,
+      "detail": "404 patient_not_found"
+    },
+    {
+      "name": "action semantics",
+      "passed": true,
+      "detail": "unsupported 422 · recorded action leaves intelligence unchanged"
+    },
+    {
+      "name": "route exposure",
+      "passed": true,
+      "detail": "12 route files, no ground-truth or debug route"
+    },
+    {
+      "name": "no model or database clients",
+      "passed": true,
+      "detail": "19 API/service modules scanned"
+    },
+    {
+      "name": "offline independence",
+      "passed": true,
+      "detail": "all P0 reads served with network disabled and credentials removed"
+    },
+    {
+      "name": "fail closed",
+      "passed": true,
+      "detail": "invalid cache returns 503 demo_cache_not_ready"
+    },
+    {
+      "name": "maria regression",
+      "passed": true,
+      "detail": "rank 27 (stored priority order, not forced to #1)"
+    },
+    {
+      "name": "openapi coverage",
+      "passed": true,
+      "detail": "12 documented paths match 12 route files"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "A",
+      "name": "Contract",
+      "passed": true,
+      "detail": "11 P0 routes match continua-api-v1"
+    },
+    {
+      "gate": "B",
+      "name": "Trust boundary",
+      "passed": true,
+      "detail": "verified gaps only; no candidate or hidden label fields"
+    },
+    {
+      "gate": "C",
+      "name": "Storage independence",
+      "passed": true,
+      "detail": "no filesystem access in lib/api or lib/services; routes never import repositories"
+    },
+    {
+      "gate": "D",
+      "name": "Offline read path",
+      "passed": true,
+      "detail": "network disabled and credentials removed; all P0 reads succeed"
+    },
+    {
+      "gate": "E",
+      "name": "Consistency",
+      "passed": true,
+      "detail": "CT-01…CT-08 cross-endpoint checks"
+    },
+    {
+      "gate": "F",
+      "name": "Validation",
+      "passed": true,
+      "detail": "malformed and oversized input cannot escape the schemas"
+    },
+    {
+      "gate": "G",
+      "name": "Error safety",
+      "passed": true,
+      "detail": "structured, non-sensitive envelopes"
+    },
+    {
+      "gate": "H",
+      "name": "Benchmark integrity",
+      "passed": true,
+      "detail": "evaluation API equals the frozen Phase-9 report"
+    },
+    {
+      "gate": "I",
+      "name": "Performance",
+      "passed": true,
+      "detail": "9 routes within accepted p95 targets"
+    },
+    {
+      "gate": "J",
+      "name": "Security",
+      "passed": true,
+      "detail": "no leakage, traversal, debug route exposure, or secret leakage"
+    },
+    {
+      "gate": "K",
+      "name": "Maria",
+      "passed": true,
+      "detail": "rank 27 matches stored priority"
+    }
+  ],
+  "latency": [
+    {
+      "route": "panel",
+      "p50_ms": 0.14,
+      "p95_ms": 0.22,
+      "target_ms": 50
+    },
+    {
+      "route": "queue",
+      "p50_ms": 0.19,
+      "p95_ms": 0.34,
+      "target_ms": 50
+    },
+    {
+      "route": "patients",
+      "p50_ms": 0.55,
+      "p95_ms": 0.64,
+      "target_ms": 75
+    },
+    {
+      "route": "patient",
+      "p50_ms": 0.13,
+      "p95_ms": 0.19,
+      "target_ms": 75
+    },
+    {
+      "route": "timeline",
+      "p50_ms": 0.21,
+      "p95_ms": 0.26,
+      "target_ms": 100
+    },
+    {
+      "route": "gaps",
+      "p50_ms": 0.14,
+      "p95_ms": 0.26,
+      "target_ms": 75
+    },
+    {
+      "route": "evidence",
+      "p50_ms": 0.21,
+      "p95_ms": 0.33,
+      "target_ms": 100
+    },
+    {
+      "route": "metrics",
+      "p50_ms": 0.16,
+      "p95_ms": 0.26,
+      "target_ms": 50
+    },
+    {
+      "route": "evaluation",
+      "p50_ms": 0.2,
+      "p95_ms": 0.31,
+      "target_ms": 50
+    }
+  ],
+  "cold_api_request_ms": 60.69,
+  "maria": {
+    "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+    "rank": 27,
+    "flagship_gap_id": "6c55444c-b2fb-5f94-aabf-8f2905c141e0"
+  },
+  "openapi": {
+    "path": "docs/api/openapi.json",
+    "sha256": "c8aaf8a51eb3c0166c6ebedbf67a707f0890572478f28ee480cca0be0d177d63",
+    "paths": [
+      "/api/v1/evaluation",
+      "/api/v1/evidence/{gapId}",
+      "/api/v1/gaps/{gapId}/actions",
+      "/api/v1/health",
+      "/api/v1/metrics",
+      "/api/v1/panels/{panelId}",
+      "/api/v1/panels/{panelId}/patients",
+      "/api/v1/panels/{panelId}/queue",
+      "/api/v1/patients/{patientId}",
+      "/api/v1/patients/{patientId}/gaps",
+      "/api/v1/patients/{patientId}/timeline",
+      "/api/v1/readiness"
+    ]
+  },
+  "api_source_sha256": "3bad155ce3d0f3f45c6474c908c26d02c73e182499f8917c6708be99259f078a",
+  "files_hashed": 47
+}

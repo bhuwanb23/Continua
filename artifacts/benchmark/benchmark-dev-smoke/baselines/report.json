@@ -1,0 +1,203 @@
+{
+  "status": "measured",
+  "entries": [
+    {
+      "name": "predict_nothing",
+      "status": "measured",
+      "source": "none",
+      "metrics": {
+        "per_type": {
+          "missed_followup": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7,
+            "precision": null,
+            "recall": 0,
+            "f1": 0
+          },
+          "duplicate_test": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 11,
+            "precision": null,
+            "recall": 0,
+            "f1": 0
+          },
+          "med_monitoring": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7,
+            "precision": null,
+            "recall": 0,
+            "f1": 0
+          }
+        },
+        "macro_f1": 0,
+        "micro_f1": 0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 25,
+        "ground_truth_gaps": 25,
+        "reported_gaps": 0
+      },
+      "macro_f1": 0,
+      "micro_f1": 0,
+      "hard_negative_pass_rate": 1,
+      "grounding_rate": null,
+      "note": "Sanity predictor. Recall and F1 must be zero."
+    },
+    {
+      "name": "naive_keyword_rules",
+      "status": "measured",
+      "source": "fixture_replay",
+      "metrics": {
+        "per_type": {
+          "missed_followup": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "duplicate_test": {
+            "tp": 3,
+            "fp": 8,
+            "fn": 8,
+            "precision": 0.2727272727272727,
+            "recall": 0.2727272727272727,
+            "f1": 0.2727272727272727
+          },
+          "med_monitoring": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7,
+            "precision": null,
+            "recall": 0,
+            "f1": 0
+          }
+        },
+        "macro_f1": 0.42424242424242425,
+        "micro_f1": 0.46511627906976744,
+        "true_positives": 10,
+        "false_positives": 8,
+        "false_negatives": 15,
+        "ground_truth_gaps": 25,
+        "reported_gaps": 18
+      },
+      "macro_f1": 0.42424242424242425,
+      "micro_f1": 0.46511627906976744,
+      "hard_negative_pass_rate": 1,
+      "grounding_rate": 1,
+      "note": "Simple referral-completion and exact duplicate rules over frozen extracted events; no normalization layer beyond frozen event fields and no evidence gate."
+    },
+    {
+      "name": "oracle_events_upper_bound",
+      "status": "measured",
+      "source": "oracle",
+      "metrics": {
+        "per_type": {
+          "missed_followup": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "duplicate_test": {
+            "tp": 11,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "med_monitoring": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          }
+        },
+        "macro_f1": 1,
+        "micro_f1": 1,
+        "true_positives": 25,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "ground_truth_gaps": 25,
+        "reported_gaps": 25
+      },
+      "macro_f1": 1,
+      "micro_f1": 1,
+      "hard_negative_pass_rate": null,
+      "grounding_rate": null,
+      "note": "Gold canonical events plus deterministic rules; diagnostic upper bound, not deployable."
+    },
+    {
+      "name": "full_hybrid_fixture_replay",
+      "status": "measured",
+      "source": "fixture_replay",
+      "metrics": {
+        "per_type": {
+          "missed_followup": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "duplicate_test": {
+            "tp": 11,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "med_monitoring": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          }
+        },
+        "macro_f1": 1,
+        "micro_f1": 1,
+        "true_positives": 25,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "ground_truth_gaps": 25,
+        "reported_gaps": 25
+      },
+      "macro_f1": 1,
+      "micro_f1": 1,
+      "hard_negative_pass_rate": 1,
+      "grounding_rate": 1,
+      "note": "Full extracted -> detector -> evidence -> priority path using frozen fixture extraction."
+    },
+    {
+      "name": "llm_only_gap_judge",
+      "status": "not_run",
+      "source": "unavailable",
+      "metrics": null,
+      "macro_f1": null,
+      "micro_f1": null,
+      "hard_negative_pass_rate": null,
+      "grounding_rate": null,
+      "note": "No live provider configured. The LLM-only baseline is not measured; no synthetic substitute is reported."
+    }
+  ],
+  "measured_baselines": 4,
+  "meaningful_comparison": true,
+  "limitations": [
+    "The naive baseline shares the frozen fixture-extracted event store; it tests simpler judgment, not simpler extraction.",
+    "The LLM-only baseline was not run because no provider was configured.",
+    "The oracle-events baseline is an upper bound, not a competitor."
+  ]
+}

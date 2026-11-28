@@ -1,0 +1,422 @@
+[
+  {
+    "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+    "status": "COMPLETE",
+    "document_count": 13,
+    "accepted_event_count": 13,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+    "status": "COMPLETE",
+    "document_count": 13,
+    "accepted_event_count": 13,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "fd6f72e1-5c7c-5d32-82b5-f59d0724a0b8",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "f03103c6-77da-5b3c-aa8c-2eaa69a10eb6",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "1a052190-7ad0-54c7-95c7-8c9502080be2",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "50c3eb6b-abfd-5241-86cb-685101651b78",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "1ebcc119-a037-5e40-b034-b7b1c7ad9591",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "2e747376-7b45-5793-802a-247bc9ccd60f",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "9166bfa1-3651-52a9-949b-6c14cc8c58b9",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "306b85b7-d099-5a2e-9da2-87fe15247384",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "0d897623-5352-588b-a1e0-15b0aedc1171",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "e4fbd351-d304-5d39-a948-1a6397cba139",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "abcdbca3-a2fd-5265-88f4-fc879d4a14fa",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "7c650408-fa5b-5efb-a75b-47dcc52c701f",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "14a43a84-31d6-5763-9fd6-a47dabcc2b08",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "4655f72d-c926-5766-859b-6cd45cbaecbe",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "c7b9ef81-9444-56fa-8cb9-d17201ebec59",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "48400b39-475f-5477-8c82-6d56068df599",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "491ac2ac-1249-5906-ab2e-10affc8feff4",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "98c35244-660d-5966-ab9c-353ba06ae906",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "73d37aed-75bb-511c-82ff-74e848dd87d4",
+    "status": "COMPLETE",
+    "document_count": 9,
+    "accepted_event_count": 9,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "7e5f78a3-24fc-598e-be60-e020b4ca3c65",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "13bf6285-5ef3-545f-b280-f9fe9e9d9455",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "50802290-51d6-580c-90ff-deb48fde0b40",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "fee39371-388c-5434-a68e-a2960cf89819",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "0cae34d0-e503-5585-8402-519b06d35750",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "7e937461-61d7-56f4-9374-b9898b635be8",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "6d952ef8-190c-57f2-ab7f-ee095c61e402",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "539efe66-7d1d-554f-b694-6fac41e67c6b",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "dafe98f5-2873-56b9-a4f6-b70e6f6e3e25",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "fb7ea7f4-55e3-566d-b240-b5bcf6ebda55",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "deab9223-2d62-577e-9d41-23929e4eff99",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "23e858b3-8ab0-58c4-82cd-6873b8915122",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "00f9f2f6-b2b9-52db-979f-dd45929e49fe",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "cb9c9a11-23d8-54cf-96d5-adf8461501c9",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "8ed0ad89-9f35-55e7-994a-344bca58e63e",
+    "status": "COMPLETE",
+    "document_count": 9,
+    "accepted_event_count": 9,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "e14c122d-5053-50c1-aeb0-36225feff589",
+    "status": "COMPLETE",
+    "document_count": 9,
+    "accepted_event_count": 9,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "82662b06-f9d5-581a-baec-8bd78c7cf647",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "fd6f4e2f-d63c-5bb5-90dc-d2873531513a",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "6e447d9f-2cf4-5b04-a378-14bec3e0174c",
+    "status": "COMPLETE",
+    "document_count": 7,
+    "accepted_event_count": 7,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "99aa70e5-4028-5e22-a266-f841c176e50d",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "4e36e9af-26c3-5802-8b74-d8ca0f69d4ad",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "30b1d127-ecd2-5e13-b0f2-6b579c328499",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "88d6cc47-ce57-5af4-b701-68de188ce8ad",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "afd3184b-749b-5439-92a6-0dd136e2b4c9",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "67306812-1286-5f32-8e2b-cc11ba399f24",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "12a06ba7-66a6-524b-8707-1c525c4ef922",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "fd9b92bb-6591-5427-ae70-d4ab51739473",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "4e74aa3e-cc02-57e4-ae83-9f6d45c22b49",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 5,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "ac4cddd3-ecc3-5581-8e02-d15451f14334",
+    "status": "COMPLETE",
+    "document_count": 5,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "fd988bac-d502-5fac-891a-7b9f8682666d",
+    "status": "COMPLETE",
+    "document_count": 9,
+    "accepted_event_count": 8,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "e0992109-3b8d-5162-9cd2-6017ea4f9ebb",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "7e9052d5-f85c-50e3-a69a-c5e012c74481",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "7feb5a77-d9cd-53e0-91c1-6b951b7c94e2",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "c661c25f-c7d3-555c-9708-37763e9e4437",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "8f2b0295-4a13-5a2f-90b8-d43f83a1055b",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  },
+  {
+    "patient_id": "8f3558bb-1514-5945-b036-1142a13c423d",
+    "status": "COMPLETE",
+    "document_count": 4,
+    "accepted_event_count": 4,
+    "rejected_event_count": 0
+  }
+]

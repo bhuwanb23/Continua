@@ -1,0 +1,23 @@
+{
+  "status": "measured",
+  "runs": 2,
+  "compared": [
+    "canonical_event_cache_sha256",
+    "candidate_gap_ids",
+    "verified_gap_ids",
+    "patient_scores",
+    "top_k_order",
+    "evaluation_results"
+  ],
+  "differences": {
+    "canonical_event_cache_sha256": 0,
+    "candidate_gap_ids": 0,
+    "verified_gap_ids": 0,
+    "patient_scores": 0,
+    "top_k_order": 0,
+    "evaluation_results": 0
+  },
+  "identical": true,
+  "llm_temperature": null,
+  "note": "Two deterministic post-extraction executions were compared. Live LLM extraction is excluded; the fixture event cache is frozen."
+}

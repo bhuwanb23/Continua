@@ -1,0 +1,124 @@
+{
+  "status": "partial",
+  "entries": [
+    {
+      "name": "oracle_events",
+      "status": "measured",
+      "description": "Replace fixture extraction with frozen canonical truth events.",
+      "metrics": {
+        "per_type": {
+          "missed_followup": {
+            "tp": 19,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "duplicate_test": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "med_monitoring": {
+            "tp": 13,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          }
+        },
+        "macro_f1": 1,
+        "micro_f1": 1,
+        "true_positives": 41,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "ground_truth_gaps": 41,
+        "reported_gaps": 41
+      },
+      "macro_f1": 1,
+      "delta_macro_f1": 0,
+      "top5_retention": null,
+      "finding": "Fixture replay gives the same gap metrics as oracle events in this run; no extraction loss is observable.",
+      "limitation": "Oracle is not deployable."
+    },
+    {
+      "name": "no_evidence_gate",
+      "status": "measured",
+      "description": "Use candidate gaps directly instead of requiring evidence verification.",
+      "metrics": {
+        "per_type": {
+          "missed_followup": {
+            "tp": 19,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "duplicate_test": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          },
+          "med_monitoring": {
+            "tp": 13,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1,
+            "recall": 1,
+            "f1": 1
+          }
+        },
+        "macro_f1": 1,
+        "micro_f1": 1,
+        "true_positives": 41,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "ground_truth_gaps": 41,
+        "reported_gaps": 41
+      },
+      "macro_f1": 1,
+      "delta_macro_f1": 0,
+      "top5_retention": null,
+      "finding": "The evidence gate removed no benchmark gap in this fixture run; its value is trust/auditability, not measured F1 gain here.",
+      "limitation": "Candidate output does not satisfy the trust gates for displayed care gaps."
+    },
+    {
+      "name": "no_secondary_priority_cap",
+      "status": "measured",
+      "description": "Raise the secondary-gap bonus cap from 0.30 to 1.00.",
+      "metrics": null,
+      "macro_f1": null,
+      "delta_macro_f1": null,
+      "top5_retention": 1,
+      "finding": "Removing the secondary cap does not change the Top-5 in this panel.",
+      "limitation": "Single fixed panel; not evidence of population-level ranking stability."
+    }
+  ],
+  "unmeasured": [
+    {
+      "name": "no_normalization",
+      "reason": "The frozen extraction store has already been normalized; a faithful raw-entity ablation requires a new extraction run."
+    },
+    {
+      "name": "no_reconciliation",
+      "reason": "Reconciliation is embedded in the frozen extraction artifact; disabling it requires regenerating canonical events."
+    },
+    {
+      "name": "no_negative_safeguards",
+      "reason": "Detector safeguard flags are not exposed as a supported runtime configuration."
+    },
+    {
+      "name": "no_grounding_claim_filter",
+      "reason": "The evidence gate and claim-coverage filter are the same architecture boundary; no separate observable was produced."
+    }
+  ]
+}

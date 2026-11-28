@@ -1,0 +1,78 @@
+{
+  "status": "measured",
+  "cases": [
+    {
+      "name": "wrong_document",
+      "gap_id": "5910053c-efa3-596a-8571-92474ef77045",
+      "expected": "suppressed",
+      "observed": "suppressed",
+      "passed": true,
+      "failure_codes": [
+        "EV-003"
+      ],
+      "reason": "Positive evidence document does not match the canonical event source."
+    },
+    {
+      "name": "wrong_patient",
+      "gap_id": "5910053c-efa3-596a-8571-92474ef77045",
+      "expected": "suppressed",
+      "observed": "suppressed",
+      "passed": true,
+      "failure_codes": [
+        "EV-002"
+      ],
+      "reason": "Cited canonical event belongs to a different patient."
+    },
+    {
+      "name": "altered_span",
+      "gap_id": "5910053c-efa3-596a-8571-92474ef77045",
+      "expected": "suppressed",
+      "observed": "suppressed",
+      "passed": true,
+      "failure_codes": [
+        "EV-003",
+        "EV-004"
+      ],
+      "reason": "Quoted span is not supported by the source text (score 0.769)."
+    },
+    {
+      "name": "missing_policy",
+      "gap_id": "5910053c-efa3-596a-8571-92474ef77045",
+      "expected": "suppressed",
+      "observed": "suppressed",
+      "passed": true,
+      "failure_codes": [
+        "EV-011"
+      ],
+      "reason": "Candidate detector or policy version is not the frozen verification target."
+    },
+    {
+      "name": "stale_event_store",
+      "gap_id": "5910053c-efa3-596a-8571-92474ef77045",
+      "expected": "suppressed",
+      "observed": "suppressed",
+      "passed": true,
+      "failure_codes": [
+        "EV-011"
+      ],
+      "reason": "Candidate was produced from a different event-store snapshot; recompute is required."
+    },
+    {
+      "name": "missing_evidence",
+      "gap_id": "5910053c-efa3-596a-8571-92474ef77045",
+      "expected": "suppressed",
+      "observed": "suppressed",
+      "passed": true,
+      "failure_codes": [
+        "EV-010"
+      ],
+      "reason": "Required medication-start evidence is missing."
+    }
+  ],
+  "total": 6,
+  "rejected": 6,
+  "rejection_rate": 1,
+  "target": 1,
+  "passed": true,
+  "not_run_reason": "Contradicted-absence corruption is covered by Phase 7 absence-policy tests and is not injected here because it requires mutating the event store rather than the evidence package."
+}

@@ -1,0 +1,104 @@
+{
+  "variant_count": 8,
+  "mean_top5_retention": 0.9,
+  "min_top5_retention": 0.8,
+  "top1_stability": 1,
+  "variants": [
+    {
+      "name": "severity_medium_low_plus_15",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "97446e90-e627-5597-896f-b60931da6274",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "09ec7b36-dc73-556a-b1f4-d0ef64897c1a"
+      ],
+      "top5_retention": 1,
+      "top1_unchanged": true
+    },
+    {
+      "name": "severity_medium_low_minus_15",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+        "13bf6285-5ef3-545f-b280-f9fe9e9d9455"
+      ],
+      "top5_retention": 0.8,
+      "top1_unchanged": true
+    },
+    {
+      "name": "actionability_duplicate_plus_15",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+        "97446e90-e627-5597-896f-b60931da6274"
+      ],
+      "top5_retention": 1,
+      "top1_unchanged": true
+    },
+    {
+      "name": "actionability_duplicate_minus_15",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "97446e90-e627-5597-896f-b60931da6274"
+      ],
+      "top5_retention": 1,
+      "top1_unchanged": true
+    },
+    {
+      "name": "temporal_thresholds_early",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+        "fd6f72e1-5c7c-5d32-82b5-f59d0724a0b8"
+      ],
+      "top5_retention": 0.8,
+      "top1_unchanged": true
+    },
+    {
+      "name": "temporal_thresholds_late",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "97446e90-e627-5597-896f-b60931da6274",
+        "13bf6285-5ef3-545f-b280-f9fe9e9d9455"
+      ],
+      "top5_retention": 0.8,
+      "top1_unchanged": true
+    },
+    {
+      "name": "secondary_factor_0_08",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "13bf6285-5ef3-545f-b280-f9fe9e9d9455"
+      ],
+      "top5_retention": 0.8,
+      "top1_unchanged": true
+    },
+    {
+      "name": "secondary_cap_0_35",
+      "top5_patient_ids": [
+        "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+        "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+        "b5bcb947-b221-5360-95ba-18b64d7f1993",
+        "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+        "97446e90-e627-5597-896f-b60931da6274"
+      ],
+      "top5_retention": 1,
+      "top1_unchanged": true
+    }
+  ]
+}

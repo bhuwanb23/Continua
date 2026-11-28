@@ -1,0 +1,4 @@
+{
+  "status": "not_run",
+  "reason": "No live provider configured. No synthetic output is substituted for an LLM-only baseline."
+}

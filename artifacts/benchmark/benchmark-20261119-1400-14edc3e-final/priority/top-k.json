@@ -1,0 +1,373 @@
+{
+  "k": 5,
+  "queue": [
+    {
+      "rank": 1,
+      "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+      "display_name": "Maya Adeyemi",
+      "patient_priority_score": 86,
+      "priority_band": "P1",
+      "top_gap": {
+        "gap_id": "e08a191d-b975-5977-a322-4cc385ee05d1",
+        "gap_type": "med_monitoring",
+        "title": "Medication monitoring check for Warfarin overdue",
+        "severity": "high",
+        "gap_priority_score": 95,
+        "priority_band": "P1"
+      },
+      "verified_gap_count": 2,
+      "headline": "Warfarin monitoring appears unresolved · 96 days overdue",
+      "recommended_coordinator_action": "Verify monitoring status and coordinate follow-up if unresolved.",
+      "priority_breakdown": {
+        "top_gap_id": "e08a191d-b975-5977-a322-4cc385ee05d1",
+        "top_gap_raw": 1.425,
+        "top_gap_overdue_days": 96,
+        "verified_gap_count": 2,
+        "secondary_gap_count": 1,
+        "secondary_raw_sum": 1.3,
+        "secondary_factor": 0.1,
+        "secondary_bonus": 0.13,
+        "patient_raw_score": 1.555
+      },
+      "explanation": {
+        "why_band": "P1 — this gap scores 95 in the 80–100 workflow band.",
+        "top_verified_issue": "Medication monitoring check for Warfarin overdue",
+        "workflow_severity": "high",
+        "overdue_days": 96,
+        "days_between": null,
+        "action": "Verify monitoring status and coordinate follow-up if unresolved.",
+        "other_verified_issues": 1,
+        "factors": {
+          "severity": "high",
+          "severity_weight": 1,
+          "temporal_factor": 1.5,
+          "temporal_bucket": "overdue_over_90",
+          "overdue_days": 96,
+          "window_days": 7,
+          "overdue_ratio": 13.7143,
+          "actionability_class": "direct_coordinator_action",
+          "actionability_weight": 0.95
+        },
+        "patient_aggregation": {
+          "top_gap_id": "e08a191d-b975-5977-a322-4cc385ee05d1",
+          "top_gap_raw": 1.425,
+          "top_gap_overdue_days": 96,
+          "verified_gap_count": 2,
+          "secondary_gap_count": 1,
+          "secondary_raw_sum": 1.3,
+          "secondary_factor": 0.1,
+          "secondary_bonus": 0.13,
+          "patient_raw_score": 1.555
+        },
+        "arithmetic": "gap raw = 1 × 1.5 × 0.95 = 1.425; display = round(100 × 1.425 / 1.5) = 95. patient raw = 1.425 + min(0.1 × 1.3, 0.3) = 1.555; display = round(100 × 1.555 / 1.8) = 86.",
+        "disclaimer": "Synthetic demo data. Intervention priority orders coordinator workflow only. Not medical advice."
+      },
+      "priority_version": "priority-v1"
+    },
+    {
+      "rank": 2,
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "display_name": "Farid Adeyemi",
+      "patient_priority_score": 82,
+      "priority_band": "P1",
+      "top_gap": {
+        "gap_id": "eaa3f21c-0676-5a4b-8ca7-129d9676841a",
+        "gap_type": "missed_followup",
+        "title": "Missed Oncology follow-up",
+        "severity": "high",
+        "gap_priority_score": 87,
+        "priority_band": "P1"
+      },
+      "verified_gap_count": 3,
+      "headline": "Oncology follow-up appears unresolved · 44 days overdue",
+      "recommended_coordinator_action": "Verify referral status and coordinate follow-up.",
+      "priority_breakdown": {
+        "top_gap_id": "eaa3f21c-0676-5a4b-8ca7-129d9676841a",
+        "top_gap_raw": 1.3,
+        "top_gap_overdue_days": 44,
+        "verified_gap_count": 3,
+        "secondary_gap_count": 2,
+        "secondary_raw_sum": 1.7145,
+        "secondary_factor": 0.1,
+        "secondary_bonus": 0.17145,
+        "patient_raw_score": 1.47145
+      },
+      "explanation": {
+        "why_band": "P1 — this gap scores 87 in the 80–100 workflow band.",
+        "top_verified_issue": "Missed Oncology follow-up",
+        "workflow_severity": "high",
+        "overdue_days": 44,
+        "days_between": null,
+        "action": "Verify referral status and coordinate follow-up.",
+        "other_verified_issues": 2,
+        "factors": {
+          "severity": "high",
+          "severity_weight": 1,
+          "temporal_factor": 1.3,
+          "temporal_bucket": "overdue_31_60",
+          "overdue_days": 44,
+          "window_days": 45,
+          "overdue_ratio": 0.9778,
+          "actionability_class": "direct_coordinator_action",
+          "actionability_weight": 1
+        },
+        "patient_aggregation": {
+          "top_gap_id": "eaa3f21c-0676-5a4b-8ca7-129d9676841a",
+          "top_gap_raw": 1.3,
+          "top_gap_overdue_days": 44,
+          "verified_gap_count": 3,
+          "secondary_gap_count": 2,
+          "secondary_raw_sum": 1.7145,
+          "secondary_factor": 0.1,
+          "secondary_bonus": 0.17145,
+          "patient_raw_score": 1.47145
+        },
+        "arithmetic": "gap raw = 1 × 1.3 × 1 = 1.3; display = round(100 × 1.3 / 1.5) = 87. patient raw = 1.3 + min(0.1 × 1.7145, 0.3) = 1.4714; display = round(100 × 1.4714 / 1.8) = 82.",
+        "disclaimer": "Synthetic demo data. Intervention priority orders coordinator workflow only. Not medical advice."
+      },
+      "priority_version": "priority-v1"
+    },
+    {
+      "rank": 3,
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "display_name": "Jonah Adeyemi",
+      "patient_priority_score": 81,
+      "priority_band": "P1",
+      "top_gap": {
+        "gap_id": "eac62ad1-5066-5c1a-b4bd-a83d45173ae1",
+        "gap_type": "missed_followup",
+        "title": "Missed Oncology follow-up",
+        "severity": "high",
+        "gap_priority_score": 93,
+        "priority_band": "P1"
+      },
+      "verified_gap_count": 2,
+      "headline": "Oncology follow-up appears unresolved · 71 days overdue",
+      "recommended_coordinator_action": "Verify referral status and coordinate follow-up.",
+      "priority_breakdown": {
+        "top_gap_id": "eac62ad1-5066-5c1a-b4bd-a83d45173ae1",
+        "top_gap_raw": 1.4,
+        "top_gap_overdue_days": 71,
+        "verified_gap_count": 2,
+        "secondary_gap_count": 1,
+        "secondary_raw_sum": 0.595,
+        "secondary_factor": 0.1,
+        "secondary_bonus": 0.0595,
+        "patient_raw_score": 1.4595
+      },
+      "explanation": {
+        "why_band": "P1 — this gap scores 93 in the 80–100 workflow band.",
+        "top_verified_issue": "Missed Oncology follow-up",
+        "workflow_severity": "high",
+        "overdue_days": 71,
+        "days_between": null,
+        "action": "Verify referral status and coordinate follow-up.",
+        "other_verified_issues": 1,
+        "factors": {
+          "severity": "high",
+          "severity_weight": 1,
+          "temporal_factor": 1.4,
+          "temporal_bucket": "overdue_61_90",
+          "overdue_days": 71,
+          "window_days": 45,
+          "overdue_ratio": 1.5778,
+          "actionability_class": "direct_coordinator_action",
+          "actionability_weight": 1
+        },
+        "patient_aggregation": {
+          "top_gap_id": "eac62ad1-5066-5c1a-b4bd-a83d45173ae1",
+          "top_gap_raw": 1.4,
+          "top_gap_overdue_days": 71,
+          "verified_gap_count": 2,
+          "secondary_gap_count": 1,
+          "secondary_raw_sum": 0.595,
+          "secondary_factor": 0.1,
+          "secondary_bonus": 0.0595,
+          "patient_raw_score": 1.4595
+        },
+        "arithmetic": "gap raw = 1 × 1.4 × 1 = 1.4; display = round(100 × 1.4 / 1.5) = 93. patient raw = 1.4 + min(0.1 × 0.595, 0.3) = 1.4595; display = round(100 × 1.4595 / 1.8) = 81.",
+        "disclaimer": "Synthetic demo data. Intervention priority orders coordinator workflow only. Not medical advice."
+      },
+      "priority_version": "priority-v1"
+    },
+    {
+      "rank": 4,
+      "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+      "display_name": "Keiko Adeyemi",
+      "patient_priority_score": 81,
+      "priority_band": "P1",
+      "top_gap": {
+        "gap_id": "2bcf4513-7a1d-51f9-9d10-4b327c6299b8",
+        "gap_type": "missed_followup",
+        "title": "Missed Oncology follow-up",
+        "severity": "high",
+        "gap_priority_score": 93,
+        "priority_band": "P1"
+      },
+      "verified_gap_count": 2,
+      "headline": "Oncology follow-up appears unresolved · 64 days overdue",
+      "recommended_coordinator_action": "Verify referral status and coordinate follow-up.",
+      "priority_breakdown": {
+        "top_gap_id": "2bcf4513-7a1d-51f9-9d10-4b327c6299b8",
+        "top_gap_raw": 1.4,
+        "top_gap_overdue_days": 64,
+        "verified_gap_count": 2,
+        "secondary_gap_count": 1,
+        "secondary_raw_sum": 0.491625,
+        "secondary_factor": 0.1,
+        "secondary_bonus": 0.049163,
+        "patient_raw_score": 1.449163
+      },
+      "explanation": {
+        "why_band": "P1 — this gap scores 93 in the 80–100 workflow band.",
+        "top_verified_issue": "Missed Oncology follow-up",
+        "workflow_severity": "high",
+        "overdue_days": 64,
+        "days_between": null,
+        "action": "Verify referral status and coordinate follow-up.",
+        "other_verified_issues": 1,
+        "factors": {
+          "severity": "high",
+          "severity_weight": 1,
+          "temporal_factor": 1.4,
+          "temporal_bucket": "overdue_61_90",
+          "overdue_days": 64,
+          "window_days": 45,
+          "overdue_ratio": 1.4222,
+          "actionability_class": "direct_coordinator_action",
+          "actionability_weight": 1
+        },
+        "patient_aggregation": {
+          "top_gap_id": "2bcf4513-7a1d-51f9-9d10-4b327c6299b8",
+          "top_gap_raw": 1.4,
+          "top_gap_overdue_days": 64,
+          "verified_gap_count": 2,
+          "secondary_gap_count": 1,
+          "secondary_raw_sum": 0.491625,
+          "secondary_factor": 0.1,
+          "secondary_bonus": 0.049163,
+          "patient_raw_score": 1.449163
+        },
+        "arithmetic": "gap raw = 1 × 1.4 × 1 = 1.4; display = round(100 × 1.4 / 1.5) = 93. patient raw = 1.4 + min(0.1 × 0.4916, 0.3) = 1.4492; display = round(100 × 1.4492 / 1.8) = 81.",
+        "disclaimer": "Synthetic demo data. Intervention priority orders coordinator workflow only. Not medical advice."
+      },
+      "priority_version": "priority-v1"
+    },
+    {
+      "rank": 5,
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "display_name": "Elena Adeyemi",
+      "patient_priority_score": 80,
+      "priority_band": "P1",
+      "top_gap": {
+        "gap_id": "73d0ea18-f91f-5b6a-ab67-760c95fcb961",
+        "gap_type": "missed_followup",
+        "title": "Missed Oncology follow-up",
+        "severity": "high",
+        "gap_priority_score": 87,
+        "priority_band": "P1"
+      },
+      "verified_gap_count": 3,
+      "headline": "Oncology follow-up appears unresolved · 51 days overdue",
+      "recommended_coordinator_action": "Verify referral status and coordinate follow-up.",
+      "priority_breakdown": {
+        "top_gap_id": "73d0ea18-f91f-5b6a-ab67-760c95fcb961",
+        "top_gap_raw": 1.3,
+        "top_gap_overdue_days": 51,
+        "verified_gap_count": 3,
+        "secondary_gap_count": 2,
+        "secondary_raw_sum": 1.4595,
+        "secondary_factor": 0.1,
+        "secondary_bonus": 0.14595,
+        "patient_raw_score": 1.44595
+      },
+      "explanation": {
+        "why_band": "P1 — this gap scores 87 in the 80–100 workflow band.",
+        "top_verified_issue": "Missed Oncology follow-up",
+        "workflow_severity": "high",
+        "overdue_days": 51,
+        "days_between": null,
+        "action": "Verify referral status and coordinate follow-up.",
+        "other_verified_issues": 2,
+        "factors": {
+          "severity": "high",
+          "severity_weight": 1,
+          "temporal_factor": 1.3,
+          "temporal_bucket": "overdue_31_60",
+          "overdue_days": 51,
+          "window_days": 45,
+          "overdue_ratio": 1.1333,
+          "actionability_class": "direct_coordinator_action",
+          "actionability_weight": 1
+        },
+        "patient_aggregation": {
+          "top_gap_id": "73d0ea18-f91f-5b6a-ab67-760c95fcb961",
+          "top_gap_raw": 1.3,
+          "top_gap_overdue_days": 51,
+          "verified_gap_count": 3,
+          "secondary_gap_count": 2,
+          "secondary_raw_sum": 1.4595,
+          "secondary_factor": 0.1,
+          "secondary_bonus": 0.14595,
+          "patient_raw_score": 1.44595
+        },
+        "arithmetic": "gap raw = 1 × 1.3 × 1 = 1.3; display = round(100 × 1.3 / 1.5) = 87. patient raw = 1.3 + min(0.1 × 1.4595, 0.3) = 1.446; display = round(100 × 1.446 / 1.8) = 80.",
+        "disclaimer": "Synthetic demo data. Intervention priority orders coordinator workflow only. Not medical advice."
+      },
+      "priority_version": "priority-v1"
+    }
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+      "display_name": "Maya Adeyemi",
+      "verified": true,
+      "truth_match": true,
+      "gap_id": "e08a191d-b975-5977-a322-4cc385ee05d1",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "rank": 2,
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "display_name": "Farid Adeyemi",
+      "verified": true,
+      "truth_match": true,
+      "gap_id": "eaa3f21c-0676-5a4b-8ca7-129d9676841a",
+      "gap_type": "missed_followup"
+    },
+    {
+      "rank": 3,
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "display_name": "Jonah Adeyemi",
+      "verified": true,
+      "truth_match": true,
+      "gap_id": "eac62ad1-5066-5c1a-b4bd-a83d45173ae1",
+      "gap_type": "missed_followup"
+    },
+    {
+      "rank": 4,
+      "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+      "display_name": "Keiko Adeyemi",
+      "verified": true,
+      "truth_match": true,
+      "gap_id": "2bcf4513-7a1d-51f9-9d10-4b327c6299b8",
+      "gap_type": "missed_followup"
+    },
+    {
+      "rank": 5,
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "display_name": "Elena Adeyemi",
+      "verified": true,
+      "truth_match": true,
+      "gap_id": "73d0ea18-f91f-5b6a-ab67-760c95fcb961",
+      "gap_type": "missed_followup"
+    }
+  ],
+  "precision_at_k": {
+    "1": 1,
+    "3": 1,
+    "5": 1,
+    "10": 1
+  }
+}

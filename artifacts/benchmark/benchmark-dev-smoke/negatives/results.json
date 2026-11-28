@@ -1,0 +1,41 @@
+{
+  "status": "measured",
+  "candidates": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "pass_rate": 1,
+    "failures": []
+  },
+  "verified": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "pass_rate": 1,
+    "failures": []
+  },
+  "by_family": [
+    {
+      "family": "alias_covered_monitoring",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "boundary_monitoring",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    }
+  ],
+  "candidate_pass_rate": 1,
+  "verified_pass_rate": 1,
+  "target": 0.9,
+  "passed": true
+}

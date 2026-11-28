@@ -1,0 +1,44 @@
+{
+  "title": "CONTINUA INTELLIGENCE BENCHMARK",
+  "benchmark": "continua-benchmark-v1",
+  "dataset": "continua-synth-v1 / continua-eval-v1",
+  "evaluation_date": "2026-06-05",
+  "partition": "dev (dev)",
+  "extraction_f1": 1,
+  "extraction_status": "measured",
+  "oracle_macro_f1": 1,
+  "extracted_macro_f1": 1,
+  "e2e_macro_f1": 1,
+  "e2e_micro_f1": 1,
+  "per_type": {
+    "missed_followup": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "duplicate_test": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "med_monitoring": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    }
+  },
+  "hard_negative_pass": 1,
+  "displayed_gap_grounding": 1,
+  "unsupported_displayed_claims": 0,
+  "top5_verified": "5/5",
+  "top5_truth_precision": "5/5",
+  "demographic_invariance_violations": 0,
+  "deterministic_downstream_differences": 0,
+  "live_patient_latency": "not measured (no live provider)",
+  "cached_demo_latency": "1.81 ms",
+  "claims": [
+    "Fixture-replay extraction, not live model quality.",
+    "Synthetic data only; not clinical validation.",
+    "LLM-only baseline not run without a configured provider."
+  ]
+}

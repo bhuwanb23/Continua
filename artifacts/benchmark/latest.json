@@ -1,0 +1,8 @@
+{
+  "run_id": "benchmark-20261119-1400-14edc3e-final",
+  "path": "artifacts/benchmark/benchmark-20261119-1400-14edc3e-final",
+  "status": "COMPLETED",
+  "benchmark_version": "continua-benchmark-v1",
+  "finalized_at": "2026-11-28T02:52:46.801Z",
+  "artifact_hashes": "artifact-hashes.json"
+}

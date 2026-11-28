@@ -1,0 +1,2580 @@
+{
+  "extraction_predictions": [
+    {
+      "event_id": "f2e4eb6d-524b-527a-a399-f7a4fcb3a8fc",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "consult",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "source_doc_id": "925b8102-db65-594a-84c9-093c3e28bc76",
+      "source_span": "54F with type 2 diabetes, A1c 8.1%.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d205cc87-ec6e-50b6-9ee5-f2b0dc007ee4",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "medication_start",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "source_doc_id": "925b8102-db65-594a-84c9-093c3e28bc76",
+      "source_span": "Starting metformin 1000 mg twice daily.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "9304a645-2d08-5337-9075-a8fa8d486331",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "consult",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "source_doc_id": "d47d9ede-8f1a-5b0f-ba59-3249aeddc57e",
+      "source_span": "New diagnosis of invasive ductal carcinoma, left breast, on screening mammogram.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "eb249f84-741e-5c10-9a4c-ae4c002c9212",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "surgery",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "source_doc_id": "f66fb0f1-17e7-512a-ab3b-c6f6b3ac5cf7",
+      "source_span": "Underwent left lumpectomy with sentinel lymph node biopsy on 2026-03-18.",
+      "normalized_entity": "lumpectomy",
+      "normalized": {
+        "procedure": "lumpectomy",
+        "site": "left breast"
+      },
+      "provider": "Dr. Teresa Vaughn",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "8019d3ce-4382-5123-921a-094e6ffbeb38",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "referral",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "source_doc_id": "e86df95a-6952-5f96-a276-5c3c7f4f3395",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days.",
+      "normalized_entity": "oncology",
+      "normalized": {
+        "specialty": "oncology",
+        "status": "placed",
+        "expected_window_days": 45
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "cbf37c05-cba1-59fb-acf5-a2a8e283b6d7",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "imaging",
+      "date": "2026-04-18",
+      "date_precision": "day",
+      "source_doc_id": "20eaf734-05ca-5b27-a969-4b860da5750f",
+      "source_span": "Bilateral diagnostic mammogram and breast ultrasound for post-surgical baseline.",
+      "normalized_entity": "mammogram:breast",
+      "normalized": {
+        "modality": "mammogram",
+        "body_region": "breast",
+        "series_status": "unknown"
+      },
+      "provider": "Cedar Ridge Imaging",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "3bec8ded-aa67-5f83-ac49-837ff134165b",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "lab_result",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "source_doc_id": "53636809-5946-57b5-9d2d-2d145222c24d",
+      "source_span": "CBC with differential: WBC 5.8, Hgb 12.4, Plt 248. Within normal limits.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "15b075ff-f4a0-5365-9a1d-f2bfc9de0053",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "medication_start",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "source_doc_id": "33a26ee7-a0c0-5367-9207-8b53fe7aa245",
+      "source_span": "Started tamoxifen 20 mg daily for ER+ breast cancer.",
+      "normalized_entity": "tamoxifen",
+      "normalized": {
+        "drug": "tamoxifen"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "1759601d-85f4-5da0-840c-eb87178e6501",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "lab_result",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "source_doc_id": "666e404a-9e5d-5d8d-a1ee-1be97d8fe67f",
+      "source_span": "Repeat CBC with differential ordered at follow-up visit: WBC 5.9, Hgb 12.5, Plt 251. Within normal limits. No clinical indication documented for repeat at this interval.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "8b9ab272-737e-5646-9e6d-f39bb3827d98",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "consult",
+      "date": "2026-05-02",
+      "date_precision": "day",
+      "source_doc_id": "f1c055ab-8330-5b8e-892b-08c6ed0c8763",
+      "source_span": "Primary care follow-up.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "dfe000a1-e91d-57dd-9c60-bafa171f2a84",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "followup",
+      "date": "2026-05-06",
+      "date_precision": "day",
+      "source_doc_id": "2460462e-dbe9-5dbd-8d87-b092b02f6d6f",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "80b8bbed-cc93-5aed-a7b5-d542e03edb96",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "event_type": "lab_result",
+      "date": "2026-05-08",
+      "date_precision": "day",
+      "source_doc_id": "648f3dd7-6f49-5fc3-9ca9-d4f769e5d9b8",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c4c0150c-5e4e-5c86-8c85-36326b1ece5b",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "medication_start",
+      "date": "2026-01-09",
+      "date_precision": "day",
+      "source_doc_id": "b3cd802f-04b6-5f04-a2fe-4a9665fa95e7",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "14726411-c480-51c6-84bd-3f0670cd9982",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "consult",
+      "date": "2026-01-11",
+      "date_precision": "day",
+      "source_doc_id": "e3d171ba-46e9-5b75-a132-ba4248c13fca",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "998f1b01-a444-5781-894b-8c4311d467d7",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "followup",
+      "date": "2026-01-31",
+      "date_precision": "day",
+      "source_doc_id": "610137a8-2c8e-51a0-bcdd-67435c719cb5",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "59bbe132-fdcc-5b4b-8569-422511701e4d",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "referral",
+      "date": "2026-02-08",
+      "date_precision": "day",
+      "source_doc_id": "5f0ed52f-6338-5c13-9202-13a58e90be9b",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days.",
+      "normalized_entity": "oncology",
+      "normalized": {
+        "specialty": "oncology",
+        "status": "placed",
+        "expected_window_days": 45
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "cfd104bb-9c1d-58be-bce1-450837beecc4",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "lab_result",
+      "date": "2026-02-08",
+      "date_precision": "day",
+      "source_doc_id": "bbf16d7b-4d13-57b7-8234-f204b385e389",
+      "source_span": "Fasting Lipid Panel: LDL 118, HDL 46, Triglycerides 142.",
+      "normalized_entity": "lipid",
+      "normalized": {
+        "test": "lipid",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "079a2a4f-61eb-55fe-a49c-f3254ecd0478",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "lab_result",
+      "date": "2026-02-15",
+      "date_precision": "day",
+      "source_doc_id": "e4b24bb9-22e0-547e-86a4-5ef6911929ce",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "8488b695-f153-57f8-8633-f141d12b6cbc",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "consult",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "source_doc_id": "fef47ffb-8578-534c-a02a-d93d2f2c0683",
+      "source_span": "Primary Care consultation completed. Routine primary care follow-up; no specialty evaluation performed.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "e9e883ab-3e96-501a-81ed-594b5c2ee21d",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "followup",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "source_doc_id": "e34f8f36-ac2b-5c50-921c-0a812e9d11ce",
+      "source_span": "Phone follow-up: patient confirmed transportation for upcoming visit.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "5c80267b-1194-5ec4-b14a-0639cca0589a",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "lab_result",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "source_doc_id": "3b452ce9-506f-5304-b835-e6429906e79e",
+      "source_span": "Complete Blood Count: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "73097c49-0475-5df9-ae64-0d11e38c15b6",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "consult",
+      "date": "2026-03-07",
+      "date_precision": "day",
+      "source_doc_id": "248fdb9f-521d-5f0b-8c6a-eef507003c9e",
+      "source_span": "Medication list reviewed; no changes made today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d5bd8be9-c32f-5f2c-b2b6-ae07100c1a76",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "lab_result",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "source_doc_id": "52263daa-a777-5e01-ae5e-ad9bf26a0c43",
+      "source_span": "Complete Blood Count: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "6eb6a3ee-04f8-5a29-9653-be66cb73062c",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "followup",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "source_doc_id": "083ec0c4-d47d-53f9-875f-005fdaa33b25",
+      "source_span": "Phone follow-up: patient confirmed medication pick-up at pharmacy.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d58b5f8d-f7d3-5ba0-b60b-b6cc004cb17b",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "event_type": "consult",
+      "date": "2026-03-27",
+      "date_precision": "day",
+      "source_doc_id": "22e19a9f-717b-59d8-a05d-3f2ccca53c82",
+      "source_span": "Care plan reviewed with the patient; no changes to medications.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d197ec9e-a8f7-5517-9ab1-6f7aab22c0bc",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "medication_start",
+      "date": "2026-01-13",
+      "date_precision": "day",
+      "source_doc_id": "7fb11c02-ff35-5ce0-a2d1-a7125a92c17c",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "88caf460-1173-57c5-8eea-60c66db1aa4a",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "consult",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "source_doc_id": "ad2999af-414c-58c2-9351-eb3e4d9a7881",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "dd721214-065c-5b72-bb6b-cfdcef5ef89f",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "followup",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "source_doc_id": "ca2481f4-07f3-5baf-91b0-174104d6a4ce",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "64dcffba-4fc2-515b-a9a2-269d4530e803",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "lab_result",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "source_doc_id": "b09c8272-0353-5e78-8fa5-2878d225dbb6",
+      "source_span": "Lipid Panel: LDL 118, HDL 46, Triglycerides 142.",
+      "normalized_entity": "lipid",
+      "normalized": {
+        "test": "lipid",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "3bdb186d-cb8a-5567-8949-36c11d5ff65a",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "referral",
+      "date": "2026-02-15",
+      "date_precision": "day",
+      "source_doc_id": "c8e67546-a3c5-58a8-ad7c-7dbe6fa465c9",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days.",
+      "normalized_entity": "oncology",
+      "normalized": {
+        "specialty": "oncology",
+        "status": "placed",
+        "expected_window_days": 45
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "3d6871ec-beea-5a6d-a3f0-4d18474f888d",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "lab_result",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "source_doc_id": "2f09c80c-ca0e-5f18-8890-d16ee2136c91",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "81977309-53e1-5878-8e13-9e952db5cc47",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "consult",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "source_doc_id": "31218110-a045-5c62-b194-e992535fe75c",
+      "source_span": "Primary Care consultation completed. Routine primary care follow-up; no specialty evaluation performed.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "a3714224-1da7-563c-bbf9-f8cb3061ed23",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "followup",
+      "date": "2026-02-28",
+      "date_precision": "day",
+      "source_doc_id": "df4b0ff1-7030-5461-8178-329b7843067a",
+      "source_span": "Phone follow-up: patient confirmed transportation for upcoming visit.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "86292be3-ab44-5c0e-8b79-803e09482b7d",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "consult",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "source_doc_id": "67bda75c-9ab6-5048-a092-5c50a7a0834e",
+      "source_span": "Medication list reviewed; no changes made today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "830a4013-8a7a-5e28-aee0-a194911129ac",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "lab_result",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "source_doc_id": "69b9bbf9-57aa-52f0-a720-cb8be79565db",
+      "source_span": "CBC with differential: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "6ef60ba2-832b-56a9-9875-f18604d16ac4",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "lab_result",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "source_doc_id": "2ddf7b29-9e14-5ecc-8102-8243c4f547a7",
+      "source_span": "CBC with differential: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "a06e3175-8c40-5a5b-96b4-ace943ba47ed",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "followup",
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "source_doc_id": "83223a79-ec18-5808-8098-760e10cc78ea",
+      "source_span": "Phone follow-up: patient confirmed medication pick-up at pharmacy.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "2b162e5a-58f2-5d4b-bab7-2df9416e8d7e",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "event_type": "consult",
+      "date": "2026-03-30",
+      "date_precision": "day",
+      "source_doc_id": "095021c8-abe6-528c-b32d-a09849061956",
+      "source_span": "Care plan reviewed with the patient; no changes to medications.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "3b01c027-5ab7-5769-8f9a-55c6e8b0d797",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "consult",
+      "date": "2026-01-17",
+      "date_precision": "day",
+      "source_doc_id": "cb9ab333-ec80-5a98-a97d-46d5a5f84d57",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "9ba22032-7de7-5116-a81c-5c1c3a4f3f05",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "medication_start",
+      "date": "2026-01-17",
+      "date_precision": "day",
+      "source_doc_id": "b2dc1116-943f-596a-af36-97ce00700d8b",
+      "source_span": "Started warfarin 5 mg daily for atrial fibrillation.",
+      "normalized_entity": "warfarin",
+      "normalized": {
+        "drug": "warfarin"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "b017f34b-2e7a-5423-9da4-e40d5a4113aa",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "followup",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "source_doc_id": "39c65968-f44f-5a2b-9410-ff3fdd4302b0",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c4cc699a-4a64-5f4b-9829-da51789d3e7f",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "lab_result",
+      "date": "2026-02-16",
+      "date_precision": "day",
+      "source_doc_id": "6f373627-8e40-5052-a598-a543327645bd",
+      "source_span": "Fasting Lipid Panel: LDL 118, HDL 46, Triglycerides 142.",
+      "normalized_entity": "lipid",
+      "normalized": {
+        "test": "lipid",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "db28eb77-e3a6-54a8-b7fc-cd437731b551",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "lab_result",
+      "date": "2026-02-21",
+      "date_precision": "day",
+      "source_doc_id": "cc6e603c-e72f-5bc9-8942-9a524c4d0bf3",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c59e1894-32aa-5dc1-a876-2e689df9eb49",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "referral",
+      "date": "2026-02-22",
+      "date_precision": "day",
+      "source_doc_id": "9f33dd01-85ce-53e9-b171-b13bbe0ce145",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days.",
+      "normalized_entity": "oncology",
+      "normalized": {
+        "specialty": "oncology",
+        "status": "placed",
+        "expected_window_days": 45
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "2b4cf1e2-0320-5336-be6d-7255147e6aae",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "followup",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "source_doc_id": "582e0dca-dbbd-5c7b-81d4-4d87be3982be",
+      "source_span": "Phone follow-up: patient confirmed transportation for upcoming visit.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "eb704f98-2b0c-5fe2-962d-6aa122d599e3",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "consult",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "source_doc_id": "c5f82e4c-3a71-5eed-8ef3-cccb5314450e",
+      "source_span": "Primary Care consultation completed. Routine primary care follow-up; no specialty evaluation performed.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "f7d682ef-ed34-5deb-b3ad-42023caf7a8e",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "consult",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "source_doc_id": "0a681f69-4a2a-5d57-89f6-8215c247f342",
+      "source_span": "Medication list reviewed; no changes made today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d74fdddb-9a53-5f7a-b536-f5dee256b526",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "lab_result",
+      "date": "2026-03-16",
+      "date_precision": "day",
+      "source_doc_id": "001ff9e4-c94a-50c1-ba4a-204ae08a77a8",
+      "source_span": "CBC w/ diff: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "897524a0-e4bf-5e51-a8bc-1dc0152d2a67",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "followup",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "source_doc_id": "8668e315-6210-59cd-be7f-7ac739adc35e",
+      "source_span": "Phone follow-up: patient confirmed medication pick-up at pharmacy.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "af87a624-6f98-5455-a1d3-72bed9797621",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "lab_result",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "source_doc_id": "78fb834f-e801-5375-b93d-ec8e982af6da",
+      "source_span": "CBC w/ diff: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "71f353d2-62a9-54ce-bbd2-e2001043d9f1",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "event_type": "consult",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "source_doc_id": "488aea1f-856f-592e-99f8-5432bac76571",
+      "source_span": "Care plan reviewed with the patient; no changes to medications.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "cafa1ee1-5845-5f80-b10f-703a5b3e3ce8",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "event_type": "consult",
+      "date": "2026-01-26",
+      "date_precision": "day",
+      "source_doc_id": "59985dcb-db0b-59ff-86f9-106f7915e2ba",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "7a06fc6a-b209-5ca4-8858-f12976dbcf22",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "event_type": "followup",
+      "date": "2026-02-15",
+      "date_precision": "day",
+      "source_doc_id": "a4c378a6-8f2d-57bf-89e5-168d5179625b",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "6a98a38d-3419-577e-aa35-91d29945ab4e",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "event_type": "lab_result",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "source_doc_id": "49e861f8-2cd8-5f7b-a684-14164b82d576",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "351198da-df30-5fef-8c8e-2db732f155ff",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "event_type": "referral",
+      "date": "2026-03-15",
+      "date_precision": "day",
+      "source_doc_id": "d25fe9b8-5a97-5740-8de7-9e7907675db5",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days.",
+      "normalized_entity": "oncology",
+      "normalized": {
+        "specialty": "oncology",
+        "status": "placed",
+        "expected_window_days": 45
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "450615d8-7139-5056-86ca-2dacc58e6d7d",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "event_type": "consult",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "source_doc_id": "cca35e75-4661-5eef-8764-fb2d9743523b",
+      "source_span": "Primary Care consultation completed. Routine primary care follow-up; no specialty evaluation performed.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "e1ac56c4-3320-5e10-8908-ddc606cf004a",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "event_type": "lab_result",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "source_doc_id": "1ee3008c-198a-526a-8043-5fca5a502d14",
+      "source_span": "CBC with differential: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "fcca46c5-faea-5b92-afad-348039f712bf",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "event_type": "lab_result",
+      "date": "2026-04-08",
+      "date_precision": "day",
+      "source_doc_id": "f550c941-733e-5cdc-9561-d0ab425d5699",
+      "source_span": "CBC with differential: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d45a62ac-0f7e-5f0d-821f-8c3c2c4bb2ad",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "event_type": "consult",
+      "date": "2026-01-29",
+      "date_precision": "day",
+      "source_doc_id": "d2aa0787-3c69-52e6-aa69-251e1d514b46",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "5396a14a-0700-5461-a0bf-70ef7014cbed",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "event_type": "followup",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "source_doc_id": "6e9df396-3e3d-5e8a-a232-f966e81497fe",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "6549c8fa-7ae1-5fe1-bcdd-c6148ea7e07b",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "event_type": "lab_result",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "source_doc_id": "ab9c712c-cbcf-5159-9c64-fa04ec73f2ab",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "25bfc61b-0adc-5eed-be50-055833943982",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "event_type": "referral",
+      "date": "2026-03-22",
+      "date_precision": "day",
+      "source_doc_id": "f1fec56b-71e4-5065-8bb9-02f7f400bd42",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days.",
+      "normalized_entity": "oncology",
+      "normalized": {
+        "specialty": "oncology",
+        "status": "placed",
+        "expected_window_days": 45
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "df8b5b4b-a48d-5392-be29-2ceb7055c8b8",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "event_type": "consult",
+      "date": "2026-04-01",
+      "date_precision": "day",
+      "source_doc_id": "72665b7a-c899-5782-af29-4aa92451de3d",
+      "source_span": "Primary Care consultation completed. Routine primary care follow-up; no specialty evaluation performed.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "a09d8c17-b4f4-5273-a953-8d37d718ac21",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "event_type": "lab_result",
+      "date": "2026-04-05",
+      "date_precision": "day",
+      "source_doc_id": "ff4aa89a-df04-507c-8620-9e0bc7e9ef69",
+      "source_span": "CBC w/ diff: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d355b292-b9e4-5a1a-88ab-2a6d9697766a",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "event_type": "lab_result",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "source_doc_id": "6ecb6033-be7c-5fa7-a000-033dc7e5aa2b",
+      "source_span": "CBC w/ diff: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "4d2f4e8b-f076-52c3-8484-e14cac4c5e15",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "event_type": "consult",
+      "date": "2026-02-01",
+      "date_precision": "day",
+      "source_doc_id": "ea97276f-abad-581d-ad62-1fad4e1e66e6",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d919855c-fe17-545d-ac79-51cacfb7064a",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "event_type": "referral",
+      "date": "2026-02-02",
+      "date_precision": "day",
+      "source_doc_id": "5e57edfd-6580-5497-84a2-7d90d9c55064",
+      "source_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days.",
+      "normalized_entity": "oncology",
+      "normalized": {
+        "specialty": "oncology",
+        "status": "placed",
+        "expected_window_days": 45
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "94f6df77-1185-5ae7-9c38-40732294cf53",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "event_type": "consult",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "source_doc_id": "c93e6528-ead3-55c1-9aa4-f688e968e538",
+      "source_span": "Primary Care consultation completed. Routine primary care follow-up; no specialty evaluation performed.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c98f0f3c-53b5-5f25-bc29-e4f035c2416d",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "event_type": "followup",
+      "date": "2026-02-21",
+      "date_precision": "day",
+      "source_doc_id": "0c178694-166c-5c35-82b8-676adde8957d",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "dd9a6632-c881-5fda-943c-11d15218d5c5",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "event_type": "lab_result",
+      "date": "2026-03-08",
+      "date_precision": "day",
+      "source_doc_id": "40bad6bc-4c9e-52a8-bfd9-d4c01a608b43",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "720c6d33-2e2f-5a57-9459-29ee43dc063c",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "event_type": "lab_result",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "source_doc_id": "d71fc44a-995b-596b-8d6e-aee074df21d4",
+      "source_span": "CBC: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "a57aaa35-843d-5ce1-8061-a53174197f87",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "event_type": "lab_result",
+      "date": "2026-04-16",
+      "date_precision": "day",
+      "source_doc_id": "1f36ae1a-3db0-5cbd-9a89-a355a8e23158",
+      "source_span": "CBC: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "e592b1bb-7213-547a-ab30-d1ceade8297a",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "event_type": "medication_start",
+      "date": "2026-01-06",
+      "date_precision": "day",
+      "source_doc_id": "c9e1dfab-2d58-54b7-95ee-a03005015bfb",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "5fb053f8-cc43-5042-987f-28ab573832e6",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "event_type": "consult",
+      "date": "2026-01-10",
+      "date_precision": "day",
+      "source_doc_id": "9b1cd1c8-331d-5e64-8a98-e36338b0ac18",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "8892d2e0-6c14-5b52-8585-88e28cbf3ac5",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "event_type": "followup",
+      "date": "2026-01-30",
+      "date_precision": "day",
+      "source_doc_id": "086692e2-d070-5ab5-9ab3-b6b1cefe5213",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "2d597810-056a-598b-9e0f-f5bfb5e100cf",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "event_type": "lab_result",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "source_doc_id": "e85bf134-7771-5baf-9235-2796efc6bda8",
+      "source_span": "Lipid Panel: LDL 118, HDL 46, Triglycerides 142.",
+      "normalized_entity": "lipid",
+      "normalized": {
+        "test": "lipid",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c1f199f0-1862-5d05-9ea7-f5c67147896c",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "event_type": "lab_result",
+      "date": "2026-02-14",
+      "date_precision": "day",
+      "source_doc_id": "599afa76-1ba4-5686-84f8-bb5e74090bdf",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "2af240e3-201f-5d4c-a671-1dd55229bc5b",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "event_type": "lab_result",
+      "date": "2026-03-21",
+      "date_precision": "day",
+      "source_doc_id": "5e3f31f2-c6c4-57b7-8a19-45930d271035",
+      "source_span": "CBC with differential: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "08ef875d-6eb4-5f5c-9a1d-04f219161caa",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "event_type": "lab_result",
+      "date": "2026-03-29",
+      "date_precision": "day",
+      "source_doc_id": "0c19b77e-f5e8-5cd6-863a-f4f0a990f6a4",
+      "source_span": "CBC with differential: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "5fd7f02d-1378-5442-a1a5-d3e739a46143",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "event_type": "medication_start",
+      "date": "2026-01-10",
+      "date_precision": "day",
+      "source_doc_id": "0fa35d4d-b944-597a-8a6f-b8171510fc00",
+      "source_span": "Started warfarin 5 mg daily for atrial fibrillation.",
+      "normalized_entity": "warfarin",
+      "normalized": {
+        "drug": "warfarin"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "ab29c2c9-7e18-575c-bb93-60138b1c2e18",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "event_type": "consult",
+      "date": "2026-01-13",
+      "date_precision": "day",
+      "source_doc_id": "ee75ee83-8410-59ab-9cb6-7583a508e9f2",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "3ceb2384-086e-50db-a916-24c2490f062f",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "event_type": "followup",
+      "date": "2026-02-02",
+      "date_precision": "day",
+      "source_doc_id": "0e60d2ed-88c6-5dc2-b041-b7bce1755986",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "7a69534a-fe70-5793-a267-2e73035e48d0",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "event_type": "lab_result",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "source_doc_id": "29d67ba1-9cc6-5427-97cf-18cfb8d33b14",
+      "source_span": "Fasting Lipid Panel: LDL 118, HDL 46, Triglycerides 142.",
+      "normalized_entity": "lipid",
+      "normalized": {
+        "test": "lipid",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "5c202f91-8549-5432-9add-d02057b359f9",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "event_type": "lab_result",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "source_doc_id": "49ad3407-0086-54df-b9ba-5e3ae7d2a843",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "8fac95dd-4d1a-5d5d-a22b-ff10212b2999",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "event_type": "imaging",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "source_doc_id": "fc9f1dee-4a3b-5663-92fe-7c8e3e2c12f8",
+      "source_span": "MRI of the knee: no acute abnormality.",
+      "normalized_entity": "mri:knee",
+      "normalized": {
+        "modality": "mri",
+        "body_region": "knee",
+        "series_status": "unknown"
+      },
+      "provider": "Cedar Ridge Imaging",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "561d5405-0ac9-5e28-92f5-1c78e8b68a8c",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "event_type": "imaging",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "source_doc_id": "e39cf92f-8afd-55cf-b335-2848ad23a648",
+      "source_span": "MRI of the knee: no acute abnormality.",
+      "normalized_entity": "mri:knee",
+      "normalized": {
+        "modality": "mri",
+        "body_region": "knee",
+        "series_status": "unknown"
+      },
+      "provider": "Northgate Imaging Center",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c70f1a47-b6fa-5488-9abe-42bdde254e3e",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "event_type": "medication_start",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "source_doc_id": "7e2e6fd9-b6b9-5feb-89b5-bea3df940e7d",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Sofia Alvarez",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "96f897cc-64da-5b84-a502-ccf4f497ee44",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "event_type": "consult",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "source_doc_id": "f5f2caa4-1ad8-53b9-9374-dde4ea519c3d",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Sofia Alvarez",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "acad5348-64bb-584c-ba4c-4232e2ede8a1",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "event_type": "followup",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "source_doc_id": "f4d664b6-521c-54a9-ba18-c201f19562fa",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Sofia Alvarez",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "87a42e0f-a1e8-5e44-af10-5b8e16291b47",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "event_type": "lab_result",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "source_doc_id": "48ab0286-c961-59c8-85d4-19b696bb5e29",
+      "source_span": "Lipid Panel: LDL 118, HDL 46, Triglycerides 142.",
+      "normalized_entity": "lipid",
+      "normalized": {
+        "test": "lipid",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "bd138b53-76f0-5455-83f1-754afad014ac",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "event_type": "lab_result",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "source_doc_id": "7b384921-67f4-583f-9ab8-a116f3aadb42",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "e63d09e8-9a0b-5d70-a11a-fe884f34a5c2",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "event_type": "lab_result",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "source_doc_id": "40b4007e-b24c-5eeb-9a54-beadd1ab6ed8",
+      "source_span": "CBC: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "edb99ba8-f72f-5752-8afa-365833fe3778",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "event_type": "lab_result",
+      "date": "2026-04-06",
+      "date_precision": "day",
+      "source_doc_id": "4166d857-6bec-5210-9316-ebd0f5bd8541",
+      "source_span": "CBC: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Sofia Alvarez",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "be0e2d13-a9d8-559a-9a3b-d7c8552da8b1",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "consult",
+      "date": "2026-01-27",
+      "date_precision": "day",
+      "source_doc_id": "38821072-40df-5abc-8e45-346f30075ae8",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "e4a3641c-8393-50df-804c-378a2dc5a287",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "followup",
+      "date": "2026-02-16",
+      "date_precision": "day",
+      "source_doc_id": "8df0c358-77ec-5ad4-bc0e-28b1acfbf6f8",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "37bc6fd4-0d8d-5c46-85f9-a2c397e946c0",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "lab_result",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "source_doc_id": "78f3814c-a544-5f64-8cb7-d6ab88daa482",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "ee2d2a07-fbc9-5aa5-90f6-20b5ae2eb4df",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "followup",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "source_doc_id": "31ddc72d-0081-5b0c-be2e-c2e3dbc15570",
+      "source_span": "Phone follow-up: patient confirmed transportation for upcoming visit.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "07369f11-ed46-58e0-b6e0-305295ee5e8e",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "lab_result",
+      "date": "2026-03-16",
+      "date_precision": "day",
+      "source_doc_id": "0bb736f0-9ea4-5ef8-8abb-6762189a1dc3",
+      "source_span": "Complete Blood Count: WBC 5.8, Hgb 12.4, Platelets 248.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "784a46fd-563f-5dfd-8281-4f646e25015d",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "consult",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "source_doc_id": "42d59aa3-d2b0-55cb-80fd-21577c8c4997",
+      "source_span": "Medication list reviewed; no changes made today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "476cfdcd-f9e1-5de6-ad34-e3ae83cec257",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "lab_result",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "source_doc_id": "0a3f0326-d5e4-5497-8439-426f161529c9",
+      "source_span": "Complete Blood Count: WBC 5.9, Hgb 12.5, Platelets 251.",
+      "normalized_entity": "cbc",
+      "normalized": {
+        "test": "cbc",
+        "series_status": "unknown"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "6b74a2d3-52f2-5810-a16d-cbbf9f782dad",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "followup",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "source_doc_id": "f25c4537-d509-5424-ab32-37a231263749",
+      "source_span": "Phone follow-up: patient confirmed medication pick-up at pharmacy.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "b99eb2a2-46ff-5ee4-a0dd-90672174a7e6",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "event_type": "consult",
+      "date": "2026-04-12",
+      "date_precision": "day",
+      "source_doc_id": "56c18d50-2748-58b6-9c92-7360ed87bfcf",
+      "source_span": "Care plan reviewed with the patient; no changes to medications.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "1f819a29-252e-5ae1-b5eb-d92d9219db71",
+      "patient_id": "2f6079a3-3c2c-5305-b9b9-668687df24d5",
+      "event_type": "consult",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "source_doc_id": "abf29aa3-d9fd-5d1b-8698-906833d75f0f",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c446aceb-14d5-5cad-96fe-53b892f07d81",
+      "patient_id": "2f6079a3-3c2c-5305-b9b9-668687df24d5",
+      "event_type": "medication_start",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "source_doc_id": "2b230efe-9658-509e-89f7-89f6b14da32f",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "209085d1-bca7-5650-9068-4cf840f89132",
+      "patient_id": "2f6079a3-3c2c-5305-b9b9-668687df24d5",
+      "event_type": "followup",
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "source_doc_id": "797e9447-a343-5066-aeb9-bae47464febf",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Daniel Cho",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "0fafc715-fb18-51b7-9b8c-2caf990f09e4",
+      "patient_id": "2f6079a3-3c2c-5305-b9b9-668687df24d5",
+      "event_type": "lab_result",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "source_doc_id": "e8173d96-c2eb-5039-9f36-e9d6fb43f61e",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c13e55fb-ed29-5618-9384-daa7d45204b1",
+      "patient_id": "2f6079a3-3c2c-5305-b9b9-668687df24d5",
+      "event_type": "lab_result",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "source_doc_id": "0cb2e3ad-874e-5002-877f-db838c92c96a",
+      "source_span": "HbA1c: 7.1%.",
+      "normalized_entity": "a1c",
+      "normalized": {
+        "test": "a1c",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c61a8594-b87e-5da9-a6fe-660ed7e8b31a",
+      "patient_id": "bb751d08-d605-553c-a265-b361cc98e5d4",
+      "event_type": "consult",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "source_doc_id": "3fe98368-f780-5153-b735-e719bddb7ba5",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Sofia Alvarez",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "22b3d349-596c-54cc-9997-399ea233ee1a",
+      "patient_id": "bb751d08-d605-553c-a265-b361cc98e5d4",
+      "event_type": "medication_start",
+      "date": "2026-02-16",
+      "date_precision": "day",
+      "source_doc_id": "b8070f66-4e05-5091-9387-f59938007ed7",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Sofia Alvarez",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "09ad83f8-414d-5c95-8b6d-806b61b1b394",
+      "patient_id": "bb751d08-d605-553c-a265-b361cc98e5d4",
+      "event_type": "followup",
+      "date": "2026-03-01",
+      "date_precision": "day",
+      "source_doc_id": "f6c80f28-4224-5422-8baf-956011709d5d",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Sofia Alvarez",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "f57fdd01-8f63-576f-85f0-78d561e74669",
+      "patient_id": "bb751d08-d605-553c-a265-b361cc98e5d4",
+      "event_type": "lab_result",
+      "date": "2026-03-16",
+      "date_precision": "day",
+      "source_doc_id": "141a251f-dbcc-52e5-8207-973d49486939",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "28a9d980-dca3-5787-af95-0f27302fb02f",
+      "patient_id": "bb751d08-d605-553c-a265-b361cc98e5d4",
+      "event_type": "lab_result",
+      "date": "2026-04-17",
+      "date_precision": "day",
+      "source_doc_id": "9999049d-6ffe-535b-a1c7-51ac6b3bba7f",
+      "source_span": "HbA1c: 7.1%.",
+      "normalized_entity": "a1c",
+      "normalized": {
+        "test": "a1c",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "7a5c4065-d0aa-5ec0-b078-d8de05711422",
+      "patient_id": "b59fcd3f-4320-5670-889d-aef25f07a5a6",
+      "event_type": "consult",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "source_doc_id": "fa8fd8c8-e818-559e-9aee-c837a31a7cf7",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Ethan Brooks",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "f33d2776-08e5-5b82-ae81-a72f952d1c5a",
+      "patient_id": "b59fcd3f-4320-5670-889d-aef25f07a5a6",
+      "event_type": "medication_start",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "source_doc_id": "165b5c0a-5d75-5c03-bd79-25aded8f9361",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Ethan Brooks",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "231697fb-0ff4-545f-adb3-5b5c8fc2a12c",
+      "patient_id": "b59fcd3f-4320-5670-889d-aef25f07a5a6",
+      "event_type": "followup",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "source_doc_id": "4ca2a2cc-b7d8-55d1-a266-b7990b741084",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Ethan Brooks",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "76f800c4-d672-5c1a-862e-25ed1e8ad267",
+      "patient_id": "b59fcd3f-4320-5670-889d-aef25f07a5a6",
+      "event_type": "lab_result",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "source_doc_id": "0e7999e7-dff0-5a06-9987-5af5a294a1bd",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "777af41c-e5cb-5e18-8910-223071fa0122",
+      "patient_id": "b59fcd3f-4320-5670-889d-aef25f07a5a6",
+      "event_type": "lab_result",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "source_doc_id": "047cd2fd-150e-5395-9f24-41a71dbb4faf",
+      "source_span": "HbA1c: 7.1%.",
+      "normalized_entity": "a1c",
+      "normalized": {
+        "test": "a1c",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d392f745-a1c6-5f9b-a0ee-cbcf9c8aa7d8",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "consult",
+      "date": "2026-02-15",
+      "date_precision": "day",
+      "source_doc_id": "67e737f4-ab0b-5f4c-bdd9-e853db90f326",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "a8fd891c-0891-5e77-83a2-74064eaef202",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "medication_start",
+      "date": "2026-02-22",
+      "date_precision": "day",
+      "source_doc_id": "031f60c8-f563-57f4-a176-b6a07cdcf8db",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "5bd9afb7-3fdb-5442-a8f6-f5a04298b83f",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "followup",
+      "date": "2026-03-07",
+      "date_precision": "day",
+      "source_doc_id": "2d0ca7f8-dc08-544b-87b8-14ce2880edee",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "49de9f06-eeea-5742-8706-e71f9ec43b83",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "lab_result",
+      "date": "2026-03-22",
+      "date_precision": "day",
+      "source_doc_id": "2afa3c86-1034-5c03-9a90-c0ce059f250b",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "cbeb7d70-f152-5991-9b11-49eb6e7fceb1",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "followup",
+      "date": "2026-04-01",
+      "date_precision": "day",
+      "source_doc_id": "bcabbafd-389a-5055-a975-2eb7d409753c",
+      "source_span": "Phone follow-up: patient confirmed transportation for upcoming visit.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "8e395dde-b573-53b0-8102-c1b7dfefe11d",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "consult",
+      "date": "2026-04-11",
+      "date_precision": "day",
+      "source_doc_id": "e764aa43-963a-5316-91a0-b20aa76f9a8f",
+      "source_span": "Medication list reviewed; no changes made today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "f892d2ed-a258-5c50-a792-19c3012502e1",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "followup",
+      "date": "2026-04-21",
+      "date_precision": "day",
+      "source_doc_id": "00cdb675-9989-584c-9bd8-0baaaae2dae2",
+      "source_span": "Phone follow-up: patient confirmed medication pick-up at pharmacy.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "9404880b-85e7-5621-a3fe-8c802d8efecb",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "consult",
+      "date": "2026-05-01",
+      "date_precision": "day",
+      "source_doc_id": "a1fe5b51-23f6-5a0a-b29e-5d2c245304c2",
+      "source_span": "Care plan reviewed with the patient; no changes to medications.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "54c76cf2-9e02-5ec3-aca0-789148b4e9e6",
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "event_type": "lab_result",
+      "date": "2026-05-22",
+      "date_precision": "day",
+      "source_doc_id": "b2c8e6a7-826d-56ad-960c-442baffb1e7d",
+      "source_span": "A1c: 7.1%.",
+      "normalized_entity": "a1c",
+      "normalized": {
+        "test": "a1c",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "d25f6da0-f2c4-558d-9483-15ebd6f0e565",
+      "patient_id": "3150b13f-fb84-53bc-9116-69550d51f0e6",
+      "event_type": "consult",
+      "date": "2026-01-09",
+      "date_precision": "day",
+      "source_doc_id": "0a0d0211-20c6-5dd8-9775-89270dfd9e2c",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "2dfff8dd-2dd0-5c4b-aaec-f5bf0f54e54f",
+      "patient_id": "3150b13f-fb84-53bc-9116-69550d51f0e6",
+      "event_type": "medication_start",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "source_doc_id": "65b9cf87-2a82-5b8f-bf3d-8ca925cac2f7",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "af76a419-9255-5b79-8d76-842b9c6cd494",
+      "patient_id": "3150b13f-fb84-53bc-9116-69550d51f0e6",
+      "event_type": "followup",
+      "date": "2026-01-29",
+      "date_precision": "day",
+      "source_doc_id": "1bf989d1-d761-5f60-9835-17986d6436b7",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c08c0e99-7e5c-5004-abce-3ae4eec4e9b1",
+      "patient_id": "3150b13f-fb84-53bc-9116-69550d51f0e6",
+      "event_type": "lab_result",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "source_doc_id": "193a31eb-e9ea-5cd7-931e-c31a5a262f3e",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "4c3e7e86-091c-5981-a09a-64c8bf96107d",
+      "patient_id": "3150b13f-fb84-53bc-9116-69550d51f0e6",
+      "event_type": "lab_result",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "source_doc_id": "b8e92ded-1b34-5bef-9d9c-fceb44eae2ca",
+      "source_span": "A1c: 7.1%.",
+      "normalized_entity": "a1c",
+      "normalized": {
+        "test": "a1c",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "48808a0d-296a-533c-9814-ca3a8292e596",
+      "patient_id": "85e80aec-2b20-515a-bb49-d2fb1d7afe97",
+      "event_type": "consult",
+      "date": "2026-01-12",
+      "date_precision": "day",
+      "source_doc_id": "011dcba9-bc7d-5409-830c-5e0ad1f7830c",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "c33346ee-d435-55fc-8fd9-1d98d4bc3814",
+      "patient_id": "85e80aec-2b20-515a-bb49-d2fb1d7afe97",
+      "event_type": "medication_start",
+      "date": "2026-01-19",
+      "date_precision": "day",
+      "source_doc_id": "3dff57f3-3a2c-5c65-8b9b-67a2420292a8",
+      "source_span": "Started metformin 1000 mg twice daily for type 2 diabetes.",
+      "normalized_entity": "metformin",
+      "normalized": {
+        "drug": "metformin"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "478163aa-a586-5a75-bb95-2a0a81c6b926",
+      "patient_id": "85e80aec-2b20-515a-bb49-d2fb1d7afe97",
+      "event_type": "followup",
+      "date": "2026-02-01",
+      "date_precision": "day",
+      "source_doc_id": "f5b885b4-a071-5689-8ca3-7706e62ca3e6",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Priya Raman",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "ed18c103-0073-5463-a370-8e04481a6bf4",
+      "patient_id": "85e80aec-2b20-515a-bb49-d2fb1d7afe97",
+      "event_type": "lab_result",
+      "date": "2026-02-16",
+      "date_precision": "day",
+      "source_doc_id": "8c41d016-c332-5b2a-9440-44e739e4b2de",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "4668ad41-a4bc-54eb-8434-46970b1c72f5",
+      "patient_id": "85e80aec-2b20-515a-bb49-d2fb1d7afe97",
+      "event_type": "lab_result",
+      "date": "2026-04-18",
+      "date_precision": "day",
+      "source_doc_id": "14d084e5-e69b-58f3-8514-ced6ad27cf2b",
+      "source_span": "A1c: 7.1%.",
+      "normalized_entity": "a1c",
+      "normalized": {
+        "test": "a1c",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "487a1676-2abc-544f-8d80-1f08d50f6cb5",
+      "patient_id": "256fe41f-9cac-55f1-9b13-6cf08cf615df",
+      "event_type": "consult",
+      "date": "2026-02-08",
+      "date_precision": "day",
+      "source_doc_id": "bfb4ea84-e344-50de-9b36-637b4a40e453",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Ethan Brooks",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "f3af6ac9-4d67-540a-a90d-ee657f8e93b4",
+      "patient_id": "256fe41f-9cac-55f1-9b13-6cf08cf615df",
+      "event_type": "followup",
+      "date": "2026-02-28",
+      "date_precision": "day",
+      "source_doc_id": "bbf2e465-cfa3-5c2e-922d-7b45ecbec46b",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Ethan Brooks",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "f97e9826-07d5-59c4-8862-50a4a374779f",
+      "patient_id": "256fe41f-9cac-55f1-9b13-6cf08cf615df",
+      "event_type": "lab_result",
+      "date": "2026-03-15",
+      "date_precision": "day",
+      "source_doc_id": "9f93cbc1-c318-52d1-8c7d-a9fe625a6b33",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Valley Clinical Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "df3318b8-29ce-5f16-be0c-18af52055d19",
+      "patient_id": "49d37604-55e8-5533-bf9b-d386c62ac006",
+      "event_type": "consult",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "source_doc_id": "0184d448-98bb-5080-8397-54757ab17219",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "06c3b5ef-dd77-59a6-85c0-5b9eb0e1b80c",
+      "patient_id": "49d37604-55e8-5533-bf9b-d386c62ac006",
+      "event_type": "followup",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "source_doc_id": "9ac28f09-4425-5e7b-acf2-1d19f46910d3",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Lena Ortiz",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "433b582e-5243-5332-9625-a7a6c9b3efe2",
+      "patient_id": "49d37604-55e8-5533-bf9b-d386c62ac006",
+      "event_type": "lab_result",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "source_doc_id": "e28c7a4b-3e71-5901-ae2b-77597c017bef",
+      "source_span": "TSH: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Metro Lab Services",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "4e4a6574-a17a-548c-853f-d7155702d13e",
+      "patient_id": "bd01741e-c6dd-5e99-aecb-bf93e10ffea5",
+      "event_type": "consult",
+      "date": "2026-02-14",
+      "date_precision": "day",
+      "source_doc_id": "34422524-489b-53a5-b4f3-ef0972a44515",
+      "source_span": "Patient reports doing well overall; no new concerns today.",
+      "normalized_entity": "primary_care",
+      "normalized": {
+        "specialty": "primary_care",
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "fb8289f7-2f98-531b-90c4-e58712130500",
+      "patient_id": "bd01741e-c6dd-5e99-aecb-bf93e10ffea5",
+      "event_type": "followup",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "source_doc_id": "d7537ead-bf97-5eb6-8947-eead386d3d11",
+      "source_span": "Phone follow-up: patient reports doing well; no new symptoms.",
+      "normalized_entity": null,
+      "normalized": {
+        "status": "completed"
+      },
+      "provider": "Dr. Marcus Bell",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    },
+    {
+      "event_id": "ca141a6e-2d49-53d5-b714-9e0c6a4c9758",
+      "patient_id": "bd01741e-c6dd-5e99-aecb-bf93e10ffea5",
+      "event_type": "lab_result",
+      "date": "2026-03-21",
+      "date_precision": "day",
+      "source_doc_id": "bc486093-428b-5dd3-9f94-03bc5a3d72f5",
+      "source_span": "Thyroid Stimulating Hormone: 2.1 mIU/L.",
+      "normalized_entity": "tsh",
+      "normalized": {
+        "test": "tsh",
+        "series_status": "unknown"
+      },
+      "provider": "Pinnacle Labs",
+      "verification_method": "exact",
+      "verification_score": 1,
+      "mention_context": "contemporaneous"
+    }
+  ]
+}

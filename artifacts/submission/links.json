@@ -1,6 +1,10 @@
 {
-  "repository": "not-configured",
-  "demo": "not-configured",
-  "video": "artifacts/reliability/backup-walkthrough.webm",
-  "status": "DRAFT"
+  "repository": "https://github.com/bhuwanb23/Continua",
+  "demo": "LIVE_DEMO_URL",
+  "video": "VIDEO_URL",
+  "executive_summary": "docs/submission/EXECUTIVE_SUMMARY.md",
+  "ai_disclosure": "AI_DISCLOSURE.md",
+  "run_instructions": "README.md#-quick-start",
+  "backup_video": "artifacts/reliability/backup-walkthrough.webm",
+  "status": "READY_PENDING_URLS"
 }

@@ -1,0 +1,112 @@
+{
+  "status": "measured",
+  "source": "fixture_replay",
+  "live_model_measured": false,
+  "metrics": {
+    "per_type": {
+      "missed_followup": {
+        "tp": 19,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      "duplicate_test": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      "med_monitoring": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      }
+    },
+    "macro_f1": 1,
+    "micro_f1": 1,
+    "true_positives": 41,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "ground_truth_gaps": 41,
+    "reported_gaps": 41
+  },
+  "per_type": {
+    "missed_followup": {
+      "tp": 19,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "duplicate_test": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "med_monitoring": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    }
+  },
+  "macro_f1": 1,
+  "micro_f1": 1,
+  "per_type_precision_min": 1,
+  "per_type_recall_min": 1,
+  "hard_negative_pass_rate": 1,
+  "patient_level": {
+    "patients": 60,
+    "truth_positive_patients": 31,
+    "patients_with_candidate": 31,
+    "patients_with_verified": 31,
+    "true_positive_patients": 31,
+    "false_alert_patients": 0,
+    "missed_positive_patients": 0,
+    "patient_alert_precision": 1,
+    "patient_alert_recall": 1
+  },
+  "trust": {
+    "citation_validity": 1,
+    "patient_ownership_rate": 1,
+    "span_support_rate": 1,
+    "grounded_gap_rate": 1,
+    "unsupported_claim_rate": 0,
+    "required_claim_support": 1,
+    "ungrounded_queue_gaps": 0,
+    "wrong_patient_citations": 0
+  },
+  "targets": {
+    "macro_f1": 0.75,
+    "per_type_precision": 0.8,
+    "per_type_recall": 0.7,
+    "hard_negative_pass_rate": 0.9,
+    "top5_verified": 5,
+    "top5_truth": 5
+  },
+  "target_results": {
+    "macro_f1": true,
+    "per_type_precision": true,
+    "per_type_recall": true,
+    "hard_negative_pass_rate": true,
+    "top5_verified": true,
+    "top5_truth": true
+  },
+  "limitations": [
+    "The end-to-end path starts from frozen fixture-extracted events, not live LLM extraction.",
+    "Synthetic records and benchmark monitoring policies do not establish clinical validity."
+  ]
+}

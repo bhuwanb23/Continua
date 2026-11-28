@@ -1,0 +1,33 @@
+{
+  "measured": {
+    "cache_queue_read_p50_ms": {
+      "value": 1.7859,
+      "unit": "ms",
+      "classification": "MEASURED",
+      "source": "frozen Phase-9 benchmark latency.json (cached_queue_read_parse.p50_ms)"
+    },
+    "verified_gap_count": {
+      "value": 66,
+      "unit": "gaps",
+      "classification": "MEASURED",
+      "source": "frozen priority panel verified gap set"
+    }
+  },
+  "modeled": {
+    "potential_coordinator_hours_redirected": {
+      "value": 13.2,
+      "unit": "hours",
+      "classification": "MODELED",
+      "basis": "12 manual review minutes per verified gap (scenario assumption) x 66 verified gaps"
+    }
+  },
+  "scenario_assumptions": {
+    "manual_review_minutes_per_verified_gap": {
+      "value": 12,
+      "unit": "minutes",
+      "classification": "SCENARIO_ASSUMPTION",
+      "basis": "Assumed coordinator review time; not measured in this build."
+    }
+  },
+  "external_research": {}
+}

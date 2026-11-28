@@ -1,0 +1,101 @@
+{
+  "status": "measured",
+  "context": "fixture_replay",
+  "live_model_measured": false,
+  "stages": {
+    "document_preparation": {
+      "count": 12,
+      "p50_ms": 3.0622,
+      "p95_ms": 3.8201,
+      "mean_ms": 3.1441,
+      "min_ms": 2.8346,
+      "max_ms": 3.8201
+    },
+    "extraction": {
+      "count": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "mean_ms": null,
+      "min_ms": null,
+      "max_ms": null
+    },
+    "schema_normalization_reconciliation": {
+      "count": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "mean_ms": null,
+      "min_ms": null,
+      "max_ms": null
+    },
+    "gap_detection": {
+      "count": 12,
+      "p50_ms": 0.9056,
+      "p95_ms": 1.5453,
+      "mean_ms": 0.9786,
+      "min_ms": 0.8059,
+      "max_ms": 1.5453
+    },
+    "evidence_verification": {
+      "count": 12,
+      "p50_ms": 4.0905,
+      "p95_ms": 5.367,
+      "mean_ms": 4.19,
+      "min_ms": 3.2732,
+      "max_ms": 5.367
+    },
+    "priority": {
+      "count": 12,
+      "p50_ms": 1.2148,
+      "p95_ms": 4.6795,
+      "mean_ms": 1.4884,
+      "min_ms": 1.0451,
+      "max_ms": 4.6795
+    },
+    "complete_pipeline": {
+      "count": 5,
+      "p50_ms": 13.0917,
+      "p95_ms": 22.5473,
+      "mean_ms": 16.347,
+      "min_ms": 12.1791,
+      "max_ms": 22.5473
+    }
+  },
+  "single_patient": {
+    "count": 12,
+    "p50_ms": 5.2237,
+    "p95_ms": 7.8623,
+    "mean_ms": 5.5839,
+    "min_ms": 4.4923,
+    "max_ms": 7.8623
+  },
+  "panel": {
+    "count": 5,
+    "p50_ms": 13.0917,
+    "p95_ms": 22.5473,
+    "mean_ms": 16.347,
+    "min_ms": 12.1791,
+    "max_ms": 22.5473
+  },
+  "complete_pipeline": {
+    "count": 5,
+    "p50_ms": 13.0917,
+    "p95_ms": 22.5473,
+    "mean_ms": 16.347,
+    "min_ms": 12.1791,
+    "max_ms": 22.5473
+  },
+  "cached_queue_read_parse": {
+    "count": 12,
+    "p50_ms": 1.8067,
+    "p95_ms": 2.0956,
+    "mean_ms": 1.841,
+    "min_ms": 1.7121,
+    "max_ms": 2.0956
+  },
+  "repetitions": 12,
+  "limitations": [
+    "Extraction and normalization are frozen fixture artifacts; their live model latency is not measured.",
+    "Cached queue read/parse is not AI-processing latency and does not include UI rendering.",
+    "Panel repeat count is smaller than local-stage repeat count."
+  ]
+}

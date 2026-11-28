@@ -1,0 +1,943 @@
+{
+  "predictions": [
+    {
+      "prediction_id": "naive-duplicate-18f895db-b6cc-52e7-a86b-8aa1589ccaf4-d4af3caf-e8de-52d2-aacf-fd744b908c51",
+      "patient_id": "1a052190-7ad0-54c7-95c7-8c9502080be2",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "18f895db-b6cc-52e7-a86b-8aa1589ccaf4"
+      ],
+      "identity": {
+        "test": "Complete Blood Count",
+        "event_ids": [
+          "18f895db-b6cc-52e7-a86b-8aa1589ccaf4",
+          "d4af3caf-e8de-52d2-aacf-fd744b908c51"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "23032d6e-4877-5dbf-9665-f2d7aef93380",
+          "quoted_span": "Complete Blood Count: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "d84219ed-93af-5a8e-9f03-78274fc03500",
+          "quoted_span": "Complete Blood Count: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-19",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-1eef0bd7-2013-594f-9782-8d3843e337ed-0b44fb51-a843-575f-a8a5-efd2a55d644b",
+      "patient_id": "73d37aed-75bb-511c-82ff-74e848dd87d4",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "1eef0bd7-2013-594f-9782-8d3843e337ed"
+      ],
+      "identity": {
+        "test": "CBC with differential",
+        "event_ids": [
+          "1eef0bd7-2013-594f-9782-8d3843e337ed",
+          "0b44fb51-a843-575f-a8a5-efd2a55d644b"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "17b2bcf9-2ff8-582c-8472-fc6da1cd8cd7",
+          "quoted_span": "CBC with differential: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "5d12ddd0-7aab-53e9-bec1-7a506ff054f1",
+          "quoted_span": "CBC with differential: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-04",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-241d5fdf-8029-5759-8f7b-3cfa4b88e351-4ae74525-39dd-5542-be1d-ff849565605b",
+      "patient_id": "98c35244-660d-5966-ab9c-353ba06ae906",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "241d5fdf-8029-5759-8f7b-3cfa4b88e351"
+      ],
+      "identity": {
+        "test": "CBC",
+        "event_ids": [
+          "241d5fdf-8029-5759-8f7b-3cfa4b88e351",
+          "4ae74525-39dd-5542-be1d-ff849565605b"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "0727d170-4266-5a8f-bd4e-6dc1966fd92e",
+          "quoted_span": "CBC: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "158b0268-300a-591a-8975-c913f9088a72",
+          "quoted_span": "CBC: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-03-25",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-2fd5c4bc-40a7-57d9-96aa-ed82e16a335d-b30b544f-ca29-5d63-a2cf-969b7965c3a2",
+      "patient_id": "7e5f78a3-24fc-598e-be60-e020b4ca3c65",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "2fd5c4bc-40a7-57d9-96aa-ed82e16a335d"
+      ],
+      "identity": {
+        "modality": "MRI",
+        "body_region": "knee",
+        "event_ids": [
+          "2fd5c4bc-40a7-57d9-96aa-ed82e16a335d",
+          "b30b544f-ca29-5d63-a2cf-969b7965c3a2"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "8024a2ab-d5de-54ab-bd0d-3d1051a4163e",
+          "quoted_span": "MRI of the knee: no acute abnormality."
+        },
+        {
+          "doc_id": "174a8506-5489-563a-a278-8bac82133111",
+          "quoted_span": "MRI of the knee: no acute abnormality."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-09",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-38b8bfad-eb13-5254-8733-6aa8995f9f79-b7ec6792-f8a5-58b2-8318-f467f0e6c8d2",
+      "patient_id": "48400b39-475f-5477-8c82-6d56068df599",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "38b8bfad-eb13-5254-8733-6aa8995f9f79"
+      ],
+      "identity": {
+        "modality": "MRI",
+        "body_region": "brain",
+        "event_ids": [
+          "38b8bfad-eb13-5254-8733-6aa8995f9f79",
+          "b7ec6792-f8a5-58b2-8318-f467f0e6c8d2"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "d3f5ecb9-f8d8-5f9a-a9a2-2dbbeed9d465",
+          "quoted_span": "MRI of the brain: no acute abnormality."
+        },
+        {
+          "doc_id": "04317e23-76e4-52ed-9c50-8ddc8e1fa3d2",
+          "quoted_span": "MRI of the brain: no acute abnormality."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-03-15",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-5a59eb18-2832-53ae-81c4-e67b25394d5c-e56e173e-7fe2-5bb1-85a8-a4f0af44a129",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "5a59eb18-2832-53ae-81c4-e67b25394d5c"
+      ],
+      "identity": {
+        "modality": "MRI",
+        "body_region": "knee",
+        "event_ids": [
+          "5a59eb18-2832-53ae-81c4-e67b25394d5c",
+          "e56e173e-7fe2-5bb1-85a8-a4f0af44a129"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "a4442b3c-a5a9-5c91-a92b-711b0fb5c6c9",
+          "quoted_span": "MRI of the knee: no acute abnormality."
+        },
+        {
+          "doc_id": "ef055a09-4144-5cc3-9cdb-098bd6f62d86",
+          "quoted_span": "MRI of the knee: no acute abnormality."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-09",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-5bfdf581-d671-5395-be5f-aedfba6dfda3-796f7d50-5a34-5f62-a7ec-55ae6c1731fa",
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "5bfdf581-d671-5395-be5f-aedfba6dfda3"
+      ],
+      "identity": {
+        "test": "Complete Blood Count",
+        "event_ids": [
+          "5bfdf581-d671-5395-be5f-aedfba6dfda3",
+          "796f7d50-5a34-5f62-a7ec-55ae6c1731fa"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "59de9c2f-8000-5cb2-8803-c2650828ed5b",
+          "quoted_span": "Complete Blood Count: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "f195b7dc-300a-543d-ba6c-a3551496e8de",
+          "quoted_span": "Complete Blood Count: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-29",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-5d8baebd-71ac-5e2f-98a8-d800e6aa8836-3dec7cb1-f443-5da2-80f7-6465b0ad7f1b",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "5d8baebd-71ac-5e2f-98a8-d800e6aa8836"
+      ],
+      "identity": {
+        "test": "CBC",
+        "event_ids": [
+          "5d8baebd-71ac-5e2f-98a8-d800e6aa8836",
+          "3dec7cb1-f443-5da2-80f7-6465b0ad7f1b"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "c73f37d1-598c-5bb0-94ea-012bd2ce84fe",
+          "quoted_span": "CBC: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "82618b7c-26ad-570f-85a5-1054d6c32018",
+          "quoted_span": "CBC: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-04",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-768d9807-f282-5c22-ac36-82a1ff6e186d-50caaf42-4009-5a1d-a50d-a194837c2eef",
+      "patient_id": "491ac2ac-1249-5906-ab2e-10affc8feff4",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "768d9807-f282-5c22-ac36-82a1ff6e186d"
+      ],
+      "identity": {
+        "test": "CBC w/ diff",
+        "event_ids": [
+          "768d9807-f282-5c22-ac36-82a1ff6e186d",
+          "50caaf42-4009-5a1d-a50d-a194837c2eef"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "a2063121-6bca-5998-ba44-e26d42b24fd3",
+          "quoted_span": "CBC w/ diff: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "d783c015-88bc-5fb2-8852-58b5543c2320",
+          "quoted_span": "CBC w/ diff: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-03-20",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-1a3bc4a2-cd23-5c06-a3b4-aee8bd7809c1",
+      "patient_id": "8f3558bb-1514-5945-b036-1142a13c423d",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "1a3bc4a2-cd23-5c06-a3b4-aee8bd7809c1"
+      ],
+      "identity": {
+        "specialty": "cardiology"
+      },
+      "evidence": [
+        {
+          "doc_id": "a5efe5f7-f265-5d24-9f99-a470d69ec9e6",
+          "quoted_span": "Referral to Cardiology for arrhythmia evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-04-11",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-1d784924-490a-53ce-9b61-ad401f2b9934",
+      "patient_id": "4655f72d-c926-5766-859b-6cd45cbaecbe",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "1d784924-490a-53ce-9b61-ad401f2b9934"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "79daf761-a0dc-5439-9f06-3a8ab1d2b5f7",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-18",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-222c13ed-64ad-5c60-875b-451b25d21bb0",
+      "patient_id": "abcdbca3-a2fd-5265-88f4-fc879d4a14fa",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "222c13ed-64ad-5c60-875b-451b25d21bb0"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "d84d867b-25fd-5527-908c-23d9e3f5648a",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-03-28",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-224a4d98-2890-5246-88fb-d4dbecfbb6b4",
+      "patient_id": "deab9223-2d62-577e-9d41-23929e4eff99",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "224a4d98-2890-5246-88fb-d4dbecfbb6b4"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "663a5d62-1f22-547a-bcef-05fcd91f4897",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-06-24",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-2319f7f3-2d21-5b94-bc28-46b5489cae82",
+      "patient_id": "9166bfa1-3651-52a9-949b-6c14cc8c58b9",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "2319f7f3-2d21-5b94-bc28-46b5489cae82"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "3bf52262-8116-5ef1-8dbe-7a4c5d7766ae",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-24",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-31830d37-6c41-5cbf-9ede-2d461d95247b",
+      "patient_id": "8f2b0295-4a13-5a2f-90b8-d43f83a1055b",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "31830d37-6c41-5cbf-9ede-2d461d95247b"
+      ],
+      "identity": {
+        "specialty": "cardiology"
+      },
+      "evidence": [
+        {
+          "doc_id": "b1c99f05-5538-5cf2-8a2f-79d965aad878",
+          "quoted_span": "Referral to Cardiology for arrhythmia evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-04-08",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-353f3376-7794-5995-b6cf-ee2413dc8e63",
+      "patient_id": "8ed0ad89-9f35-55e7-994a-344bca58e63e",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "353f3376-7794-5995-b6cf-ee2413dc8e63"
+      ],
+      "identity": {
+        "specialty": "cardiology"
+      },
+      "evidence": [
+        {
+          "doc_id": "e8d256c3-6b1a-5b69-b16d-8c3d2c83b67e",
+          "quoted_span": "Referral to Cardiology for cardiac evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-04-28",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-37c32186-3129-561f-93bc-40c293c974ed",
+      "patient_id": "e4fbd351-d304-5d39-a948-1a6397cba139",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "37c32186-3129-561f-93bc-40c293c974ed"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "ca242d22-f2a2-5eeb-a559-97d2ec325129",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-03-21",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-510f8d05-ec60-5005-8fb6-f57c0cd4f494",
+      "patient_id": "1ebcc119-a037-5e40-b034-b7b1c7ad9591",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "510f8d05-ec60-5005-8fb6-f57c0cd4f494"
+      ],
+      "identity": {
+        "specialty": "cardiology"
+      },
+      "evidence": [
+        {
+          "doc_id": "59c48b69-2e3f-56a0-bdb5-af2ef380273a",
+          "quoted_span": "Referral to Cardiology for cardiac evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-03-26",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-5c89fd22-a28b-580d-bc56-76bcd3c7c6d0",
+      "patient_id": "cb9c9a11-23d8-54cf-96d5-adf8461501c9",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "5c89fd22-a28b-580d-bc56-76bcd3c7c6d0"
+      ],
+      "identity": {
+        "specialty": "cardiology"
+      },
+      "evidence": [
+        {
+          "doc_id": "4a2eb716-694e-5c9f-a3b6-ee03121d674b",
+          "quoted_span": "Referral to Cardiology for cardiac evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-04-25",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-5f18d82e-9e7e-5416-8f7a-40f7c89d3679",
+      "patient_id": "50c3eb6b-abfd-5241-86cb-685101651b78",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "5f18d82e-9e7e-5416-8f7a-40f7c89d3679"
+      ],
+      "identity": {
+        "specialty": "cardiology"
+      },
+      "evidence": [
+        {
+          "doc_id": "3b230324-dcd5-5791-addc-92280471cbcf",
+          "quoted_span": "Referral to Cardiology for cardiac evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-03-19",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-605212a9-cd98-5148-9699-029e5d48781d",
+      "patient_id": "c7b9ef81-9444-56fa-8cb9-d17201ebec59",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "605212a9-cd98-5148-9699-029e5d48781d"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "34a91571-6d2e-577a-a003-fffed7823fe5",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-25",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-61e40b27-39e1-5a47-9240-af8deb650f13",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "61e40b27-39e1-5a47-9240-af8deb650f13"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "baf7c795-d5f5-58dd-8eef-7c4968b5adbc",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-15",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-63d881f3-5305-59ad-90b5-bd799019faff",
+      "patient_id": "dafe98f5-2873-56b9-a4f6-b70e6f6e3e25",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "63d881f3-5305-59ad-90b5-bd799019faff"
+      ],
+      "identity": {
+        "specialty": "endocrinology"
+      },
+      "evidence": [
+        {
+          "doc_id": "f8bf20a7-1c12-50e4-bbfc-6c6f849e3e50",
+          "quoted_span": "Referral to Endocrinology for endocrine evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-04-10",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-689f2e03-a8d2-5ad2-a8c2-ea29914011e6",
+      "patient_id": "306b85b7-d099-5a2e-9da2-87fe15247384",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "689f2e03-a8d2-5ad2-a8c2-ea29914011e6"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "041c7422-c5eb-5cdb-9e2c-278ca59d5b61",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-05-01",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-70b56903-37fa-588d-86a7-c2b8dfba7a3d",
+      "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "70b56903-37fa-588d-86a7-c2b8dfba7a3d"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "e178bfab-ec78-5a3d-8523-2d4fdc3d2475",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-02",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-7579132b-f912-5754-b272-e4b5efd0972a",
+      "patient_id": "23e858b3-8ab0-58c4-82cd-6873b8915122",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "7579132b-f912-5754-b272-e4b5efd0972a"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "0015c019-0196-5847-be13-7775b2c73f40",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-06-24",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-7adbc031-1b80-5d62-ba85-ef0e010d5b17",
+      "patient_id": "fb7ea7f4-55e3-566d-b240-b5bcf6ebda55",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "7adbc031-1b80-5d62-ba85-ef0e010d5b17"
+      ],
+      "identity": {
+        "specialty": "endocrinology"
+      },
+      "evidence": [
+        {
+          "doc_id": "30ef54e7-0663-56f5-a5a4-4e5e758bdec7",
+          "quoted_span": "Referral to Endocrinology for endocrine evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-04-13",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-8a8e3c8e-a4ef-5ca3-a08e-45cd49811abf",
+      "patient_id": "fd6f72e1-5c7c-5d32-82b5-f59d0724a0b8",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "8a8e3c8e-a4ef-5ca3-a08e-45cd49811abf"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "d60b63d8-b366-5526-994f-1c7576e23c65",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-09",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-9647af4e-fd23-5cbe-9ea1-7a0993d53cb7",
+      "patient_id": "0d897623-5352-588b-a1e0-15b0aedc1171",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "9647af4e-fd23-5cbe-9ea1-7a0993d53cb7"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "4e51414a-c60e-584c-ad75-b98db2152656",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-05-08",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-a0b7d7fb-a052-53bc-96dc-681821baa7b2",
+      "patient_id": "e14c122d-5053-50c1-aeb0-36225feff589",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "a0b7d7fb-a052-53bc-96dc-681821baa7b2"
+      ],
+      "identity": {
+        "specialty": "cardiology"
+      },
+      "evidence": [
+        {
+          "doc_id": "485c6aef-f046-5489-af35-067a095f9528",
+          "quoted_span": "Referral to Cardiology for cardiac evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-03-12",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-aa253ba6-bdbc-5d82-80f8-5218ad6b3fa0",
+      "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "aa253ba6-bdbc-5d82-80f8-5218ad6b3fa0"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "252b0cd9-4e87-5e21-b0bd-60cd9bc38dbd",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-16",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-aea6e2b0-ad76-5d11-8c57-58d2d403f1b6",
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "aea6e2b0-ad76-5d11-8c57-58d2d403f1b6"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "85840230-3e24-56ad-ab5a-98cf28cd8e6f",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-03-26",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-d1bb6c15-3058-5ddd-ad1c-11a053402218",
+      "patient_id": "f03103c6-77da-5b3c-aa8c-2eaa69a10eb6",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "d1bb6c15-3058-5ddd-ad1c-11a053402218"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "10df42ce-15e0-5cca-9c63-b01813ebf1f1",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-23",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-dc4b8e84-edda-5b28-af5b-5bcae6db5716",
+      "patient_id": "539efe66-7d1d-554f-b694-6fac41e67c6b",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "dc4b8e84-edda-5b28-af5b-5bcae6db5716"
+      ],
+      "identity": {
+        "specialty": "endocrinology"
+      },
+      "evidence": [
+        {
+          "doc_id": "4c275bb2-630c-5920-8be6-65edbc918f5c",
+          "quoted_span": "Referral to Endocrinology for endocrine evaluation. Please schedule within 30 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 30,
+      "due_date": "2026-04-07",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-ddb17f34-4aa9-52bd-8d6e-43b542f8c926",
+      "patient_id": "00f9f2f6-b2b9-52db-979f-dd45929e49fe",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "ddb17f34-4aa9-52bd-8d6e-43b542f8c926"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "a193cc78-43ae-5874-b6cd-b89dd8d876de",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-06-24",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-e4aeeab3-f721-5246-bb9c-3a9db3482b18",
+      "patient_id": "14a43a84-31d6-5763-9fd6-a47dabcc2b08",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "e4aeeab3-f721-5246-bb9c-3a9db3482b18"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "a9cb3845-f8da-5c94-b048-1ffe1c14e787",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-11",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-e5180b3d-c3cf-5252-b017-de593e50a3ed",
+      "patient_id": "7c650408-fa5b-5efb-a75b-47dcc52c701f",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "e5180b3d-c3cf-5252-b017-de593e50a3ed"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "7727388d-4ca8-5add-bd04-0cf243505088",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-04",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-ee6ec72a-a60f-587f-872f-c071a3d719ac",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "ee6ec72a-a60f-587f-872f-c071a3d719ac"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "bb2459da-7f17-568b-a126-49d96e661648",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-22",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-efbff792-ebfa-5a61-a536-9b5acdd480d7",
+      "patient_id": "2e747376-7b45-5793-802a-247bc9ccd60f",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "efbff792-ebfa-5a61-a536-9b5acdd480d7"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "0aa4d34c-d3cc-5b46-9518-24e478736f82",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-17",
+      "confidence": 1
+    }
+  ],
+  "metrics": {
+    "name": "naive_keyword_rules",
+    "status": "measured",
+    "source": "fixture_replay",
+    "metrics": {
+      "per_type": {
+        "missed_followup": {
+          "tp": 19,
+          "fp": 11,
+          "fn": 0,
+          "precision": 0.6333333333333333,
+          "recall": 1,
+          "f1": 0.7755102040816326
+        },
+        "duplicate_test": {
+          "tp": 5,
+          "fp": 4,
+          "fn": 4,
+          "precision": 0.5555555555555556,
+          "recall": 0.5555555555555556,
+          "f1": 0.5555555555555556
+        },
+        "med_monitoring": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 13,
+          "precision": null,
+          "recall": 0,
+          "f1": 0
+        }
+      },
+      "macro_f1": 0.4436885865457294,
+      "micro_f1": 0.6,
+      "true_positives": 24,
+      "false_positives": 15,
+      "false_negatives": 17,
+      "ground_truth_gaps": 41,
+      "reported_gaps": 39
+    },
+    "macro_f1": 0.4436885865457294,
+    "micro_f1": 0.6,
+    "hard_negative_pass_rate": 0.6206896551724138,
+    "grounding_rate": 1,
+    "note": "Simple referral-completion and exact duplicate rules over frozen extracted events; no normalization layer beyond frozen event fields and no evidence gate."
+  }
+}

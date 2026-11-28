@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "status": "COMPLETED",
+  "checks": [
+    {
+      "name": "benchmark_hashes",
+      "passed": true,
+      "detail": "Frozen benchmark hashes and contracts validate."
+    },
+    {
+      "name": "evaluation_date",
+      "passed": true,
+      "detail": "2026-06-05 == 2026-06-05"
+    },
+    {
+      "name": "partitions_disjoint",
+      "passed": true,
+      "detail": "20 dev / 60 final, overlap 0"
+    },
+    {
+      "name": "versions_frozen",
+      "passed": true,
+      "detail": "dataset continua-synth-v1; eval continua-eval-v1; extractor extractor-v1; prompt extraction-prompt-v1; detector gaps-v1; evidence evidence-v1; priority priority-v1"
+    },
+    {
+      "name": "frozen_extraction_store",
+      "passed": true,
+      "detail": "/home/user/Continua/artifacts/extraction/phase6-extracted-final/canonical-events.json"
+    },
+    {
+      "name": "extraction_source_labeled",
+      "passed": true,
+      "detail": "source=fixture; fixture results are not model-quality evidence"
+    },
+    {
+      "name": "no_label_leakage",
+      "passed": true,
+      "detail": "329 runtime/tooling files scanned; no runtime label access"
+    },
+    {
+      "name": "provider_configuration_recorded",
+      "passed": true,
+      "detail": "no live provider configured; live extraction and LLM-only baseline will be NOT_RUN"
+    },
+    {
+      "name": "git_working_tree_clean",
+      "passed": false,
+      "detail": "4475bac has 6 changed path(s)"
+    }
+  ],
+  "warnings": [
+    "git worktree was dirty at benchmark time; the source hash and artifact hashes identify the exact evaluated state.",
+    "Gate A integrity is limited because the worktree was not clean; this is reported, not hidden."
+  ],
+  "hashes": {
+    "ground_truth_sha256": "3a0deb04396a9c6a51208d56c04a59c878fb7199d58cbe7e8cc4b338a5f1a5f2",
+    "negative_manifest_sha256": "9b72b523728fced7bb901c6a99523b76d3301d0dfba8e07dbde051095f5990a9",
+    "extraction_gold_sha256": "d74e758c32f5499235aa47145ff06f858ca0dcc411a1385ca833ac1624bec284",
+    "partitions_sha256": "f605254c355c09373b8c7eb83ee65475a6af7210f84303633b46cfa34565428c",
+    "benchmark_contracts_sha256": "e77b81a9f3745b593be38a3256a85942cfb1f34d8ee72905b8055aa368dd1f55",
+    "evaluation_config_sha256": "d822c52cb0c823678e1c87c270560c23b524508265515dfc816fb12d565b871a"
+  },
+  "input_hashes": {
+    "extracted_event_store_sha256": "ec2a6aba851bb6a3d10c5a2a34dacf73b959ad1ba6004ff83e990fc29884750a",
+    "extraction_metadata_sha256": "cb97b1c1e3ef1093e9512b488496fede6cee2beabd71be84bddb97297b992188"
+  },
+  "benchmark_summary": {
+    "patients": 80,
+    "documents": 485,
+    "providers": 26,
+    "truth_gaps": 66,
+    "negatives": 35,
+    "gold_events": 130,
+    "dev_patients": 20,
+    "final_patients": 60,
+    "overlap": 0,
+    "hard_negative_families": 13
+  },
+  "leaked_metric_publication": false
+}

@@ -1,0 +1,28 @@
+{
+  "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+  "fixture_key": "P-001-maria",
+  "queue_rank": 27,
+  "flagship_gap_id": "6c55444c-b2fb-5f94-aabf-8f2905c141e0",
+  "demo_path": {
+    "timeline_event_ids": [
+      "f928b6e6-1dc7-5219-8b56-b940527ee6ea",
+      "00e5d6c8-ab1a-5aa7-8ed6-59b9adebc3bc",
+      "be7f80b5-d06b-53a2-bde0-a0efd6c2fb20",
+      "d2d6a71b-d380-594a-ae08-e0b165cf3296",
+      "a80089cc-f2d9-5b8e-9aca-a4dc918c43c5",
+      "46e47348-63e9-5357-aa3b-7a31d932a381",
+      "0fbaa1ec-8984-5c2f-a47e-dab0a7fcd121",
+      "e906aaa3-ff0b-5cca-9a06-4e30afdb947a",
+      "bea5e300-8da3-5d22-af5b-e11927623e2b",
+      "17f13e6b-3d70-5ae7-ac5d-f0b44171d34b",
+      "eea562d7-a3a6-50a1-b3f0-add56f4c8411",
+      "b5bd952e-ac34-5fbe-959d-f93635575c03"
+    ],
+    "gap_ids": [
+      "6c55444c-b2fb-5f94-aabf-8f2905c141e0",
+      "1e71df16-4214-595f-9062-88d0c99ee49b",
+      "77c292e1-e3d2-52f8-9e5c-d7fdd38cee41"
+    ],
+    "flagship_evidence_id": "a9721f39-25fb-5868-aa54-0f5c6c5d1325"
+  }
+}

@@ -1,0 +1,595 @@
+{
+  "layer": {
+    "status": "measured",
+    "source": "fixture_replay",
+    "candidates": 25,
+    "verified": 25,
+    "suppressed": 0,
+    "candidate_metrics": {
+      "per_type": {
+        "missed_followup": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "duplicate_test": {
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "med_monitoring": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      },
+      "macro_f1": 1,
+      "micro_f1": 1,
+      "true_positives": 25,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "ground_truth_gaps": 25,
+      "reported_gaps": 25
+    },
+    "verified_metrics": {
+      "per_type": {
+        "missed_followup": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "duplicate_test": {
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "med_monitoring": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      },
+      "macro_f1": 1,
+      "micro_f1": 1,
+      "true_positives": 25,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "ground_truth_gaps": 25,
+      "reported_gaps": 25
+    },
+    "precision_gain": 0,
+    "recall_cost": null,
+    "candidate_grounding": {
+      "reported_gaps": 25,
+      "evidence_items": 36,
+      "citation_validity": 1,
+      "span_support_rate": 1,
+      "grounded_gap_rate": 1,
+      "unsupported_claim_rate": 0
+    },
+    "verified_grounding": {
+      "reported_gaps": 25,
+      "evidence_items": 36,
+      "citation_validity": 1,
+      "span_support_rate": 1,
+      "grounded_gap_rate": 1,
+      "unsupported_claim_rate": 0
+    },
+    "required_span_support": 1,
+    "required_claim_support": 1,
+    "wrong_patient_citations": 0,
+    "ungrounded_displayed_gaps": 0,
+    "unsupported_displayed_claims": 0,
+    "unsupported_claim_taxonomy": {},
+    "failures_by_code": {},
+    "all_displayed_gaps_grounded": true
+  },
+  "grounding_results": [
+    {
+      "prediction_id": "9e9d9048-77f5-526a-991b-4eadf3f18bd8",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "d71fc44a-995b-596b-8d6e-aee074df21d4",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "1f36ae1a-3db0-5cbd-9a89-a355a8e23158",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "65053f21-9b38-5e24-9555-5c762df4f340",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "5e57edfd-6580-5497-84a2-7d90d9c55064",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "d57dbb3a-15e0-53f6-9490-ce0133c7a802",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "3b452ce9-506f-5304-b835-e6429906e79e",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "52263daa-a777-5e01-ae5e-ad9bf26a0c43",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "10b56ea8-c586-5514-bc41-eecfb0d7eb28",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "b3cd802f-04b6-5f04-a2fe-4a9665fa95e7",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "baacca51-faf1-56ab-befa-b713c6e87676",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "5f0ed52f-6338-5c13-9202-13a58e90be9b",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "1928be01-f25e-5f87-908c-aa21d4ec58a3",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "ff4aa89a-df04-507c-8620-9e0bc7e9ef69",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "6ecb6033-be7c-5fa7-a000-033dc7e5aa2b",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "d54223b7-d8bf-5761-8ff9-d3f9a335eaa1",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "f1fec56b-71e4-5065-8bb9-02f7f400bd42",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "04435581-5e28-5015-9b2d-331d059cebe6",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "001ff9e4-c94a-50c1-ba4a-204ae08a77a8",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "78fb834f-e801-5375-b93d-ec8e982af6da",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "032cba66-04bd-54ed-b73a-65ca4ddaaea9",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "b2dc1116-943f-596a-af36-97ce00700d8b",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "fac0cd29-82a9-5e59-8ed2-bfe0a7f8ed90",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "9f33dd01-85ce-53e9-b171-b13bbe0ce145",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "ffb148be-09d8-56fc-8ee9-8c9c74ca3d0b",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "53636809-5946-57b5-9d2d-2d145222c24d",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "666e404a-9e5d-5d8d-a1ee-1be97d8fe67f",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "fb950a64-4078-5fc8-92eb-7c33e6bb3943",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "925b8102-db65-594a-84c9-093c3e28bc76",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "5815b39a-6495-5cb9-9228-801ea5d437ae",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "e86df95a-6952-5f96-a276-5c3c7f4f3395",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "5c45294f-0c77-5448-bf27-4ad7d8cab23d",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "0bb736f0-9ea4-5ef8-8abb-6762189a1dc3",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "0a3f0326-d5e4-5497-8439-426f161529c9",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "fee93f22-05a7-596b-ac21-794941db5deb",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "40b4007e-b24c-5eeb-9a54-beadd1ab6ed8",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "4166d857-6bec-5210-9316-ebd0f5bd8541",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "a39c8bd0-887d-52be-ab89-885b1c8bf0ec",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "7e2e6fd9-b6b9-5feb-89b5-bea3df940e7d",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "5b5e4ba0-000f-50ca-8fca-39fb7f63afe6",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "69b9bbf9-57aa-52f0-a720-cb8be79565db",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "2ddf7b29-9e14-5ecc-8102-8243c4f547a7",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "0c20bce6-b0ee-58a8-9ee2-1866203dabb1",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "7fb11c02-ff35-5ce0-a2d1-a7125a92c17c",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "0e8093d8-389c-5b91-86f4-90ddf0afc430",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "c8e67546-a3c5-58a8-ad7c-7dbe6fa465c9",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "165becde-f8ac-5030-9ce3-485d5035a0ac",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "1ee3008c-198a-526a-8043-5fca5a502d14",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "f550c941-733e-5cdc-9561-d0ab425d5699",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "c6a7a53a-7d66-56de-81ba-9a18c3d0c5dd",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "d25fe9b8-5a97-5740-8de7-9e7907675db5",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "cc1f84f5-3ccb-53f0-a875-fb75a7c9a78d",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "fc9f1dee-4a3b-5663-92fe-7c8e3e2c12f8",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "e39cf92f-8afd-55cf-b335-2848ad23a648",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "7d7206e4-88f8-56d1-932d-f085f6825810",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "0fa35d4d-b944-597a-8a6f-b8171510fc00",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "3e1a472d-f6bd-53ce-b1de-e846d982b2a1",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "5e3f31f2-c6c4-57b7-8a19-45930d271035",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        },
+        {
+          "doc_id": "0c19b77e-f5e8-5cd6-863a-f4f0a990f6a4",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    },
+    {
+      "prediction_id": "76dfd882-eafa-5cd4-8154-6105fb4054c5",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "grounded": true,
+      "evidence": [
+        {
+          "doc_id": "c9e1dfab-2d58-54b7-95ee-a03005015bfb",
+          "exists": true,
+          "owned_by_patient": true,
+          "span_supported": true,
+          "verification_method": "exact",
+          "verification_score": 1
+        }
+      ],
+      "failures": []
+    }
+  ]
+}

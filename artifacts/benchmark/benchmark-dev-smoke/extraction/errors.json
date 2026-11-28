@@ -1,0 +1,12 @@
+{
+  "false_positive_prediction_ids": [],
+  "false_negative_gold_ids": [],
+  "taxonomy": {
+    "unsupported_event": 0,
+    "wrong_event_type": 0,
+    "duplicate_occurrence": 0,
+    "historical_mention_mistaken_as_current": 0,
+    "wrong_normalization": 53,
+    "unannotated_event_not_hallucination": 76
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "reconciliation_version": "reconciliation-v1",
+  "patients": [
+    {
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "2f6079a3-3c2c-5305-b9b9-668687df24d5",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "bb751d08-d605-553c-a265-b361cc98e5d4",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "b59fcd3f-4320-5670-889d-aef25f07a5a6",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "f414574f-36f8-590f-a275-906170147973",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "3150b13f-fb84-53bc-9116-69550d51f0e6",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "85e80aec-2b20-515a-bb49-d2fb1d7afe97",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "256fe41f-9cac-55f1-9b13-6cf08cf615df",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "49d37604-55e8-5533-bf9b-d386c62ac006",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    },
+    {
+      "patient_id": "bd01741e-c6dd-5e99-aecb-bf93e10ffea5",
+      "reconciliation_version": "reconciliation-v1",
+      "merged_duplicates": [],
+      "attached_provenance": [],
+      "retained_historical": []
+    }
+  ]
+}

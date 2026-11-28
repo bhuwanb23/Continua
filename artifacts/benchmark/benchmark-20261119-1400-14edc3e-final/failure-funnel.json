@@ -1,0 +1,297 @@
+{
+  "truth_gaps": 41,
+  "stages": [
+    {
+      "stage": "truth_gaps",
+      "count": 41,
+      "denominator": 41,
+      "rate": 1,
+      "note": "Frozen benchmark truth gaps."
+    },
+    {
+      "stage": "support_events_extracted",
+      "count": 0,
+      "denominator": 41,
+      "rate": 0,
+      "note": "Trigger or identity support event exists in the event store."
+    },
+    {
+      "stage": "correct_candidates",
+      "count": 41,
+      "denominator": 41,
+      "rate": 1,
+      "note": "Candidate gap matches truth by frozen matching rules."
+    },
+    {
+      "stage": "verified_gaps",
+      "count": 41,
+      "denominator": 41,
+      "rate": 1,
+      "note": "Candidate survives the evidence gate."
+    },
+    {
+      "stage": "ranked_gaps",
+      "count": 41,
+      "denominator": 41,
+      "rate": 1,
+      "note": "Verified gap is eligible and present in the priority panel."
+    },
+    {
+      "stage": "top_k_truth_patients",
+      "count": 5,
+      "denominator": 5,
+      "rate": 1,
+      "note": "Top-5 patients whose surfaced top gap matches truth."
+    }
+  ],
+  "truth_gap_ids_lost": [
+    {
+      "truth_gap_id": "0508b76c-efb9-56b9-9e21-2652ed3ac7c8",
+      "stage": "EXTRACTION",
+      "patient_id": "f03103c6-77da-5b3c-aa8c-2eaa69a10eb6",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "0786b4cc-c05d-51e3-8950-4c59777d4394",
+      "stage": "EXTRACTION",
+      "patient_id": "f03103c6-77da-5b3c-aa8c-2eaa69a10eb6",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "0ba9ae27-56bf-5a08-b9a8-829b7f5725bc",
+      "stage": "EXTRACTION",
+      "patient_id": "fee39371-388c-5434-a68e-a2960cf89819",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "0d3cc2f6-2118-5f4b-b4e8-ad37bcefc652",
+      "stage": "EXTRACTION",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "0f4d0f3d-ca48-5bb2-8d1e-66c00924d056",
+      "stage": "EXTRACTION",
+      "patient_id": "48400b39-475f-5477-8c82-6d56068df599",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "1327dbce-1268-5a82-a46c-a40b28346f56",
+      "stage": "EXTRACTION",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "13d1f28b-16b5-5b12-9ee7-17ab0f19d31f",
+      "stage": "EXTRACTION",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "149b020c-f066-5098-9a04-05a9f861f602",
+      "stage": "EXTRACTION",
+      "patient_id": "0cae34d0-e503-5585-8402-519b06d35750",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "160ac9a5-17a4-533b-af06-d299548437fd",
+      "stage": "EXTRACTION",
+      "patient_id": "9166bfa1-3651-52a9-949b-6c14cc8c58b9",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "170dc8e1-a5ca-5d7f-a114-dda0cf79350d",
+      "stage": "EXTRACTION",
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "1856004d-e5c1-54fe-b023-2d02ffd54316",
+      "stage": "EXTRACTION",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "1da13b03-e829-5139-ae49-f182565fb700",
+      "stage": "EXTRACTION",
+      "patient_id": "50802290-51d6-580c-90ff-deb48fde0b40",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "26df05ec-458f-5f3b-a324-1ffa0219e0bf",
+      "stage": "EXTRACTION",
+      "patient_id": "4655f72d-c926-5766-859b-6cd45cbaecbe",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "2c025d61-8970-582e-a393-ff58ecf2d4ba",
+      "stage": "EXTRACTION",
+      "patient_id": "0d897623-5352-588b-a1e0-15b0aedc1171",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "34bbb8bf-61cb-56de-a7d5-56bc9e651b0e",
+      "stage": "EXTRACTION",
+      "patient_id": "2e747376-7b45-5793-802a-247bc9ccd60f",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "3666986a-9882-561f-a641-368534ee42b9",
+      "stage": "EXTRACTION",
+      "patient_id": "98c35244-660d-5966-ab9c-353ba06ae906",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "39b7b85a-2d07-596a-9f8a-754935bfcde1",
+      "stage": "EXTRACTION",
+      "patient_id": "97446e90-e627-5597-896f-b60931da6274",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "3facd21f-ace9-5a34-a2a4-dc236fe1040e",
+      "stage": "EXTRACTION",
+      "patient_id": "1a052190-7ad0-54c7-95c7-8c9502080be2",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "42ebfd8b-ccff-50fc-a69a-e282472275a7",
+      "stage": "EXTRACTION",
+      "patient_id": "306b85b7-d099-5a2e-9da2-87fe15247384",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "513cccdd-84a2-5395-bf86-9033c440450d",
+      "stage": "EXTRACTION",
+      "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "5911b840-a6ba-5f0d-9b8d-031445cecdf2",
+      "stage": "EXTRACTION",
+      "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "5e6bd373-d142-58fd-b17f-277ba4b322ee",
+      "stage": "EXTRACTION",
+      "patient_id": "1ebcc119-a037-5e40-b034-b7b1c7ad9591",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "6bc8f952-9a0b-5217-9f18-270ec8547dbc",
+      "stage": "EXTRACTION",
+      "patient_id": "fd6f72e1-5c7c-5d32-82b5-f59d0724a0b8",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "74736f92-cfbc-530f-b3c9-a647fdd34224",
+      "stage": "EXTRACTION",
+      "patient_id": "c7b9ef81-9444-56fa-8cb9-d17201ebec59",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "7f133099-a132-5b8a-88c8-7bac90ba1967",
+      "stage": "EXTRACTION",
+      "patient_id": "14a43a84-31d6-5763-9fd6-a47dabcc2b08",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "830f68a5-0905-560e-9fdd-953bf7ad8274",
+      "stage": "EXTRACTION",
+      "patient_id": "13bf6285-5ef3-545f-b280-f9fe9e9d9455",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "8d6c3363-01a6-54fb-b2ab-5e095b20521c",
+      "stage": "EXTRACTION",
+      "patient_id": "84aba5f3-d918-54ed-baab-ec74ada9a4bd",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "8d8d6e9b-b014-57a2-bfec-5a4bfafc3b3f",
+      "stage": "EXTRACTION",
+      "patient_id": "fd6f72e1-5c7c-5d32-82b5-f59d0724a0b8",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "9718d256-5235-5b60-9393-470728077a81",
+      "stage": "EXTRACTION",
+      "patient_id": "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "986f7f62-477d-5430-a0e4-10114523542b",
+      "stage": "EXTRACTION",
+      "patient_id": "7c650408-fa5b-5efb-a75b-47dcc52c701f",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "9b167908-6954-5a64-b6a8-23e3b7038e42",
+      "stage": "EXTRACTION",
+      "patient_id": "6d952ef8-190c-57f2-ab7f-ee095c61e402",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "9c9c4ea9-ef52-5f04-959e-ae9ee739389e",
+      "stage": "EXTRACTION",
+      "patient_id": "73d37aed-75bb-511c-82ff-74e848dd87d4",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "acff4171-64c6-544c-a2be-fa5dbd8f0100",
+      "stage": "EXTRACTION",
+      "patient_id": "50c3eb6b-abfd-5241-86cb-685101651b78",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "b6ceeea3-f076-5114-ada2-84d662abd76e",
+      "stage": "EXTRACTION",
+      "patient_id": "1a052190-7ad0-54c7-95c7-8c9502080be2",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "cbafbbc0-748a-540e-ab8f-5b6651028655",
+      "stage": "EXTRACTION",
+      "patient_id": "7e937461-61d7-56f4-9374-b9898b635be8",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "d6f888f0-3f78-5399-aae9-763f98813df7",
+      "stage": "EXTRACTION",
+      "patient_id": "09ec7b36-dc73-556a-b1f4-d0ef64897c1a",
+      "gap_type": "med_monitoring"
+    },
+    {
+      "truth_gap_id": "e45ac341-0e1b-5000-af81-e5c1a4ff6759",
+      "stage": "EXTRACTION",
+      "patient_id": "7e5f78a3-24fc-598e-be60-e020b4ca3c65",
+      "gap_type": "duplicate_test"
+    },
+    {
+      "truth_gap_id": "efcbcd3a-5a5a-57dd-ac2f-6eb27ba577da",
+      "stage": "EXTRACTION",
+      "patient_id": "abcdbca3-a2fd-5265-88f4-fc879d4a14fa",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "f41373ee-0deb-595f-948f-1e6ecc3a5c28",
+      "stage": "EXTRACTION",
+      "patient_id": "b5bcb947-b221-5360-95ba-18b64d7f1993",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "f7567560-0177-5792-af10-e8f1053465de",
+      "stage": "EXTRACTION",
+      "patient_id": "e4fbd351-d304-5d39-a948-1a6397cba139",
+      "gap_type": "missed_followup"
+    },
+    {
+      "truth_gap_id": "faa2024a-9f34-5d6d-a026-7df2092ece32",
+      "stage": "EXTRACTION",
+      "patient_id": "491ac2ac-1249-5906-ab2e-10affc8feff4",
+      "gap_type": "duplicate_test"
+    }
+  ],
+  "top_k_patients": 5,
+  "interpretation": "41 truth gaps were lost; the first failing stage is attributed in error-attribution.json."
+}

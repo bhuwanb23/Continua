@@ -1,0 +1,64 @@
+{
+  "cache_version": "continua-demo-cache-v1",
+  "dataset_version": "continua-synth-v1",
+  "eval_version": "continua-eval-v1",
+  "clinical_event_schema": "clinical-event-v1.1",
+  "extractor_version": "extractor-v1",
+  "normalization_version": "normalization-v1",
+  "detector_version": "gaps-v1",
+  "gap_policy_version": "gap-policy-v1",
+  "evidence_version": "evidence-v1",
+  "priority_version": "priority-v1",
+  "benchmark_version": "continua-benchmark-v1",
+  "evaluation_as_of_date": "2026-06-05",
+  "patient_count": 80,
+  "generated_at": "2026-11-28T02:52:47.331Z",
+  "git_commit": "4475bac70eb486180a8ad3141ffaaeb65827459f",
+  "artifacts": {
+    "panel.json": {
+      "sha256": "e9c786ea183b8c71198e7a9bd7b08ee4a033084b0e8e51e1fc976648c4841f6b",
+      "bytes": 541
+    },
+    "patients.json": {
+      "sha256": "a746731e7ca15dfeda35f123372ebd0284e408827f7c2a7edcfbdf3b4bbff55a",
+      "bytes": 27947
+    },
+    "records.json": {
+      "sha256": "c58ffb7fac7fa2d4132f14c2d9c8f27e2f9bf57a41bdf8345913e78de778b6a6",
+      "bytes": 1232131
+    },
+    "timelines.json": {
+      "sha256": "e0ecead7c3867965a9625f650efb19f6a5d317852fc1ba3d310bc85511a4bab8",
+      "bytes": 529990
+    },
+    "verified-gaps.json": {
+      "sha256": "8102c2b8b30c50c400938116162564d23f61100790462d20a8a027549edea76d",
+      "bytes": 738017
+    },
+    "evidence.json": {
+      "sha256": "8f83a4b7a7fdc8a661c7692dbbedee9560ea711c8db059c6ac154544e2075b06",
+      "bytes": 416126
+    },
+    "priorities.json": {
+      "sha256": "e2844d0a692999cb55cb956d3daae116204445dea279e803eea0dcdf4b2cb729",
+      "bytes": 119808
+    },
+    "queue.json": {
+      "sha256": "d7804d79f2b0d0c87c1574a721ddbd664d47a33cf5f0782aeb4344af41c0ea2a",
+      "bytes": 13091
+    },
+    "impact.json": {
+      "sha256": "c8273cef5073bf4f7e7efc8fb72b7b9cd625d85470df4d55235800c78a8fd075",
+      "bytes": 936
+    },
+    "evaluation.json": {
+      "sha256": "ddc441ff7d50e90c6a1b37fee7ce1e2854a6849070557c6a1f2a9a9a90bb693e",
+      "bytes": 217155
+    },
+    "maria.json": {
+      "sha256": "03d8bdf317c490aa7a32f0f9571251830f30bb7c54e9edd987adab0bb753601a",
+      "bytes": 1008
+    }
+  },
+  "manifest_sha256": "724e2cdd267700f529b1efd7c9bf7dc4c16cf8274a817d197eaf1215da867f69"
+}

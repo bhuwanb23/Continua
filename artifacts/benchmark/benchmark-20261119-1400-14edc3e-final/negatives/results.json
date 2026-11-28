@@ -1,0 +1,122 @@
+{
+  "status": "measured",
+  "candidates": {
+    "total": 29,
+    "passed": 29,
+    "failed": 0,
+    "pass_rate": 1,
+    "failures": []
+  },
+  "verified": {
+    "total": 29,
+    "passed": 29,
+    "failed": 0,
+    "pass_rate": 1,
+    "failures": []
+  },
+  "by_family": [
+    {
+      "family": "completed_referral",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "completed_status",
+      "cases": 2,
+      "passed": 2,
+      "pass_rate": 1,
+      "candidate_cases": 2,
+      "candidate_passed": 2,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "duplicated_document",
+      "cases": 2,
+      "passed": 2,
+      "pass_rate": 1,
+      "candidate_cases": 2,
+      "candidate_passed": 2,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "explicit_series",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "imaging_different_region",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "med_stopped_early",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "missing_provider",
+      "cases": 2,
+      "passed": 2,
+      "pass_rate": 1,
+      "candidate_cases": 2,
+      "candidate_passed": 2,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "partial_date",
+      "cases": 2,
+      "passed": 2,
+      "pass_rate": 1,
+      "candidate_cases": 2,
+      "candidate_passed": 2,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "referral_inside_window",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "repeated_lab_outside_window",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    },
+    {
+      "family": "telehealth_completion",
+      "cases": 3,
+      "passed": 3,
+      "pass_rate": 1,
+      "candidate_cases": 3,
+      "candidate_passed": 3,
+      "candidate_pass_rate": 1
+    }
+  ],
+  "candidate_pass_rate": 1,
+  "verified_pass_rate": 1,
+  "target": 0.9,
+  "passed": true
+}

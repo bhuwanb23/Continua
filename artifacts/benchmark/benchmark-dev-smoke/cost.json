@@ -1,0 +1,20 @@
+{
+  "status": "not_run",
+  "llm_calls": 0,
+  "documents": 144,
+  "tokens": {
+    "input": null,
+    "output": null,
+    "total": null,
+    "cached_input": null
+  },
+  "provider_model": "fixture",
+  "pricing_basis": "none",
+  "pricing_date": null,
+  "cost_usd": null,
+  "cost_per_document_usd": null,
+  "cost_per_patient_usd": null,
+  "cost_per_panel_usd": null,
+  "measured": false,
+  "note": "No live LLM calls or token usage exist in the fixture replay. Dollar cost is not measured and is reported as null."
+}

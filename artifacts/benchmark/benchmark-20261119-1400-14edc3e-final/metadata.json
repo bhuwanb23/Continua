@@ -1,0 +1,48 @@
+{
+  "run_id": "benchmark-20261119-1400-14edc3e-final",
+  "timestamp": "2026-11-28T02:52:46.122Z",
+  "mode": "final",
+  "benchmark_version": "continua-benchmark-v1",
+  "status": "COMPLETED",
+  "git": {
+    "commit": "4475bac70eb486180a8ad3141ffaaeb65827459f",
+    "short_commit": "4475bac",
+    "worktree_clean": false,
+    "dirty_file_count": 6
+  },
+  "dataset_version": "continua-synth-v1",
+  "eval_version": "continua-eval-v1",
+  "extractor_version": "extractor-v1",
+  "fixture_extractor_version": "fixture-extractor-v1",
+  "prompt_version": "extraction-prompt-v1",
+  "normalization_version": "normalization-v1",
+  "detector_version": "gaps-v1",
+  "gap_policy_version": "gap-policy-v1",
+  "evidence_version": "evidence-v1",
+  "priority_version": "priority-v1",
+  "clinical_event_schema": "clinical-event-v1.1",
+  "evaluation_as_of_date": "2026-06-05",
+  "partition": "final",
+  "partition_patients": 60,
+  "provider_configured": false,
+  "provider_model": null,
+  "extraction_source": "fixture_replay",
+  "extraction_is_live": false,
+  "benchmark_hashes": {
+    "ground_truth_sha256": "3a0deb04396a9c6a51208d56c04a59c878fb7199d58cbe7e8cc4b338a5f1a5f2",
+    "negative_manifest_sha256": "9b72b523728fced7bb901c6a99523b76d3301d0dfba8e07dbde051095f5990a9",
+    "extraction_gold_sha256": "d74e758c32f5499235aa47145ff06f858ca0dcc411a1385ca833ac1624bec284",
+    "partitions_sha256": "f605254c355c09373b8c7eb83ee65475a6af7210f84303633b46cfa34565428c",
+    "benchmark_contracts_sha256": "e77b81a9f3745b593be38a3256a85942cfb1f34d8ee72905b8055aa368dd1f55",
+    "evaluation_config_sha256": "d822c52cb0c823678e1c87c270560c23b524508265515dfc816fb12d565b871a"
+  },
+  "input_hashes": {
+    "extracted_event_store_sha256": "ec2a6aba851bb6a3d10c5a2a34dacf73b959ad1ba6004ff83e990fc29884750a",
+    "extraction_metadata_sha256": "cb97b1c1e3ef1093e9512b488496fede6cee2beabd71be84bddb97297b992188"
+  },
+  "notes": [
+    "Synthetic records only; this is not clinical validation.",
+    "Extraction is a deterministic fixture replay. Its extraction metrics do not measure live model quality.",
+    "No live provider was configured; LLM-only baseline is NOT_RUN."
+  ]
+}

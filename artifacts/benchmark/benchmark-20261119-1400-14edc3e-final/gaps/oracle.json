@@ -1,0 +1,117 @@
+{
+  "layer": {
+    "status": "measured",
+    "source": "oracle",
+    "metrics": {
+      "per_type": {
+        "missed_followup": {
+          "tp": 19,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "duplicate_test": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "med_monitoring": {
+          "tp": 13,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      },
+      "macro_f1": 1,
+      "micro_f1": 1,
+      "true_positives": 41,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "ground_truth_gaps": 41,
+      "reported_gaps": 41
+    },
+    "per_type": {
+      "missed_followup": {
+        "tp": 19,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      "duplicate_test": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      "med_monitoring": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      }
+    },
+    "matches": {
+      "true_positives": 41,
+      "false_positives": 0,
+      "false_negatives": 0
+    },
+    "predictions": 41,
+    "truth_gaps": 41
+  },
+  "verified_gap_ids": [
+    "660de088-7861-5723-bd42-319351764f5c",
+    "7824607e-a210-56cc-adb8-8888cd2a5ff3",
+    "93951c25-b4ba-51d8-9132-0d007e4ff119",
+    "921d8c22-da81-5311-aca7-9589f7e98326",
+    "e8db5c75-d6d8-5da4-be95-ae7f6c032f02",
+    "9f7d1ded-f0dc-5b66-93fc-b488b1b0c22c",
+    "a91db556-9819-585b-90f6-bf36af8b311b",
+    "4fa981cf-81d5-5e0f-94c4-c0dfa921af6f",
+    "6baf71ce-0f81-5996-9028-663bb73e7a18",
+    "8ece28d5-1220-5f60-9f2e-b4dc5ff6b94b",
+    "d1f4e943-4a39-5fd6-9f30-5f2d28286ddc",
+    "46abfce1-8a39-5b87-89a0-296398b712ba",
+    "f12370a5-bd0f-50d3-bd2d-09eb5d2b4000",
+    "0264cb74-065c-59ef-8a4d-2f728a99f050",
+    "ec05222e-6b91-50e8-a444-8130b7abea48",
+    "61008905-03a7-517b-9bbe-0f6c285e8ffa",
+    "b5cb5f1c-e971-5b5e-8619-409033b90d80",
+    "325c4206-e327-56e0-a564-3dd459a6eaaf",
+    "c42fc70c-59ac-57d7-841b-8c85d31314ae",
+    "bd2c5dd1-e0c6-5c9e-a0a0-23d9cc70aacb",
+    "a85decac-f1d8-5d18-abec-d7e4e6b198a0",
+    "1f47a441-9f18-5ad1-979c-66d9b1c8f44c",
+    "c03718ac-83b5-560b-89d5-97a2a1d3b37c",
+    "fb21482c-84d8-5f85-a49b-9cb245fad56e",
+    "f5cafa5f-52e2-5c8a-a752-bcf98cece811",
+    "87a03705-d141-5300-8fac-87a2c8261c0f",
+    "5541ee70-2979-59aa-ba40-52f5066560fb",
+    "057957de-048b-5243-bc3b-007785af3f09",
+    "4f159210-d5d6-5974-9437-c406c970c3b2",
+    "3929dc99-7ac7-5f46-8186-f9a51a75e632",
+    "d23c9dd6-6a2e-5dfb-8df4-04f31b4b4ddb",
+    "1b6ba3c3-e1be-5b38-aea2-343be7cde6b3",
+    "da258f3c-8abc-56cc-9006-bd8ce7716257",
+    "cfa2e6e2-c70b-55f8-8fe7-c49130adafe2",
+    "e70d933e-4859-5640-9d4a-75c6bce554c5",
+    "ecbe9948-6d3a-5165-878c-2f8040250d89",
+    "ef73969d-9d03-56e7-b861-bea42acf92f9",
+    "80535b7b-aa74-5a5e-bf89-ab8e5da391e1",
+    "dce64a90-cf0a-5794-83cd-8718af0c8594",
+    "7faa1478-2171-5e85-8e84-626e59a684f0",
+    "76fe1ad9-4e8e-5619-9d6b-340797dcc97d"
+  ]
+}

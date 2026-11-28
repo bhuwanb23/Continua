@@ -1,0 +1,516 @@
+{
+  "predictions": [
+    {
+      "prediction_id": "naive-duplicate-0fbaa1ec-8984-5c2f-a47e-dab0a7fcd121-bea5e300-8da3-5d22-af5b-e11927623e2b",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "0fbaa1ec-8984-5c2f-a47e-dab0a7fcd121"
+      ],
+      "identity": {
+        "test": "CBC with differential",
+        "event_ids": [
+          "0fbaa1ec-8984-5c2f-a47e-dab0a7fcd121",
+          "bea5e300-8da3-5d22-af5b-e11927623e2b"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "53636809-5946-57b5-9d2d-2d145222c24d",
+          "quoted_span": "CBC with differential: WBC 5.8, Hgb 12.4, Plt 248. Within normal limits."
+        },
+        {
+          "doc_id": "666e404a-9e5d-5d8d-a1ee-1be97d8fe67f",
+          "quoted_span": "Repeat CBC with differential ordered at follow-up visit: WBC 5.9, Hgb 12.5, Plt 251. Within normal limits. No clinical indication documented for repeat at this interval."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-05-04",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-3bf2f698-5674-5e50-aff7-28221c3d3c1d-0da62f64-9fba-53ec-887d-218b7e1a086f",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "3bf2f698-5674-5e50-aff7-28221c3d3c1d"
+      ],
+      "identity": {
+        "test": "Complete Blood Count",
+        "event_ids": [
+          "3bf2f698-5674-5e50-aff7-28221c3d3c1d",
+          "0da62f64-9fba-53ec-887d-218b7e1a086f"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "3b452ce9-506f-5304-b835-e6429906e79e",
+          "quoted_span": "Complete Blood Count: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "52263daa-a777-5e01-ae5e-ad9bf26a0c43",
+          "quoted_span": "Complete Blood Count: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-03-20",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-5a1b0799-716b-54d6-9045-b23a5ffb092a-6063e2d6-964c-5112-ad06-d81e2f3eeaab",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "5a1b0799-716b-54d6-9045-b23a5ffb092a"
+      ],
+      "identity": {
+        "test": "CBC",
+        "event_ids": [
+          "5a1b0799-716b-54d6-9045-b23a5ffb092a",
+          "6063e2d6-964c-5112-ad06-d81e2f3eeaab"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "d71fc44a-995b-596b-8d6e-aee074df21d4",
+          "quoted_span": "CBC: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "1f36ae1a-3db0-5cbd-9a89-a355a8e23158",
+          "quoted_span": "CBC: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-24",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-7ca28a67-bd07-5169-b6f1-9e2aef03b1a9-f0f5bca6-5a28-57ea-9656-40a863e7f703",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "7ca28a67-bd07-5169-b6f1-9e2aef03b1a9"
+      ],
+      "identity": {
+        "test": "CBC w/ diff",
+        "event_ids": [
+          "7ca28a67-bd07-5169-b6f1-9e2aef03b1a9",
+          "f0f5bca6-5a28-57ea-9656-40a863e7f703"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "ff4aa89a-df04-507c-8620-9e0bc7e9ef69",
+          "quoted_span": "CBC w/ diff: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "6ecb6033-be7c-5fa7-a000-033dc7e5aa2b",
+          "quoted_span": "CBC w/ diff: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-19",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-888247b4-5e40-50cb-b95d-943b1129222b-1854c503-d547-54c0-baff-a83aabd29ea0",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "888247b4-5e40-50cb-b95d-943b1129222b"
+      ],
+      "identity": {
+        "test": "CBC with differential",
+        "event_ids": [
+          "888247b4-5e40-50cb-b95d-943b1129222b",
+          "1854c503-d547-54c0-baff-a83aabd29ea0"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "69b9bbf9-57aa-52f0-a720-cb8be79565db",
+          "quoted_span": "CBC with differential: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "2ddf7b29-9e14-5ecc-8102-8243c4f547a7",
+          "quoted_span": "CBC with differential: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-03-25",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-adda7a71-99d8-5d22-8792-3fc20601b8c9-5997c37c-11fd-5e92-b769-c96a21a7f554",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "adda7a71-99d8-5d22-8792-3fc20601b8c9"
+      ],
+      "identity": {
+        "test": "CBC with differential",
+        "event_ids": [
+          "adda7a71-99d8-5d22-8792-3fc20601b8c9",
+          "5997c37c-11fd-5e92-b769-c96a21a7f554"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "1ee3008c-198a-526a-8043-5fca5a502d14",
+          "quoted_span": "CBC with differential: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "f550c941-733e-5cdc-9561-d0ab425d5699",
+          "quoted_span": "CBC with differential: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-14",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-b3ea089a-8e29-5c8a-9b49-2aefce1455cd-60c9f49b-b5f1-5c6b-b921-f46d30a06a99",
+      "patient_id": "92652b42-ffd4-5081-9f4e-f40525c5d175",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "b3ea089a-8e29-5c8a-9b49-2aefce1455cd"
+      ],
+      "identity": {
+        "test": "Complete Blood Count",
+        "event_ids": [
+          "b3ea089a-8e29-5c8a-9b49-2aefce1455cd",
+          "60c9f49b-b5f1-5c6b-b921-f46d30a06a99"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "0bb736f0-9ea4-5ef8-8abb-6762189a1dc3",
+          "quoted_span": "Complete Blood Count: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "0a3f0326-d5e4-5497-8439-426f161529c9",
+          "quoted_span": "Complete Blood Count: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-03-30",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-bf1384b0-9637-5217-b93c-bceb7a76c356-12964491-a0d1-5616-809d-1e1a198af1c5",
+      "patient_id": "a2fdfce5-4f6c-5f22-8ea3-2d9a4510ad0c",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "bf1384b0-9637-5217-b93c-bceb7a76c356"
+      ],
+      "identity": {
+        "test": "CBC",
+        "event_ids": [
+          "bf1384b0-9637-5217-b93c-bceb7a76c356",
+          "12964491-a0d1-5616-809d-1e1a198af1c5"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "40b4007e-b24c-5eeb-9a54-beadd1ab6ed8",
+          "quoted_span": "CBC: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "4166d857-6bec-5210-9316-ebd0f5bd8541",
+          "quoted_span": "CBC: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-14",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-c5958a37-1330-57e0-95a1-12a333922eea-400938e9-3e90-5b20-b6b2-60bccbd6a3c2",
+      "patient_id": "c8c188c5-0013-582d-9e63-4c2a1856fd04",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "c5958a37-1330-57e0-95a1-12a333922eea"
+      ],
+      "identity": {
+        "modality": "MRI",
+        "body_region": "knee",
+        "event_ids": [
+          "c5958a37-1330-57e0-95a1-12a333922eea",
+          "400938e9-3e90-5b20-b6b2-60bccbd6a3c2"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "fc9f1dee-4a3b-5663-92fe-7c8e3e2c12f8",
+          "quoted_span": "MRI of the knee: no acute abnormality."
+        },
+        {
+          "doc_id": "e39cf92f-8afd-55cf-b335-2848ad23a648",
+          "quoted_span": "MRI of the knee: no acute abnormality."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-09",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-e7e1f2db-2b69-54f2-95b1-794d7a30e20b-86380041-6db0-5404-b0cd-a6a122f4e5de",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "e7e1f2db-2b69-54f2-95b1-794d7a30e20b"
+      ],
+      "identity": {
+        "test": "CBC w/ diff",
+        "event_ids": [
+          "e7e1f2db-2b69-54f2-95b1-794d7a30e20b",
+          "86380041-6db0-5404-b0cd-a6a122f4e5de"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "001ff9e4-c94a-50c1-ba4a-204ae08a77a8",
+          "quoted_span": "CBC w/ diff: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "78fb834f-e801-5375-b93d-ec8e982af6da",
+          "quoted_span": "CBC w/ diff: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-03-30",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-duplicate-f061b31b-0e11-5c1e-b50d-6bc43a4424ad-d15d6f70-1fb2-5b5d-b32e-b1d161935014",
+      "patient_id": "d4107356-186d-5298-8b9f-13c898903649",
+      "gap_type": "duplicate_test",
+      "trigger_event_ids": [
+        "f061b31b-0e11-5c1e-b50d-6bc43a4424ad"
+      ],
+      "identity": {
+        "test": "CBC with differential",
+        "event_ids": [
+          "f061b31b-0e11-5c1e-b50d-6bc43a4424ad",
+          "d15d6f70-1fb2-5b5d-b32e-b1d161935014"
+        ]
+      },
+      "evidence": [
+        {
+          "doc_id": "5e3f31f2-c6c4-57b7-8a19-45930d271035",
+          "quoted_span": "CBC with differential: WBC 5.8, Hgb 12.4, Platelets 248."
+        },
+        {
+          "doc_id": "0c19b77e-f5e8-5cd6-863a-f4f0a990f6a4",
+          "quoted_span": "CBC with differential: WBC 5.9, Hgb 12.5, Platelets 251."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 14,
+      "due_date": "2026-04-04",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-346647bf-c7ce-573b-99d9-20bac77a6ce4",
+      "patient_id": "236101ef-9377-5114-bb4f-8c9ce85ff1f7",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "346647bf-c7ce-573b-99d9-20bac77a6ce4"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "5e57edfd-6580-5497-84a2-7d90d9c55064",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-03-19",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-4849c86d-a07c-5850-9475-5201c19a4e1f",
+      "patient_id": "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "4849c86d-a07c-5850-9475-5201c19a4e1f"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "c8e67546-a3c5-58a8-ad7c-7dbe6fa465c9",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-01",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-76d29db6-4b4e-5f46-a4cf-802efd00a9d9",
+      "patient_id": "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "76d29db6-4b4e-5f46-a4cf-802efd00a9d9"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "5f0ed52f-6338-5c13-9202-13a58e90be9b",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-03-25",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-80fd88ce-58f0-540e-b460-d44d20351b80",
+      "patient_id": "460da30e-adb2-512e-a35c-337d6c46f52d",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "80fd88ce-58f0-540e-b460-d44d20351b80"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "f1fec56b-71e4-5065-8bb9-02f7f400bd42",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-05-06",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-a59b5696-97a8-5646-a2a9-1bce27a42e99",
+      "patient_id": "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "a59b5696-97a8-5646-a2a9-1bce27a42e99"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "9f33dd01-85ce-53e9-b171-b13bbe0ce145",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-08",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-a80089cc-f2d9-5b8e-9aca-a4dc918c43c5",
+      "patient_id": "6fc752d8-8b56-5977-b41d-0b77c8ecea28",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "a80089cc-f2d9-5b8e-9aca-a4dc918c43c5"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "e86df95a-6952-5f96-a276-5c3c7f4f3395",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation (endocrine therapy and radiation planning). Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-05-09",
+      "confidence": 1
+    },
+    {
+      "prediction_id": "naive-followup-f5a17e63-3fd9-5e88-abe0-c453e95c4489",
+      "patient_id": "c5936c42-175d-5a1e-b400-c1ac5c0cf229",
+      "gap_type": "missed_followup",
+      "trigger_event_ids": [
+        "f5a17e63-3fd9-5e88-abe0-c453e95c4489"
+      ],
+      "identity": {
+        "specialty": "oncology"
+      },
+      "evidence": [
+        {
+          "doc_id": "d25fe9b8-5a97-5740-8de7-9e7907675db5",
+          "quoted_span": "Referral to Medical Oncology for adjuvant therapy evaluation. Please schedule within 45 days."
+        }
+      ],
+      "detector_version": "naive-rules-v1",
+      "window_days": 45,
+      "due_date": "2026-04-29",
+      "confidence": 1
+    }
+  ],
+  "metrics": {
+    "name": "naive_keyword_rules",
+    "status": "measured",
+    "source": "fixture_replay",
+    "metrics": {
+      "per_type": {
+        "missed_followup": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "duplicate_test": {
+          "tp": 3,
+          "fp": 8,
+          "fn": 8,
+          "precision": 0.2727272727272727,
+          "recall": 0.2727272727272727,
+          "f1": 0.2727272727272727
+        },
+        "med_monitoring": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "precision": null,
+          "recall": 0,
+          "f1": 0
+        }
+      },
+      "macro_f1": 0.42424242424242425,
+      "micro_f1": 0.46511627906976744,
+      "true_positives": 10,
+      "false_positives": 8,
+      "false_negatives": 15,
+      "ground_truth_gaps": 25,
+      "reported_gaps": 18
+    },
+    "macro_f1": 0.42424242424242425,
+    "micro_f1": 0.46511627906976744,
+    "hard_negative_pass_rate": 1,
+    "grounding_rate": 1,
+    "note": "Simple referral-completion and exact duplicate rules over frozen extracted events; no normalization layer beyond frozen event fields and no evidence gate."
+  }
+}

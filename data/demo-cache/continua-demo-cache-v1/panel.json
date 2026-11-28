@@ -1,0 +1,20 @@
+{
+  "panel_id": "demo",
+  "name": "Oncology Continuity Demo",
+  "patient_count": 80,
+  "flagged_patient_count": 42,
+  "verified_gap_counts": {
+    "missed_followup": 26,
+    "duplicate_test": 20,
+    "med_monitoring": 20
+  },
+  "top_patient_ids": [
+    "485d8a51-07cb-52eb-8d3a-ac817458c0d0",
+    "55bc402f-4cff-5f92-a28b-f59363cf5a7d",
+    "34f1180e-64fd-58e7-87d0-8dfcc167c089",
+    "ac0a1357-80e2-51ce-8896-ffe9bb967fe6",
+    "c8c188c5-0013-582d-9e63-4c2a1856fd04"
+  ],
+  "generated_at": "2026-11-28T02:52:47.331Z",
+  "synthetic": true
+}
